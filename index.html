@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HumAIne Email Templates</title>
+<link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body { background: #14081E; color: #F5F0FA; font-family: 'Manrope', sans-serif; display: flex; flex-direction: column; overflow: hidden; }
+
+  /* top bar */
+  .topbar { display: flex; align-items: center; justify-content: space-between; padding: 16px 28px; border-bottom: 1px solid #2F2444; flex-shrink: 0; background: #180A24; }
+  .topbar .brand { font-family: 'Jura', sans-serif; font-weight: 700; font-size: 21px; }
+  .topbar .brand .ai { background: linear-gradient(135deg,#5271FF 0%,#B5B7F6 55%,#E5C3F0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .topbar .label { font-family: 'Roboto', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #B5B7F6; }
+
+  .layout { display: flex; flex: 1; min-height: 0; }
+
+  /* sidebar */
+  .sidebar { width: 340px; flex-shrink: 0; border-right: 1px solid #2F2444; overflow-y: auto; background: #12071C; }
+  .sidebar::-webkit-scrollbar { width: 6px; }
+  .sidebar::-webkit-scrollbar-thumb { background: #2F2444; border-radius: 3px; }
+  .sidebar .section { padding: 20px 20px 10px; font-family: 'Roboto', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #6F6383; }
+
+  .item { display: flex; gap: 14px; padding: 16px 20px; cursor: pointer; border-left: 2px solid transparent; transition: background .15s, border-color .15s; }
+  .item:hover { background: rgba(82,113,255,0.05); }
+  .item.active { background: rgba(82,113,255,0.10); border-left-color: #5271FF; }
+  .item .avatar { width: 40px; height: 40px; border-radius: 12px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Jura', sans-serif; font-weight: 700; font-size: 16px; color: #fff; }
+  .item .avatar.blue { background: linear-gradient(135deg, #5271FF, #7B8CFF); }
+  .item .avatar.lilac { background: linear-gradient(135deg, #8A7BD8, #B5B7F6); }
+  .item .avatar.plum { background: #221230; border: 1px solid #3A2B52; color: #B5B7F6; }
+  .item .meta { min-width: 0; flex: 1; }
+  .item .row1 { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 3px; }
+  .item .sender { font-weight: 700; font-size: 13.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .item .num { font-family: 'Jura', sans-serif; font-size: 10px; color: #6F6383; flex-shrink: 0; }
+  .item .subject { font-size: 13px; color: #CFC8DE; margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .item.active .subject { color: #F5F0FA; }
+  .item .snippet { font-size: 12px; font-weight: 300; color: #6F6383; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .item .tag { display: inline-block; margin-top: 7px; font-family: 'Roboto', sans-serif; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: #B5B7F6; border: 1px solid rgba(181,183,246,0.3); border-radius: 999px; padding: 3px 9px; }
+  .item .tag.alert { color: #E07A85; border-color: rgba(224,122,133,0.35); }
+
+  /* viewer */
+  .viewer { flex: 1; min-width: 0; display: flex; flex-direction: column; background: #14081E; }
+  .viewer-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 24px; border-bottom: 1px solid #2F2444; flex-shrink: 0; }
+  .viewer-head h2 { font-family: 'Jura', sans-serif; font-size: 16px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .viewer-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+
+  /* theme switch */
+  .theme-switch { display: flex; border: 1px solid #2F2444; border-radius: 999px; overflow: hidden; background: #180A24; }
+  .theme-switch button { border: 0; background: transparent; color: #6F6383; font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 11px; padding: 8px 16px; cursor: pointer; transition: all .15s; }
+  .theme-switch button.on { background: #5271FF; color: #F5F0FA; }
+  .theme-switch button.on.light-on { background: #E5C3F0; color: #180A24; }
+
+  .viewer-head .file { font-family: 'Roboto', sans-serif; font-size: 11px; color: #A99FBB; text-decoration: none; border: 1px solid #2F2444; background: #180A24; border-radius: 999px; padding: 8px 16px; white-space: nowrap; transition: all .15s; }
+  .viewer-head .file:hover { color: #B5B7F6; border-color: #5271FF; }
+  .viewer iframe { flex: 1; width: 100%; border: 0; background: #14081E; transition: background .2s; }
+  .viewer.light iframe { background: #EFEAF6; }
+
+  @media (max-width: 860px) {
+    .sidebar { width: 84px; }
+    .item .meta, .sidebar .section { display: none; }
+    .item { justify-content: center; padding: 14px 0; }
+    .viewer-head h2 { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">Hum<span class="ai">AI</span>ne</div>
+  <div class="label">Email Templates &middot; Zyn Global</div>
+</div>
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="section">Inbox &middot; 8</div>
+
+    <div class="item" data-src="01-galaxy-invitation.html" data-title="Your HumAIne access is approved">
+      <div class="avatar blue">H</div>
+      <div class="meta">
+        <div class="row1"><span class="sender">HumAIne</span><span class="num">01</span></div>
+        <div class="subject">Your HumAIne access is approved</div>
+        <div class="snippet">No waitlist, no velvet rope&hellip;</div>
+        <span class="tag">Invitation</span>
+      </div>
+    </div>
+
+    <div class="item" data-src="02-security-alert.html" data-title="A new sign-in. Was it you?">
+      <div class="avatar plum">S</div>
+      <div class="meta">
+        <div class="row1"><span class="sender">HumAIne Security</span><span class="num">02</span></div>
+        <div class="subject">A new sign-in. Was it you?</div>
+        <div class="snippet">Someone signed in from a new device&hellip;</div>
+        <span class="tag alert">Security alert</span>
+      </div>
+    </div>
+
+    <div class="item" data-src="03-team-invite.html" data-title="James Whitfield invited you to Acme Limited">
+      <div class="avatar lilac">A</div>
+      <div class="meta">
+        <div class="row1"><span class="sender">Acme Limited</span><span class="num">03</span></div>
+        <div class="subject">You&rsquo;re invited to Acme Limited</div>
+        <div class="snippet">James Whitfield wants you in&hellip;</div>
+        <span class="tag">Team invite</span>
+      </div>
+    </div>
+
+    <div class="item" data-src="04-password-reset.html" data-title="Reset your password">
+      <div class="avatar plum">S</div>
+      <div class="meta">
+        <div class="row1"><span class="sender">HumAIne Security</span><span class="num">04</span></div>
+        <div class="subject">Reset your password</div>
+        <div class="snippet">Single-use link, 15 minutes&hellip;</div>
+        <span class="tag">Password reset</span>
+      </div>
+    </div>
+
+    <div class="item" data-src="05-pin-reset.html" data-title="Set a new security PIN">
+      <div class="avatar plum">S</div>
+      <div class="meta">
+        <div class="row1"><span class="sender">HumAIne Security</span><span class="num">05</span></div>
+        <div class="subject">Set a new security PIN</div>
+        <div class="snippet">The setup window stays open for 15 minutes&hellip;</div>
+        <span class="tag">PIN reset</span>
+      </div>
+    </div>
+
+    <div class="item" data-src="06-mfa-override.html" data-title="Two-factor is about to change">
+      <div class="avatar plum">S</div>
+      <div class="meta">
+        <div class="row1"><span class="sender">HumAIne Security</span><span class="num">06</span></div>
+        <div class="subject">Two-factor is about to change</div>
+        <div class="snippet">Continue only if you made this request&hellip;</div>
+        <span class="tag alert">Critical action</span>
+      </div>
+    </div>
+
+    <div class="item" data-src="07-welcome.html" data-title="Welcome to HumAIne">
+      <div class="avatar blue">H</div>
+      <div class="meta">
+        <div class="row1"><span class="sender">HumAIne</span><span class="num">07</span></div>
+        <div class="subject">Welcome to HumAIne</div>
+        <div class="snippet">Your workspace is live&hellip;</div>
+        <span class="tag">Onboarding</span>
+      </div>
+    </div>
+
+    <div class="item" data-src="08-otp-code.html" data-title="Your access code: 720941">
+      <div class="avatar blue">H</div>
+      <div class="meta">
+        <div class="row1"><span class="sender">HumAIne</span><span class="num">08</span></div>
+        <div class="subject">Your access code: 720941</div>
+        <div class="snippet">Single-use, expires in 10 minutes&hellip;</div>
+        <span class="tag">OTP code</span>
+      </div>
+    </div>
+  </aside>
+
+  <main class="viewer" id="viewer">
+    <div class="viewer-head">
+      <h2 id="viewer-title">Your HumAIne access is approved</h2>
+      <div class="viewer-actions">
+        <div class="theme-switch" id="theme-switch">
+          <button id="btn-dark" class="on">Dark</button>
+          <button id="btn-light">Light</button>
+        </div>
+        <a class="file" id="viewer-file" href="01-galaxy-invitation.html" target="_blank">01-galaxy-invitation.html &nearr;</a>
+      </div>
+    </div>
+    <iframe id="viewer-frame" src="01-galaxy-invitation.html" title="Email preview"></iframe>
+  </main>
+</div>
+
+<script>
+  const items = document.querySelectorAll('.item');
+  const frame = document.getElementById('viewer-frame');
+  const title = document.getElementById('viewer-title');
+  const file = document.getElementById('viewer-file');
+  const viewer = document.getElementById('viewer');
+  const btnDark = document.getElementById('btn-dark');
+  const btnLight = document.getElementById('btn-light');
+
+  let theme = localStorage.getItem('email-theme') || 'dark';
+
+  function applyTheme() {
+    btnDark.classList.toggle('on', theme === 'dark');
+    btnLight.classList.toggle('on', theme === 'light');
+    btnLight.classList.toggle('light-on', theme === 'light');
+    viewer.classList.toggle('light', theme === 'light');
+    try { frame.contentWindow.postMessage('theme:' + theme, '*'); } catch (e) {}
+  }
+
+  function setTheme(t) {
+    theme = t;
+    localStorage.setItem('email-theme', t);
+    applyTheme();
+  }
+
+  btnDark.addEventListener('click', () => setTheme('dark'));
+  btnLight.addEventListener('click', () => setTheme('light'));
+  frame.addEventListener('load', applyTheme); // re-apply after each email loads
+
+  function select(item) {
+    items.forEach(i => i.classList.remove('active'));
+    item.classList.add('active');
+    const src = item.dataset.src;
+    frame.src = src + (theme === 'light' ? '?theme=light' : '');
+    title.textContent = item.dataset.title;
+    file.href = src;
+    file.textContent = src + ' ↗';
+    location.hash = src.split('-')[0];
+  }
+
+  items.forEach(item => item.addEventListener('click', () => select(item)));
+
+  // deep-link support: #01 ... #08
+  const hash = location.hash.replace('#', '');
+  const initial = [...items].find(i => i.dataset.src.startsWith(hash)) || items[0];
+  select(initial);
+  applyTheme();
+
+  // arrow-key navigation
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    e.preventDefault();
+    const list = [...items];
+    const idx = list.findIndex(i => i.classList.contains('active'));
+    const next = e.key === 'ArrowDown' ? Math.min(idx + 1, list.length - 1) : Math.max(idx - 1, 0);
+    select(list[next]);
+    list[next].scrollIntoView({ block: 'nearest' });
+  });
+</script>
+</body>
+</html>
