@@ -7,7 +7,7 @@
 <meta name="x-apple-disable-message-reformatting">
 <meta name="color-scheme" content="dark light">
 <meta name="supported-color-schemes" content="dark light">
-<title>Set a new HumAIne device PIN</title>
+<title>Confirm your two-factor authentication change</title>
 <!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
 <![endif]-->
@@ -28,19 +28,23 @@
   html.theme-light .t2{color:#5A4E6E!important;}
   html.theme-light .t3{color:#8C7FA3!important;}
   html.theme-light .tb{color:#4A5BD6!important;}
+  html.theme-light .tr{color:#B8434F!important;}
   html.theme-light .foot{background-color:#F5F0FA!important;border-color:#E4DCEF!important;}
   html.theme-light .surface{background-color:#FAF7FD!important;border-color:#E4DCEF!important;}
+  html.theme-light .btn2{color:#180A24!important;border-color:#C9BEDC!important;}
+  html.theme-light .warn{background-color:#FDF0F1!important;border-color:#EFC9CD!important;}
   html.theme-light a{color:#4A5BD6;}
   @media screen and (max-width:620px){
     .stack{display:block!important;width:100%!important;}
     .px{padding-left:24px!important;padding-right:24px!important;}
     .h1{font-size:26px!important;line-height:1.25!important;}
+    .btnwrap{display:block!important;margin-bottom:12px!important;}
   }
 </style>
 </head>
 <body class="page" style="margin:0;padding:0;background-color:#14081E;">
 
-<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#14081E;">Set a new PIN for {{device_name}}. The setup window closes in {{expiry_minutes}} minutes.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#14081E;">Someone requested to turn off two-factor authentication on your account. Confirm or reject this change.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="page" bgcolor="#14081E">
 <tr><td align="center" style="padding:32px 16px;">
@@ -53,43 +57,80 @@
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
       <tr>
         <td class="t1" style="font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:20px;color:#F5F0FA;">Hum<span class="grad-text" style="color:#5271FF;">AI</span>ne</td>
-        <td class="tb" align="right" style="font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#B5B7F6;">Device PIN</td>
+        <td class="tb" align="right" style="font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#B5B7F6;">Security notice</td>
       </tr>
     </table>
   </td></tr>
 
   <tr><td class="px" style="padding:44px 48px 8px;">
-    <h1 class="h1 t1" style="margin:0 0 20px;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:40px;line-height:1.05;letter-spacing:-1px;color:#F5F0FA;">Six new <span class="grad-text" style="color:#5271FF;">digits.</span></h1>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:24px;">
+      <tr><td style="padding:8px 16px;border:1px solid #6E3A44;background-color:#2A1520;border-radius:999px;">
+        <span class="tr" style="font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:#E07A85;">Action required</span>
+      </td></tr>
+    </table>
+
+    <h1 class="h1 t1" style="margin:0 0 20px;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:40px;line-height:1.05;letter-spacing:-1px;color:#F5F0FA;">Someone&rsquo;s removing<br>the second lock.</h1>
     <p class="t2" style="margin:0 0 16px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:15px;line-height:1.75;color:#A99FBB;">Hi {{first_name}},</p>
-    <p class="t2" style="margin:0 0 28px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:15px;line-height:1.75;color:#A99FBB;">You asked to reset the PIN that unlocks HumAIne on <strong class="t1" style="color:#F5F0FA;font-weight:700;">{{device_name}}</strong>. Pick something you&rsquo;ll actually remember, but that your flatmate wouldn&rsquo;t guess.</p>
+    <p class="t2" style="margin:0 0 24px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:15px;line-height:1.75;color:#A99FBB;">A request came in to switch off two-factor on your account. We&rsquo;ve paused it &mdash; nothing changes until you say the word. Here&rsquo;s where it came from:</p>
   </td></tr>
 
-  <tr><td class="px" style="padding:0 48px 12px;">
-    <!--[if mso]>
-    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{set_pin_url}}" style="height:48px;v-text-anchor:middle;width:160px;" arcsize="28%" stroke="f" fillcolor="#5271FF">
-      <w:anchorlock/><center style="color:#FFFFFF;font-family:'Segoe UI',Arial,sans-serif;font-size:15px;font-weight:bold;">Set a new PIN</center>
-    </v:roundrect>
-    <![endif]-->
-    <!--[if !mso]><!-->
-    <a href="{{set_pin_url}}" style="display:inline-block;background-color:#5271FF;color:#FFFFFF;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:15px;text-decoration:none;padding:15px 32px;border-radius:12px;">Set a new PIN</a>
-    <!--<![endif]-->
+  <!-- request details -->
+  <tr><td class="px" style="padding:0 48px 8px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td class="hair t3" width="42%" style="padding:13px 0;border-top:1px solid #2F2444;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">Requested</td>
+        <td class="hair t1" align="right" style="padding:13px 0;border-top:1px solid #2F2444;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:600;font-size:14px;color:#F5F0FA;">{{request_date}} at {{request_time}}</td>
+      </tr>
+      <tr>
+        <td class="hair t3" style="padding:13px 0;border-top:1px solid #2F2444;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">From device</td>
+        <td class="hair t1" align="right" style="padding:13px 0;border-top:1px solid #2F2444;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:600;font-size:14px;color:#F5F0FA;">{{device_name}} &middot; {{city}}, {{country}}</td>
+      </tr>
+      <tr>
+        <td class="hair t3" style="padding:13px 0;border-top:1px solid #2F2444;border-bottom:1px solid #2F2444;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">Current method</td>
+        <td class="hair t1" align="right" style="padding:13px 0;border-top:1px solid #2F2444;border-bottom:1px solid #2F2444;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:600;font-size:14px;color:#F5F0FA;">{{current_mfa_method}}</td>
+      </tr>
+    </table>
   </td></tr>
 
-  <!-- guidance panel -->
+  <!-- warning -->
   <tr><td class="px" style="padding:28px 48px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="surface" style="background-color:#221230;border:1px solid #3A2B52;border-radius:12px;">
-      <tr><td style="padding:20px 24px;">
-        <p class="t3" style="margin:0 0 14px;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">A quick word on 123456</p>
-        <p class="t2" style="margin:0 0 8px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:13.5px;line-height:1.7;color:#A99FBB;">&bull;&nbsp;&nbsp;Straight runs and repeats are the first thing anyone tries.</p>
-        <p class="t2" style="margin:0 0 8px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:13.5px;line-height:1.7;color:#A99FBB;">&bull;&nbsp;&nbsp;Your birthday is on the internet. Pick something else.</p>
-        <p class="t2" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:13.5px;line-height:1.7;color:#A99FBB;">&bull;&nbsp;&nbsp;This unlocks the app on this device only &mdash; it&rsquo;s not your account password.</p>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="warn" style="background-color:#2A1520;border:1px solid #6E3A44;border-radius:12px;">
+      <tr><td style="padding:18px 22px;">
+        <p class="t2" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:13.5px;line-height:1.7;color:#A99FBB;">Turn this off and your password is the only thing standing between your workspace and the internet. If you&rsquo;re just switching phones, pair the new one instead &mdash; takes about thirty seconds.</p>
       </td></tr>
     </table>
   </td></tr>
 
-  <tr><td class="px" style="padding:24px 48px 40px;">
-    <p class="t3" style="margin:0 0 10px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#6F6383;"><strong class="t2" style="color:#A99FBB;">This link expires in {{expiry_minutes}} minutes.</strong> If the button doesn&rsquo;t work, copy and paste this link into your browser:<br><a href="{{set_pin_url}}" style="color:#8FA2FF;word-break:break-all;">{{set_pin_url}}</a></p>
-    <p class="t3" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#6F6383;">If you didn&rsquo;t request this, your existing PIN remains active. Let us know at <a href="mailto:{{support_email}}" style="color:#8FA2FF;">{{support_email}}</a>.</p>
+  <!-- actions -->
+  <tr><td class="px" style="padding:28px 48px 0;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td class="btnwrap" style="padding-right:12px;">
+          <!--[if mso]>
+          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{confirm_change_url}}" style="height:48px;v-text-anchor:middle;width:165px;" arcsize="28%" stroke="f" fillcolor="#5271FF">
+            <w:anchorlock/><center style="color:#FFFFFF;font-family:'Segoe UI',Arial,sans-serif;font-size:15px;font-weight:bold;">Confirm change</center>
+          </v:roundrect>
+          <![endif]-->
+          <!--[if !mso]><!-->
+          <a href="{{confirm_change_url}}" style="display:inline-block;background-color:#5271FF;color:#FFFFFF;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:15px;text-decoration:none;padding:15px 30px;border-radius:12px;">Confirm change</a>
+          <!--<![endif]-->
+        </td>
+        <td class="btnwrap">
+          <!--[if mso]>
+          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{reject_change_url}}" style="height:48px;v-text-anchor:middle;width:175px;" arcsize="28%" strokecolor="#3A2B52" fillcolor="#180A24">
+            <w:anchorlock/><center style="color:#F5F0FA;font-family:'Segoe UI',Arial,sans-serif;font-size:15px;font-weight:bold;">I didn't request this</center>
+          </v:roundrect>
+          <![endif]-->
+          <!--[if !mso]><!-->
+          <a href="{{reject_change_url}}" class="btn2 t1" style="display:inline-block;background-color:transparent;color:#F5F0FA;border:1px solid #3A2B52;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:15px;text-decoration:none;padding:14px 30px;border-radius:12px;">I didn&rsquo;t request this</a>
+          <!--<![endif]-->
+        </td>
+      </tr>
+    </table>
+  </td></tr>
+
+  <tr><td class="px" style="padding:22px 48px 40px;">
+    <p class="t3" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#6F6383;">This confirmation link expires in {{expiry_minutes}} minutes. Choosing &ldquo;I didn&rsquo;t request this&rdquo; cancels the change and locks your security settings for review.</p>
   </td></tr>
 
   <!-- footer : transactional -->
