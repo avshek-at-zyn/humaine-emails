@@ -12,13 +12,15 @@ Nine production-ready HTML email templates for HumAIne (Zyn Global), plus a brow
 |---|------|------|---------|
 | 01 | `01-early-access.html` | Marketing | Early-access invitation |
 | 02 | `02-security-alert.html` | Transactional | New-device sign-in alert |
-| 03 | `03-team-invite.html` | Transactional | Workspace invitation |
+| 03 | `03-document-shared.html` | Transactional | Someone shared a generated document |
 | 04 | `04-password-reset.html` | Transactional | Password reset link |
 | 05 | `05-pin-reset.html` | Transactional | Device PIN reset |
 | 06 | `06-mfa-change.html` | Transactional | Two-factor change confirmation |
 | 07 | `07-welcome.html` | Lifecycle | Post-signup welcome |
 | 08 | `08-otp-code.html` | Transactional | One-time sign-in code |
 | 09 | `09-onboarding-abandoned.html` | Lifecycle | Abandoned-setup re-engagement |
+
+Copy is written against HumAIne's actual surface — **chat, news, and document generation**. There is no workspace, team, or data-source concept anywhere in these templates; if the product grows one, the onboarding checklist in 09 and the three-step list in 07 are the places to revisit.
 
 **Transactional** templates have no unsubscribe link — they're service messages tied to an active account, and suppressing them would break account security. **Marketing** and **lifecycle** templates carry unsubscribe + preferences links and the postal address block, which CAN-SPAM and equivalents require.
 
@@ -48,17 +50,19 @@ Security templates (02, 04, 05, 06, 08) also use `{{security_url}}` and `{{suppo
 |----------|------|
 | 01 Early access | `{{activation_url}}`, `{{expiry_date}}` |
 | 02 Security alert | `{{signin_date}}`, `{{signin_time}}`, `{{timezone}}`, `{{device_name}}`, `{{browser_name}}`, `{{city}}`, `{{country}}`, `{{ip_address}}`, `{{secure_account_url}}`, `{{sessions_url}}` |
-| 03 Team invite | `{{inviter_name}}`, `{{inviter_email}}`, `{{workspace_name}}`, `{{workspace_initial}}`, `{{member_count}}`, `{{role_name}}`, `{{expiry_date}}`, `{{accept_invite_url}}` |
+| 03 Document shared | `{{sharer_name}}`, `{{sharer_email}}`, `{{document_title}}`, `{{document_type}}`, `{{page_count}}`, `{{generated_date}}`, `{{share_message}}`, `{{document_url}}` |
 | 04 Password reset | `{{reset_password_url}}`, `{{expiry_minutes}}` |
 | 05 PIN reset | `{{set_pin_url}}`, `{{device_name}}`, `{{expiry_minutes}}` |
 | 06 MFA change | `{{confirm_change_url}}`, `{{reject_change_url}}`, `{{request_date}}`, `{{request_time}}`, `{{device_name}}`, `{{city}}`, `{{country}}`, `{{current_mfa_method}}`, `{{expiry_minutes}}` |
-| 07 Welcome | `{{workspace_url}}` |
+| 07 Welcome | `{{app_url}}` |
 | 08 OTP code | `{{otp_code}}`, `{{expiry_minutes}}`, `{{device_name}}`, `{{city}}`, `{{country}}`, `{{request_time}}`, `{{timezone}}`, `{{secure_account_url}}` |
 | 09 Abandoned setup | `{{resume_onboarding_url}}`, `{{book_setup_url}}`, `{{percent_complete}}`, `{{completed_steps}}`, `{{total_steps}}`, `{{minutes_remaining}}`, `{{days_saved}}` |
 
 ### Two things to wire up by hand
 
-**09's progress bar** is a two-cell table with the filled cell hard-coded to `width="50%"`. Set it from `{{percent_complete}}` in your ESP's templating, and mark the matching checklist rows done — the four steps are static markup, not a loop.
+**09's progress bar** is a two-cell table with the filled cell hard-coded to `width="50%"`. Set it from `{{percent_complete}}` in your ESP's templating, and mark the matching checklist rows done — the four steps (create account, confirm email, ask first question, generate first document) are static markup, not a loop. Swap them if your real signup flow differs.
+
+**03's share note** (`{{share_message}}`) renders inside a quote block. If sharing without a message is allowed, wrap that block in a conditional so you don't ship empty quote marks.
 
 **Subject lines** live in each file's `<title>`. Most ESPs set the subject separately, so copy them across. The preheader (the grey text after the subject in an inbox list) is the hidden `<div>` immediately after `<body>`.
 

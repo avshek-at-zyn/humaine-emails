@@ -7,7 +7,7 @@
 <meta name="x-apple-disable-message-reformatting">
 <meta name="color-scheme" content="dark light">
 <meta name="supported-color-schemes" content="dark light">
-<title>{{inviter_name}} invited you to {{workspace_name}} on HumAIne</title>
+<title>{{sharer_name}} shared a document with you</title>
 <!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
 <![endif]-->
@@ -30,89 +30,89 @@
   html.theme-light .tb{color:#4A5BD6!important;}
   html.theme-light .foot{background-color:#F5F0FA!important;border-color:#E4DCEF!important;}
   html.theme-light .surface{background-color:#FAF7FD!important;border-color:#E4DCEF!important;}
+  html.theme-light .doccard{background-color:#FAF7FD!important;border-color:#D9CBEA!important;}
+  html.theme-light .quote{background-color:#F4F1FC!important;border-color:#5271FF!important;}
   html.theme-light a{color:#4A5BD6;}
   @media screen and (max-width:620px){
     .stack{display:block!important;width:100%!important;}
     .px{padding-left:24px!important;padding-right:24px!important;}
-    .h1{font-size:26px!important;line-height:1.25!important;}
+    .h1{font-size:32px!important;line-height:1.1!important;}
   }
 </style>
 </head>
 <body class="page" style="margin:0;padding:0;background-color:#14081E;">
 
-<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#14081E;">Join {{workspace_name}} as {{role_name}}. This invitation expires in {{expiry_days}} days.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#14081E;">{{document_title}} — {{sharer_name}} sent this over. Read it in HumAIne.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="page" bgcolor="#14081E">
 <tr><td align="center" style="padding:32px 16px;">
 
-<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" class="card" style="max-width:600px;width:100%;background-color:#180A24;border:1px solid #2F2444;border-radius:16px;overflow:hidden;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" class="card" style="max-width:600px;width:100%;background-color:#180A24;border:1px solid #2F2444;border-radius:18px;overflow:hidden;">
 
   <tr><td height="3" bgcolor="#5271FF" style="height:3px;line-height:3px;font-size:3px;background:linear-gradient(135deg,#5271FF 0%,#B5B7F6 55%,#E5C3F0 100%);">&nbsp;</td></tr>
 
-  <tr><td class="px hair" style="padding:28px 48px 24px;border-bottom:1px solid #2F2444;">
+  <tr><td class="px hair" style="padding:28px 44px 24px;border-bottom:1px solid #2F2444;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
       <tr>
         <td class="t1" style="font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:20px;color:#F5F0FA;">Hum<span class="grad-text" style="color:#5271FF;">AI</span>ne</td>
-        <td class="tb" align="right" style="font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#B5B7F6;">Workspace invitation</td>
+        <td class="tb" align="right" style="font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#B5B7F6;">Shared with you</td>
       </tr>
     </table>
   </td></tr>
 
-  <tr><td class="px" style="padding:44px 48px 8px;">
-    <h1 class="h1 t1" style="margin:0 0 20px;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:40px;line-height:1.05;letter-spacing:-1px;color:#F5F0FA;">{{inviter_name}} saved<br>you a <span class="grad-text" style="color:#5271FF;">seat.</span></h1>
-    <p class="t2" style="margin:0 0 16px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:15px;line-height:1.75;color:#A99FBB;">Hi {{first_name}},</p>
-    <p class="t2" style="margin:0 0 28px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:15px;line-height:1.75;color:#A99FBB;">{{inviter_email}} wants you inside <strong class="t1" style="color:#F5F0FA;font-weight:700;">{{workspace_name}}</strong> on HumAIne. Same tools, same data, none of the &ldquo;can you forward me that file&rdquo;.</p>
+  <tr><td class="px" style="padding:44px 44px 8px;">
+    <h1 class="h1 t1" style="margin:0 0 20px;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:40px;line-height:1.05;letter-spacing:-1px;color:#F5F0FA;">{{sharer_name}} sent you<br>something to <span class="grad-text" style="color:#5271FF;">read.</span></h1>
+    <p class="t2" style="margin:0 0 28px;max-width:410px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:15.5px;line-height:1.7;color:#A99FBB;">Hi {{first_name}} &mdash; {{sharer_email}} shared a HumAIne document with you. It&rsquo;s ready whenever you are.</p>
   </td></tr>
 
-  <!-- invitation summary -->
-  <tr><td class="px" style="padding:0 48px 32px;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="surface" style="background-color:#221230;border:1px solid #3A2B52;border-radius:14px;">
-      <tr><td style="padding:24px 28px;">
+  <!-- the document card -->
+  <tr><td class="px" style="padding:0 44px 8px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="doccard" style="background-color:#221230;border:1px solid #3A2B52;border-radius:16px;box-shadow:8px 8px 0 rgba(82,113,255,0.10);">
+      <tr><td style="padding:28px;">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
           <tr>
-            <td width="48" valign="middle">
+            <td width="50" valign="top">
               <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                <tr><td align="center" valign="middle" width="44" height="44" bgcolor="#5271FF" style="width:44px;height:44px;border-radius:12px;color:#FFFFFF;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:19px;">{{workspace_initial}}</td></tr>
+                <tr><td align="center" valign="middle" width="42" height="42" bgcolor="#5271FF" style="width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,#5271FF 0%,#B5B7F6 100%);color:#FFFFFF;font-family:'Segoe UI',Arial,sans-serif;font-size:19px;line-height:42px;">&#9635;</td></tr>
               </table>
             </td>
-            <td valign="middle" style="padding-left:16px;">
-              <p class="t1" style="margin:0 0 3px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:16px;color:#F5F0FA;">{{workspace_name}}</p>
-              <p class="t3" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:12.5px;color:#6F6383;">{{member_count}} members</p>
+            <td valign="top" style="padding-left:16px;">
+              <p class="t1" style="margin:0 0 6px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:17px;line-height:1.35;color:#F5F0FA;">{{document_title}}</p>
+              <p class="t3" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:12.5px;color:#6F6383;">{{document_type}} &middot; {{page_count}} pages &middot; generated {{generated_date}}</p>
             </td>
           </tr>
         </table>
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:20px;">
-          <tr>
-            <td class="hair t3" width="45%" style="padding:12px 0;border-top:1px solid #3A2B52;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">Your role</td>
-            <td class="hair t1" align="right" style="padding:12px 0;border-top:1px solid #3A2B52;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:600;font-size:14px;color:#F5F0FA;">{{role_name}}</td>
-          </tr>
-          <tr>
-            <td class="hair t3" style="padding:12px 0;border-top:1px solid #3A2B52;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">Invitation expires</td>
-            <td class="hair t1" align="right" style="padding:12px 0;border-top:1px solid #3A2B52;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:600;font-size:14px;color:#F5F0FA;">{{expiry_date}}</td>
-          </tr>
+
+        <!-- optional note from the sharer -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:22px;">
+          <tr><td class="quote" style="padding:14px 18px;border-left:3px solid #5271FF;background-color:rgba(82,113,255,0.08);border-radius:0 8px 8px 0;">
+            <p class="t2" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-style:italic;font-size:13.5px;line-height:1.7;color:#A99FBB;">&ldquo;{{share_message}}&rdquo;</p>
+          </td></tr>
+        </table>
+
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:24px;">
+          <tr><td>
+            <!--[if mso]>
+            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{document_url}}" style="height:48px;v-text-anchor:middle;width:170px;" arcsize="28%" stroke="f" fillcolor="#5271FF">
+              <w:anchorlock/><center style="color:#FFFFFF;font-family:'Segoe UI',Arial,sans-serif;font-size:15px;font-weight:bold;">Open document</center>
+            </v:roundrect>
+            <![endif]-->
+            <!--[if !mso]><!-->
+            <a href="{{document_url}}" style="display:inline-block;background-color:#5271FF;color:#FFFFFF;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:15px;text-decoration:none;padding:15px 32px;border-radius:12px;">Open document</a>
+            <!--<![endif]-->
+          </td></tr>
         </table>
       </td></tr>
     </table>
   </td></tr>
 
-  <tr><td class="px" style="padding:0 48px 12px;">
-    <!--[if mso]>
-    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{accept_invite_url}}" style="height:48px;v-text-anchor:middle;width:190px;" arcsize="28%" stroke="f" fillcolor="#5271FF">
-      <w:anchorlock/><center style="color:#FFFFFF;font-family:'Segoe UI',Arial,sans-serif;font-size:15px;font-weight:bold;">Take your seat</center>
-    </v:roundrect>
-    <![endif]-->
-    <!--[if !mso]><!-->
-    <a href="{{accept_invite_url}}" style="display:inline-block;background-color:#5271FF;color:#FFFFFF;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:15px;text-decoration:none;padding:15px 32px;border-radius:12px;">Take your seat</a>
-    <!--<![endif]-->
-  </td></tr>
-
-  <tr><td class="px" style="padding:20px 48px 40px;">
-    <p class="t3" style="margin:0 0 10px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#6F6383;">If the button doesn&rsquo;t work, copy and paste this link into your browser:<br><a href="{{accept_invite_url}}" style="color:#8FA2FF;word-break:break-all;">{{accept_invite_url}}</a></p>
-    <p class="t3" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#6F6383;">If you weren&rsquo;t expecting this invitation you can safely ignore this email. Nothing is shared with you until you accept.</p>
+  <tr><td class="px" style="padding:26px 44px 40px;">
+    <p class="t3" style="margin:0 0 10px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#6F6383;">Button not cooperating? Paste this instead:<br><a href="{{document_url}}" style="color:#8FA2FF;word-break:break-all;">{{document_url}}</a></p>
+    <p class="t3" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#6F6383;">Only people {{sharer_name}} shared this with can open it. Weren&rsquo;t expecting it? Ignore this email &mdash; nothing opens on its own.</p>
   </td></tr>
 
   <!-- footer : transactional -->
-  <tr><td class="px foot hair" style="background-color:#12071C;border-top:1px solid #2F2444;padding:36px 48px 32px;">
+  <tr><td class="px foot hair" style="background-color:#12071C;border-top:1px solid #2F2444;padding:36px 44px 32px;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
       <tr>
         <td class="stack" valign="top" width="55%" style="padding-right:20px;padding-bottom:20px;">
@@ -131,7 +131,7 @@
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:24px;">
       <tr><td height="1" class="hairbg" style="height:1px;line-height:1px;font-size:1px;background-color:#2F2444;">&nbsp;</td></tr>
       <tr><td style="padding-top:20px;">
-        <p class="t3" style="margin:0 0 8px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:11px;line-height:1.7;color:#6F6383;">This invitation was sent to {{recipient_email}} at the request of {{inviter_email}}.</p>
+        <p class="t3" style="margin:0 0 8px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:11px;line-height:1.7;color:#6F6383;">This was sent to {{recipient_email}} because {{sharer_email}} shared a document with you.</p>
         <p class="t3" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:11px;line-height:1.7;color:#6F6383;">&copy; {{current_year}} {{company_name}}. All rights reserved.</p>
       </td></tr>
     </table>
