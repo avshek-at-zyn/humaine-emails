@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="540" viewBox="0 0 1260 540">
+  <defs>
+    <radialGradient id="spglow" cx="68%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#5271FF" stop-opacity="0.42"/>
+      <stop offset="60%" stop-color="#5271FF" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#5271FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="spg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5271FF"/>
+      <stop offset="55%" stop-color="#B5B7F6"/>
+      <stop offset="100%" stop-color="#E5C3F0"/>
+    </linearGradient>
+    <linearGradient id="sptrail" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5271FF" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#5271FF" stop-opacity="0.5"/>
+      <stop offset="78%" stop-color="#B5B7F6" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#E5C3F0"/>
+    </linearGradient>
+    <filter id="spblur" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="spsoft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="1.5"/></filter>
+  </defs>
+
+  <rect width="1260" height="540" fill="#180A24"/>
+  <rect width="1260" height="540" fill="url(#spglow)"/>
+
+  <!-- comet trail : glow underlayer then crisp tapered ribbon -->
+  <g filter="url(#spblur)" opacity="0.6">
+    <path d="M 190 478 C 430 402 645 302 846 162 L 872 186 C 668 328 452 428 190 478 Z" fill="#5271FF"/>
+  </g>
+  <g filter="url(#spsoft)">
+    <path d="M 190 478 C 430 402 645 302 848 158 L 870 184 C 666 330 450 430 190 478 Z" fill="url(#sptrail)"/>
+    <path d="M 320 462 C 520 420 680 340 844 204" fill="none" stroke="#B5B7F6" stroke-width="2.5" stroke-linecap="round" opacity="0.22"/>
+  </g>
+
+  <!-- comet head -->
+  <g filter="url(#spblur)" opacity="0.85">
+    <circle cx="866" cy="164" r="42" fill="#B5B7F6"/>
+  </g>
+  <g filter="url(#spsoft)">
+    <circle cx="866" cy="164" r="17" fill="url(#spg)"/>
+    <circle cx="866" cy="164" r="7.5" fill="#FFFFFF" opacity="0.95"/>
+  </g>
+
+  <!-- radiating shards of light -->
+  <g stroke-linecap="round" filter="url(#spsoft)">
+    <line x1="898" y1="132" x2="972" y2="74"  stroke="url(#spg)" stroke-width="5"   opacity="0.9"/>
+    <line x1="908" y1="170" x2="988" y2="162" stroke="url(#spg)" stroke-width="4"   opacity="0.7"/>
+    <line x1="882" y1="112" x2="906" y2="52"  stroke="#E5C3F0"   stroke-width="3.5" opacity="0.75"/>
+    <line x1="900" y1="204" x2="952" y2="242" stroke="#B5B7F6"   stroke-width="3"   opacity="0.5"/>
+    <line x1="832" y1="122" x2="800" y2="82"  stroke="#B5B7F6"   stroke-width="3"   opacity="0.45"/>
+    <line x1="912" y1="150" x2="1006" y2="118" stroke="#B5B7F6"  stroke-width="2.5" opacity="0.4"/>
+  </g>
+
+  <!-- ember particles drifting off the trail -->
+  <circle cx="700" cy="240" r="3.2" fill="#B5B7F6" opacity="0.7"/>
+  <circle cx="560" cy="330" r="2.6" fill="#5271FF" opacity="0.65"/>
+  <circle cx="420" cy="400" r="2.2" fill="#5271FF" opacity="0.45"/>
+  <circle cx="760" cy="290" r="2"   fill="#E5C3F0" opacity="0.55"/>
+
+  <!-- tiny stars -->
+  <circle cx="150"  cy="120" r="1.8" fill="#5271FF" opacity="0.7"/>
+  <circle cx="330"  cy="190" r="1.6" fill="#B5B7F6" opacity="0.5"/>
+  <circle cx="1065" cy="90"  r="2.4" fill="#E5C3F0" opacity="0.8"/>
+  <circle cx="1150" cy="420" r="2"   fill="#B5B7F6" opacity="0.55"/>
+  <circle cx="590"  cy="470" r="1.9" fill="#E5C3F0" opacity="0.5"/>
+</svg>

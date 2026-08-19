@@ -20,7 +20,28 @@ Nine production-ready HTML email templates for HumAIne (Zyn Global), plus a brow
 | 08 | `08-otp-code.html` | Transactional | One-time sign-in code |
 | 09 | `09-onboarding-abandoned.html` | Lifecycle | Abandoned-setup re-engagement |
 
-Copy is written against HumAIne's actual surface — **chat, news, and document generation**. There is no workspace, team, or data-source concept anywhere in these templates; if the product grows one, the onboarding checklist in 09 and the three-step list in 07 are the places to revisit.
+| 10 | `10-org-invite.html` | Transactional | Invitation to join an organization |
+| 11 | `11-password-changed.html` | Transactional | Confirmation after a password change |
+| 12 | `12-product-update.html` | Marketing | Release announcement — new features & version |
+
+Copy is written against HumAIne's actual surface — **chat, news, and document generation**. Organizations exist as an account concept, but there is no workspace, team-dashboard, or data-source concept anywhere in these templates; if the product grows one, the onboarding checklist in 09 and the three-step list in 07 are the places to revisit.
+
+## Jira coverage
+
+| Ticket | Scope | Template |
+|--------|-------|----------|
+| HL26-40 | Invitation email after user registers | `01-early-access.html` |
+| HL26-41 | Invitation from Organization | `10-org-invite.html` |
+| HL26-42 | Forgot password confirmation email | `04-password-reset.html` |
+| HL26-48 | New password set email | `11-password-changed.html` |
+| HL26-47 | Reset MFA | `06-mfa-change.html` |
+| HL26-43 | Change PIN information email | `05-pin-reset.html` |
+| HL26-44 | New Device notification | `02-security-alert.html` |
+| HL26-46 | New Updates email — features & version | `12-product-update.html` |
+| HL26-49 | Confirmation that the user has registered | `07-welcome.html` |
+| HL26-71 | User abandons the journey midway of signup | `09-onboarding-abandoned.html` |
+
+Not on the board but in the set: `03-document-shared.html` and `08-otp-code.html`.
 
 **Transactional** templates have no unsubscribe link — they're service messages tied to an active account, and suppressing them would break account security. **Marketing** and **lifecycle** templates carry unsubscribe + preferences links and the postal address block, which CAN-SPAM and equivalents require.
 
@@ -57,6 +78,9 @@ Security templates (02, 04, 05, 06, 08) also use `{{security_url}}` and `{{suppo
 | 07 Welcome | `{{app_url}}` |
 | 08 OTP code | `{{otp_code}}`, `{{expiry_minutes}}`, `{{device_name}}`, `{{city}}`, `{{country}}`, `{{request_time}}`, `{{timezone}}`, `{{secure_account_url}}` |
 | 09 Abandoned setup | `{{resume_onboarding_url}}`, `{{book_setup_url}}`, `{{percent_complete}}`, `{{completed_steps}}`, `{{total_steps}}`, `{{minutes_remaining}}`, `{{days_saved}}` |
+| 10 Org invite | `{{inviter_name}}`, `{{inviter_email}}`, `{{org_name}}`, `{{role_name}}`, `{{expiry_date}}`, `{{accept_invite_url}}` |
+| 11 Password changed | `{{change_date}}`, `{{change_time}}`, `{{timezone}}`, `{{device_name}}`, `{{city}}`, `{{country}}`, `{{recover_account_url}}` |
+| 12 Product update | `{{version_number}}`, `{{feature_1_title}}`, `{{feature_1_description}}`, `{{feature_2_title}}`, `{{feature_2_description}}`, `{{feature_3_title}}`, `{{feature_3_description}}`, `{{changelog_url}}` |
 
 ### Two things to wire up by hand
 
