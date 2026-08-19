@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="540" viewBox="0 0 1260 540">
+  <defs>
+    <radialGradient id="kglow" cx="72%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#5271FF" stop-opacity="0.4"/>
+      <stop offset="60%" stop-color="#5271FF" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#5271FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="kg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C3F0"/>
+      <stop offset="55%" stop-color="#B5B7F6"/>
+      <stop offset="100%" stop-color="#5271FF"/>
+    </linearGradient>
+    <filter id="kblur" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="ksoft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="1.5"/></filter>
+  </defs>
+
+  <rect width="1260" height="540" fill="#180A24"/>
+  <rect width="1260" height="540" fill="url(#kglow)"/>
+
+  <!-- big keyhole, right of centre -->
+  <g filter="url(#kblur)" opacity="0.65">
+    <circle cx="900" cy="215" r="95" fill="none" stroke="#5271FF" stroke-width="40"/>
+    <path d="M 870 290 L 930 290 L 955 430 L 845 430 Z" fill="#5271FF"/>
+  </g>
+  <g filter="url(#ksoft)">
+    <circle cx="900" cy="215" r="95" fill="none" stroke="url(#kg)" stroke-width="14"/>
+    <path d="M 872 292 L 928 292 L 952 428 L 848 428 Z" fill="url(#kg)"/>
+    <circle cx="900" cy="215" r="42" fill="#180A24"/>
+    <circle cx="900" cy="215" r="42" fill="none" stroke="#E5C3F0" stroke-opacity="0.5" stroke-width="1.5"/>
+  </g>
+
+  <!-- teeth of light entering from the left -->
+  <g stroke-linecap="round">
+    <rect x="90"  y="200" width="330" height="4"  rx="2" fill="url(#kg)" opacity="0.85"/>
+    <rect x="90"  y="200" width="330" height="4"  rx="2" fill="url(#kg)" opacity="0.5" filter="url(#kblur)"/>
+    <rect x="352" y="212" width="20"  height="26" rx="4" fill="url(#kg)" opacity="0.8"/>
+    <rect x="300" y="212" width="14"  height="18" rx="4" fill="url(#kg)" opacity="0.6"/>
+    <rect x="252" y="212" width="14"  height="24" rx="4" fill="url(#kg)" opacity="0.5"/>
+    <rect x="160" y="290" width="200" height="3"  rx="1.5" fill="#B5B7F6" opacity="0.35"/>
+    <rect x="220" y="340" width="120" height="2.5" rx="1.25" fill="#B5B7F6" opacity="0.22"/>
+  </g>
+
+  <!-- small orbiting dots -->
+  <circle cx="640" cy="120" r="3" fill="#E5C3F0" opacity="0.8"/>
+  <circle cx="560" cy="420" r="2.2" fill="#B5B7F6" opacity="0.55"/>
+  <circle cx="1150" cy="140" r="2.4" fill="#B5B7F6" opacity="0.6"/>
+  <circle cx="1090" cy="470" r="1.8" fill="#E5C3F0" opacity="0.5"/>
+  <circle cx="120" cy="110" r="1.6" fill="#5271FF" opacity="0.7"/>
+</svg>

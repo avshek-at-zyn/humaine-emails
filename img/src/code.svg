@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="540" viewBox="0 0 1260 540">
+  <defs>
+    <radialGradient id="cglow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#5271FF" stop-opacity="0.4"/>
+      <stop offset="60%" stop-color="#5271FF" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#5271FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cell" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#B5B7F6" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#5271FF" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="cellHot" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5F0FA" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#B5B7F6" stop-opacity="0.5"/>
+    </linearGradient>
+    <filter id="cblur" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="20"/></filter>
+    <filter id="csoft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="1.2"/></filter>
+  </defs>
+
+  <rect width="1260" height="540" fill="#180A24"/>
+  <rect width="1260" height="540" fill="url(#cglow)"/>
+
+  <!-- glow behind the cell row -->
+  <rect x="270" y="180" width="720" height="180" rx="24" fill="#5271FF" opacity="0.45" filter="url(#cblur)"/>
+
+  <!-- six code cells, third one lit -->
+  <g filter="url(#csoft)">
+    <rect x="290" y="195" width="100" height="150" rx="16" fill="url(#cell)" stroke="#B5B7F6" stroke-opacity="0.4" stroke-width="1.5"/>
+    <rect x="406" y="195" width="100" height="150" rx="16" fill="url(#cell)" stroke="#B5B7F6" stroke-opacity="0.4" stroke-width="1.5"/>
+    <rect x="522" y="180" width="110" height="180" rx="18" fill="url(#cellHot)" stroke="#F5F0FA" stroke-opacity="0.8" stroke-width="2"/>
+    <rect x="648" y="195" width="100" height="150" rx="16" fill="url(#cell)" stroke="#B5B7F6" stroke-opacity="0.4" stroke-width="1.5"/>
+    <rect x="764" y="195" width="100" height="150" rx="16" fill="url(#cell)" stroke="#B5B7F6" stroke-opacity="0.4" stroke-width="1.5"/>
+    <rect x="880" y="195" width="100" height="150" rx="16" fill="url(#cell)" stroke="#B5B7F6" stroke-opacity="0.4" stroke-width="1.5"/>
+  </g>
+
+  <!-- abstract glyph marks inside cells (not real digits) -->
+  <g fill="#180A24" opacity="0.85">
+    <circle cx="577" cy="252" r="14"/>
+    <rect x="571" y="278" width="12" height="40" rx="6"/>
+  </g>
+  <g fill="#B5B7F6" opacity="0.5">
+    <rect x="330" y="255" width="22" height="6" rx="3"/>
+    <rect x="446" y="255" width="22" height="6" rx="3"/>
+    <rect x="688" y="255" width="22" height="6" rx="3"/>
+    <rect x="804" y="255" width="22" height="6" rx="3"/>
+    <rect x="920" y="255" width="22" height="6" rx="3"/>
+  </g>
+
+  <!-- ticking dots above -->
+  <g fill="#E5C3F0">
+    <circle cx="560" cy="120" r="3" opacity="0.75"/>
+    <circle cx="600" cy="120" r="3" opacity="0.5"/>
+    <circle cx="640" cy="120" r="3" opacity="0.3"/>
+    <circle cx="680" cy="120" r="3" opacity="0.15"/>
+  </g>
+
+  <!-- stars -->
+  <circle cx="150" cy="140" r="2.2" fill="#B5B7F6" opacity="0.6"/>
+  <circle cx="1120" cy="120" r="2.4" fill="#E5C3F0" opacity="0.6"/>
+  <circle cx="180" cy="430" r="1.8" fill="#5271FF" opacity="0.6"/>
+  <circle cx="1100" cy="440" r="1.6" fill="#B5B7F6" opacity="0.5"/>
+</svg>

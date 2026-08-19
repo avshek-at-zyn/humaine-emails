@@ -21,7 +21,7 @@
   a{color:#8FA2FF;}
   .grad-text{background:linear-gradient(135deg,#5271FF 0%,#B5B7F6 55%,#E5C3F0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
   html.theme-light body,html.theme-light .page{background-color:#EFEAF6!important;}
-  html.theme-light .card{background-color:#FFFFFF!important;border-color:#E4DCEF!important;}
+  html.theme-light .card{background-color:#FFFFFF!important;}
   html.theme-light .hair{border-color:#E4DCEF!important;}
   html.theme-light .hairbg{background-color:#E4DCEF!important;}
   html.theme-light .t1{color:#180A24!important;}
@@ -29,16 +29,12 @@
   html.theme-light .t3{color:#8C7FA3!important;}
   html.theme-light .tb{color:#4A5BD6!important;}
   html.theme-light .tr{color:#B8434F!important;}
-  html.theme-light .foot{background-color:#F5F0FA!important;border-color:#E4DCEF!important;}
-  html.theme-light .surface{background-color:#FAF7FD!important;border-color:#E4DCEF!important;}
-  html.theme-light .btn2{color:#180A24!important;border-color:#C9BEDC!important;}
+  html.theme-light .btn2{color:#180A24!important;border-color:rgba(24,10,36,0.4)!important;}
   html.theme-light a{color:#4A5BD6;}
   @media screen and (max-width:620px){
-    .stack{display:block!important;width:100%!important;}
-    .px{padding-left:24px!important;padding-right:24px!important;}
-    .h1{font-size:26px!important;line-height:1.25!important;}
+    .px{padding-left:28px!important;padding-right:28px!important;}
+    .h1{font-size:28px!important;line-height:1.2!important;}
     .val{text-align:left!important;padding-top:2px!important;padding-bottom:14px!important;}
-    .lbl{padding-bottom:0!important;}
   }
 </style>
 </head>
@@ -47,97 +43,89 @@
 <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#14081E;">A device we don't recognise just signed in. Two taps to sort it either way.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="page" bgcolor="#14081E">
-<tr><td align="center" style="padding:32px 16px;">
+<tr><td align="center" style="padding:0;">
 
-<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" class="card" style="max-width:600px;width:100%;background-color:#180A24;border:1px solid #2F2444;border-radius:16px;overflow:hidden;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" class="card" style="max-width:600px;width:100%;background-color:#180A24;">
 
   <tr><td height="3" bgcolor="#5271FF" style="height:3px;line-height:3px;font-size:3px;background:linear-gradient(135deg,#5271FF 0%,#B5B7F6 55%,#E5C3F0 100%);">&nbsp;</td></tr>
 
-  <tr><td class="px hair" style="padding:28px 48px 24px;border-bottom:1px solid #2F2444;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-      <tr>
-        <td class="t1" style="font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:20px;color:#F5F0FA;">Hum<span class="grad-text" style="color:#5271FF;">AI</span>ne</td>
-        <td class="tb" align="right" style="font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#B5B7F6;">Security notice</td>
-      </tr>
-    </table>
+  <tr><td align="center" style="background-color:#12071C;padding:20px 24px;">
+    <span style="font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:19px;color:#F5F0FA;">Hum<span class="grad-text" style="color:#5271FF;">AI</span>ne</span>
   </td></tr>
 
-  <tr><td class="px" style="padding:44px 48px 8px;">
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:24px;">
-      <tr><td style="padding:8px 16px;border:1px solid #6E3A44;background-color:#2A1520;border-radius:999px;">
-        <span class="tr" style="font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:#E07A85;">Unrecognised device</span>
-      </td></tr>
-    </table>
-
-    <h1 class="h1 t1" style="margin:0 0 20px;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:40px;line-height:1.05;letter-spacing:-1px;color:#F5F0FA;">Someone just<br>walked in.</h1>
-    <p class="t2" style="margin:0 0 16px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:15px;line-height:1.75;color:#A99FBB;">Hi {{first_name}},</p>
-    <p class="t2" style="margin:0 0 8px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:15px;line-height:1.75;color:#A99FBB;">A device we&rsquo;ve never seen before just signed in to your account. If that was you on a new laptop, carry on &mdash; nothing to do here.</p>
+  <!-- hero image -->
+  <tr><td>
+    <img src="https://humaine-email.vercel.app/img/shield.jpg" width="600" alt="A faceted crystal shield with a keyhole of light" style="display:block;width:100%;height:auto;border:0;">
   </td></tr>
 
-  <!-- details -->
-  <tr><td class="px" style="padding:28px 48px 8px;">
+  <!-- body -->
+  <tr><td class="px" style="padding:48px 56px 8px;">
+    <p class="tr" style="margin:0 0 18px;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:#E07A85;">Unrecognised device</p>
+    <h1 class="h1 t1" style="margin:0 0 26px;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:600;font-size:34px;line-height:1.15;letter-spacing:-0.5px;color:#F5F0FA;">Someone just signed in.<br>Was it you?</h1>
+    <p class="t2" style="margin:0 0 22px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:15.5px;line-height:1.8;color:#A99FBB;">Hi {{first_name}} &mdash; a device we&rsquo;ve never seen before just signed in to your HumAIne account. If that was you on a new laptop, carry on. Nothing to do here.</p>
+  </td></tr>
+
+  <!-- ledger -->
+  <tr><td class="px" style="padding:16px 56px 8px;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
       <tr>
-        <td class="hair t3 lbl" width="40%" style="padding:14px 0;border-top:1px solid #2F2444;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">Date &amp; time</td>
+        <td class="hair t3" width="42%" style="padding:14px 0;border-top:1px solid #2F2444;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">Date &amp; time</td>
         <td class="val hair t1" align="right" style="padding:14px 0;border-top:1px solid #2F2444;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:600;font-size:14px;color:#F5F0FA;">{{signin_date}} at {{signin_time}} ({{timezone}})</td>
       </tr>
       <tr>
-        <td class="hair t3 lbl" style="padding:14px 0;border-top:1px solid #2F2444;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">Device</td>
+        <td class="hair t3" style="padding:14px 0;border-top:1px solid #2F2444;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">Device</td>
         <td class="val hair t1" align="right" style="padding:14px 0;border-top:1px solid #2F2444;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:600;font-size:14px;color:#F5F0FA;">{{device_name}} &middot; {{browser_name}}</td>
       </tr>
       <tr>
-        <td class="hair t3 lbl" style="padding:14px 0;border-top:1px solid #2F2444;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">Approximate location</td>
+        <td class="hair t3" style="padding:14px 0;border-top:1px solid #2F2444;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">Location</td>
         <td class="val hair t1" align="right" style="padding:14px 0;border-top:1px solid #2F2444;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:600;font-size:14px;color:#F5F0FA;">{{city}}, {{country}}</td>
       </tr>
       <tr>
-        <td class="hair t3 lbl" style="padding:14px 0;border-top:1px solid #2F2444;border-bottom:1px solid #2F2444;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">IP address</td>
+        <td class="hair t3" style="padding:14px 0;border-top:1px solid #2F2444;border-bottom:1px solid #2F2444;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">IP address</td>
         <td class="val hair t1" align="right" style="padding:14px 0;border-top:1px solid #2F2444;border-bottom:1px solid #2F2444;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:600;font-size:14px;color:#F5F0FA;">{{ip_address}}</td>
       </tr>
     </table>
-    <p class="t3" style="margin:14px 0 0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:12px;line-height:1.6;color:#6F6383;">Location is estimated from the IP address and may not be exact.</p>
+    <p class="t3" style="margin:12px 0 0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:11.5px;line-height:1.6;color:#6F6383;">Location is estimated from the IP address and may not be exact.</p>
   </td></tr>
 
-  <!-- action -->
-  <tr><td class="px" style="padding:32px 48px 0;">
-    <p class="t2" style="margin:0 0 24px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:15px;line-height:1.75;color:#A99FBB;"><strong class="t1" style="color:#F5F0FA;font-weight:700;">Doesn&rsquo;t ring a bell?</strong> Hit the button and we&rsquo;ll bolt the door: every session signed out, password reset, done in seconds.</p>
+  <!-- actions -->
+  <tr><td class="px" style="padding:34px 56px 0;">
+    <p class="t2" style="margin:0 0 26px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:15.5px;line-height:1.8;color:#A99FBB;"><strong class="t1" style="color:#F5F0FA;font-weight:700;">Doesn&rsquo;t ring a bell?</strong> Hit the button and we&rsquo;ll bolt the door &mdash; every session signed out, password reset, done in seconds.</p>
     <!--[if mso]>
-    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{secure_account_url}}" style="height:48px;v-text-anchor:middle;width:190px;" arcsize="28%" stroke="f" fillcolor="#5271FF">
+    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{secure_account_url}}" style="height:50px;v-text-anchor:middle;width:160px;" arcsize="50%" stroke="f" fillcolor="#5271FF">
       <w:anchorlock/><center style="color:#FFFFFF;font-family:'Segoe UI',Arial,sans-serif;font-size:15px;font-weight:bold;">Lock it down</center>
     </v:roundrect>
     <![endif]-->
     <!--[if !mso]><!-->
-    <a href="{{secure_account_url}}" style="display:inline-block;background-color:#5271FF;color:#FFFFFF;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:15px;text-decoration:none;padding:15px 32px;border-radius:12px;">Lock it down</a>
+    <a href="{{secure_account_url}}" style="display:inline-block;background-color:#5271FF;color:#FFFFFF;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:15px;text-decoration:none;padding:16px 34px;border-radius:999px;">Lock it down</a>
     <!--<![endif]-->
+    &nbsp;&nbsp;
+    <a href="{{sessions_url}}" class="btn2 t1" style="display:inline-block;background-color:transparent;color:#F5F0FA;border:1.5px solid rgba(245,240,250,0.45);font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:15px;text-decoration:none;padding:14.5px 34px;border-radius:999px;">That was me</a>
   </td></tr>
 
-  <tr><td class="px" style="padding:20px 48px 40px;">
+  <tr><td class="px" style="padding:22px 56px 48px;">
     <p class="t3" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#6F6383;">Or review all active sessions at <a href="{{sessions_url}}" style="color:#8FA2FF;">{{sessions_url}}</a></p>
   </td></tr>
 
-  <!-- footer : transactional (no unsubscribe) -->
-  <tr><td class="px foot hair" style="background-color:#12071C;border-top:1px solid #2F2444;padding:36px 48px 32px;">
+  <!-- questions line -->
+  <tr><td class="px hair" align="center" style="padding:30px 56px;border-top:1px solid #2F2444;">
+    <p class="t2" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:14px;color:#A99FBB;">Worried about your account? <a href="{{security_url}}" style="color:#8FA2FF;text-decoration:none;">Visit the security centre</a></p>
+  </td></tr>
+
+  <!-- minimal footer : transactional -->
+  <tr><td class="px hair" style="padding:34px 56px 40px;border-top:1px solid #2F2444;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
       <tr>
-        <td class="stack" valign="top" width="55%" style="padding-right:20px;padding-bottom:20px;">
-          <p class="t1" style="margin:0 0 6px;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:15px;letter-spacing:1px;color:#F5F0FA;">ZYN GLOBAL</p>
-          <p class="tb" style="margin:0 0 14px;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#B5B7F6;">Intelligence evolved.</p>
-          <p class="t3" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:11.5px;line-height:1.7;color:#6F6383;">{{company_name}}<br>{{company_address}}</p>
+        <td valign="middle">
+          <p class="t1" style="margin:0;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;color:#F5F0FA;">ZYN GLOBAL</p>
+          <p class="tb" style="margin:4px 0 0;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:#B5B7F6;">Intelligence evolved.</p>
         </td>
-        <td class="stack" valign="top" width="45%">
-          <p class="t3" style="margin:0 0 14px;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#6F6383;">Support</p>
-          <p style="margin:0 0 10px;"><a href="{{help_url}}" class="t2" style="font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:13px;color:#A99FBB;text-decoration:none;">Help centre</a></p>
-          <p style="margin:0 0 10px;"><a href="{{security_url}}" class="t2" style="font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:13px;color:#A99FBB;text-decoration:none;">Security centre</a></p>
-          <p style="margin:0;"><a href="{{privacy_url}}" class="t2" style="font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:13px;color:#A99FBB;text-decoration:none;">Privacy policy</a></p>
+        <td valign="middle" align="right" style="font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:12px;">
+          <a href="{{help_url}}" class="t2" style="color:#A99FBB;text-decoration:none;">Help</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="{{security_url}}" class="t2" style="color:#A99FBB;text-decoration:none;">Security</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="{{privacy_url}}" class="t2" style="color:#A99FBB;text-decoration:none;">Privacy</a>
         </td>
       </tr>
     </table>
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:24px;">
-      <tr><td height="1" class="hairbg" style="height:1px;line-height:1px;font-size:1px;background-color:#2F2444;">&nbsp;</td></tr>
-      <tr><td style="padding-top:20px;">
-        <p class="t3" style="margin:0 0 8px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:11px;line-height:1.7;color:#6F6383;">This is a security notification sent to {{recipient_email}}. Security alerts can&rsquo;t be turned off while your account is active.</p>
-        <p class="t3" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:11px;line-height:1.7;color:#6F6383;">&copy; {{current_year}} {{company_name}}. All rights reserved.</p>
-      </td></tr>
-    </table>
+    <p class="t3" style="margin:26px 0 0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:10.5px;line-height:1.8;color:#6F6383;">Security notification sent to {{recipient_email}} &mdash; these can&rsquo;t be turned off while your account is active.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}</p>
   </td></tr>
 
 </table>

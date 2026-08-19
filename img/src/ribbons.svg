@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="540" viewBox="0 0 1260 540">
+  <defs>
+    <radialGradient id="tintL" cx="12%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#5271FF" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#5271FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="tintR" cx="95%" cy="110%" r="75%">
+      <stop offset="0%" stop-color="#E5C3F0" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#E5C3F0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rb1" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5271FF"/>
+      <stop offset="55%" stop-color="#B5B7F6"/>
+      <stop offset="100%" stop-color="#E5C3F0"/>
+    </linearGradient>
+    <linearGradient id="rb2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3D53D8"/>
+      <stop offset="100%" stop-color="#B5B7F6"/>
+    </linearGradient>
+    <linearGradient id="rb3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5271FF" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#E5C3F0" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+    <filter id="soft2" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+  </defs>
+
+  <rect width="1260" height="540" fill="#180A24"/>
+  <rect width="1260" height="540" fill="url(#tintL)"/>
+  <rect width="1260" height="540" fill="url(#tintR)"/>
+
+  <!-- glow underlayers -->
+  <path d="M -80 600 C 260 420, 300 260, 180 40" stroke="#5271FF" stroke-opacity="0.5" stroke-width="150" fill="none" filter="url(#soft)"/>
+  <path d="M 120 640 C 470 460, 520 250, 400 -60" stroke="#B5B7F6" stroke-opacity="0.32" stroke-width="120" fill="none" filter="url(#soft)"/>
+
+  <!-- main ribbons -->
+  <path d="M -80 600 C 260 420, 300 260, 180 40" stroke="url(#rb1)" stroke-width="86" stroke-linecap="round" fill="none" filter="url(#soft2)"/>
+  <path d="M 120 640 C 470 460, 520 250, 400 -60" stroke="url(#rb2)" stroke-width="70" stroke-linecap="round" fill="none" filter="url(#soft2)" opacity="0.9"/>
+  <path d="M 330 660 C 690 480, 720 240, 610 -80" stroke="url(#rb3)" stroke-width="46" stroke-linecap="round" fill="none" filter="url(#soft2)" opacity="0.75"/>
+  <path d="M 560 680 C 880 500, 930 260, 830 -60" stroke="url(#rb3)" stroke-width="20" stroke-linecap="round" fill="none" filter="url(#soft2)" opacity="0.45"/>
+
+  <!-- sparse stars in the negative space -->
+  <circle cx="1020" cy="120" r="2.5" fill="#E5C3F0" opacity="0.8"/>
+  <circle cx="1130" cy="230" r="1.8" fill="#B5B7F6" opacity="0.6"/>
+  <circle cx="960" cy="330" r="1.5" fill="#B5B7F6" opacity="0.5"/>
+  <circle cx="1180" cy="420" r="2.2" fill="#5271FF" opacity="0.7"/>
+  <circle cx="890" cy="70" r="1.4" fill="#E5C3F0" opacity="0.5"/>
+</svg>

@@ -21,7 +21,7 @@
   a{color:#8FA2FF;}
   .grad-text{background:linear-gradient(135deg,#5271FF 0%,#B5B7F6 55%,#E5C3F0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
   html.theme-light body,html.theme-light .page{background-color:#EFEAF6!important;}
-  html.theme-light .card{background-color:#FFFFFF!important;border-color:#E4DCEF!important;}
+  html.theme-light .card{background-color:#FFFFFF!important;}
   html.theme-light .hair{border-color:#E4DCEF!important;}
   html.theme-light .hairbg{background-color:#E4DCEF!important;}
   html.theme-light .t1{color:#180A24!important;}
@@ -29,14 +29,14 @@
   html.theme-light .t3{color:#8C7FA3!important;}
   html.theme-light .tb{color:#4A5BD6!important;}
   html.theme-light .tr{color:#B8434F!important;}
-  html.theme-light .foot{background-color:#F5F0FA!important;border-color:#E4DCEF!important;}
+  html.theme-light .tm{color:#2E8F96!important;}
   html.theme-light .codebox{background-color:#F4F1FC!important;border-color:#D9CBEA!important;}
   html.theme-light a{color:#4A5BD6;}
   @media screen and (max-width:620px){
-    .stack{display:block!important;width:100%!important;}
-    .px{padding-left:24px!important;padding-right:24px!important;}
-    .h1{font-size:30px!important;line-height:1.15!important;}
-    .code{font-size:40px!important;letter-spacing:8px!important;}
+    .px{padding-left:28px!important;padding-right:28px!important;}
+    .h1{font-size:28px!important;line-height:1.2!important;}
+    .code{font-size:38px!important;letter-spacing:8px!important;}
+    .val{text-align:left!important;padding-top:2px!important;padding-bottom:14px!important;}
   }
 </style>
 </head>
@@ -45,29 +45,31 @@
 <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#14081E;">{{otp_code}} — good for {{expiry_minutes}} minutes, then it's gone.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="page" bgcolor="#14081E">
-<tr><td align="center" style="padding:32px 16px;">
+<tr><td align="center" style="padding:0;">
 
-<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" class="card" style="max-width:600px;width:100%;background-color:#180A24;border:1px solid #2F2444;border-radius:18px;overflow:hidden;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" class="card" style="max-width:600px;width:100%;background-color:#180A24;">
 
   <tr><td height="3" bgcolor="#5271FF" style="height:3px;line-height:3px;font-size:3px;background:linear-gradient(135deg,#5271FF 0%,#B5B7F6 55%,#E5C3F0 100%);">&nbsp;</td></tr>
 
-  <tr><td class="px hair" style="padding:28px 44px 24px;border-bottom:1px solid #2F2444;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-      <tr>
-        <td class="t1" style="font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:20px;color:#F5F0FA;">Hum<span class="grad-text" style="color:#5271FF;">AI</span>ne</td>
-        <td class="tb" align="right" style="font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#B5B7F6;">Sign-in code</td>
-      </tr>
-    </table>
+  <tr><td align="center" style="background-color:#12071C;padding:20px 24px;">
+    <span style="font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:19px;color:#F5F0FA;">Hum<span class="grad-text" style="color:#5271FF;">AI</span>ne</span>
   </td></tr>
 
-  <tr><td class="px" style="padding:44px 44px 0;">
-    <h1 class="h1 t1" style="margin:0 0 14px;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:38px;line-height:1.08;letter-spacing:-1px;color:#F5F0FA;">Here&rsquo;s your code.</h1>
-    <p class="t2" style="margin:0 0 32px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:15px;line-height:1.7;color:#A99FBB;">Punch this in and you&rsquo;re through, {{first_name}}.</p>
+  <!-- hero image -->
+  <tr><td>
+    <img src="https://humaine-email.vercel.app/img/code.jpg" width="600" alt="A row of glowing code cells with one lit up" style="display:block;width:100%;height:auto;border:0;">
   </td></tr>
 
-  <!-- the code : single block, merge-tag safe, selectable -->
-  <tr><td class="px" style="padding:0 44px;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="codebox" style="background-color:#221230;border:1px solid #3A2B52;border-radius:16px;">
+  <!-- body -->
+  <tr><td class="px" style="padding:48px 56px 8px;">
+    <p class="tb" style="margin:0 0 18px;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:#B5B7F6;">Sign-in code</p>
+    <h1 class="h1 t1" style="margin:0 0 22px;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:600;font-size:34px;line-height:1.15;letter-spacing:-0.5px;color:#F5F0FA;">Here&rsquo;s your code.</h1>
+    <p class="t2" style="margin:0 0 30px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:15.5px;line-height:1.8;color:#A99FBB;">Punch this in and you&rsquo;re through, {{first_name}}.</p>
+  </td></tr>
+
+  <!-- the code -->
+  <tr><td class="px" style="padding:0 56px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="codebox" style="background-color:#221230;border:1px solid #3A2B52;border-radius:18px;">
       <tr><td align="center" style="padding:34px 20px;">
         <p class="code t1" style="margin:0;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:46px;line-height:1.15;letter-spacing:11px;text-indent:11px;word-break:break-all;color:#F5F0FA;">{{otp_code}}</p>
       </td></tr>
@@ -78,48 +80,38 @@
   </td></tr>
 
   <!-- who asked -->
-  <tr><td class="px" style="padding:32px 44px 0;">
+  <tr><td class="px" style="padding:32px 56px 0;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
       <tr>
-        <td class="hair t3" width="42%" style="padding:13px 0;border-top:1px solid #2F2444;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">Requested by</td>
-        <td class="hair t1" align="right" style="padding:13px 0;border-top:1px solid #2F2444;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:600;font-size:14px;color:#F5F0FA;">{{device_name}} &middot; {{city}}, {{country}}</td>
+        <td class="hair t3" width="42%" style="padding:14px 0;border-top:1px solid #2F2444;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">Requested by</td>
+        <td class="val hair t1" align="right" style="padding:14px 0;border-top:1px solid #2F2444;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:600;font-size:14px;color:#F5F0FA;">{{device_name}} &middot; {{city}}, {{country}}</td>
       </tr>
       <tr>
-        <td class="hair t3" style="padding:13px 0;border-top:1px solid #2F2444;border-bottom:1px solid #2F2444;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">At</td>
-        <td class="hair t1" align="right" style="padding:13px 0;border-top:1px solid #2F2444;border-bottom:1px solid #2F2444;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:600;font-size:14px;color:#F5F0FA;">{{request_time}} ({{timezone}})</td>
+        <td class="hair t3" style="padding:14px 0;border-top:1px solid #2F2444;border-bottom:1px solid #2F2444;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">At</td>
+        <td class="val hair t1" align="right" style="padding:14px 0;border-top:1px solid #2F2444;border-bottom:1px solid #2F2444;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:600;font-size:14px;color:#F5F0FA;">{{request_time}} ({{timezone}})</td>
       </tr>
     </table>
   </td></tr>
 
-  <tr><td class="px" style="padding:26px 44px 40px;">
-    <p class="t2" style="margin:0 0 10px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:13.5px;line-height:1.7;color:#A99FBB;">Nobody from HumAIne will ever ask you for this code.</p>
+  <tr><td class="px" style="padding:28px 56px 48px;">
+    <p class="t2" style="margin:0 0 10px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:14px;line-height:1.7;color:#A99FBB;">Nobody from HumAIne will ever ask you for this code.</p>
     <p class="t3" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#6F6383;">Not on a call, not in a chat, not in an email that looks a lot like this one. If someone asks, they&rsquo;re not us &mdash; tell us at <a href="mailto:{{support_email}}" style="color:#8FA2FF;">{{support_email}}</a>. Didn&rsquo;t request a code? Someone may have your password. <a href="{{secure_account_url}}" style="color:#8FA2FF;">Secure your account</a>.</p>
   </td></tr>
 
-  <!-- footer : transactional -->
-  <tr><td class="px foot hair" style="background-color:#12071C;border-top:1px solid #2F2444;padding:36px 44px 32px;">
+  <!-- minimal footer : transactional -->
+  <tr><td class="px hair" style="padding:34px 56px 40px;border-top:1px solid #2F2444;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
       <tr>
-        <td class="stack" valign="top" width="55%" style="padding-right:20px;padding-bottom:20px;">
-          <p class="t1" style="margin:0 0 6px;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:15px;letter-spacing:1px;color:#F5F0FA;">ZYN GLOBAL</p>
-          <p class="tb" style="margin:0 0 14px;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#B5B7F6;">Intelligence evolved.</p>
-          <p class="t3" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:11.5px;line-height:1.7;color:#6F6383;">{{company_name}}<br>{{company_address}}</p>
+        <td valign="middle">
+          <p class="t1" style="margin:0;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;color:#F5F0FA;">ZYN GLOBAL</p>
+          <p class="tb" style="margin:4px 0 0;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:#B5B7F6;">Intelligence evolved.</p>
         </td>
-        <td class="stack" valign="top" width="45%">
-          <p class="t3" style="margin:0 0 14px;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#6F6383;">Support</p>
-          <p style="margin:0 0 10px;"><a href="{{help_url}}" class="t2" style="font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:13px;color:#A99FBB;text-decoration:none;">Help centre</a></p>
-          <p style="margin:0 0 10px;"><a href="{{security_url}}" class="t2" style="font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:13px;color:#A99FBB;text-decoration:none;">Security centre</a></p>
-          <p style="margin:0;"><a href="{{privacy_url}}" class="t2" style="font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:13px;color:#A99FBB;text-decoration:none;">Privacy policy</a></p>
+        <td valign="middle" align="right" style="font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:12px;">
+          <a href="{{help_url}}" class="t2" style="color:#A99FBB;text-decoration:none;">Help</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="{{security_url}}" class="t2" style="color:#A99FBB;text-decoration:none;">Security</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="{{privacy_url}}" class="t2" style="color:#A99FBB;text-decoration:none;">Privacy</a>
         </td>
       </tr>
     </table>
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:24px;">
-      <tr><td height="1" class="hairbg" style="height:1px;line-height:1px;font-size:1px;background-color:#2F2444;">&nbsp;</td></tr>
-      <tr><td style="padding-top:20px;">
-        <p class="t3" style="margin:0 0 8px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:11px;line-height:1.7;color:#6F6383;">This is an account security email sent to {{recipient_email}} and can&rsquo;t be unsubscribed from.</p>
-        <p class="t3" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:11px;line-height:1.7;color:#6F6383;">&copy; {{current_year}} {{company_name}}. All rights reserved.</p>
-      </td></tr>
-    </table>
+    <p class="t3" style="margin:26px 0 0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:10.5px;line-height:1.8;color:#6F6383;">Account security email sent to {{recipient_email}} &mdash; can&rsquo;t be unsubscribed from.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}</p>
   </td></tr>
 
 </table>

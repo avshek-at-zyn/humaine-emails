@@ -21,20 +21,17 @@
   a{color:#8FA2FF;}
   .grad-text{background:linear-gradient(135deg,#5271FF 0%,#B5B7F6 55%,#E5C3F0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
   html.theme-light body,html.theme-light .page{background-color:#EFEAF6!important;}
-  html.theme-light .card{background-color:#FFFFFF!important;border-color:#E4DCEF!important;}
+  html.theme-light .card{background-color:#FFFFFF!important;}
   html.theme-light .hair{border-color:#E4DCEF!important;}
   html.theme-light .hairbg{background-color:#E4DCEF!important;}
   html.theme-light .t1{color:#180A24!important;}
   html.theme-light .t2{color:#5A4E6E!important;}
   html.theme-light .t3{color:#8C7FA3!important;}
   html.theme-light .tb{color:#4A5BD6!important;}
-  html.theme-light .foot{background-color:#F5F0FA!important;border-color:#E4DCEF!important;}
-  html.theme-light .surface{background-color:#FAF7FD!important;border-color:#E4DCEF!important;}
   html.theme-light a{color:#4A5BD6;}
   @media screen and (max-width:620px){
-    .stack{display:block!important;width:100%!important;}
-    .px{padding-left:24px!important;padding-right:24px!important;}
-    .h1{font-size:42px!important;line-height:1!important;}
+    .px{padding-left:28px!important;padding-right:28px!important;}
+    .h1{font-size:32px!important;line-height:1.12!important;}
   }
 </style>
 </head>
@@ -43,83 +40,85 @@
 <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#14081E;">Everything is switched on. Three things worth doing in your first five minutes.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="page" bgcolor="#14081E">
-<tr><td align="center" style="padding:32px 16px;">
+<tr><td align="center" style="padding:0;">
 
-<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" class="card" style="max-width:600px;width:100%;background-color:#180A24;border:1px solid #2F2444;border-radius:18px;overflow:hidden;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" class="card" style="max-width:600px;width:100%;background-color:#180A24;">
 
   <tr><td height="3" bgcolor="#5271FF" style="height:3px;line-height:3px;font-size:3px;background:linear-gradient(135deg,#5271FF 0%,#B5B7F6 55%,#E5C3F0 100%);">&nbsp;</td></tr>
 
-  <!-- hero -->
-  <tr><td class="px" align="center" style="padding:64px 44px 56px;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cpath d='M-20 240C50 160 50 80 -20 0' stroke='%235271FF' stroke-opacity='.13' stroke-width='40' fill='none'/%3E%3Cpath d='M80 240C150 160 150 80 80 0' stroke='%23B5B7F6' stroke-opacity='.09' stroke-width='40' fill='none'/%3E%3Cpath d='M180 240C250 160 250 80 180 0' stroke='%23E5C3F0' stroke-opacity='.06' stroke-width='40' fill='none'/%3E%3C/svg%3E&quot;);background-repeat:repeat;">
-    <p class="t1" style="margin:0 0 40px;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:24px;color:#F5F0FA;">Hum<span class="grad-text" style="color:#5271FF;">AI</span>ne</p>
-    <h1 class="h1 t1" style="margin:0 0 24px;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:52px;line-height:1;letter-spacing:-1.5px;color:#F5F0FA;">You&rsquo;re in.<br>Now the <span class="grad-text" style="color:#5271FF;">fun part.</span></h1>
-    <p class="t2" style="margin:0 auto;max-width:390px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:15.5px;line-height:1.7;color:#A99FBB;">Welcome aboard, {{first_name}}. Everything&rsquo;s switched on and waiting. Three things worth doing in your first five minutes.</p>
+  <tr><td align="center" style="background-color:#12071C;padding:20px 24px;">
+    <span style="font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:19px;color:#F5F0FA;">Hum<span class="grad-text" style="color:#5271FF;">AI</span>ne</span>
   </td></tr>
 
-  <!-- three first moves -->
-  <tr><td class="px hair" style="padding:0 44px;border-top:1px solid #2F2444;">
+  <!-- full-bleed square hero : the orb -->
+  <tr><td>
+    <a href="{{app_url}}"><img src="https://humaine-email.vercel.app/img/orb.jpg" width="600" alt="A glowing blue orb with a ring of light orbiting it" style="display:block;width:100%;height:auto;border:0;"></a>
+  </td></tr>
+
+  <!-- body -->
+  <tr><td class="px" align="center" style="padding:48px 56px 8px;">
+    <h1 class="h1 t1" style="margin:0 0 24px;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:600;font-size:38px;line-height:1.12;letter-spacing:-0.5px;color:#F5F0FA;">You&rsquo;re in.<br>Now the <span class="grad-text" style="color:#5271FF;">fun part.</span></h1>
+    <p class="t2" style="margin:0 auto 8px;max-width:420px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:15.5px;line-height:1.8;color:#A99FBB;">Welcome aboard, {{first_name}}. Everything&rsquo;s switched on and waiting. Three things worth doing in your first five minutes:</p>
+  </td></tr>
+
+  <!-- three moves, airy numbered rows -->
+  <tr><td class="px" style="padding:28px 56px 8px;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
       <tr>
-        <td width="44" valign="top" class="hair" style="padding:26px 0;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:15px;color:#5271FF;">01</td>
-        <td valign="top" style="padding:26px 0;">
+        <td width="44" valign="top" class="hair" style="padding:24px 0;border-top:1px solid #2F2444;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:14px;color:#5271FF;">01</td>
+        <td valign="top" class="hair" style="padding:24px 0;border-top:1px solid #2F2444;">
           <p class="t1" style="margin:0 0 6px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:15.5px;color:#F5F0FA;">Ask it the hard question</p>
-          <p class="t2" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:13.5px;line-height:1.65;color:#A99FBB;">Open a chat and ask the one that usually takes three people and a Thursday.</p>
+          <p class="t2" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:13.5px;line-height:1.7;color:#A99FBB;">Open a chat and ask the one that usually takes three people and a Thursday.</p>
         </td>
       </tr>
       <tr>
-        <td width="44" valign="top" class="hair" style="padding:26px 0;border-top:1px solid #2F2444;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:15px;color:#5271FF;">02</td>
-        <td valign="top" class="hair" style="padding:26px 0;border-top:1px solid #2F2444;">
+        <td width="44" valign="top" class="hair" style="padding:24px 0;border-top:1px solid #2F2444;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:14px;color:#5271FF;">02</td>
+        <td valign="top" class="hair" style="padding:24px 0;border-top:1px solid #2F2444;">
           <p class="t1" style="margin:0 0 6px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:15.5px;color:#F5F0FA;">Tune your news</p>
-          <p class="t2" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:13.5px;line-height:1.65;color:#A99FBB;">Tell it what you care about. It reads the internet so you can stop.</p>
+          <p class="t2" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:13.5px;line-height:1.7;color:#A99FBB;">Tell it what you care about. It reads the internet so you can stop.</p>
         </td>
       </tr>
       <tr>
-        <td width="44" valign="top" class="hair" style="padding:26px 0;border-top:1px solid #2F2444;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:15px;color:#5271FF;">03</td>
-        <td valign="top" class="hair" style="padding:26px 0;border-top:1px solid #2F2444;">
+        <td width="44" valign="top" class="hair" style="padding:24px 0;border-top:1px solid #2F2444;border-bottom:1px solid #2F2444;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:14px;color:#5271FF;">03</td>
+        <td valign="top" class="hair" style="padding:24px 0;border-top:1px solid #2F2444;border-bottom:1px solid #2F2444;">
           <p class="t1" style="margin:0 0 6px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:15.5px;color:#F5F0FA;">Make it a document</p>
-          <p class="t2" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:13.5px;line-height:1.65;color:#A99FBB;">Turn that chat into a brief you&rsquo;d happily put your name on.</p>
+          <p class="t2" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:13.5px;line-height:1.7;color:#A99FBB;">Turn that chat into a brief you&rsquo;d happily put your name on.</p>
         </td>
       </tr>
     </table>
   </td></tr>
 
   <!-- CTA -->
-  <tr><td class="px hair" align="center" style="padding:40px 44px 48px;border-top:1px solid #2F2444;">
+  <tr><td class="px" align="center" style="padding:38px 56px 48px;">
     <!--[if mso]>
-    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{app_url}}" style="height:50px;v-text-anchor:middle;width:200px;" arcsize="28%" stroke="f" fillcolor="#5271FF">
+    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{app_url}}" style="height:50px;v-text-anchor:middle;width:160px;" arcsize="50%" stroke="f" fillcolor="#5271FF">
       <w:anchorlock/><center style="color:#FFFFFF;font-family:'Segoe UI',Arial,sans-serif;font-size:15px;font-weight:bold;">Start a chat</center>
     </v:roundrect>
     <![endif]-->
     <!--[if !mso]><!-->
-    <a href="{{app_url}}" style="display:inline-block;background-color:#5271FF;color:#FFFFFF;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:15px;text-decoration:none;padding:16px 38px;border-radius:13px;">Start a chat</a>
+    <a href="{{app_url}}" style="display:inline-block;background-color:#5271FF;color:#FFFFFF;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:15px;text-decoration:none;padding:16px 40px;border-radius:999px;">Start a chat</a>
     <!--<![endif]-->
-    <p class="t3" style="margin:20px auto 0;max-width:400px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#6F6383;">Stuck on any of it? Reply to this email &mdash; a human reads it. Or raid the <a href="{{help_url}}" style="color:#8FA2FF;">help centre</a>.</p>
   </td></tr>
 
-  <!-- footer : lifecycle (unsubscribe) -->
-  <tr><td class="px foot hair" style="background-color:#12071C;border-top:1px solid #2F2444;padding:36px 44px 32px;">
+  <!-- questions line -->
+  <tr><td class="px hair" align="center" style="padding:30px 56px;border-top:1px solid #2F2444;">
+    <p class="t2" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:14px;color:#A99FBB;">Stuck on anything? Reply to this email &mdash; a human reads it. Or raid the <a href="{{help_url}}" style="color:#8FA2FF;text-decoration:none;">help centre</a>.</p>
+  </td></tr>
+
+  <!-- minimal footer : lifecycle -->
+  <tr><td class="px hair" style="padding:34px 56px 40px;border-top:1px solid #2F2444;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
       <tr>
-        <td class="stack" valign="top" width="55%" style="padding-right:20px;padding-bottom:20px;">
-          <p class="t1" style="margin:0 0 6px;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:15px;letter-spacing:1px;color:#F5F0FA;">ZYN GLOBAL</p>
-          <p class="tb" style="margin:0 0 14px;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#B5B7F6;">Intelligence evolved.</p>
-          <p class="t3" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:11.5px;line-height:1.7;color:#6F6383;">{{company_name}}<br>{{company_address}}</p>
+        <td valign="middle">
+          <p class="t1" style="margin:0;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;color:#F5F0FA;">ZYN GLOBAL</p>
+          <p class="tb" style="margin:4px 0 0;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:#B5B7F6;">Intelligence evolved.</p>
         </td>
-        <td class="stack" valign="top" width="45%">
-          <p class="t3" style="margin:0 0 14px;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#6F6383;">Resources</p>
-          <p style="margin:0 0 10px;"><a href="{{help_url}}" class="t2" style="font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:13px;color:#A99FBB;text-decoration:none;">Help centre</a></p>
-          <p style="margin:0 0 10px;"><a href="{{privacy_url}}" class="t2" style="font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:13px;color:#A99FBB;text-decoration:none;">Privacy policy</a></p>
-          <p style="margin:0;"><a href="{{terms_url}}" class="t2" style="font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:13px;color:#A99FBB;text-decoration:none;">Terms of service</a></p>
+        <td valign="middle" align="right" style="font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:12px;">
+          <a href="{{help_url}}" class="t2" style="color:#A99FBB;text-decoration:none;">Help</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="{{privacy_url}}" class="t2" style="color:#A99FBB;text-decoration:none;">Privacy</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="{{terms_url}}" class="t2" style="color:#A99FBB;text-decoration:none;">Terms</a>
         </td>
       </tr>
     </table>
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:24px;">
-      <tr><td height="1" class="hairbg" style="height:1px;line-height:1px;font-size:1px;background-color:#2F2444;">&nbsp;</td></tr>
-      <tr><td style="padding-top:20px;">
-        <p class="t3" style="margin:0 0 8px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:11px;line-height:1.7;color:#6F6383;">You&rsquo;re getting this because {{recipient_email}} just created a HumAIne account.</p>
-        <p class="t3" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:11px;line-height:1.7;color:#6F6383;">&copy; {{current_year}} {{company_name}}. &nbsp;<a href="{{preferences_url}}" style="color:#6F6383;">Email preferences</a> &nbsp;&middot;&nbsp; <a href="{{unsubscribe_url}}" style="color:#6F6383;">Unsubscribe</a></p>
-      </td></tr>
-    </table>
+    <p class="t3" style="margin:26px 0 0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:10.5px;line-height:1.8;color:#6F6383;">You&rsquo;re getting this because {{recipient_email}} just created a HumAIne account.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br><a href="{{preferences_url}}" style="color:#6F6383;">Email preferences</a> &nbsp;&middot;&nbsp; <a href="{{unsubscribe_url}}" style="color:#6F6383;">Unsubscribe</a></p>
   </td></tr>
 
 </table>

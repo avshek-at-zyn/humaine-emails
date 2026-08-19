@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="540" viewBox="0 0 1260 540">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="55%" r="60%">
+      <stop offset="0%" stop-color="#5271FF" stop-opacity="0.5"/>
+      <stop offset="55%" stop-color="#5271FF" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#5271FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sheet1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B5B7F6" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#5271FF" stop-opacity="0.10"/>
+    </linearGradient>
+    <linearGradient id="sheet2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C3F0" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#B5B7F6" stop-opacity="0.14"/>
+    </linearGradient>
+    <linearGradient id="sheet3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5F0FA" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#B5B7F6" stop-opacity="0.4"/>
+    </linearGradient>
+    <filter id="pblur" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2"/></filter>
+    <filter id="pglow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="24"/></filter>
+  </defs>
+
+  <rect width="1260" height="540" fill="#180A24"/>
+  <ellipse cx="640" cy="300" rx="560" ry="320" fill="url(#glow)"/>
+
+  <!-- back sheet -->
+  <g transform="rotate(-9 520 300)">
+    <rect x="330" y="130" width="380" height="470" rx="18" fill="url(#sheet1)" stroke="#B5B7F6" stroke-opacity="0.25" stroke-width="1.5" filter="url(#pblur)"/>
+  </g>
+  <!-- mid sheet -->
+  <g transform="rotate(-3 640 320)">
+    <rect x="470" y="90" width="380" height="480" rx="18" fill="url(#sheet2)" stroke="#E5C3F0" stroke-opacity="0.35" stroke-width="1.5" filter="url(#pblur)"/>
+    <rect x="510" y="150" width="200" height="10" rx="5" fill="#F5F0FA" opacity="0.35"/>
+    <rect x="510" y="180" width="290" height="8" rx="4" fill="#F5F0FA" opacity="0.2"/>
+    <rect x="510" y="204" width="260" height="8" rx="4" fill="#F5F0FA" opacity="0.2"/>
+  </g>
+  <!-- front sheet glow -->
+  <g transform="rotate(4 800 320)">
+    <rect x="640" y="120" width="360" height="460" rx="18" fill="#5271FF" opacity="0.5" filter="url(#pglow)"/>
+    <rect x="640" y="120" width="360" height="460" rx="18" fill="url(#sheet3)" stroke="#F5F0FA" stroke-opacity="0.5" stroke-width="1.5"/>
+    <rect x="678" y="180" width="180" height="12" rx="6" fill="#180A24" opacity="0.55"/>
+    <rect x="678" y="216" width="280" height="9" rx="4.5" fill="#180A24" opacity="0.3"/>
+    <rect x="678" y="242" width="250" height="9" rx="4.5" fill="#180A24" opacity="0.3"/>
+    <rect x="678" y="268" width="265" height="9" rx="4.5" fill="#180A24" opacity="0.3"/>
+    <rect x="678" y="316" width="150" height="9" rx="4.5" fill="#5271FF" opacity="0.75"/>
+  </g>
+
+  <!-- stars -->
+  <circle cx="150" cy="120" r="2.4" fill="#E5C3F0" opacity="0.7"/>
+  <circle cx="240" cy="420" r="1.8" fill="#B5B7F6" opacity="0.55"/>
+  <circle cx="1130" cy="150" r="2" fill="#B5B7F6" opacity="0.6"/>
+  <circle cx="1180" cy="400" r="1.6" fill="#E5C3F0" opacity="0.5"/>
+</svg>

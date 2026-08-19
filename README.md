@@ -68,6 +68,28 @@ Security templates (02, 04, 05, 06, 08) also use `{{security_url}}` and `{{suppo
 
 ---
 
+## Imagery
+
+Every email opens with a full-bleed hero artwork — image-led, editorial structure (dark masthead band → hero image → big headline → calm body → pill button → minimal footer). The art is original brand illustration, authored as SVG in `img/src/` and rasterized to JPEG with sharp-cli:
+
+| File | Used by | Subject |
+|------|---------|---------|
+| `img/ribbons.jpg` | 01 | Flowing brand ribbons |
+| `img/shield.jpg` | 02, 06 | Faceted crystal shield with keyhole |
+| `img/papers.jpg` | 03 | Backlit floating document pages |
+| `img/keys.jpg` | 04, 05 | Glowing keyhole with entering light |
+| `img/orb.jpg` | 07 | Orb with orbiting ring (square) |
+| `img/path.jpg` | 09 | Light path dissolving before its destination |
+| `img/code.jpg` | 08 | Row of code cells, one lit |
+
+All ~20–30 KB each. Emails reference them absolutely (`https://humaine-email.vercel.app/img/…`) so sent mail loads them from production. To change an artwork, edit the SVG and re-run:
+
+```bash
+npx --yes sharp-cli --input img/src/NAME.svg --output img/NAME.jpg --quality 88 resize 1200 514
+```
+
+Images are blocked-by-default in some clients, so every hero has descriptive alt text and no information lives only in the image.
+
 ## Client support
 
 Built table-based with fully inline styles.
