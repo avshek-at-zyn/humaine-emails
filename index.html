@@ -26,6 +26,7 @@
   .item { display: flex; gap: 13px; padding: 14px 20px; cursor: pointer; border-left: 2px solid transparent; transition: background .15s, border-color .15s; }
   .item:hover { background: rgba(82,113,255,0.05); }
   .item.active { background: rgba(82,113,255,0.10); border-left-color: #5271FF; }
+  .item .avatar-icon { width: 38px; height: 38px; flex-shrink: 0; object-fit: contain; }
   .item .avatar { width: 36px; height: 36px; border-radius: 11px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Jura', sans-serif; font-weight: 700; font-size: 15px; color: #fff; }
   .item .avatar.blue { background: linear-gradient(135deg, #5271FF, #7B8CFF); }
   .item .avatar.lilac { background: linear-gradient(135deg, #8A7BD8, #B5B7F6); }
@@ -78,7 +79,7 @@
     <div class="section">Lifecycle &middot; 4</div>
 
     <div class="item" data-src="12-product-update.html" data-title="HumAIne just levelled up.">
-      <div class="avatar blue">H</div>
+      <img class="avatar-icon" src="img/icons/rocket.png" alt="" width="38" height="38">
       <div class="meta">
         <div class="row1"><span class="sender">HumAIne</span><span class="num">12</span></div>
         <div class="subject">HumAIne just levelled up.</div>
@@ -88,7 +89,7 @@
     </div>
 
     <div class="item" data-src="01-early-access.html" data-title="You're in.">
-      <div class="avatar blue">H</div>
+      <img class="avatar-icon" src="img/icons/key.png" alt="" width="38" height="38">
       <div class="meta">
         <div class="row1"><span class="sender">HumAIne</span><span class="num">01</span></div>
         <div class="subject">You&rsquo;re in.</div>
@@ -98,7 +99,7 @@
     </div>
 
     <div class="item" data-src="07-welcome.html" data-title="You're in. Now the fun part.">
-      <div class="avatar blue">H</div>
+      <img class="avatar-icon" src="img/icons/sparkle.png" alt="" width="38" height="38">
       <div class="meta">
         <div class="row1"><span class="sender">HumAIne</span><span class="num">07</span></div>
         <div class="subject">You&rsquo;re in. Now the fun part.</div>
@@ -108,7 +109,7 @@
     </div>
 
     <div class="item" data-src="09-onboarding-abandoned.html" data-title="You stopped one step short">
-      <div class="avatar blue">H</div>
+      <img class="avatar-icon" src="img/icons/progress.png" alt="" width="38" height="38">
       <div class="meta">
         <div class="row1"><span class="sender">HumAIne</span><span class="num">09</span></div>
         <div class="subject">You stopped one step short</div>
@@ -120,7 +121,7 @@
     <div class="section">Transactional &middot; 8</div>
 
     <div class="item" data-src="10-org-invite.html" data-title="{{inviter_name}} saved you a seat at {{org_name}}">
-      <div class="avatar lilac">O</div>
+      <img class="avatar-icon" src="img/icons/gate.png" alt="" width="38" height="38">
       <div class="meta">
         <div class="row1"><span class="sender">HumAIne</span><span class="num">10</span></div>
         <div class="subject">Someone saved you a seat.</div>
@@ -130,7 +131,7 @@
     </div>
 
     <div class="item" data-src="11-password-changed.html" data-title="New password. Locked in.">
-      <div class="avatar plum">S</div>
+      <img class="avatar-icon" src="img/icons/seal.png" alt="" width="38" height="38">
       <div class="meta">
         <div class="row1"><span class="sender">HumAIne Security</span><span class="num">11</span></div>
         <div class="subject">New password. Locked in.</div>
@@ -140,7 +141,7 @@
     </div>
 
     <div class="item" data-src="02-security-alert.html" data-title="Someone just signed in. Was it you?">
-      <div class="avatar plum">S</div>
+      <img class="avatar-icon" src="img/icons/shield.png" alt="" width="38" height="38">
       <div class="meta">
         <div class="row1"><span class="sender">HumAIne Security</span><span class="num">02</span></div>
         <div class="subject">Someone just walked in.</div>
@@ -150,7 +151,7 @@
     </div>
 
     <div class="item" data-src="03-document-shared.html" data-title="{{sharer_name}} sent you something to read.">
-      <div class="avatar lilac">D</div>
+      <img class="avatar-icon" src="img/icons/doc.png" alt="" width="38" height="38">
       <div class="meta">
         <div class="row1"><span class="sender">Shared with you</span><span class="num">03</span></div>
         <div class="subject">Someone sent you a document.</div>
@@ -160,7 +161,7 @@
     </div>
 
     <div class="item" data-src="04-password-reset.html" data-title="Let's get you back in.">
-      <div class="avatar plum">S</div>
+      <img class="avatar-icon" src="img/icons/lock.png" alt="" width="38" height="38">
       <div class="meta">
         <div class="row1"><span class="sender">HumAIne Security</span><span class="num">04</span></div>
         <div class="subject">Let&rsquo;s get you back in.</div>
@@ -170,7 +171,7 @@
     </div>
 
     <div class="item" data-src="05-pin-reset.html" data-title="Six new digits.">
-      <div class="avatar plum">S</div>
+      <img class="avatar-icon" src="img/icons/keypad.png" alt="" width="38" height="38">
       <div class="meta">
         <div class="row1"><span class="sender">HumAIne Security</span><span class="num">05</span></div>
         <div class="subject">Six new digits.</div>
@@ -180,7 +181,7 @@
     </div>
 
     <div class="item" data-src="06-mfa-change.html" data-title="Someone's removing the second lock.">
-      <div class="avatar plum">S</div>
+      <img class="avatar-icon" src="img/icons/doublelock.png" alt="" width="38" height="38">
       <div class="meta">
         <div class="row1"><span class="sender">HumAIne Security</span><span class="num">06</span></div>
         <div class="subject">Someone&rsquo;s removing the second lock.</div>
@@ -190,7 +191,7 @@
     </div>
 
     <div class="item" data-src="08-otp-code.html" data-title="Here's your code.">
-      <div class="avatar plum">S</div>
+      <img class="avatar-icon" src="img/icons/ticket.png" alt="" width="38" height="38">
       <div class="meta">
         <div class="row1"><span class="sender">HumAIne Security</span><span class="num">08</span></div>
         <div class="subject">Here&rsquo;s your code.</div>

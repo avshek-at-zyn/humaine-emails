@@ -114,6 +114,31 @@ npx --yes sharp-cli --input img/src/NAME.svg --output img/NAME.jpg --quality 88 
 
 Images are blocked-by-default in some clients, so every hero has descriptive alt text and no information lives only in the image.
 
+### Clay icon set
+
+Between the hero and the headline, every email carries a 76px 3D clay icon — glossy blue/periwinkle gradients, lilac and mint accents, top-left light, one highlight, soft ground shadow, and a −7° "sticker" tilt baked in. Authored as SVG in `img/src/icons/`, rasterized to 228px transparent PNGs in `img/icons/` (~10 KB each), so they sit correctly on both the dark card and the light-mode white card.
+
+| Icon | Used by | Depicts |
+|------|---------|---------|
+| `key.png` | 01 | Clay key — your keys to early access |
+| `shield.png` | 02 | Shield with coral alert dot |
+| `doc.png` | 03 | Document with fold + share arrow |
+| `lock.png` | 04 | Padlock |
+| `keypad.png` | 05 | PIN pad, one key pressed |
+| `doublelock.png` | 06 | Two locks — the "second lock" |
+| `sparkle.png` | 07 | Sparkle burst (centered) |
+| `ticket.png` | 08 | One-use ticket with perforation |
+| `progress.png` | 09 | Progress ring stopped just short |
+| `gate.png` | 10 | Archway with open door |
+| `seal.png` | 11 | Seal of approval with check |
+| `rocket.png` | 12 | Launching rocket |
+
+Icons are decorative (`alt=""`), so blocked-image clients lose nothing. To edit one, change its SVG and re-run:
+
+```bash
+npx --yes sharp-cli --input img/src/icons/NAME.svg --output img/icons/NAME.png resize 228 228
+```
+
 ## Client support
 
 Built table-based with fully inline styles.
