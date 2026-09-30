@@ -1,0 +1,14 @@
+{
+  "name": "humaine-email-tools",
+  "private": true,
+  "type": "module",
+  "description": "Asset generators for the HumAIne email templates (hero scenes, clay icons).",
+  "scripts": {
+    "scenes": "node scene.mjs",
+    "shot": "node shot.mjs"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5",
+    "puppeteer-core": "^23.11.1"
+  }
+}

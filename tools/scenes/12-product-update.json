@@ -1,0 +1,20 @@
+{
+  "name": "12-product-update",
+  "icon": "img/src/icons/rocket.svg",
+  "iconSize": 330,
+  "height": 600,
+  "seed": 12,
+  "planets": [
+    { "type": "blue", "x": 754, "y": 100, "r": 36, "ring": true, "tilt": 14, "ringScale": 1.95 },
+    { "type": "lilac", "x": 184, "y": 228, "r": 18 },
+    { "type": "pink", "x": 318, "y": 418, "r": 12 },
+    { "type": "cyan", "x": 1012, "y": 330, "r": 10 }
+  ],
+  "pinkGlow": { "x": 505, "y": 425, "r": 210 },
+  "shootingStar": { "x": 334, "y": 118, "len": 150, "angle": -55 },
+  "sparkles": [
+    [952, 168, 7],
+    [1078, 262, 5],
+    [452, 468, 6]
+  ]
+}

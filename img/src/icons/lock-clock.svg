@@ -1,0 +1,60 @@
+<svg width="232" height="235" viewBox="0 0 232 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- humAIne clay: lilac lock (from password-reset-success.svg) with a white clock badge (glyph from chat-history). Reset requested, link on a timer. -->
+  <g opacity="0.3" filter="url(#lc_floor)">
+    <path d="M109.976 223.424C139.386 223.424 163.227 218.759 163.227 213.005C163.227 207.251 139.386 202.586 109.976 202.586C80.566 202.586 56.7246 207.251 56.7246 213.005C56.7246 218.759 80.566 223.424 109.976 223.424Z" fill="black"/>
+  </g>
+
+  <!-- shackle -->
+  <path d="M54.4492 104.413V71.5445C54.4492 40.5018 65.3292 24.9804 87.0892 24.9804C108.849 24.9804 119.729 40.5018 119.729 71.5445V85.2398" stroke="url(#lc_shackle)" stroke-width="18" stroke-linecap="round"/>
+
+  <!-- body : base, bottom shade, specular -->
+  <path d="M122.449 98.9352H57.1688C42.1466 98.9352 29.9688 111.198 29.9688 126.326V175.629C29.9688 190.756 42.1466 203.02 57.1688 203.02H122.449C137.471 203.02 149.649 190.756 149.649 175.629V126.326C149.649 111.198 137.471 98.9352 122.449 98.9352Z" fill="url(#lc_body)"/>
+  <path d="M122.449 98.9352H57.1688C42.1466 98.9352 29.9688 111.198 29.9688 126.326V175.629C29.9688 190.756 42.1466 203.02 57.1688 203.02H122.449C137.471 203.02 149.649 190.756 149.649 175.629V126.326C149.649 111.198 137.471 98.9352 122.449 98.9352Z" fill="url(#lc_bodyShade)"/>
+  <path d="M122.449 98.9352H57.1688C42.1466 98.9352 29.9688 111.198 29.9688 126.326V175.629C29.9688 190.756 42.1466 203.02 57.1688 203.02H122.449C137.471 203.02 149.649 190.756 149.649 175.629V126.326C149.649 111.198 137.471 98.9352 122.449 98.9352Z" fill="url(#lc_bodyHi)"/>
+
+  <!-- keyhole -->
+  <path d="M89.8095 159.195C100.325 159.195 108.85 150.61 108.85 140.021C108.85 129.432 100.325 120.848 89.8095 120.848C79.294 120.848 70.7695 129.432 70.7695 140.021C70.7695 150.61 79.294 159.195 89.8095 159.195Z" fill="url(#lc_keyDisc)"/>
+  <path d="M90.1918 145.157C94.7689 145.157 98.4793 141.67 98.4793 137.368C98.4793 133.066 94.7689 129.578 90.1918 129.578C85.6147 129.578 81.9043 133.066 81.9043 137.368C81.9043 141.67 85.6147 145.157 90.1918 145.157Z" fill="#8E56A8"/>
+  <path d="M93.8885 144.13C93.8885 141.861 92.0618 140.021 89.8085 140.021C87.5552 140.021 85.7285 141.861 85.7285 144.13V157.825C85.7285 160.094 87.5552 161.934 89.8085 161.934C92.0618 161.934 93.8885 160.094 93.8885 157.825V144.13Z" fill="#8E56A8"/>
+
+  <!-- clock badge : white clay disc, soft contact shade, specular, violet glyph -->
+  <circle cx="168" cy="93" r="33" fill="url(#lc_badge)"/>
+  <circle cx="168" cy="93" r="33" fill="url(#lc_badgeShade)"/>
+  <circle cx="168" cy="93" r="33" fill="url(#lc_badgeHi)"/>
+  <circle cx="168" cy="93" r="22.5" stroke="url(#lc_glyph)" stroke-width="3.6"/>
+  <path d="M168 78.5V93L179.5 99" stroke="url(#lc_glyph)" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="168" cy="93" r="3" fill="#4B33C2"/>
+
+  <defs>
+    <filter id="lc_floor" x="49.7788" y="195.64" width="120.394" height="34.7291" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.47291"/>
+    </filter>
+    <radialGradient id="lc_shackle" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(81.8668 40.867) scale(42.432 51.6314)">
+      <stop stop-color="#D0CCF8"/><stop offset="0.4" stop-color="#B5B7F6"/><stop offset="1" stop-color="#6E60C8"/>
+    </radialGradient>
+    <radialGradient id="lc_body" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(77.8408 124.956) scale(86.1696 74.9408)">
+      <stop stop-color="#F0D6F8"/><stop offset="0.3" stop-color="#E5C3F0"/><stop offset="0.7" stop-color="#C48DD8"/><stop offset="1" stop-color="#8E56A8"/>
+    </radialGradient>
+    <radialGradient id="lc_bodyShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(95.7927 187.407) scale(65.824 57.2465)">
+      <stop stop-opacity="0"/><stop offset="0.65" stop-opacity="0"/><stop offset="1" stop-color="#472858" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="lc_bodyHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(68.2664 117.67) scale(33.5104 29.1437)">
+      <stop stop-color="white" stop-opacity="0.7"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lc_keyDisc" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(85.2399 130.434) scale(22.848 23.0081)">
+      <stop stop-color="white"/><stop offset="0.5" stop-color="#F0EDF8"/><stop offset="1" stop-color="#D6D1EA"/>
+    </radialGradient>
+    <radialGradient id="lc_badge" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(161.4 76.8) scale(43 42)">
+      <stop stop-color="white"/><stop offset="0.5" stop-color="#F0EDF8"/><stop offset="1" stop-color="#D6D1EA"/>
+    </radialGradient>
+    <radialGradient id="lc_badgeShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(172 106) scale(38 36)">
+      <stop stop-color="#5A3C86" stop-opacity="0"/><stop offset="0.7" stop-color="#5A3C86" stop-opacity="0"/><stop offset="1" stop-color="#5A3C86" stop-opacity="0.22"/>
+    </radialGradient>
+    <radialGradient id="lc_badgeHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(158 73.5) scale(18.5 18)">
+      <stop stop-color="white" stop-opacity="0.6"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lc_glyph" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(158 80) scale(40 40)">
+      <stop stop-color="#8A7EE8"/><stop offset="0.45" stop-color="#6E60C8"/><stop offset="1" stop-color="#4227B8"/>
+    </radialGradient>
+  </defs>
+</svg>

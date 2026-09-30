@@ -1,0 +1,18 @@
+{
+  "name": "01-early-access",
+  "icon": "img/src/app/administrator-icon.svg",
+  "iconSize": 318,
+  "iconY": 280,
+  "height": 600,
+  "seed": 1,
+  "planets": [
+    { "type": "glass", "x": 230, "y": 346, "r": 44, "ring": true, "tilt": -14 },
+    { "type": "lilac", "x": 884, "y": 128, "r": 15 },
+    { "type": "blue", "x": 1036, "y": 336, "r": 24, "ring": true, "tilt": 26, "ringScale": 2.0 },
+    { "type": "cyan", "x": 356, "y": 122, "r": 8 }
+  ],
+  "orbit": { "scale": 1.14, "tilt": 7, "moon": "pink", "moonR": 7, "moonAt": 0.07 },
+  "pinkGlow": { "x": 790, "y": 372, "r": 230 },
+  "shootingStar": { "x": 752, "y": 92, "len": 170, "angle": 20 },
+  "sparkles": [[936, 452, 7], [300, 468, 5], [690, 112, 5]]
+}

@@ -3,275 +3,173 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HumAIne Email Templates</title>
-<link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<meta name="color-scheme" content="dark">
+<title>humAIne email templates</title>
+<link rel="icon" href="img/brand/mark-96.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { height: 100%; }
-  body { background: #14081E; color: #F5F0FA; font-family: 'Manrope', sans-serif; display: flex; flex-direction: column; overflow: hidden; }
+  body { background: #090B14; color: #FFFFFF; font-family: 'DM Sans', 'Helvetica Neue', sans-serif; display: flex; flex-direction: column; overflow: hidden; }
 
-  .topbar { display: flex; align-items: center; justify-content: space-between; padding: 16px 28px; border-bottom: 1px solid #2F2444; flex-shrink: 0; background: #180A24; }
-  .topbar .brand { font-family: 'Jura', sans-serif; font-weight: 700; font-size: 21px; }
-  .topbar .brand .ai { background: linear-gradient(135deg,#5271FF 0%,#B5B7F6 55%,#E5C3F0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-  .topbar .label { font-family: 'Roboto', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #B5B7F6; }
+  .topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 24px; border-bottom: 1px solid #1C1E27; flex-shrink: 0;
+    background: radial-gradient(60% 140% at 50% -40%, rgba(167,139,250,0.22), transparent 70%), #090B14; }
+  .topbar img { display: block; width: 144px; height: 36px; }
+  .topbar .label { font-size: 12.5px; color: #7D7F8F; }
+  .topbar .label b { color: #C4B5FD; font-weight: 600; }
 
   .layout { display: flex; flex: 1; min-height: 0; }
 
-  .sidebar { width: 330px; flex-shrink: 0; border-right: 1px solid #2F2444; overflow-y: auto; background: #12071C; }
+  .sidebar { width: 340px; flex-shrink: 0; border-right: 1px solid #1C1E27; overflow-y: auto; background: #0C0E17; }
   .sidebar::-webkit-scrollbar { width: 6px; }
-  .sidebar::-webkit-scrollbar-thumb { background: #2F2444; border-radius: 3px; }
-  .sidebar .section { padding: 18px 20px 8px; font-family: 'Roboto', sans-serif; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: #6F6383; }
-  .sidebar .section + .section { border-top: 1px solid #2F2444; margin-top: 8px; }
+  .sidebar::-webkit-scrollbar-thumb { background: #23252E; border-radius: 3px; }
+  .section { padding: 18px 20px 8px; font-size: 11px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: #565869; }
+  .section + .item { margin-top: 2px; }
 
-  .item { display: flex; gap: 13px; padding: 14px 20px; cursor: pointer; border-left: 2px solid transparent; transition: background .15s, border-color .15s; }
-  .item:hover { background: rgba(82,113,255,0.05); }
-  .item.active { background: rgba(82,113,255,0.10); border-left-color: #5271FF; }
-  .item .avatar-icon { width: 38px; height: 38px; flex-shrink: 0; object-fit: contain; }
-  .item .avatar { width: 36px; height: 36px; border-radius: 11px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Jura', sans-serif; font-weight: 700; font-size: 15px; color: #fff; }
-  .item .avatar.blue { background: linear-gradient(135deg, #5271FF, #7B8CFF); }
-  .item .avatar.lilac { background: linear-gradient(135deg, #8A7BD8, #B5B7F6); }
-  .item .avatar.plum { background: #221230; border: 1px solid #3A2B52; color: #B5B7F6; }
-  .item .meta { min-width: 0; flex: 1; }
-  .item .row1 { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 2px; }
-  .item .sender { font-weight: 700; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .item .num { font-family: 'Jura', sans-serif; font-size: 10px; color: #6F6383; flex-shrink: 0; }
-  .item .subject { font-size: 12.5px; color: #CFC8DE; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .item.active .subject { color: #F5F0FA; }
-  .item .snippet { font-size: 11.5px; font-weight: 300; color: #6F6383; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .item .tag { display: inline-block; margin-top: 6px; font-family: 'Roboto', sans-serif; font-size: 8px; letter-spacing: 1.8px; text-transform: uppercase; border-radius: 999px; padding: 3px 8px; }
-  .item .tag.txn { color: #B5B7F6; border: 1px solid rgba(181,183,246,0.3); }
-  .item .tag.mkt { color: #ACE1E4; border: 1px solid rgba(172,225,228,0.3); }
-  .item .tag.alert { color: #E07A85; border: 1px solid rgba(224,122,133,0.35); }
+  .item { display: flex; gap: 12px; align-items: center; padding: 11px 16px 11px 18px; cursor: pointer; border-left: 2px solid transparent; transition: background .15s, border-color .15s; }
+  .item:hover { background: rgba(255,255,255,0.03); }
+  .item.active { background: rgba(167,139,250,0.10); border-left-color: #A78BFA; }
+  .thumb { width: 64px; height: 44px; flex-shrink: 0; border-radius: 10px; border: 1px solid #23252E; background: #15171F center/cover no-repeat; }
+  .meta { min-width: 0; flex: 1; }
+  .row1 { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 2px; }
+  .sender { font-weight: 600; font-size: 12.5px; color: #FFFFFF; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .num { font-size: 11px; color: #565869; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+  .subject { font-size: 12.5px; color: #B4B5C4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .item.active .subject { color: #FFFFFF; }
+  .snippet { font-size: 11.5px; color: #565869; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 1px; }
+  .tag { display: inline-block; margin-top: 6px; font-size: 10.5px; font-weight: 600; border-radius: 999px; padding: 2px 9px; border: 1px solid; }
+  .tag.info    { color: #C4B5FD; background: #1C1A30; border-color: #383159; }
+  .tag.alert   { color: #FCA5A5; background: #26171F; border-color: #5D2F35; }
+  .tag.success { color: #4ADE80; background: #08241F; border-color: #0B5236; }
+  .tag.release { color: #F9A8D4; background: #26192B; border-color: #5A3358; }
 
-  .viewer { flex: 1; min-width: 0; display: flex; flex-direction: column; background: #14081E; }
-  .viewer-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 24px; border-bottom: 1px solid #2F2444; flex-shrink: 0; }
-  .viewer-head h2 { font-family: 'Jura', sans-serif; font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .viewer-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-
-  .theme-switch { display: flex; border: 1px solid #2F2444; border-radius: 999px; overflow: hidden; background: #180A24; }
-  .theme-switch button { border: 0; background: transparent; color: #6F6383; font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 11px; padding: 7px 15px; cursor: pointer; transition: all .15s; }
-  .theme-switch button.on { background: #5271FF; color: #FFFFFF; }
-  .theme-switch button.on.light-on { background: #E5C3F0; color: #180A24; }
-
-  .viewer-head .file { font-family: 'Roboto', sans-serif; font-size: 11px; color: #A99FBB; text-decoration: none; border: 1px solid #2F2444; background: #180A24; border-radius: 999px; padding: 7px 15px; white-space: nowrap; transition: all .15s; }
-  .viewer-head .file:hover { color: #B5B7F6; border-color: #5271FF; }
-  .viewer iframe { flex: 1; width: 100%; border: 0; background: #14081E; transition: background .2s; }
-  .viewer.light iframe { background: #EFEAF6; }
+  .viewer { flex: 1; min-width: 0; display: flex; flex-direction: column; background: #090B14; }
+  .viewer-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 22px; border-bottom: 1px solid #1C1E27; flex-shrink: 0; }
+  .viewer-head h2 { font-family: 'Hahmlet', Georgia, serif; font-size: 16px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .viewer-head .meta-line { font-size: 12px; color: #7D7F8F; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .actions { display: flex; gap: 8px; flex-shrink: 0; }
+  .btn { font-size: 12.5px; font-weight: 600; color: #FFFFFF; text-decoration: none; border: 1px solid #23252E; background: #15171F; border-radius: 12px; padding: 8px 14px; white-space: nowrap; cursor: pointer; transition: border-color .15s; }
+  .btn:hover { border-color: #A78BFA; }
+  .btn.seg.on { background: #1C1A30; border-color: #383159; color: #C4B5FD; }
+  .stage { flex: 1; min-height: 0; display: flex; justify-content: center; overflow: auto; }
+  .stage iframe { width: 100%; height: 100%; border: 0; background: #090B14; transition: width .25s ease; }
+  .stage.mobile iframe { width: 390px; border-left: 1px solid #1C1E27; border-right: 1px solid #1C1E27; }
 
   @media (max-width: 860px) {
-    .sidebar { width: 78px; }
-    .item .meta, .sidebar .section { display: none; }
-    .item { justify-content: center; padding: 13px 0; }
-    .viewer-head h2 { display: none; }
+    .sidebar { width: 96px; }
+    .meta, .section { display: none; }
+    .item { justify-content: center; padding: 10px 0; }
+    .topbar .label, .viewer-head .meta-line, .seg { display: none; }
   }
 </style>
 </head>
 <body>
 
 <div class="topbar">
-  <div class="brand">Hum<span class="ai">AI</span>ne</div>
-  <div class="label">Email Templates &middot; Zyn Global</div>
+  <img src="img/brand/lockup@2x.png" alt="humAIne">
+  <div class="label"><b>12</b> email templates &middot; dark, app-native</div>
 </div>
 
 <div class="layout">
   <aside class="sidebar" id="sidebar">
-
     <div class="section">Lifecycle &middot; 4</div>
-
-    <div class="item" data-src="12-product-update.html" data-title="HumAIne just levelled up.">
-      <img class="avatar-icon" src="img/icons/rocket.png" alt="" width="38" height="38">
-      <div class="meta">
-        <div class="row1"><span class="sender">HumAIne</span><span class="num">12</span></div>
-        <div class="subject">HumAIne just levelled up.</div>
-        <div class="snippet">Release {{version_number}} is rolling out&hellip;</div>
-        <span class="tag mkt">Product update</span>
-      </div>
-    </div>
-
-    <div class="item" data-src="01-early-access.html" data-title="You're in.">
-      <img class="avatar-icon" src="img/icons/key.png" alt="" width="38" height="38">
-      <div class="meta">
-        <div class="row1"><span class="sender">HumAIne</span><span class="num">01</span></div>
-        <div class="subject">You&rsquo;re in.</div>
-        <div class="snippet">No waitlist, no sales call&hellip;</div>
-        <span class="tag mkt">Early access</span>
-      </div>
-    </div>
-
-    <div class="item" data-src="07-welcome.html" data-title="You're in. Now the fun part.">
-      <img class="avatar-icon" src="img/icons/sparkle.png" alt="" width="38" height="38">
-      <div class="meta">
-        <div class="row1"><span class="sender">HumAIne</span><span class="num">07</span></div>
-        <div class="subject">You&rsquo;re in. Now the fun part.</div>
-        <div class="snippet">Three things for your first five minutes&hellip;</div>
-        <span class="tag mkt">Welcome</span>
-      </div>
-    </div>
-
-    <div class="item" data-src="09-onboarding-abandoned.html" data-title="You stopped one step short">
-      <img class="avatar-icon" src="img/icons/progress.png" alt="" width="38" height="38">
-      <div class="meta">
-        <div class="row1"><span class="sender">HumAIne</span><span class="num">09</span></div>
-        <div class="subject">You stopped one step short</div>
-        <div class="snippet">Your setup is exactly where you left it&hellip;</div>
-        <span class="tag mkt">Abandoned setup</span>
-      </div>
-    </div>
+    <div class="item" data-src="01-early-access.html" data-sender="humAIne" data-tag="info" data-label="Early access"></div>
+    <div class="item" data-src="07-welcome.html" data-sender="humAIne" data-tag="success" data-label="Welcome"></div>
+    <div class="item" data-src="09-onboarding-abandoned.html" data-sender="humAIne" data-tag="info" data-label="Abandoned setup"></div>
+    <div class="item" data-src="12-product-update.html" data-sender="humAIne" data-tag="release" data-label="Product update"></div>
 
     <div class="section">Transactional &middot; 8</div>
-
-    <div class="item" data-src="10-org-invite.html" data-title="{{inviter_name}} saved you a seat at {{org_name}}">
-      <img class="avatar-icon" src="img/icons/gate.png" alt="" width="38" height="38">
-      <div class="meta">
-        <div class="row1"><span class="sender">HumAIne</span><span class="num">10</span></div>
-        <div class="subject">Someone saved you a seat.</div>
-        <div class="snippet">{{org_name}} wants you in&hellip;</div>
-        <span class="tag txn">Org invite</span>
-      </div>
-    </div>
-
-    <div class="item" data-src="11-password-changed.html" data-title="New password. Locked in.">
-      <img class="avatar-icon" src="img/icons/seal.png" alt="" width="38" height="38">
-      <div class="meta">
-        <div class="row1"><span class="sender">HumAIne Security</span><span class="num">11</span></div>
-        <div class="subject">New password. Locked in.</div>
-        <div class="snippet">All other sessions signed out&hellip;</div>
-        <span class="tag txn">Password changed</span>
-      </div>
-    </div>
-
-    <div class="item" data-src="02-security-alert.html" data-title="Someone just signed in. Was it you?">
-      <img class="avatar-icon" src="img/icons/shield.png" alt="" width="38" height="38">
-      <div class="meta">
-        <div class="row1"><span class="sender">HumAIne Security</span><span class="num">02</span></div>
-        <div class="subject">Someone just walked in.</div>
-        <div class="snippet">A device we&rsquo;ve never seen before&hellip;</div>
-        <span class="tag alert">Security alert</span>
-      </div>
-    </div>
-
-    <div class="item" data-src="03-document-shared.html" data-title="{{sharer_name}} sent you something to read.">
-      <img class="avatar-icon" src="img/icons/doc.png" alt="" width="38" height="38">
-      <div class="meta">
-        <div class="row1"><span class="sender">Shared with you</span><span class="num">03</span></div>
-        <div class="subject">Someone sent you a document.</div>
-        <div class="snippet">Ready whenever you are&hellip;</div>
-        <span class="tag txn">Document shared</span>
-      </div>
-    </div>
-
-    <div class="item" data-src="04-password-reset.html" data-title="Let's get you back in.">
-      <img class="avatar-icon" src="img/icons/lock.png" alt="" width="38" height="38">
-      <div class="meta">
-        <div class="row1"><span class="sender">HumAIne Security</span><span class="num">04</span></div>
-        <div class="subject">Let&rsquo;s get you back in.</div>
-        <div class="snippet">Happens to everyone&hellip;</div>
-        <span class="tag txn">Password reset</span>
-      </div>
-    </div>
-
-    <div class="item" data-src="05-pin-reset.html" data-title="Six new digits.">
-      <img class="avatar-icon" src="img/icons/keypad.png" alt="" width="38" height="38">
-      <div class="meta">
-        <div class="row1"><span class="sender">HumAIne Security</span><span class="num">05</span></div>
-        <div class="subject">Six new digits.</div>
-        <div class="snippet">Something your flatmate wouldn&rsquo;t guess&hellip;</div>
-        <span class="tag txn">PIN reset</span>
-      </div>
-    </div>
-
-    <div class="item" data-src="06-mfa-change.html" data-title="Someone's removing the second lock.">
-      <img class="avatar-icon" src="img/icons/doublelock.png" alt="" width="38" height="38">
-      <div class="meta">
-        <div class="row1"><span class="sender">HumAIne Security</span><span class="num">06</span></div>
-        <div class="subject">Someone&rsquo;s removing the second lock.</div>
-        <div class="snippet">We&rsquo;ve paused it until you say the word&hellip;</div>
-        <span class="tag alert">Two-factor</span>
-      </div>
-    </div>
-
-    <div class="item" data-src="08-otp-code.html" data-title="Here's your code.">
-      <img class="avatar-icon" src="img/icons/ticket.png" alt="" width="38" height="38">
-      <div class="meta">
-        <div class="row1"><span class="sender">HumAIne Security</span><span class="num">08</span></div>
-        <div class="subject">Here&rsquo;s your code.</div>
-        <div class="snippet">One use only, no encores&hellip;</div>
-        <span class="tag txn">Sign-in code</span>
-      </div>
-    </div>
-
+    <div class="item" data-src="02-security-alert.html" data-sender="humAIne Security" data-tag="alert" data-label="New device"></div>
+    <div class="item" data-src="03-document-shared.html" data-sender="humAIne" data-tag="info" data-label="Document shared"></div>
+    <div class="item" data-src="04-password-reset.html" data-sender="humAIne Security" data-tag="info" data-label="Password reset"></div>
+    <div class="item" data-src="05-pin-reset.html" data-sender="humAIne Security" data-tag="info" data-label="PIN reset"></div>
+    <div class="item" data-src="06-mfa-change.html" data-sender="humAIne Security" data-tag="alert" data-label="MFA reset"></div>
+    <div class="item" data-src="08-otp-code.html" data-sender="humAIne Security" data-tag="info" data-label="Sign-in code"></div>
+    <div class="item" data-src="10-org-invite.html" data-sender="humAIne" data-tag="info" data-label="Org invite"></div>
+    <div class="item" data-src="11-password-changed.html" data-sender="humAIne Security" data-tag="success" data-label="Password changed"></div>
   </aside>
 
-  <main class="viewer" id="viewer">
+  <main class="viewer">
     <div class="viewer-head">
-      <h2 id="viewer-title">You&rsquo;re in.</h2>
-      <div class="viewer-actions">
-        <div class="theme-switch" id="theme-switch">
-          <button id="btn-dark" class="on">Dark</button>
-          <button id="btn-light">Light</button>
-        </div>
-        <a class="file" id="viewer-file" href="01-early-access.html" target="_blank">01-early-access.html &nearr;</a>
+      <div style="min-width:0">
+        <h2 id="viewer-title">&nbsp;</h2>
+        <div class="meta-line" id="viewer-pre">&nbsp;</div>
+      </div>
+      <div class="actions">
+        <button class="btn seg on" id="btn-desktop" type="button">Desktop</button>
+        <button class="btn seg" id="btn-mobile" type="button">Mobile</button>
+        <a class="btn" id="viewer-file" href="#" target="_blank" rel="noopener">Open &nearr;</a>
       </div>
     </div>
-    <iframe id="viewer-frame" src="01-early-access.html" title="Email preview"></iframe>
+    <div class="stage" id="stage"><iframe id="viewer-frame" title="Email preview"></iframe></div>
   </main>
 </div>
 
 <script>
-  const items = document.querySelectorAll('.item');
+  const items = [...document.querySelectorAll('.item')];
   const frame = document.getElementById('viewer-frame');
-  const title = document.getElementById('viewer-title');
-  const file = document.getElementById('viewer-file');
-  const viewer = document.getElementById('viewer');
-  const btnDark = document.getElementById('btn-dark');
-  const btnLight = document.getElementById('btn-light');
+  const titleEl = document.getElementById('viewer-title');
+  const preEl = document.getElementById('viewer-pre');
+  const fileEl = document.getElementById('viewer-file');
+  const stage = document.getElementById('stage');
+  const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-  let theme = localStorage.getItem('email-theme') || 'dark';
+  // Build each sidebar row from the template itself: subject from <title>, snippet from the preheader.
+  items.forEach(item => {
+    const src = item.dataset.src, stem = src.replace('.html', '');
+    item.innerHTML =
+      `<div class="thumb" style="background-image:url('img/hero/${stem}.jpg')"></div>
+       <div class="meta">
+         <div class="row1"><span class="sender">${esc(item.dataset.sender)}</span><span class="num">${stem.slice(0, 2)}</span></div>
+         <div class="subject">${esc(item.dataset.label)}</div>
+         <div class="snippet">&nbsp;</div>
+         <span class="tag ${item.dataset.tag}">${esc(item.dataset.label)}</span>
+       </div>`;
+    fetch(src).then(r => r.text()).then(html => {
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const subject = (doc.querySelector('title')?.textContent || '').trim();
+      const pre = (doc.body.querySelector('div')?.textContent || '').replace(/[‌ ]+/g, ' ').trim();
+      item.dataset.subject = subject; item.dataset.pre = pre;
+      if (subject) item.querySelector('.subject').textContent = subject;
+      if (pre) item.querySelector('.snippet').textContent = pre;
+      if (item.classList.contains('active')) showMeta(item);
+    }).catch(() => {});
+  });
 
-  function applyTheme() {
-    btnDark.classList.toggle('on', theme === 'dark');
-    btnLight.classList.toggle('on', theme === 'light');
-    btnLight.classList.toggle('light-on', theme === 'light');
-    viewer.classList.toggle('light', theme === 'light');
-    try { frame.contentWindow.postMessage('theme:' + theme, '*'); } catch (e) {}
+  function showMeta(item) {
+    titleEl.textContent = item.dataset.subject || item.dataset.label;
+    preEl.textContent = item.dataset.pre || '';
   }
-
-  function setTheme(t) {
-    theme = t;
-    localStorage.setItem('email-theme', t);
-    applyTheme();
-  }
-
-  btnDark.addEventListener('click', () => setTheme('dark'));
-  btnLight.addEventListener('click', () => setTheme('light'));
-  frame.addEventListener('load', applyTheme);
 
   function select(item) {
     items.forEach(i => i.classList.remove('active'));
     item.classList.add('active');
-    const src = item.dataset.src;
-    frame.src = src + (theme === 'light' ? '?theme=light' : '');
-    title.textContent = item.dataset.title;
-    file.href = src;
-    file.textContent = src + ' ↗';
-    location.hash = src.split('-')[0];
+    frame.src = item.dataset.src;
+    fileEl.href = item.dataset.src;
+    showMeta(item);
+    history.replaceState(null, '', '#' + item.dataset.src.slice(0, 2));
   }
 
   items.forEach(item => item.addEventListener('click', () => select(item)));
 
-  const hash = location.hash.replace('#', '');
-  const initial = [...items].find(i => i.dataset.src.startsWith(hash)) || items[0];
-  select(initial);
-  applyTheme();
+  const setMode = mobile => {
+    stage.classList.toggle('mobile', mobile);
+    document.getElementById('btn-mobile').classList.toggle('on', mobile);
+    document.getElementById('btn-desktop').classList.toggle('on', !mobile);
+  };
+  document.getElementById('btn-desktop').addEventListener('click', () => setMode(false));
+  document.getElementById('btn-mobile').addEventListener('click', () => setMode(true));
+
+  const hash = location.hash.slice(1);
+  select(items.find(i => hash && i.dataset.src.startsWith(hash)) || items[0]);
 
   document.addEventListener('keydown', e => {
     if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
     e.preventDefault();
-    const list = [...items];
-    const idx = list.findIndex(i => i.classList.contains('active'));
-    const next = e.key === 'ArrowDown' ? Math.min(idx + 1, list.length - 1) : Math.max(idx - 1, 0);
-    select(list[next]);
-    list[next].scrollIntoView({ block: 'nearest' });
+    const idx = items.findIndex(i => i.classList.contains('active'));
+    const next = items[e.key === 'ArrowDown' ? Math.min(idx + 1, items.length - 1) : Math.max(idx - 1, 0)];
+    select(next);
+    next.scrollIntoView({ block: 'nearest' });
   });
 </script>
 </body>

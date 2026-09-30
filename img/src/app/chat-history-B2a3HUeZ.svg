@@ -1,0 +1,53 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="">
+<defs>
+<linearGradient id="bubbleFace" x1="10%" y1="0%" x2="90%" y2="100%">
+<stop offset="0%" stop-color="#9C8FFF"/>
+<stop offset="45%" stop-color="#6E5AF0"/>
+<stop offset="100%" stop-color="#4227B8"/>
+</linearGradient>
+<linearGradient id="bubbleSide" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#38227A"/>
+<stop offset="100%" stop-color="#241456"/>
+</linearGradient>
+<linearGradient id="bubbleTop" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#C2B6FF"/>
+<stop offset="100%" stop-color="#8C7CF5"/>
+</linearGradient>
+<radialGradient id="bubbleHi" cx="28%" cy="14%" r="55%">
+<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+<stop offset="60%" stop-color="#FFFFFF" stop-opacity="0.04"/>
+<stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="clockFace" x1="10%" y1="0%" x2="90%" y2="100%">
+<stop offset="0%" stop-color="#F2EEFF"/>
+<stop offset="100%" stop-color="#DCE0FF"/>
+</linearGradient>
+<filter id="dsB" x="-80%" y="-50%" width="260%" height="260%">
+<feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#08041A" flood-opacity="0.5"/>
+</filter>
+<filter id="dsS" x="-100%" y="-60%" width="300%" height="300%">
+<feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#08041A" flood-opacity="0.45"/>
+</filter>
+</defs>
+
+<ellipse cx="100" cy="178" rx="46" ry="8" fill="#000000" opacity="0.25" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.25;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<g filter="url(#dsB)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+<path d="M38 68 L38 130 Q38 142 50 142 L60 142 L50 158 L78 142 L142 142 Q154 142 154 130 L154 68 Q154 56 142 56 L50 56 Q38 56 38 68 Z" fill="url(#bubbleSide)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+<g filter="url(#dsB)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+<path d="M30 60 L30 122 Q30 134 42 134 L52 134 L42 150 L70 134 L134 134 Q146 134 146 122 L146 60 Q146 48 134 48 L42 48 Q30 48 30 60 Z" fill="url(#bubbleFace)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M30 60 L30 122 Q30 134 42 134 L52 134 L42 150 L70 134 L134 134 Q146 134 146 122 L146 60 Q146 48 134 48 L42 48 Q30 48 30 60 Z" fill="url(#bubbleHi)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+
+<line x1="52" y1="72" x2="108" y2="72" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.9" style="fill:rgb(0, 0, 0);stroke:rgb(255, 255, 255);color:rgb(11, 11, 11);stroke-width:4px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.9;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="52" y1="88" x2="124" y2="88" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.55" style="fill:rgb(0, 0, 0);stroke:rgb(255, 255, 255);color:rgb(11, 11, 11);stroke-width:4px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.55;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="52" y1="104" x2="96" y2="104" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.35" style="fill:rgb(0, 0, 0);stroke:rgb(255, 255, 255);color:rgb(11, 11, 11);stroke-width:4px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.35;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<g filter="url(#dsS)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+<circle cx="148" cy="52" r="22" fill="url(#clockFace)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+<circle cx="148" cy="52" r="16" fill="none" stroke="#4227B8" stroke-width="2.4" style="fill:none;stroke:rgb(66, 39, 184);color:rgb(11, 11, 11);stroke-width:2.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M148 42 L148 52 L156 56" stroke="#4227B8" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round" style="fill:none;stroke:rgb(66, 39, 184);color:rgb(11, 11, 11);stroke-width:2.8px;stroke-linecap:round;stroke-linejoin:round;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="148" cy="52" r="2" fill="#4227B8" style="fill:rgb(66, 39, 184);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</svg>

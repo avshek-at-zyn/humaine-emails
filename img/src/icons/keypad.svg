@@ -1,23 +1,142 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <defs>
-    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#7C90FF"/><stop offset=".55" stop-color="#5271FF"/><stop offset="1" stop-color="#4356E0"/>
-    </linearGradient>
-    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5"/></filter>
-  </defs>
-  <ellipse cx="100" cy="178" rx="50" ry="9" fill="#050208" opacity=".45" filter="url(#blur)"/>
-  <g transform="rotate(-7 100 100)">
-    <rect x="52" y="58" width="96" height="96" rx="24" fill="#3644B8"/>
-    <rect x="52" y="50" width="96" height="96" rx="24" fill="url(#g1)"/>
-    <circle cx="76" cy="74" r="7" fill="#EDEBFF" opacity=".9"/>
-    <circle cx="100" cy="74" r="7" fill="#EDEBFF" opacity=".9"/>
-    <circle cx="124" cy="74" r="7" fill="#EDEBFF" opacity=".9"/>
-    <circle cx="76" cy="98" r="7" fill="#EDEBFF" opacity=".9"/>
-    <circle cx="100" cy="98" r="7" fill="#EDEBFF" opacity=".9"/>
-    <circle cx="124" cy="98" r="7" fill="#EDEBFF" opacity=".9"/>
-    <circle cx="76" cy="122" r="7" fill="#EDEBFF" opacity=".9"/>
-    <circle cx="100" cy="122" r="9" fill="#E5C3F0"/>
-    <circle cx="124" cy="122" r="7" fill="#EDEBFF" opacity=".9"/>
-    <ellipse cx="70" cy="60" rx="14" ry="7" fill="#fff" opacity=".3" transform="rotate(-24 70 60)"/>
+<svg width="232" height="235" viewBox="0 0 232 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- floor shadow -->
+  <g opacity="0.3" filter="url(#fshadow)">
+    <path d="M113 224C147 224 175 219.5 175 214C175 208.5 147 204 113 204C79 204 51 208.5 51 214C51 219.5 79 224 113 224Z" fill="black"/>
   </g>
+
+  <!-- tile thickness -->
+  <path d="M74 60H152C174.1 60 186 71.9 186 94V172C186 194.1 174.1 206 152 206H74C51.9 206 40 194.1 40 172V94C40 71.9 51.9 60 74 60Z" fill="url(#side)"/>
+  <path d="M74 60H152C174.1 60 186 71.9 186 94V172C186 194.1 174.1 206 152 206H74C51.9 206 40 194.1 40 172V94C40 71.9 51.9 60 74 60Z" fill="url(#sideshade)"/>
+
+  <!-- tile face : base, bottom shade, specular -->
+  <path d="M74 52H152C174.1 52 186 63.9 186 86V164C186 186.1 174.1 198 152 198H74C51.9 198 40 186.1 40 164V86C40 63.9 51.9 52 74 52Z" fill="url(#tbase)"/>
+  <path d="M74 52H152C174.1 52 186 63.9 186 86V164C186 186.1 174.1 198 152 198H74C51.9 198 40 186.1 40 164V86C40 63.9 51.9 52 74 52Z" fill="url(#tshade)"/>
+  <path d="M74 52H152C174.1 52 186 63.9 186 86V164C186 186.1 174.1 198 152 198H74C51.9 198 40 186.1 40 164V86C40 63.9 51.9 52 74 52Z" fill="url(#tspec)"/>
+
+  <!-- key drop shadows -->
+  <g filter="url(#kblur)">
+    <path d="M78.8 79C86.09 79 92 84.91 92 92.2C92 99.49 86.09 105.4 78.8 105.4C71.51 105.4 65.6 99.49 65.6 92.2C65.6 84.91 71.51 79 78.8 79Z" fill="#44185C" fill-opacity="0.5"/>
+    <path d="M113.8 79C121.09 79 127 84.91 127 92.2C127 99.49 121.09 105.4 113.8 105.4C106.51 105.4 100.6 99.49 100.6 92.2C100.6 84.91 106.51 79 113.8 79Z" fill="#44185C" fill-opacity="0.5"/>
+    <path d="M148.8 79C156.09 79 162 84.91 162 92.2C162 99.49 156.09 105.4 148.8 105.4C141.51 105.4 135.60000000000002 99.49 135.60000000000002 92.2C135.60000000000002 84.91 141.51 79 148.8 79Z" fill="#44185C" fill-opacity="0.5"/>
+    <path d="M78.8 114C86.09 114 92 119.91 92 127.2C92 134.49 86.09 140.4 78.8 140.4C71.51 140.4 65.6 134.49 65.6 127.2C65.6 119.91 71.51 114 78.8 114Z" fill="#44185C" fill-opacity="0.5"/>
+    <path d="M113.8 114C121.09 114 127 119.91 127 127.2C127 134.49 121.09 140.4 113.8 140.4C106.51 140.4 100.6 134.49 100.6 127.2C100.6 119.91 106.51 114 113.8 114Z" fill="#44185C" fill-opacity="0.5"/>
+    <path d="M148.8 114C156.09 114 162 119.91 162 127.2C162 134.49 156.09 140.4 148.8 140.4C141.51 140.4 135.60000000000002 134.49 135.60000000000002 127.2C135.60000000000002 119.91 141.51 114 148.8 114Z" fill="#44185C" fill-opacity="0.5"/>
+    <path d="M78.8 149C86.09 149 92 154.91 92 162.2C92 169.49 86.09 175.39999999999998 78.8 175.39999999999998C71.51 175.39999999999998 65.6 169.49 65.6 162.2C65.6 154.91 71.51 149 78.8 149Z" fill="#44185C" fill-opacity="0.5"/>
+    <path d="M113.8 149C121.09 149 127 154.91 127 162.2C127 169.49 121.09 175.39999999999998 113.8 175.39999999999998C106.51 175.39999999999998 100.6 169.49 100.6 162.2C100.6 154.91 106.51 149 113.8 149Z" fill="#44185C" fill-opacity="0.5"/>
+    <path d="M148.8 149C156.09 149 162 154.91 162 162.2C162 169.49 156.09 175.39999999999998 148.8 175.39999999999998C141.51 175.39999999999998 135.60000000000002 169.49 135.60000000000002 162.2C135.60000000000002 154.91 141.51 149 148.8 149Z" fill="#44185C" fill-opacity="0.5"/>
+  </g>
+
+  <!-- raised keys -->
+  <path d="M78 74.4C85.51 74.4 91.6 80.49 91.6 88C91.6 95.51 85.51 101.6 78 101.6C70.49 101.6 64.4 95.51 64.4 88C64.4 80.49 70.49 74.4 78 74.4Z" fill="url(#kbase)"/>
+  <path d="M78 74.4C85.51 74.4 91.6 80.49 91.6 88C91.6 95.51 85.51 101.6 78 101.6C70.49 101.6 64.4 95.51 64.4 88C64.4 80.49 70.49 74.4 78 74.4Z" fill="url(#kshade)"/>
+  <path d="M78 74.4C85.51 74.4 91.6 80.49 91.6 88C91.6 95.51 85.51 101.6 78 101.6C70.49 101.6 64.4 95.51 64.4 88C64.4 80.49 70.49 74.4 78 74.4Z" fill="url(#kspec)"/>
+  <path d="M113 74.4C120.51 74.4 126.6 80.49 126.6 88C126.6 95.51 120.51 101.6 113 101.6C105.49 101.6 99.4 95.51 99.4 88C99.4 80.49 105.49 74.4 113 74.4Z" fill="url(#kbase)"/>
+  <path d="M113 74.4C120.51 74.4 126.6 80.49 126.6 88C126.6 95.51 120.51 101.6 113 101.6C105.49 101.6 99.4 95.51 99.4 88C99.4 80.49 105.49 74.4 113 74.4Z" fill="url(#kshade)"/>
+  <path d="M113 74.4C120.51 74.4 126.6 80.49 126.6 88C126.6 95.51 120.51 101.6 113 101.6C105.49 101.6 99.4 95.51 99.4 88C99.4 80.49 105.49 74.4 113 74.4Z" fill="url(#kspec)"/>
+  <path d="M148 74.4C155.51 74.4 161.6 80.49 161.6 88C161.6 95.51 155.51 101.6 148 101.6C140.49 101.6 134.4 95.51 134.4 88C134.4 80.49 140.49 74.4 148 74.4Z" fill="url(#kbase)"/>
+  <path d="M148 74.4C155.51 74.4 161.6 80.49 161.6 88C161.6 95.51 155.51 101.6 148 101.6C140.49 101.6 134.4 95.51 134.4 88C134.4 80.49 140.49 74.4 148 74.4Z" fill="url(#kshade)"/>
+  <path d="M148 74.4C155.51 74.4 161.6 80.49 161.6 88C161.6 95.51 155.51 101.6 148 101.6C140.49 101.6 134.4 95.51 134.4 88C134.4 80.49 140.49 74.4 148 74.4Z" fill="url(#kspec)"/>
+  <path d="M78 109.4C85.51 109.4 91.6 115.49 91.6 123C91.6 130.51 85.51 136.6 78 136.6C70.49 136.6 64.4 130.51 64.4 123C64.4 115.49 70.49 109.4 78 109.4Z" fill="url(#kbase)"/>
+  <path d="M78 109.4C85.51 109.4 91.6 115.49 91.6 123C91.6 130.51 85.51 136.6 78 136.6C70.49 136.6 64.4 130.51 64.4 123C64.4 115.49 70.49 109.4 78 109.4Z" fill="url(#kshade)"/>
+  <path d="M78 109.4C85.51 109.4 91.6 115.49 91.6 123C91.6 130.51 85.51 136.6 78 136.6C70.49 136.6 64.4 130.51 64.4 123C64.4 115.49 70.49 109.4 78 109.4Z" fill="url(#kspec)"/>
+  <path d="M113 109.4C120.51 109.4 126.6 115.49 126.6 123C126.6 130.51 120.51 136.6 113 136.6C105.49 136.6 99.4 130.51 99.4 123C99.4 115.49 105.49 109.4 113 109.4Z" fill="url(#kbase)"/>
+  <path d="M113 109.4C120.51 109.4 126.6 115.49 126.6 123C126.6 130.51 120.51 136.6 113 136.6C105.49 136.6 99.4 130.51 99.4 123C99.4 115.49 105.49 109.4 113 109.4Z" fill="url(#kshade)"/>
+  <path d="M113 109.4C120.51 109.4 126.6 115.49 126.6 123C126.6 130.51 120.51 136.6 113 136.6C105.49 136.6 99.4 130.51 99.4 123C99.4 115.49 105.49 109.4 113 109.4Z" fill="url(#kspec)"/>
+  <path d="M148 109.4C155.51 109.4 161.6 115.49 161.6 123C161.6 130.51 155.51 136.6 148 136.6C140.49 136.6 134.4 130.51 134.4 123C134.4 115.49 140.49 109.4 148 109.4Z" fill="url(#kbase)"/>
+  <path d="M148 109.4C155.51 109.4 161.6 115.49 161.6 123C161.6 130.51 155.51 136.6 148 136.6C140.49 136.6 134.4 130.51 134.4 123C134.4 115.49 140.49 109.4 148 109.4Z" fill="url(#kshade)"/>
+  <path d="M148 109.4C155.51 109.4 161.6 115.49 161.6 123C161.6 130.51 155.51 136.6 148 136.6C140.49 136.6 134.4 130.51 134.4 123C134.4 115.49 140.49 109.4 148 109.4Z" fill="url(#kspec)"/>
+  <path d="M78 144.4C85.51 144.4 91.6 150.49 91.6 158C91.6 165.51 85.51 171.6 78 171.6C70.49 171.6 64.4 165.51 64.4 158C64.4 150.49 70.49 144.4 78 144.4Z" fill="url(#kbase)"/>
+  <path d="M78 144.4C85.51 144.4 91.6 150.49 91.6 158C91.6 165.51 85.51 171.6 78 171.6C70.49 171.6 64.4 165.51 64.4 158C64.4 150.49 70.49 144.4 78 144.4Z" fill="url(#kshade)"/>
+  <path d="M78 144.4C85.51 144.4 91.6 150.49 91.6 158C91.6 165.51 85.51 171.6 78 171.6C70.49 171.6 64.4 165.51 64.4 158C64.4 150.49 70.49 144.4 78 144.4Z" fill="url(#kspec)"/>
+  <path d="M113 144.4C120.51 144.4 126.6 150.49 126.6 158C126.6 165.51 120.51 171.6 113 171.6C105.49 171.6 99.4 165.51 99.4 158C99.4 150.49 105.49 144.4 113 144.4Z" fill="url(#kbase)"/>
+  <path d="M113 144.4C120.51 144.4 126.6 150.49 126.6 158C126.6 165.51 120.51 171.6 113 171.6C105.49 171.6 99.4 165.51 99.4 158C99.4 150.49 105.49 144.4 113 144.4Z" fill="url(#kshade)"/>
+  <path d="M113 144.4C120.51 144.4 126.6 150.49 126.6 158C126.6 165.51 120.51 171.6 113 171.6C105.49 171.6 99.4 165.51 99.4 158C99.4 150.49 105.49 144.4 113 144.4Z" fill="url(#kspec)"/>
+  <path d="M148 144.4C155.51 144.4 161.6 150.49 161.6 158C161.6 165.51 155.51 171.6 148 171.6C140.49 171.6 134.4 165.51 134.4 158C134.4 150.49 140.49 144.4 148 144.4Z" fill="url(#kbase)"/>
+  <path d="M148 144.4C155.51 144.4 161.6 150.49 161.6 158C161.6 165.51 155.51 171.6 148 171.6C140.49 171.6 134.4 165.51 134.4 158C134.4 150.49 140.49 144.4 148 144.4Z" fill="url(#kshade)"/>
+  <path d="M148 144.4C155.51 144.4 161.6 150.49 161.6 158C161.6 165.51 155.51 171.6 148 171.6C140.49 171.6 134.4 165.51 134.4 158C134.4 150.49 140.49 144.4 148 144.4Z" fill="url(#kspec)"/>
+
+  <!-- badge -->
+  <g opacity="0.45" filter="url(#bblur)">
+    <path d="M183 37C197.91 37 210 49.09 210 64C210 78.91 197.91 91 183 91C168.09 91 156 78.91 156 64C156 49.09 168.09 37 183 37Z" fill="#3A1850"/>
+  </g>
+  <path d="M182 33C196.91 33 209 45.09 209 60C209 74.91 196.91 87 182 87C167.09 87 155 74.91 155 60C155 45.09 167.09 33 182 33Z" fill="url(#bbase)"/>
+  <path d="M182 33C196.91 33 209 45.09 209 60C209 74.91 196.91 87 182 87C167.09 87 155 74.91 155 60C155 45.09 167.09 33 182 33Z" fill="url(#bspec)"/>
+  <path d="M168 54.7C171.20 54.7 173.8 57.30 173.8 60.5C173.8 63.70 171.20 66.3 168 66.3C164.80 66.3 162.2 63.70 162.2 60.5C162.2 57.30 164.80 54.7 168 54.7Z" fill="url(#dot)"/>
+  <path d="M182 54.7C185.20 54.7 187.8 57.30 187.8 60.5C187.8 63.70 185.20 66.3 182 66.3C178.80 66.3 176.2 63.70 176.2 60.5C176.2 57.30 178.80 54.7 182 54.7Z" fill="url(#dot)"/>
+  <path d="M196 54.7C199.20 54.7 201.8 57.30 201.8 60.5C201.8 63.70 199.20 66.3 196 66.3C192.80 66.3 190.2 63.70 190.2 60.5C190.2 57.30 192.80 54.7 196 54.7Z" fill="url(#dot)"/>
+
+  <defs>
+    <filter id="fshadow" x="41" y="194" width="144" height="40" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.5"/>
+    </filter>
+    <filter id="kblur" x="40" y="52" width="146" height="146" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="2.1"/>
+    </filter>
+    <filter id="bblur" x="145" y="27" width="76" height="76" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+
+    <linearGradient id="side" x1="113" y1="178" x2="113" y2="206" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A866C2"/>
+      <stop offset="1" stop-color="#6A3286"/>
+    </linearGradient>
+    <radialGradient id="sideshade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(127 198) scale(90.52 73)">
+      <stop stop-opacity="0"/>
+      <stop offset="0.6" stop-opacity="0"/>
+      <stop offset="1" stop-color="#3A1850" stop-opacity="0.5"/>
+    </radialGradient>
+
+    <radialGradient id="tbase" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(82 82) scale(148.92000000000002 148.92000000000002)">
+      <stop stop-color="#E5C3F0"/>
+      <stop offset="0.3" stop-color="#D4A2E6"/>
+      <stop offset="0.7" stop-color="#B570CC"/>
+      <stop offset="1" stop-color="#7A3E96"/>
+    </radialGradient>
+    <radialGradient id="tshade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(125 180.48) scale(90.52 87.6)">
+      <stop stop-opacity="0"/>
+      <stop offset="0.65" stop-opacity="0"/>
+      <stop offset="1" stop-color="#3A1850" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="tspec" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(74 76) scale(52.559999999999995 43.8)">
+      <stop stop-color="white" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="kwell" cx="50%" cy="42%" r="52%">
+      <stop stop-color="#5E2A7A" stop-opacity="0.24"/>
+      <stop offset="0.72" stop-color="#5E2A7A" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#5E2A7A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="kbase" cx="40%" cy="26%" r="80%">
+      <stop stop-color="#F0D6F8"/>
+      <stop offset="0.3" stop-color="#E5C3F0"/>
+      <stop offset="0.7" stop-color="#C48DD8"/>
+      <stop offset="1" stop-color="#8E56A8"/>
+    </radialGradient>
+    <radialGradient id="kshade" cx="46%" cy="36%" r="70%">
+      <stop stop-opacity="0"/>
+      <stop offset="0.65" stop-opacity="0"/>
+      <stop offset="1" stop-color="#472858" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="kspec" cx="35%" cy="29%" r="19%">
+      <stop stop-color="white" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="bbase" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(176.5 51.5) scale(35.910000000000004 35.1)">
+      <stop stop-color="white"/>
+      <stop offset="0.5" stop-color="#F0EDF8"/>
+      <stop offset="1" stop-color="#D6D1EA"/>
+    </radialGradient>
+    <radialGradient id="bspec" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(174 49) scale(15.120000000000001 14.580000000000002)">
+      <stop stop-color="white" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dot" cx="36%" cy="30%" r="78%">
+      <stop stop-color="#C9C4F8"/>
+      <stop offset="0.35" stop-color="#9C92EE"/>
+      <stop offset="0.7" stop-color="#7E70DE"/>
+      <stop offset="1" stop-color="#6E60C8"/>
+    </radialGradient>
+  </defs>
 </svg>

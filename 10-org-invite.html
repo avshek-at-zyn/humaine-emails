@@ -5,139 +5,143 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="x-apple-disable-message-reformatting">
-<meta name="color-scheme" content="dark light">
-<meta name="supported-color-schemes" content="dark light">
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+<meta name="color-scheme" content="dark">
+<meta name="supported-color-schemes" content="dark">
 <title>{{inviter_name}} saved you a seat at {{org_name}}</title>
 <!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
 <![endif]-->
-<link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+  :root{color-scheme:dark;supported-color-schemes:dark;}
   body,table,td,a{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
   table,td{mso-table-lspace:0pt;mso-table-rspace:0pt;}
   img{-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;}
-  body{margin:0!important;padding:0!important;width:100%!important;background-color:#14081E;}
+  body{margin:0!important;padding:0!important;width:100%!important;background-color:#090B14;}
   td{mso-line-height-rule:exactly;}
-  a{color:#8FA2FF;}
-  .grad-text{background:linear-gradient(135deg,#5271FF 0%,#B5B7F6 55%,#E5C3F0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
-  html.theme-light body,html.theme-light .page{background-color:#EFEAF6!important;}
-  html.theme-light .card{background-color:#FFFFFF!important;}
-  html.theme-light .hair{border-color:#E4DCEF!important;}
-  html.theme-light .hairbg{background-color:#E4DCEF!important;}
-  html.theme-light .t1{color:#180A24!important;}
-  html.theme-light .t2{color:#5A4E6E!important;}
-  html.theme-light .t3{color:#8C7FA3!important;}
-  html.theme-light .tb{color:#4A5BD6!important;}
-  html.theme-light a{color:#4A5BD6;}
+  a{color:#A78BFA;}
+  u + .body a, #MessageViewBody a{color:inherit;text-decoration:none;}
   @media screen and (max-width:620px){
-    .px{padding-left:28px!important;padding-right:28px!important;}
-    .h1{font-size:28px!important;line-height:1.2!important;}
+    .px{padding-left:24px!important;padding-right:24px!important;}
+    .h1{font-size:27px!important;line-height:1.25!important;}
+    .lead{font-size:15px!important;}
   }
 </style>
 </head>
-<body class="page" style="margin:0;padding:0;background-color:#14081E;">
+<body class="body" style="margin:0;padding:0;background-color:#090B14;">
 
-<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#14081E;">{{inviter_name}} invited you to join {{org_name}} on HumAIne. The seat is saved until {{expiry_date}}.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#090B14;">{{inviter_name}} invited you to join {{org_name}} on humAIne. Your seat is saved until {{expiry_date}}.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="page" bgcolor="#14081E">
-<tr><td align="center" style="padding:0;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#090B14" style="background-color:#090B14;">
+<tr><td align="center" style="padding:0 0 8px;">
 
-<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" class="card" style="max-width:600px;width:100%;background-color:#180A24;">
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td><![endif]-->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;">
 
-  <tr><td height="3" bgcolor="#5271FF" style="height:3px;line-height:3px;font-size:3px;background:linear-gradient(135deg,#5271FF 0%,#B5B7F6 55%,#E5C3F0 100%);">&nbsp;</td></tr>
-
-  <tr><td align="center" style="background-color:#12071C;padding:20px 24px;">
-    <span style="font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:19px;color:#F5F0FA;">Hum<span class="grad-text" style="color:#5271FF;">AI</span>ne</span>
+  <!-- masthead : official humAIne identifier -->
+  <tr><td align="center" style="padding:28px 24px 6px;">
+    <img src="https://humaine-email.vercel.app/img/brand/lockup@2x.png" width="144" height="36" alt="humAIne" style="display:block;width:144px;height:36px;border:0;">
   </td></tr>
 
-  <!-- hero image -->
+  <!-- hero : app clay illustration in a planetary scene, edges fade into the canvas -->
   <tr><td>
-    <a href="{{accept_invite_url}}"><img src="https://humaine-email.vercel.app/img/gate.jpg" width="600" alt="An open gateway of two glowing pillars, with a path of light leading in" style="display:block;width:100%;height:auto;border:0;"></a>
+    <img src="https://humaine-email.vercel.app/img/hero/10-org-invite.jpg" width="600" alt="A lilac envelope holding an invitation card with a green check, orbited by a ringed pink planet and a ringed glass planet" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
   </td></tr>
 
-  <!-- clay icon -->
-  <tr><td class="px" style="padding:40px 56px 0;"><img src="https://humaine-email.vercel.app/img/icons/gate.png" width="76" height="76" alt="" style="display:block;width:76px;height:76px;border:0;"></td></tr>
-
-  <!-- body -->
-  <tr><td class="px" style="padding:22px 56px 8px;">
-    <p class="tb" style="margin:0 0 18px;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:#B5B7F6;">Organization invite</p>
-    <h1 class="h1 t1" style="margin:0 0 26px;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:600;font-size:34px;line-height:1.15;letter-spacing:-0.5px;color:#F5F0FA;">Your name&rsquo;s<br>on the door.</h1>
-    <p class="t2" style="margin:0 0 22px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:15.5px;line-height:1.8;color:#A99FBB;">Hi {{first_name}} &mdash; <strong class="t1" style="color:#F5F0FA;font-weight:700;">{{inviter_name}}</strong> saved you a seat at <strong class="t1" style="color:#F5F0FA;font-weight:700;">{{org_name}}</strong> on HumAIne. Accept, and you&rsquo;re inside the organization&rsquo;s account &mdash; chat, news, and document generation, all under one roof.</p>
-    <p class="t2" style="margin:0 0 30px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:15.5px;line-height:1.8;color:#A99FBB;">Here&rsquo;s the invitation, in full. If it all checks out, joining is one click &mdash; no forms, no setup marathon.</p>
+  <!-- status chip : info -->
+  <tr><td align="center" class="px" style="padding:4px 40px 0;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
+      <td style="padding:7px 14px;background-color:#1C1A30;border:1px solid #383159;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:14px;font-weight:600;color:#C4B5FD;">&#10022;&nbsp; Organisation invite</td>
+    </tr></table>
   </td></tr>
 
-  <!-- invitation ledger -->
-  <tr><td class="px" style="padding:0 56px 8px;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-      <tr>
-        <td class="hair t3" width="38%" style="padding:14px 0;border-top:1px solid #2F2444;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">Invited by</td>
-        <td class="hair t1" align="right" style="padding:14px 0;border-top:1px solid #2F2444;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:14px;color:#F5F0FA;">{{inviter_name}} &middot; {{inviter_email}}</td>
-      </tr>
-      <tr>
-        <td class="hair t3" style="padding:14px 0;border-top:1px solid #2F2444;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">Organization</td>
-        <td class="hair t1" align="right" style="padding:14px 0;border-top:1px solid #2F2444;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:14px;color:#F5F0FA;">{{org_name}}</td>
-      </tr>
-      <tr>
-        <td class="hair t3" style="padding:14px 0;border-top:1px solid #2F2444;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">Your role</td>
-        <td class="hair t1" align="right" style="padding:14px 0;border-top:1px solid #2F2444;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:14px;color:#F5F0FA;">{{role_name}}</td>
-      </tr>
-      <tr>
-        <td class="hair t3" style="padding:14px 0;border-top:1px solid #2F2444;border-bottom:1px solid #2F2444;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6F6383;">Invite expires</td>
-        <td class="hair t1" align="right" style="padding:14px 0;border-top:1px solid #2F2444;border-bottom:1px solid #2F2444;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:600;font-size:14px;color:#F5F0FA;">{{expiry_date}}</td>
-      </tr>
+  <!-- headline + lead -->
+  <tr><td align="center" class="px" style="padding:22px 48px 0;">
+    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;">{{inviter_name}} saved you&nbsp;a&nbsp;seat.</h1>
+    <p class="lead" style="margin:16px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#B4B5C4;">Hi {{first_name}} &mdash; you&rsquo;re invited to join {{org_name}} on humAIne. Accept, and you&rsquo;re in: chat, news and document generation, all under one roof.</p>
+  </td></tr>
+
+  <!-- invitation card -->
+  <tr><td class="px" style="padding:28px 40px 0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#15171F;border:1px solid #23252E;border-radius:16px;">
+      <tr><td style="padding:18px 22px 18px;border-bottom:1px solid #1F2129;">
+        <p style="margin:0 0 5px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Organisation</p>
+        <p style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:18px;line-height:24px;font-weight:500;color:#FFFFFF;">{{org_name}}</p>
+      </td></tr>
+      <tr><td style="padding:16px 22px;border-bottom:1px solid #1F2129;">
+        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Invited by</p>
+        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">{{inviter_name}}<br><span style="font-size:14px;font-weight:400;color:#B4B5C4;word-wrap:break-word;overflow-wrap:anywhere;word-break:break-word;">{{inviter_email}}</span></p>
+      </td></tr>
+      <tr><td style="padding:16px 22px;border-bottom:1px solid #1F2129;">
+        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Your role</p>
+        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">{{role_name}}</p>
+      </td></tr>
+      <tr><td style="padding:16px 22px;border-bottom:1px solid #1F2129;">
+        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Invite expires</p>
+        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">{{expiry_date}}</p>
+      </td></tr>
+      <tr><td style="padding:14px 22px 16px;">
+        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;font-weight:500;color:#C4B5FD;">&#10022;&nbsp; If it all checks out, joining is one click. No forms, no setup marathon.</p>
+      </td></tr>
     </table>
   </td></tr>
 
-  <!-- CTA -->
-  <tr><td class="px" style="padding:34px 56px 16px;">
+  <!-- primary CTA -->
+  <tr><td class="px" style="padding:28px 40px 0;">
     <!--[if mso]>
-    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{accept_invite_url}}" style="height:50px;v-text-anchor:middle;width:170px;" arcsize="50%" stroke="f" fillcolor="#5271FF">
-      <w:anchorlock/><center style="color:#FFFFFF;font-family:'Segoe UI',Arial,sans-serif;font-size:15px;font-weight:bold;">Take your seat</center>
+    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{accept_invite_url}}" style="height:52px;v-text-anchor:middle;width:520px;" arcsize="31%" stroke="f" fillcolor="#768AFF">
+      <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
+      <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Accept invitation</center>
     </v:roundrect>
     <![endif]-->
     <!--[if !mso]><!-->
-    <a href="{{accept_invite_url}}" style="display:inline-block;background-color:#5271FF;color:#FFFFFF;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-weight:700;font-size:15px;text-decoration:none;padding:16px 36px;border-radius:999px;">Take your seat</a>
+    <a href="{{accept_invite_url}}" style="display:block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:16px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:600;line-height:52px;text-align:center;text-decoration:none;">Accept invitation</a>
     <!--<![endif]-->
   </td></tr>
 
-  <tr><td class="px" style="padding:16px 56px 48px;">
-    <p class="t3" style="margin:0 0 10px;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#6F6383;">If the button doesn&rsquo;t work, copy and paste this link:<br><a href="{{accept_invite_url}}" style="color:#8FA2FF;word-break:break-all;">{{accept_invite_url}}</a></p>
-    <p class="t3" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#6F6383;"><strong class="t2" style="color:#A99FBB;">Didn&rsquo;t expect this?</strong> Ignore this email &mdash; nothing is shared with {{org_name}}, and you won&rsquo;t join unless you accept. Invites you never asked for keep arriving? Tell us at <a href="mailto:{{support_email}}" style="color:#8FA2FF;">{{support_email}}</a>.</p>
+  <!-- reassurance -->
+  <tr><td align="center" class="px" style="padding:24px 48px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#B4B5C4;">Didn&rsquo;t expect this? Ignore it and the seat quietly folds itself away. Nothing is shared with {{org_name}}, and you won&rsquo;t join unless you&nbsp;accept.</p>
   </td></tr>
 
-  <!-- questions line -->
-  <tr><td class="px hair" align="center" style="padding:30px 56px;border-top:1px solid #2F2444;">
-    <p class="t2" style="margin:0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:14px;color:#A99FBB;">Wondering what you&rsquo;re walking into? <a href="{{help_url}}" style="color:#8FA2FF;text-decoration:none;">Talk to a human</a></p>
-  </td></tr>
-
-  <!-- minimal footer : transactional -->
-  <tr><td class="px hair" style="padding:34px 56px 40px;border-top:1px solid #2F2444;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+  <!-- ask humAIne -->
+  <tr><td class="px" style="padding:24px 40px 0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#12131C;border:1px solid #2A2547;border-radius:16px;">
       <tr>
-        <td valign="middle">
-          <p class="t1" style="margin:0;font-family:'Jura','Trebuchet MS',Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;color:#F5F0FA;">ZYN GLOBAL</p>
-          <p class="tb" style="margin:4px 0 0;font-family:'Roboto','Segoe UI',Arial,sans-serif;font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:#B5B7F6;">Intelligence evolved.</p>
+        <td width="52" valign="middle" style="padding:14px 0 14px 16px;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="36" height="35" alt="" style="display:block;width:36px;height:35px;border:0;"></td>
+        <td valign="middle" style="padding:14px 12px;">
+          <p style="margin:0 0 3px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#8E86C9;">Ask humAIne</p>
+          <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:16px;line-height:22px;color:#FFFFFF;text-decoration:none;">&ldquo;What happens when I join an organisation?&rdquo;</a>
         </td>
-        <td valign="middle" align="right" style="font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:12px;">
-          <a href="{{help_url}}" class="t2" style="color:#A99FBB;text-decoration:none;">Help</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="{{security_url}}" class="t2" style="color:#A99FBB;text-decoration:none;">Security</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="{{privacy_url}}" class="t2" style="color:#A99FBB;text-decoration:none;">Privacy</a>
-        </td>
+        <td width="40" valign="middle" align="right" style="padding:14px 18px 14px 0;"><a href="{{chat_url}}" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;line-height:20px;color:#A78BFA;text-decoration:none;">&rarr;</a></td>
       </tr>
     </table>
-    <p class="t3" style="margin:26px 0 0;font-family:'Manrope','Segoe UI',Arial,sans-serif;font-size:10.5px;line-height:1.8;color:#6F6383;">Invitation sent to {{recipient_email}} at the request of {{inviter_email}} &mdash; it can&rsquo;t be unsubscribed from.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}</p>
+  </td></tr>
+
+  <!-- fine print -->
+  <tr><td align="center" class="px" style="padding:22px 48px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">Button not working? Paste this link:<br><a href="{{accept_invite_url}}" style="color:#A78BFA;word-break:break-all;">{{accept_invite_url}}</a><br>Getting invites you didn&rsquo;t ask for? Tell us at <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a>.</p>
+  </td></tr>
+
+  <!-- footer : transactional (no unsubscribe) -->
+  <tr><td class="px" style="padding:44px 40px 0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#1C1E27;">&nbsp;</td></tr></table>
+  </td></tr>
+  <tr><td align="center" class="px" style="padding:30px 40px 40px;">
+    <img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="40" height="39" alt="humAIne" style="display:block;width:40px;height:39px;border:0;margin:0 auto;">
+    <p style="margin:12px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:15px;line-height:20px;color:#C9C3F2;">hum<span style="color:#8FA0FF;">AI</span>ne</p>
+    <p style="margin:4px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:18px;color:#7D7F8F;">Disruptively Human . Trust Co-created.</p>
+    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;">
+      <a href="{{help_url}}" style="color:#A3A5B5;text-decoration:none;">Help centre</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{privacy_url}}" style="color:#A3A5B5;text-decoration:none;">Privacy</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{terms_url}}" style="color:#A3A5B5;text-decoration:none;">Terms</a>
+    </p>
+    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;">One-off invitation sent to {{recipient_email}} at the request of {{inviter_email}}. It isn&rsquo;t a mailing list, so there&rsquo;s nothing to unsubscribe from.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
   </td></tr>
 
 </table>
+<!--[if mso]></td></tr></table><![endif]-->
+
 </td></tr>
 </table>
-
-<script>
-(function(){
-  if (/theme=light/.test(location.search)) document.documentElement.classList.add('theme-light');
-  window.addEventListener('message', function(e){
-    if (e.data === 'theme:light') document.documentElement.classList.add('theme-light');
-    if (e.data === 'theme:dark') document.documentElement.classList.remove('theme-light');
-  });
-})();
-</script>
 </body>
 </html>

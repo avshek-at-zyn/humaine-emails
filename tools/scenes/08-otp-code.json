@@ -1,0 +1,74 @@
+{
+  "name": "08-otp-code",
+  "icon": "img/src/icons/code-bubble.svg",
+  "iconSize": 328,
+  "height": 600,
+  "seed": 8,
+  "planets": [
+    {
+      "type": "glass",
+      "x": 236,
+      "y": 392,
+      "r": 52,
+      "ring": true,
+      "tilt": 16,
+      "ringScale": 2.0
+    },
+    {
+      "type": "pink",
+      "x": 318,
+      "y": 128,
+      "r": 14
+    },
+    {
+      "type": "lilac",
+      "x": 968,
+      "y": 150,
+      "r": 32,
+      "ring": true,
+      "tilt": -30
+    },
+    {
+      "type": "cyan",
+      "x": 1058,
+      "y": 424,
+      "r": 11
+    }
+  ],
+  "orbit": {
+    "scale": 1.3,
+    "tilt": 9,
+    "moon": "blue",
+    "moonR": 9,
+    "moonAt": 0.36
+  },
+  "pinkGlow": {
+    "x": 960,
+    "y": 170,
+    "r": 260
+  },
+  "shootingStar": {
+    "x": 820,
+    "y": 96,
+    "len": 150,
+    "angle": -22
+  },
+  "sparkles": [
+    [
+      430,
+      470,
+      7
+    ],
+    [
+      372,
+      236,
+      5
+    ],
+    [
+      1090,
+      262,
+      5
+    ]
+  ],
+  "iconY": 300
+}

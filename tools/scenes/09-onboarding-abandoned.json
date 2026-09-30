@@ -1,0 +1,18 @@
+{
+  "name": "09-onboarding-abandoned",
+  "icon": "img/src/icons/solar-progress.svg",
+  "iconSize": 460,
+  "iconY": 292,
+  "height": 600,
+  "seed": 9,
+  "planets": [
+    { "type": "blue", "x": 214, "y": 168, "r": 28, "ring": true, "tilt": -22 },
+    { "type": "lilac", "x": 1024, "y": 156, "r": 13 },
+    { "type": "cyan", "x": 996, "y": 410, "r": 9 }
+  ],
+  "orbit": { "scale": 0.92, "tilt": -6, "moon": "pink", "moonR": 7, "moonAt": 0.36 },
+  "pinkGlow": { "x": 650, "y": 322, "r": 220 },
+  "glowRadius": 400,
+  "shootingStar": { "x": 880, "y": 104, "len": 150, "angle": -14 },
+  "sparkles": [[430, 462, 7], [1080, 300, 5], [150, 336, 5]]
+}

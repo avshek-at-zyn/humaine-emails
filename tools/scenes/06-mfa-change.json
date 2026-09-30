@@ -1,0 +1,74 @@
+{
+  "name": "06-mfa-change",
+  "icon": "img/src/icons/shield-alert.svg",
+  "iconSize": 316,
+  "height": 600,
+  "seed": 6,
+  "planets": [
+    {
+      "type": "glass",
+      "x": 1010,
+      "y": 404,
+      "r": 44,
+      "ring": true,
+      "tilt": 16,
+      "ringScale": 1.7
+    },
+    {
+      "type": "blue",
+      "x": 236,
+      "y": 178,
+      "r": 22,
+      "ring": true,
+      "tilt": -22,
+      "ringScale": 1.9
+    },
+    {
+      "type": "lilac",
+      "x": 176,
+      "y": 404,
+      "r": 16
+    },
+    {
+      "type": "pink",
+      "x": 884,
+      "y": 132,
+      "r": 12
+    }
+  ],
+  "orbit": {
+    "scale": 1.16,
+    "tilt": 8,
+    "moon": "cyan",
+    "moonR": 8,
+    "moonAt": 0.4
+  },
+  "pinkGlow": {
+    "x": 900,
+    "y": 190,
+    "r": 300
+  },
+  "shootingStar": {
+    "x": 700,
+    "y": 94,
+    "len": 150,
+    "angle": -12
+  },
+  "sparkles": [
+    [
+      420,
+      478,
+      6
+    ],
+    [
+      1090,
+      236,
+      5
+    ],
+    [
+      140,
+      292,
+      6
+    ]
+  ]
+}

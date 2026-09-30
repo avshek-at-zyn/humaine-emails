@@ -1,0 +1,65 @@
+{
+  "name": "03-document-shared",
+  "icon": "img/src/icons/doc-shared.svg",
+  "iconSize": 360,
+  "height": 600,
+  "seed": 3,
+  "planets": [
+    {
+      "type": "lilac",
+      "x": 995,
+      "y": 150,
+      "r": 36,
+      "ring": true,
+      "tilt": 20,
+      "ringScale": 2.0
+    },
+    {
+      "type": "blue",
+      "x": 228,
+      "y": 400,
+      "r": 22
+    },
+    {
+      "type": "cyan",
+      "x": 170,
+      "y": 190,
+      "r": 10
+    }
+  ],
+  "orbit": {
+    "scale": 1.24,
+    "tilt": 12,
+    "moon": "pink",
+    "moonR": 8,
+    "moonAt": 0.85
+  },
+  "pinkGlow": {
+    "x": 720,
+    "y": 330,
+    "r": 170
+  },
+  "shootingStar": {
+    "x": 420,
+    "y": 100,
+    "len": 130,
+    "angle": 20
+  },
+  "sparkles": [
+    [
+      380,
+      150,
+      7
+    ],
+    [
+      850,
+      470,
+      6
+    ],
+    [
+      1075,
+      300,
+      5
+    ]
+  ]
+}

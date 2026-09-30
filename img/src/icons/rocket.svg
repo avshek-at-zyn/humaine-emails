@@ -1,20 +1,220 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <defs>
-    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#7C90FF"/><stop offset=".55" stop-color="#5271FF"/><stop offset="1" stop-color="#4356E0"/>
-    </linearGradient>
-    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#F0D8F8"/><stop offset="1" stop-color="#D3A8E8"/>
-    </linearGradient>
-    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5"/></filter>
-  </defs>
-  <ellipse cx="100" cy="178" rx="48" ry="9" fill="#050208" opacity=".45" filter="url(#blur)"/>
-  <g transform="rotate(38 100 100)">
-    <path fill="url(#g2)" d="M74 118l-22 10 12-30zM126 118l22 10-12-30z" transform="rotate(0 100 100)"/>
-    <path fill="url(#g1)" d="M100 26c20 16 30 40 30 66 0 16-4 30-10 40H80c-6-10-10-24-10-40 0-26 10-50 30-66Z"/>
-    <circle cx="100" cy="82" r="15" fill="#241536"/>
-    <circle cx="100" cy="82" r="15" fill="none" stroke="#ACE1E4" stroke-width="4"/>
-    <path fill="#E5C3F0" d="M92 138h16l-8 26z"/>
-    <ellipse cx="88" cy="48" rx="7" ry="12" fill="#fff" opacity=".35" transform="rotate(-14 88 48)"/>
+<svg width="232" height="235" viewBox="0 0 232 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <!-- hull : lilac clay (local, pre-rotation coordinates) -->
+  <radialGradient id="rkHull" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-25 -28) scale(60 104)">
+    <stop stop-color="#F0D6F8"/>
+    <stop offset="0.3" stop-color="#E5C3F0"/>
+    <stop offset="0.7" stop-color="#C48DD8"/>
+    <stop offset="1" stop-color="#8E56A8"/>
+  </radialGradient>
+  <radialGradient id="rkHullShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(24 18) scale(56 92)">
+    <stop stop-opacity="0"/>
+    <stop offset="0.65" stop-opacity="0"/>
+    <stop offset="1" stop-color="#472858" stop-opacity="0.5"/>
+  </radialGradient>
+  <radialGradient id="rkHullSpec" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-26 -22) scale(16 32)">
+    <stop stop-color="white" stop-opacity="0.7"/>
+    <stop offset="1" stop-color="white" stop-opacity="0"/>
+  </radialGradient>
+
+  <!-- nose cone : violet clay -->
+  <radialGradient id="rkNose" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-14 -74) scale(42 36)">
+    <stop stop-color="#D8D4FA"/>
+    <stop offset="0.35" stop-color="#B5B7F6"/>
+    <stop offset="0.7" stop-color="#8A7EE8"/>
+    <stop offset="1" stop-color="#6E60C8"/>
+  </radialGradient>
+  <radialGradient id="rkNoseShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(10 -48) scale(34 26)">
+    <stop stop-opacity="0"/>
+    <stop offset="0.65" stop-opacity="0"/>
+    <stop offset="1" stop-color="#2E2470" stop-opacity="0.45"/>
+  </radialGradient>
+  <radialGradient id="rkNoseSpec" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-14 -70) scale(10 12)">
+    <stop stop-color="white" stop-opacity="0.65"/>
+    <stop offset="1" stop-color="white" stop-opacity="0"/>
+  </radialGradient>
+
+  <!-- fins : pink-lilac clay -->
+  <radialGradient id="rkFinL" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-58 22) scale(30 54)">
+    <stop stop-color="#F8DDF2"/>
+    <stop offset="0.3" stop-color="#EEC0E6"/>
+    <stop offset="0.7" stop-color="#D38BCB"/>
+    <stop offset="1" stop-color="#9C5496"/>
+  </radialGradient>
+  <radialGradient id="rkFinR" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(44 22) scale(30 54)">
+    <stop stop-color="#F8DDF2"/>
+    <stop offset="0.3" stop-color="#EEC0E6"/>
+    <stop offset="0.7" stop-color="#D38BCB"/>
+    <stop offset="1" stop-color="#9C5496"/>
+  </radialGradient>
+  <radialGradient id="rkFinLShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-46 58) scale(26 40)">
+    <stop stop-opacity="0"/>
+    <stop offset="0.65" stop-opacity="0"/>
+    <stop offset="1" stop-color="#472858" stop-opacity="0.5"/>
+  </radialGradient>
+  <radialGradient id="rkFinRShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(58 58) scale(26 40)">
+    <stop stop-opacity="0"/>
+    <stop offset="0.65" stop-opacity="0"/>
+    <stop offset="1" stop-color="#472858" stop-opacity="0.5"/>
+  </radialGradient>
+  <radialGradient id="rkFinLSpec" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-58 24) scale(8 14)">
+    <stop stop-color="white" stop-opacity="0.6"/>
+    <stop offset="1" stop-color="white" stop-opacity="0"/>
+  </radialGradient>
+
+  <!-- nozzle : deep violet -->
+  <radialGradient id="rkNozzle" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-12 64) scale(34 20)">
+    <stop stop-color="#D8D4FA"/>
+    <stop offset="0.35" stop-color="#B5B7F6"/>
+    <stop offset="0.7" stop-color="#8A7EE8"/>
+    <stop offset="1" stop-color="#6E60C8"/>
+  </radialGradient>
+  <radialGradient id="rkNozzleShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6 70) scale(24 12)">
+    <stop stop-opacity="0"/>
+    <stop offset="0.6" stop-opacity="0"/>
+    <stop offset="1" stop-color="#2E2470" stop-opacity="0.5"/>
+  </radialGradient>
+
+  <!-- porthole : white rim, blue-violet glass -->
+  <radialGradient id="rkRim" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-7 -14) scale(28)">
+    <stop stop-color="white"/>
+    <stop offset="0.5" stop-color="#F0EDF8"/>
+    <stop offset="1" stop-color="#D6D1EA"/>
+  </radialGradient>
+  <radialGradient id="rkGlass" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-6 -13) scale(21)">
+    <stop stop-color="#D8D4FA"/>
+    <stop offset="0.35" stop-color="#B5B7F6"/>
+    <stop offset="0.7" stop-color="#8A7EE8"/>
+    <stop offset="1" stop-color="#6E60C8"/>
+  </radialGradient>
+  <radialGradient id="rkGlassShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(3 -2) scale(16)">
+    <stop stop-opacity="0"/>
+    <stop offset="0.6" stop-opacity="0"/>
+    <stop offset="1" stop-color="#2E2470" stop-opacity="0.5"/>
+  </radialGradient>
+
+  <!-- flame : blue fading to pink -->
+  <linearGradient id="rkFlame" x1="0" y1="74" x2="0" y2="142" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#C9D1FF"/>
+    <stop offset="0.2" stop-color="#8FA0FF"/>
+    <stop offset="0.42" stop-color="#768AFF"/>
+    <stop offset="0.68" stop-color="#F28AD9" stop-opacity="0.9"/>
+    <stop offset="1" stop-color="#FA81D6" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="rkMid" x1="0" y1="74" x2="0" y2="124" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#E4E8FF"/>
+    <stop offset="0.45" stop-color="#9FAEFF"/>
+    <stop offset="1" stop-color="#768AFF" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="rkCore" x1="0" y1="74" x2="0" y2="108" gradientUnits="userSpaceOnUse">
+    <stop stop-color="white"/>
+    <stop offset="0.55" stop-color="white" stop-opacity="0.85"/>
+    <stop offset="1" stop-color="#E9E2FF" stop-opacity="0"/>
+  </linearGradient>
+
+  <!-- badge : white disc, violet up-arrow -->
+  <radialGradient id="rkBadge" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(168 138) scale(34)">
+    <stop stop-color="white"/>
+    <stop offset="0.5" stop-color="#F0EDF8"/>
+    <stop offset="1" stop-color="#D6D1EA"/>
+  </radialGradient>
+  <radialGradient id="rkBadgeSpec" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(165 136) scale(14)">
+    <stop stop-color="white" stop-opacity="0.6"/>
+    <stop offset="1" stop-color="white" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="rkGlyph" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(168 138) scale(28)">
+    <stop stop-color="#B5B7F6"/>
+    <stop offset="0.4" stop-color="#8A7EE8"/>
+    <stop offset="0.75" stop-color="#6E60C8"/>
+    <stop offset="1" stop-color="#5A4CB4"/>
+  </radialGradient>
+
+  <filter id="rkFloor" x="-30%" y="-200%" width="160%" height="500%">
+    <feGaussianBlur stdDeviation="4"/>
+  </filter>
+  <filter id="rkMain" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#08041A" flood-opacity="0.4"/>
+  </filter>
+  <filter id="rkBadgeShadow" x="-60%" y="-60%" width="220%" height="220%">
+    <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#08041A" flood-opacity="0.35"/>
+  </filter>
+  <filter id="rkSoft" x="-60%" y="-30%" width="220%" height="160%">
+    <feGaussianBlur stdDeviation="1.1"/>
+  </filter>
+  <filter id="rkGlow" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="6"/>
+  </filter>
+
+  <clipPath id="rkUnderClip">
+    <path d="M-34 4C-50 10 -64 26 -68 50C-70 64 -64 72 -52 70C-45 68.8 -37 64.5 -27 56.5L-27 4Z"/>
+    <path d="M34 4C50 10 64 26 68 50C70 64 64 72 52 70C45 68.8 37 64.5 27 56.5L27 4Z"/>
+    <path d="M-19 52H19L23.5 70C24.6 74.5 22 78 17.5 78H-17.5C-22 78 -24.6 74.5 -23.5 70Z"/>
+  </clipPath>
+  <clipPath id="rkHullClip">
+    <path d="M0 -84C24 -84 42 -50 42 -12V36C42 52 33 60 20 60H-20C-33 60 -42 52 -42 36V-12C-42 -50 -24 -84 0 -84Z"/>
+  </clipPath>
+</defs>
+
+<!-- motion streaks + confetti, as in the app's success art -->
+<g opacity="0.32" stroke="#D8D4FA" stroke-width="1.6" stroke-linecap="round">
+  <path d="M40 132L27 150.5"/>
+  <path d="M60 150L50 164.3"/>
+</g>
+<path d="M44.2 50.6L41.1 49.2C40.2 48.8 39.2 49.2 38.8 50.1L37.3 53.2C36.9 54.1 37.3 55.1 38.2 55.5L41.3 57C42.2 57.4 43.2 57 43.6 56.1L45.1 53C45.5 52.1 45.1 51.1 44.2 50.6Z" fill="#FFD166"/>
+<path d="M204.6 70.4L202.4 71.2C201.5 71.5 201.1 72.5 201.4 73.4L202.2 75.6C202.5 76.5 203.5 76.9 204.4 76.6L206.6 75.8C207.5 75.5 207.9 74.5 207.6 73.6L206.8 71.4C206.5 70.5 205.5 70.1 204.6 70.4Z" fill="#7DE8FF"/>
+<circle cx="208" cy="196" r="3.4" fill="#FF9AC4"/>
+<path d="M28.2 98.8L25 99.7C24.4 99.9 24 100.5 24.2 101.1L25.1 104.3C25.3 104.9 25.9 105.3 26.5 105.1L29.7 104.2C30.3 104 30.7 103.4 30.5 102.8L29.6 99.6C29.4 99 28.8 98.6 28.2 98.8Z" fill="#8B7FFF"/>
+
+<!-- floor shadow -->
+<ellipse cx="112" cy="214" rx="58" ry="9" fill="#000000" opacity="0.28" filter="url(#rkFloor)"/>
+
+<!-- exhaust : emissive, sits outside the drop shadow -->
+<g transform="translate(126 102) rotate(35) scale(0.9)">
+  <ellipse cx="0" cy="96" rx="15" ry="24" fill="#768AFF" opacity="0.42" filter="url(#rkGlow)"/>
+  <path d="M-13 74C-18 94 -10 118 0 142C10 118 18 94 13 74Z" fill="url(#rkFlame)" filter="url(#rkSoft)"/>
+  <path d="M-8.5 74C-10.5 88 -5.5 104 0 124C5.5 104 10.5 88 8.5 74Z" fill="url(#rkMid)" filter="url(#rkSoft)"/>
+  <path d="M-5.2 74C-6.4 84 -3.2 96 0 110C3.2 96 6.4 84 5.2 74Z" fill="url(#rkCore)" filter="url(#rkSoft)"/>
+</g>
+
+<!-- rocket -->
+<g filter="url(#rkMain)">
+<g transform="translate(126 102) rotate(35) scale(0.9)">
+  <!-- fins, behind the hull -->
+  <path d="M-34 4C-50 10 -64 26 -68 50C-70 64 -64 72 -52 70C-45 68.8 -37 64.5 -27 56.5L-27 4Z" fill="url(#rkFinL)"/>
+  <path d="M-34 4C-50 10 -64 26 -68 50C-70 64 -64 72 -52 70C-45 68.8 -37 64.5 -27 56.5L-27 4Z" fill="url(#rkFinLShade)"/>
+  <path d="M-34 4C-50 10 -64 26 -68 50C-70 64 -64 72 -52 70C-45 68.8 -37 64.5 -27 56.5L-27 4Z" fill="url(#rkFinLSpec)"/>
+  <path d="M34 4C50 10 64 26 68 50C70 64 64 72 52 70C45 68.8 37 64.5 27 56.5L27 4Z" fill="url(#rkFinR)"/>
+  <path d="M34 4C50 10 64 26 68 50C70 64 64 72 52 70C45 68.8 37 64.5 27 56.5L27 4Z" fill="url(#rkFinRShade)"/>
+
+  <!-- nozzle -->
+  <path d="M-19 52H19L23.5 70C24.6 74.5 22 78 17.5 78H-17.5C-22 78 -24.6 74.5 -23.5 70Z" fill="url(#rkNozzle)"/>
+  <path d="M-19 52H19L23.5 70C24.6 74.5 22 78 17.5 78H-17.5C-22 78 -24.6 74.5 -23.5 70Z" fill="url(#rkNozzleShade)"/>
+
+  <!-- hull, with a soft contact shadow onto the fins -->
+  <g clip-path="url(#rkUnderClip)"><path d="M0 -84C24 -84 42 -50 42 -12V36C42 52 33 60 20 60H-20C-33 60 -42 52 -42 36V-12C-42 -50 -24 -84 0 -84Z" fill="#3A1850" opacity="0.4" filter="url(#rkSoft)" transform="translate(0 1.5) scale(1.04)"/></g>
+  <path d="M0 -84C24 -84 42 -50 42 -12V36C42 52 33 60 20 60H-20C-33 60 -42 52 -42 36V-12C-42 -50 -24 -84 0 -84Z" fill="url(#rkHull)"/>
+  <path d="M0 -84C24 -84 42 -50 42 -12V36C42 52 33 60 20 60H-20C-33 60 -42 52 -42 36V-12C-42 -50 -24 -84 0 -84Z" fill="url(#rkHullShade)"/>
+  <path d="M0 -84C24 -84 42 -50 42 -12V36C42 52 33 60 20 60H-20C-33 60 -42 52 -42 36V-12C-42 -50 -24 -84 0 -84Z" fill="url(#rkHullSpec)"/>
+
+  <!-- nose cone, wrapped onto the hull -->
+  <g clip-path="url(#rkHullClip)">
+    <path d="M-60 -120H60V-52C30 -41 -30 -41 -60 -52Z" fill="url(#rkNose)"/>
+    <path d="M-60 -120H60V-52C30 -41 -30 -41 -60 -52Z" fill="url(#rkNoseShade)"/>
+    <path d="M-60 -120H60V-52C30 -41 -30 -41 -60 -52Z" fill="url(#rkNoseSpec)"/>
   </g>
+
+  <!-- porthole -->
+  <circle cx="0" cy="-8" r="21" fill="url(#rkRim)"/>
+  <circle cx="0" cy="-8" r="14.5" fill="url(#rkGlass)"/>
+  <circle cx="0" cy="-8" r="14.5" fill="url(#rkGlassShade)"/>
+  <ellipse cx="-5.5" cy="-13" rx="4.2" ry="3" fill="white" opacity="0.75" transform="rotate(-30 -5.5 -13)"/>
+</g>
+</g>
+
+<!-- badge : release, up-arrow -->
+<g filter="url(#rkBadgeShadow)">
+  <circle cx="174" cy="150" r="27" fill="url(#rkBadge)"/>
+</g>
+<circle cx="174" cy="150" r="27" fill="url(#rkBadgeSpec)"/>
+<path d="M174 162V140M163.5 149.5L174 139L184.5 149.5" stroke="url(#rkGlyph)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

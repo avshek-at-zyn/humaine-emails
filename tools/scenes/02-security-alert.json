@@ -1,0 +1,17 @@
+{
+  "name": "02-security-alert",
+  "icon": "img/src/icons/device-alert.svg",
+  "iconSize": 316,
+  "height": 600,
+  "seed": 2,
+  "planets": [
+    { "type": "lilac", "x": 980, "y": 262, "r": 40, "ring": true, "tilt": -20, "ringScale": 2.0 },
+    { "type": "glass", "x": 182, "y": 316, "r": 30 },
+    { "type": "cyan", "x": 400, "y": 436, "r": 9 },
+    { "type": "pink", "x": 800, "y": 134, "r": 12 }
+  ],
+  "orbit": { "scale": 1.22, "tilt": 8, "moon": "blue", "moonR": 8, "moonAt": 0.08 },
+  "pinkGlow": { "x": 972, "y": 270, "r": 200 },
+  "shootingStar": { "x": 360, "y": 108, "len": 150, "angle": -20 },
+  "sparkles": [[772, 468, 7], [318, 232, 5.5], [1062, 402, 5]]
+}

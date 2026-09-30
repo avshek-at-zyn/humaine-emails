@@ -1,0 +1,61 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="">
+<defs>
+<linearGradient id="faceFE" x1="10%" y1="0%" x2="90%" y2="100%">
+<stop offset="0%" stop-color="#9C8FFF"/>
+<stop offset="45%" stop-color="#6E5AF0"/>
+<stop offset="100%" stop-color="#4227B8"/>
+</linearGradient>
+<linearGradient id="sideFE" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#38227A"/>
+<stop offset="100%" stop-color="#241456"/>
+</linearGradient>
+<linearGradient id="topFE" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#C2B6FF"/>
+<stop offset="100%" stop-color="#8C7CF5"/>
+</linearGradient>
+<radialGradient id="hiFE" cx="28%" cy="14%" r="55%">
+<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+<stop offset="60%" stop-color="#FFFFFF" stop-opacity="0.04"/>
+<stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="arrowFace" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#F2EEFF"/>
+<stop offset="100%" stop-color="#DCE0FF"/>
+</linearGradient>
+<filter id="dsMainE" x="-80%" y="-50%" width="260%" height="260%">
+<feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#08041A" flood-opacity="0.5"/>
+</filter>
+<filter id="dsBadgeE" x="-100%" y="-60%" width="300%" height="300%">
+<feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#08041A" flood-opacity="0.45"/>
+</filter>
+</defs>
+
+<ellipse cx="100" cy="178" rx="46" ry="8" fill="#000000" opacity="0.25" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.25;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+
+<g filter="url(#dsMainE)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+<path d="M58 48 L58 152 Q58 160 66 160 L142 160 Q150 160 150 152 L150 68 L130 48 Z" fill="url(#sideFE)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+
+
+<g filter="url(#dsMainE)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+<path d="M50 40 L50 144 Q50 152 58 152 L134 152 Q142 152 142 144 L142 60 L122 40 Z" fill="url(#faceFE)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M50 40 L50 144 Q50 152 58 152 L134 152 Q142 152 142 144 L142 60 L122 40 Z" fill="url(#hiFE)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+
+
+<path d="M122 40 L122 60 L142 60 Z" fill="url(#topFE)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+
+<line x1="68" y1="78" x2="112" y2="78" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.9" style="fill:rgb(0, 0, 0);stroke:rgb(255, 255, 255);color:rgb(11, 11, 11);stroke-width:4px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.9;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="68" y1="94" x2="124" y2="94" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.55" style="fill:rgb(0, 0, 0);stroke:rgb(255, 255, 255);color:rgb(11, 11, 11);stroke-width:4px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.55;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="68" y1="110" x2="100" y2="110" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.35" style="fill:rgb(0, 0, 0);stroke:rgb(255, 255, 255);color:rgb(11, 11, 11);stroke-width:4px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.35;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+
+<g filter="url(#dsBadgeE)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+<circle cx="148" cy="52" r="22" fill="url(#arrowFace)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+<path d="M148 62 L148 42" stroke="#4227B8" stroke-width="3.2" fill="none" stroke-linecap="round" style="fill:none;stroke:rgb(66, 39, 184);color:rgb(11, 11, 11);stroke-width:3.2px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M140 50 L148 42 L156 50" stroke="#4227B8" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="fill:none;stroke:rgb(66, 39, 184);color:rgb(11, 11, 11);stroke-width:3.2px;stroke-linecap:round;stroke-linejoin:round;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="138" y1="62" x2="158" y2="62" stroke="#4227B8" stroke-width="3.2" stroke-linecap="round" style="fill:rgb(0, 0, 0);stroke:rgb(66, 39, 184);color:rgb(11, 11, 11);stroke-width:3.2px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</svg>

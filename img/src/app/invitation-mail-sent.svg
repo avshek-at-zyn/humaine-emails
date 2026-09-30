@@ -1,0 +1,149 @@
+<svg viewBox="0 0 200 205" xmlns="http://www.w3.org/2000/svg" style="">
+<defs>
+
+<radialGradient id="envB" cx="38%" cy="25%" r="72%">
+<stop offset="0%" stop-color="#F0D6F8"/>
+<stop offset="30%" stop-color="#E5C3F0"/>
+<stop offset="70%" stop-color="#C48DD8"/>
+<stop offset="100%" stop-color="#8E56A8"/>
+</radialGradient>
+<radialGradient id="envAO" cx="55%" cy="88%" r="55%">
+<stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+<stop offset="65%" stop-color="#000000" stop-opacity="0"/>
+<stop offset="100%" stop-color="#472858" stop-opacity="0.5"/>
+</radialGradient>
+<radialGradient id="envHi" cx="28%" cy="16%" r="28%">
+<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.7"/>
+<stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+</radialGradient>
+
+
+<radialGradient id="flapG" cx="38%" cy="22%" r="68%">
+<stop offset="0%" stop-color="#F5E4FB"/>
+<stop offset="30%" stop-color="#EDD2F5"/>
+<stop offset="70%" stop-color="#D4A2E6"/>
+<stop offset="100%" stop-color="#9C62B8"/>
+</radialGradient>
+<radialGradient id="flapHi" cx="30%" cy="15%" r="26%">
+<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55"/>
+<stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+</radialGradient>
+
+
+<radialGradient id="cardG" cx="38%" cy="22%" r="60%">
+<stop offset="0%" stop-color="#FFFFFF"/>
+<stop offset="50%" stop-color="#F0EDF8"/>
+<stop offset="100%" stop-color="#D6D1EA"/>
+</radialGradient>
+<radialGradient id="cardHi" cx="30%" cy="15%" r="26%">
+<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.5"/>
+<stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+</radialGradient>
+
+
+<radialGradient id="plG" cx="40%" cy="25%" r="65%">
+<stop offset="0%" stop-color="#D0CCF8"/>
+<stop offset="50%" stop-color="#B5B7F6"/>
+<stop offset="100%" stop-color="#8A7EE8"/>
+</radialGradient>
+
+
+<radialGradient id="sealG" cx="40%" cy="22%" r="65%">
+<stop offset="0%" stop-color="#D0CCF8"/>
+<stop offset="35%" stop-color="#B5B7F6"/>
+<stop offset="70%" stop-color="#8A7EE8"/>
+<stop offset="100%" stop-color="#6E60C8"/>
+</radialGradient>
+<radialGradient id="sealHi" cx="32%" cy="18%" r="28%">
+<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55"/>
+<stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+</radialGradient>
+
+
+<radialGradient id="grnBg" cx="40%" cy="25%" r="65%">
+<stop offset="0%" stop-color="#78F0C0"/>
+<stop offset="50%" stop-color="#2ECB8C"/>
+<stop offset="100%" stop-color="#0C6E48"/>
+</radialGradient>
+<radialGradient id="grnHi" cx="35%" cy="20%" r="28%">
+<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.7"/>
+<stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+</radialGradient>
+
+
+<radialGradient id="motG" cx="40%" cy="30%" r="60%">
+<stop offset="0%" stop-color="#FFFFFF"/>
+<stop offset="50%" stop-color="#F0EDF8"/>
+<stop offset="100%" stop-color="#D6D1EA"/>
+</radialGradient>
+
+
+<filter id="sM" x="-30%" y="-20%" width="160%" height="160%">
+<feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#08041A" flood-opacity="0.4"/>
+</filter>
+<filter id="sB" x="-40%" y="-30%" width="180%" height="180%">
+<feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#08041A" flood-opacity="0.35"/>
+</filter>
+<filter id="sS" x="-60%" y="-50%" width="220%" height="220%">
+<feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#08041A" flood-opacity="0.25"/>
+</filter>
+</defs>
+
+<ellipse cx="92" cy="188" rx="50" ry="7" fill="#000000" opacity="0.22" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.22;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+
+<g filter="url(#sB)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+<rect x="54" y="22" width="72" height="96" rx="12" fill="url(#cardG)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<rect x="54" y="22" width="72" height="96" rx="12" fill="url(#cardHi)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+
+<g filter="url(#sS)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+<rect x="66" y="40" width="36" height="10" rx="5" fill="url(#plG)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+<g filter="url(#sS)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+<rect x="66" y="56" width="48" height="10" rx="5" fill="url(#plG)" opacity="0.7" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.7;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+<g filter="url(#sS)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+<rect x="66" y="72" width="28" height="10" rx="5" fill="url(#plG)" opacity="0.45" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.45;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+
+
+<g filter="url(#sS)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+<circle cx="106" cy="94" r="10" fill="url(#sealG)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="106" cy="94" r="10" fill="url(#sealHi)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+<path d="M102 94 L105 97 L111 90" stroke="#FFFFFF" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round" style="fill:none;stroke:rgb(255, 255, 255);color:rgb(11, 11, 11);stroke-width:2.4px;stroke-linecap:round;stroke-linejoin:round;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+
+<g filter="url(#sM)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+<rect x="28" y="88" width="128" height="86" rx="18" fill="url(#envB)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<rect x="28" y="88" width="128" height="86" rx="18" fill="url(#envAO)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<rect x="28" y="88" width="128" height="86" rx="18" fill="url(#envHi)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+
+
+<g filter="url(#sB)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+<path d="M28 88 Q28 82 36 82 L92 116 L148 82 Q156 82 156 88 L156 96 L92 130 L28 96 Z" fill="url(#flapG)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M28 88 Q28 82 36 82 L92 116 L148 82 Q156 82 156 88 L156 96 L92 130 L28 96 Z" fill="url(#flapHi)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+
+
+<g filter="url(#sS)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+<rect x="162" y="98" width="16" height="5" rx="2.5" fill="url(#motG)" transform="rotate(-12 170 100)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+<g filter="url(#sS)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+<rect x="166" y="114" width="20" height="5" rx="2.5" fill="url(#motG)" transform="rotate(-4 176 116)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+<g filter="url(#sS)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+<rect x="164" y="130" width="14" height="5" rx="2.5" fill="url(#motG)" transform="rotate(8 171 132)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+
+
+<g filter="url(#sB)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+<circle cx="154" cy="158" r="22" fill="url(#grnBg)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="154" cy="158" r="22" fill="url(#grnHi)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+<g filter="url(#sS)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+<path d="M145 158 L151 165 L164 150" stroke="#FFFFFF" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="fill:none;stroke:rgb(255, 255, 255);color:rgb(11, 11, 11);stroke-width:5px;stroke-linecap:round;stroke-linejoin:round;opacity:1;font-family:-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+</svg>

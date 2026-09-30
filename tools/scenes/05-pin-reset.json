@@ -1,0 +1,17 @@
+{
+  "name": "05-pin-reset",
+  "icon": "img/src/icons/keypad.svg",
+  "iconSize": 320,
+  "height": 600,
+  "seed": 5,
+  "planets": [
+    { "type": "lilac", "x": 236, "y": 156, "r": 32, "ring": true, "tilt": 16 },
+    { "type": "glass", "x": 978, "y": 404, "r": 46 },
+    { "type": "pink", "x": 900, "y": 124, "r": 12 },
+    { "type": "cyan", "x": 150, "y": 420, "r": 9 }
+  ],
+  "orbit": { "scale": 1.3, "tilt": -8, "moon": "pink", "moonR": 7, "moonAt": 0.62 },
+  "pinkGlow": { "x": 930, "y": 170, "r": 260 },
+  "shootingStar": { "x": 420, "y": 150, "len": 130, "angle": -24 },
+  "sparkles": [[330, 300, 6], [812, 470, 6], [1046, 250, 5]]
+}

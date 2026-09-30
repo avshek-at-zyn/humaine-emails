@@ -1,3 +1,5 @@
 .vercel
 .env*
 .vercel
+tools/node_modules
+tools/.shots

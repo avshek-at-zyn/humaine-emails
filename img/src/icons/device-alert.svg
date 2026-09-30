@@ -1,0 +1,153 @@
+<svg width="232" height="235" viewBox="0 0 232 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- humAIne clay icon: new-device sign-in. Lilac clay phone, dark glassy screen, white location badge. -->
+
+  <!-- ambient flecks (same vocabulary as password-reset-success.svg) -->
+  <g opacity="0.3">
+    <path d="M190 18V32" stroke="#FFE9B3" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M22 58L31 67" stroke="#FFE9B3" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M214 68L205 77" stroke="#FFE9B3" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+  <g opacity="0.6" filter="url(#dvBlurS)"><circle cx="34" cy="38" r="1.8" fill="white"/></g>
+  <g opacity="0.35" filter="url(#dvBlurM)"><circle cx="182" cy="46" r="7" fill="white"/></g>
+  <rect x="196" y="110" width="7" height="7" rx="1.8" transform="rotate(-20 199.5 113.5)" fill="#7DE8FF"/>
+  <rect x="18" y="146" width="6.5" height="6.5" rx="1.6" transform="rotate(25 21.25 149.25)" fill="#8B7FFF"/>
+  <circle cx="204" cy="204" r="3.4" fill="#FF9AC4"/>
+  <rect x="28" y="202" width="6" height="6" rx="1.5" transform="rotate(-14 31 205)" fill="#FFD166"/>
+
+  <!-- floor shadow -->
+  <g opacity="0.32" filter="url(#dvFloor)">
+    <ellipse cx="112" cy="212" rx="60" ry="9" fill="black"/>
+  </g>
+
+  <!-- side keys (sit behind the body) -->
+  <rect x="43" y="68" width="9" height="24" rx="4.5" fill="url(#dvKey)"/>
+  <rect x="43" y="98" width="9" height="16" rx="4.5" fill="url(#dvKey)"/>
+  <rect x="160" y="74" width="9" height="30" rx="4.5" fill="url(#dvKey)"/>
+
+  <!-- phone body : base / bottom shade / specular -->
+  <rect x="48" y="28" width="116" height="166" rx="30" fill="url(#dvBody0)"/>
+  <rect x="48" y="28" width="116" height="166" rx="30" fill="url(#dvBody1)"/>
+  <rect x="48" y="28" width="116" height="166" rx="30" fill="url(#dvBody2)"/>
+
+  <!-- screen : soft recess, dark glass, violet glow, sheen -->
+  <g opacity="0.55" filter="url(#dvRecess)">
+    <rect x="60" y="40.5" width="92" height="142" rx="20" fill="#5E2F78"/>
+  </g>
+  <rect x="62" y="42" width="88" height="138" rx="18" fill="url(#dvScr0)"/>
+  <rect x="62" y="42" width="88" height="138" rx="18" fill="url(#dvScrGlow)"/>
+  <rect x="62" y="42" width="88" height="138" rx="18" fill="url(#dvScrTop)"/>
+  <g clip-path="url(#dvScrClip)">
+    <path d="M62 42H128L62 130Z" fill="url(#dvSheen)"/>
+  </g>
+  <rect x="94" y="50" width="24" height="7" rx="3.5" fill="#0A0718" fill-opacity="0.9"/>
+
+  <!-- on-screen person : violet clay -->
+  <circle cx="106" cy="100" r="44" fill="url(#dvHalo)"/>
+  <circle cx="106" cy="84" r="14" fill="url(#dvHead0)"/>
+  <circle cx="106" cy="84" r="14" fill="url(#dvHead1)"/>
+  <circle cx="106" cy="84" r="14" fill="url(#dvHead2)"/>
+  <path d="M83 124C83 111 93 103 106 103C119 103 129 111 129 124C129 127 127 129 124 129H88C85 129 83 127 83 124Z" fill="url(#dvSh0)"/>
+  <path d="M83 124C83 111 93 103 106 103C119 103 129 111 129 124C129 127 127 129 124 129H88C85 129 83 127 83 124Z" fill="url(#dvSh1)"/>
+  <path d="M83 124C83 111 93 103 106 103C119 103 129 111 129 124C129 127 127 129 124 129H88C85 129 83 127 83 124Z" fill="url(#dvSh2)"/>
+  <rect x="84" y="142" width="44" height="7" rx="3.5" fill="#B5B7F6" fill-opacity="0.42"/>
+  <rect x="90" y="155" width="32" height="7" rx="3.5" fill="#B5B7F6" fill-opacity="0.22"/>
+
+  <!-- badge : white disc + violet location pin (scaled to ~35% of body width, centred on the lower-right bezel) -->
+  <g transform="matrix(0.82 0 0 0.82 29.16 29.16)">
+  <g opacity="0.45" filter="url(#dvBadgeSh)">
+    <circle cx="164" cy="167" r="25" fill="#2A0F3E"/>
+  </g>
+  <circle cx="162" cy="162" r="25" fill="url(#dvBadge0)"/>
+  <circle cx="162" cy="162" r="25" fill="url(#dvBadge1)"/>
+  <ellipse cx="162" cy="175.2" rx="5.4" ry="1.8" fill="#6E60C8" fill-opacity="0.28"/>
+  <path d="M162 174.5C158 169.9 152 163.7 152 157A10 10 0 0 1 172 157C172 163.7 166 169.9 162 174.5Z" fill="url(#dvPin0)"/>
+  <path d="M162 174.5C158 169.9 152 163.7 152 157A10 10 0 0 1 172 157C172 163.7 166 169.9 162 174.5Z" fill="url(#dvPin1)"/>
+  <circle cx="162" cy="157" r="3.9" fill="#FBFAFF"/>
+  </g>
+
+  <defs>
+    <filter id="dvFloor" x="40" y="190" width="150" height="44" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.5"/>
+    </filter>
+    <filter id="dvRecess" x="52" y="32" width="108" height="158" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="1.6"/>
+    </filter>
+    <filter id="dvBadgeSh" x="129" y="132" width="70" height="70" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.2"/>
+    </filter>
+    <filter id="dvBlurS" x="28" y="32" width="12" height="12" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="1.8"/>
+    </filter>
+    <filter id="dvBlurM" x="168" y="32" width="28" height="28" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.4"/>
+    </filter>
+    <clipPath id="dvScrClip"><rect x="62" y="42" width="88" height="138" rx="18"/></clipPath>
+
+    <linearGradient id="dvKey" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#D4A2E6"/><stop offset="1" stop-color="#7A3E96"/>
+    </linearGradient>
+
+    <!-- body: lilac clay, lit top-left -->
+    <radialGradient id="dvBody0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(94.4 58) scale(90 126)">
+      <stop stop-color="#F0D6F8"/><stop offset="0.3" stop-color="#E5C3F0"/><stop offset="0.7" stop-color="#C48DD8"/><stop offset="1" stop-color="#8E56A8"/>
+    </radialGradient>
+    <radialGradient id="dvBody1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(111.8 172.4) scale(67 96)">
+      <stop stop-opacity="0"/><stop offset="0.65" stop-opacity="0"/><stop offset="1" stop-color="#472858" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="dvBody2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(70 44) scale(38 34)">
+      <stop stop-color="white" stop-opacity="0.55"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- screen: dark glass -->
+    <linearGradient id="dvScr0" x1="62" y1="42" x2="150" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3A2E6B"/><stop offset="0.45" stop-color="#211A46"/><stop offset="1" stop-color="#130E2B"/>
+    </linearGradient>
+    <radialGradient id="dvScrGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(106 108) scale(64 72)">
+      <stop stop-color="#9B8CF5" stop-opacity="0.6"/><stop offset="0.5" stop-color="#7A6AE0" stop-opacity="0.24"/><stop offset="1" stop-color="#7A6AE0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="dvScrTop" x1="0" y1="42" x2="0" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A0716" stop-opacity="0.55"/><stop offset="0.12" stop-color="#0A0716" stop-opacity="0"/>
+      <stop offset="0.86" stop-color="#0A0716" stop-opacity="0"/><stop offset="1" stop-color="#0A0716" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="dvSheen" x1="62" y1="42" x2="104.2" y2="73.7" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0.18"/><stop offset="0.55" stop-color="white" stop-opacity="0.06"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="dvHalo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(106 100) scale(44 44)">
+      <stop stop-color="#8A7EE8" stop-opacity="0.28"/><stop offset="1" stop-color="#8A7EE8" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- person: violet clay -->
+    <radialGradient id="dvHead0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(101 77) scale(26 26)">
+      <stop stop-color="#D8D4FA"/><stop offset="0.35" stop-color="#B5B7F6"/><stop offset="0.7" stop-color="#8A7EE8"/><stop offset="1" stop-color="#6E60C8"/>
+    </radialGradient>
+    <radialGradient id="dvHead1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(103 79) scale(18 18)">
+      <stop stop-opacity="0"/><stop offset="0.65" stop-opacity="0"/><stop offset="1" stop-color="#2A1A5E" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="dvHead2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(101 77) scale(7.5 7.5)">
+      <stop stop-color="white" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dvSh0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(99 106) scale(38 26)">
+      <stop stop-color="#D8D4FA"/><stop offset="0.35" stop-color="#B5B7F6"/><stop offset="0.7" stop-color="#8A7EE8"/><stop offset="1" stop-color="#6E60C8"/>
+    </radialGradient>
+    <radialGradient id="dvSh1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(104 107) scale(30 23)">
+      <stop stop-opacity="0"/><stop offset="0.65" stop-opacity="0"/><stop offset="1" stop-color="#2A1A5E" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="dvSh2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(94 108) scale(12 7)">
+      <stop stop-color="white" stop-opacity="0.42"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- badge: white clay disc -->
+    <radialGradient id="dvBadge0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(157 149.75) scale(32.75 32.75)">
+      <stop stop-color="white"/><stop offset="0.5" stop-color="#F0EDF8"/><stop offset="1" stop-color="#D6D1EA"/>
+    </radialGradient>
+    <radialGradient id="dvBadge1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(154.5 147.25) scale(14 14)">
+      <stop stop-color="white" stop-opacity="0.6"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dvPin0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(158.3 151.5) scale(18 23)">
+      <stop stop-color="#D8D4FA"/><stop offset="0.35" stop-color="#B5B7F6"/><stop offset="0.7" stop-color="#8A7EE8"/><stop offset="1" stop-color="#6E60C8"/>
+    </radialGradient>
+    <radialGradient id="dvPin1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(164 172.5) scale(12.5 12.5)">
+      <stop stop-opacity="0"/><stop offset="0.6" stop-opacity="0"/><stop offset="1" stop-color="#2A1A5E" stop-opacity="0.35"/>
+    </radialGradient>
+  </defs>
+</svg>
