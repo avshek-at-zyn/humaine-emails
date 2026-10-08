@@ -26,16 +26,17 @@
     .px{padding-left:24px!important;padding-right:24px!important;}
     .h1{font-size:27px!important;line-height:1.25!important;}
     .lead{font-size:15px!important;}
-    .code{font-size:34px!important;letter-spacing:6px!important;padding-left:6px!important;}
+    .fig{font-size:36px!important;line-height:44px!important;letter-spacing:6px!important;padding-left:6px!important;}
+    .figbox{padding-top:30px!important;padding-bottom:30px!important;}
   }
   @media screen and (max-width:380px){
-    .code{font-size:30px!important;letter-spacing:4px!important;padding-left:4px!important;}
+    .fig{font-size:32px!important;line-height:40px!important;letter-spacing:4px!important;padding-left:4px!important;}
   }
 </style>
 </head>
 <body class="body" style="margin:0;padding:0;background-color:#090B14;">
 
-<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#090B14;">One use, short fuse, then it&rsquo;s gone. Nobody from humAIne will ever ask for it.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#090B14;">Enter it to finish signing in. It expires in {{expiry_minutes}} minutes, and nobody from humAIne will ever ask you for it.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#090B14" style="background-color:#090B14;">
 <tr><td align="center" style="padding:0 0 8px;">
@@ -53,74 +54,55 @@
     <img src="https://humaine-email.vercel.app/img/hero/08-otp-code.jpg" width="600" alt="A violet chat bubble holding a row of six code dots, with a clock badge, orbiting among small ringed planets" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
   </td></tr>
 
-  <!-- status chip -->
+  <!-- status chip : info -->
   <tr><td align="center" class="px" style="padding:4px 40px 0;">
     <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
       <td style="padding:7px 14px;background-color:#1C1A30;border:1px solid #383159;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:14px;font-weight:600;color:#C4B5FD;">&#10022;&nbsp; Sign-in code</td>
     </tr></table>
   </td></tr>
 
-  <!-- headline + lead -->
+  <!-- headline -->
   <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;">Here&rsquo;s your code.</h1>
-    <p class="lead" style="margin:16px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#B4B5C4;">Punch this in on the sign-in screen and you&rsquo;re through, {{first_name}}.</p>
+    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;text-wrap:balance;">Enter this code to finish signing&nbsp;in</h1>
   </td></tr>
 
-  <!-- the code : focal card -->
-  <tr><td class="px" style="padding:28px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#15171F;border:1px solid #383159;border-radius:16px;">
-      <tr><td align="center" style="padding:30px 20px 26px;">
-        <p class="code" style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:38px;line-height:46px;font-weight:700;letter-spacing:10px;padding-left:10px;word-break:break-all;color:#FFFFFF;">{{otp_code}}</p>
-        <p style="margin:12px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;color:#7D7F8F;">Expires in {{expiry_minutes}} min &middot; one use</p>
+  <!-- signature : the code as the figure. Hairlines, not a card; nothing else at this size.
+       No spaces are inserted between digits, so it pastes cleanly. -->
+  <tr><td class="px" style="padding:30px 40px 0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#23252E;">&nbsp;</td></tr>
+      <tr><td class="figbox" align="center" style="padding:38px 0 36px;">
+        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#8E86C9;">One-time code</p>
+        <p class="fig" style="margin:14px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:54px;line-height:62px;font-weight:500;letter-spacing:12px;padding-left:12px;color:#FFFFFF;word-break:break-all;">{{otp_code}}</p>
+        <p style="margin:14px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;color:#7D7F8F;">Expires in {{expiry_minutes}} minutes &middot; works once</p>
       </td></tr>
+      <tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#23252E;">&nbsp;</td></tr>
     </table>
   </td></tr>
 
-  <!-- request details -->
-  <tr><td class="px" style="padding:24px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#15171F;border:1px solid #23252E;border-radius:16px;">
-      <tr><td style="padding:16px 22px;border-bottom:1px solid #1F2129;">
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Requested</p>
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">{{request_time}} ({{timezone}})</p>
-      </td></tr>
-      <tr><td style="padding:16px 22px;">
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">From</p>
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">{{device_name}} &middot; {{city}}, {{country}}</p>
-      </td></tr>
-    </table>
+  <!-- request : one quiet line -->
+  <tr><td align="center" class="px" style="padding:16px 48px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.6;color:#7D7F8F;">Requested at {{request_time}} ({{timezone}}) from {{device_name}}, {{city}}, {{country}}</p>
   </td></tr>
 
-  <!-- safety note -->
-  <tr><td align="center" class="px" style="padding:24px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#B4B5C4;"><span style="color:#FFFFFF;font-weight:600;">Nobody from humAIne will ever ask for this code.</span> Not on a call, not in a chat, not in an email that looks a lot like this one. If someone asks, they&rsquo;re not us.</p>
+  <!-- safety -->
+  <tr><td align="center" class="px" style="padding:30px 48px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#B4B5C4;"><span style="color:#FFFFFF;font-weight:600;">Nobody from humAIne will ever ask you for this code, {{first_name}}.</span> Not on a call, in a chat or by email. Anyone who asks isn&rsquo;t&nbsp;us.</p>
   </td></tr>
 
-  <!-- didn't request : calm callout, secondary action -->
-  <tr><td class="px" style="padding:24px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#15171F;border:1px solid #23252E;border-radius:16px;">
-      <tr><td style="padding:20px 22px 22px;">
-        <p style="margin:0 0 6px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:600;color:#FFFFFF;">Didn&rsquo;t ask for a code?</p>
-        <p style="margin:0 0 18px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6;color:#B4B5C4;">Then someone may have your password. They can&rsquo;t get in without this code, so don&rsquo;t share it &mdash; and lock things down while you&rsquo;re here.</p>
-        <!--[if mso]>
-        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{secure_account_url}}" style="height:48px;v-text-anchor:middle;width:474px;" arcsize="30%" strokecolor="#2E3040" fillcolor="#1B1D26">
-          <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;">Secure my account</center>
-        </v:roundrect>
-        <![endif]-->
-        <!--[if !mso]><!-->
-        <a href="{{secure_account_url}}" style="display:block;background-color:#1B1D26;border:1px solid #2E3040;border-radius:14px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;font-weight:600;line-height:46px;text-align:center;text-decoration:none;">Secure my account</a>
-        <!--<![endif]-->
-      </td></tr>
-    </table>
+  <!-- didn't ask : one sentence, inline link -->
+  <tr><td align="center" class="px" style="padding:14px 48px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.65;color:#B4B5C4;">Didn&rsquo;t ask for it? Someone may know your password, but they can&rsquo;t get in without this code. <a href="{{secure_account_url}}" style="color:#A78BFA;font-weight:600;text-decoration:none;white-space:nowrap;">Secure your account&nbsp;&rarr;</a></p>
   </td></tr>
 
   <!-- ask humAIne -->
-  <tr><td class="px" style="padding:24px 40px 0;">
+  <tr><td class="px" style="padding:30px 40px 0;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#12131C;border:1px solid #2A2547;border-radius:16px;">
       <tr>
         <td width="52" valign="middle" style="padding:14px 0 14px 16px;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="36" height="35" alt="" style="display:block;width:36px;height:35px;border:0;"></td>
         <td valign="middle" style="padding:14px 12px;">
           <p style="margin:0 0 3px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#8E86C9;">Ask humAIne</p>
-          <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:16px;line-height:22px;color:#FFFFFF;text-decoration:none;">&ldquo;Is this email really from humAIne?&rdquo;</a>
+          <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:16px;line-height:22px;color:#FFFFFF;text-decoration:none;">&ldquo;Is this email real?&rdquo;</a>
         </td>
         <td width="40" valign="middle" align="right" style="padding:14px 18px 14px 0;"><a href="{{chat_url}}" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;line-height:20px;color:#A78BFA;text-decoration:none;">&rarr;</a></td>
       </tr>
@@ -129,10 +111,10 @@
 
   <!-- fine print -->
   <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">Didn&rsquo;t ask for this and the button won&rsquo;t work? Paste this link:<br><a href="{{secure_account_url}}" style="color:#A78BFA;word-break:break-all;">{{secure_account_url}}</a><br>Someone asking for your code? Tell us at <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a>.</p>
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">Someone asking for your code? Tell us at <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a>.</p>
   </td></tr>
 
-  <!-- footer : transactional (no unsubscribe) -->
+  <!-- footer : security -->
   <tr><td class="px" style="padding:44px 40px 0;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#1C1E27;">&nbsp;</td></tr></table>
   </td></tr>

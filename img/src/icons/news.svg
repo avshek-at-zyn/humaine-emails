@@ -1,0 +1,163 @@
+<svg width="232" height="235" viewBox="0 0 232 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- humAIne clay: lilac folded newspaper (violet headline bar, white text bars, white image block) with a white badge, violet sparkle: something new to read. -->
+
+  <!-- confetti + glints, as in the app set -->
+  <path d="M21.4 55.6L18.3 54.2C17.4 53.8 16.4 54.2 16 55L14.5 58.2C14.1 59.1 14.5 60.1 15.3 60.5L18.5 62C19.4 62.4 20.4 62 20.8 61.1L22.2 58C22.7 57.1 22.3 56.1 21.4 55.6Z" fill="#FFD166"/>
+  <path d="M207.6 116.4L205.4 117.2C204.5 117.5 204.1 118.5 204.4 119.4L205.2 121.6C205.5 122.5 206.5 122.9 207.4 122.6L209.6 121.8C210.5 121.5 210.9 120.5 210.6 119.6L209.8 117.4C209.5 116.5 208.5 116.1 207.6 116.4Z" fill="#7DE8FF"/>
+  <circle cx="206" cy="196" r="3.4" fill="#FF9AC4"/>
+  <rect x="11" y="160" width="6" height="6" rx="1.6" transform="rotate(18 14 163)" fill="#8B7FFF"/>
+  <g opacity="0.6" filter="url(#nwGlint)"><circle cx="40" cy="30" r="1.8" fill="white"/></g>
+
+  <!-- floor shadow -->
+  <g opacity="0.3" filter="url(#nwFloor)">
+    <ellipse cx="108" cy="211" rx="68" ry="9" fill="black"/>
+  </g>
+
+  <!-- inner pages, folded behind the front page -->
+  <path d="M40 84H58A16 16 0 0 1 74 100V182A16 16 0 0 1 58 198H40A16 16 0 0 1 24 182V100A16 16 0 0 1 40 84Z" fill="url(#nwFl0)"/>
+  <path d="M40 84H58A16 16 0 0 1 74 100V182A16 16 0 0 1 58 198H40A16 16 0 0 1 24 182V100A16 16 0 0 1 40 84Z" fill="url(#nwFl1)"/>
+  <path d="M40 84H58A16 16 0 0 1 74 100V182A16 16 0 0 1 58 198H40A16 16 0 0 1 24 182V100A16 16 0 0 1 40 84Z" fill="url(#nwFl2)"/>
+  <g clip-path="url(#nwFlapClip)">
+    <path d="M69 42H161A22 22 0 0 1 183 64V176A22 22 0 0 1 161 198H69A22 22 0 0 1 47 176V64A22 22 0 0 1 69 42Z" fill="#3A1850" opacity="0.42" filter="url(#nwSoft)"/>
+  </g>
+
+  <!-- front page : thickness, then base / bottom shade / specular -->
+  <path d="M72 48H164A22 22 0 0 1 186 70V176A22 22 0 0 1 164 198H72A22 22 0 0 1 50 176V70A22 22 0 0 1 72 48Z" fill="url(#nwSide)"/>
+  <path d="M72 48H164A22 22 0 0 1 186 70V176A22 22 0 0 1 164 198H72A22 22 0 0 1 50 176V70A22 22 0 0 1 72 48Z" fill="url(#nwSideShade)"/>
+  <path d="M72 40H164A22 22 0 0 1 186 62V168A22 22 0 0 1 164 190H72A22 22 0 0 1 50 168V62A22 22 0 0 1 72 40Z" fill="url(#nwPg0)"/>
+  <path d="M72 40H164A22 22 0 0 1 186 62V168A22 22 0 0 1 164 190H72A22 22 0 0 1 50 168V62A22 22 0 0 1 72 40Z" fill="url(#nwPg1)"/>
+  <path d="M72 40H164A22 22 0 0 1 186 62V168A22 22 0 0 1 164 190H72A22 22 0 0 1 50 168V62A22 22 0 0 1 72 40Z" fill="url(#nwPg2)"/>
+
+  <!-- printed matter sits slightly proud of the page -->
+  <g filter="url(#nwPrintBlur)" fill="#44185C" fill-opacity="0.45">
+    <path d="M76.5 60H137.5A8.5 8.5 0 0 1 146 68.5V68.5A8.5 8.5 0 0 1 137.5 77H76.5A8.5 8.5 0 0 1 68 68.5V68.5A8.5 8.5 0 0 1 76.5 60Z"/>
+    <path d="M77 91H103A9 9 0 0 1 112 100V123A9 9 0 0 1 103 132H77A9 9 0 0 1 68 123V100A9 9 0 0 1 77 91Z"/>
+    <path d="M126 92H162A4 4 0 0 1 166 96V96A4 4 0 0 1 162 100H126A4 4 0 0 1 122 96V96A4 4 0 0 1 126 92Z"/>
+    <path d="M126 107.5H152A4 4 0 0 1 156 111.5V111.5A4 4 0 0 1 152 115.5H126A4 4 0 0 1 122 111.5V111.5A4 4 0 0 1 126 107.5Z"/>
+    <path d="M126 123H162A4 4 0 0 1 166 127V127A4 4 0 0 1 162 131H126A4 4 0 0 1 122 127V127A4 4 0 0 1 126 123Z"/>
+    <path d="M72 147H162A4 4 0 0 1 166 151V151A4 4 0 0 1 162 155H72A4 4 0 0 1 68 151V151A4 4 0 0 1 72 147Z"/>
+    <path d="M72 162H134A4 4 0 0 1 138 166V166A4 4 0 0 1 134 170H72A4 4 0 0 1 68 166V166A4 4 0 0 1 72 162Z"/>
+  </g>
+
+  <!-- headline : soft violet clay -->
+  <path d="M76.5 58H137.5A8.5 8.5 0 0 1 146 66.5V66.5A8.5 8.5 0 0 1 137.5 75H76.5A8.5 8.5 0 0 1 68 66.5V66.5A8.5 8.5 0 0 1 76.5 58Z" fill="url(#nwHd0)"/>
+  <path d="M76.5 58H137.5A8.5 8.5 0 0 1 146 66.5V66.5A8.5 8.5 0 0 1 137.5 75H76.5A8.5 8.5 0 0 1 68 66.5V66.5A8.5 8.5 0 0 1 76.5 58Z" fill="url(#nwHd1)"/>
+  <path d="M76.5 58H137.5A8.5 8.5 0 0 1 146 66.5V66.5A8.5 8.5 0 0 1 137.5 75H76.5A8.5 8.5 0 0 1 68 66.5V66.5A8.5 8.5 0 0 1 76.5 58Z" fill="url(#nwHd2)"/>
+
+  <!-- image block : white clay, violet sun + hills -->
+  <path d="M77 89H103A9 9 0 0 1 112 98V121A9 9 0 0 1 103 130H77A9 9 0 0 1 68 121V98A9 9 0 0 1 77 89Z" fill="url(#nwImg0)"/>
+  <path d="M77 89H103A9 9 0 0 1 112 98V121A9 9 0 0 1 103 130H77A9 9 0 0 1 68 121V98A9 9 0 0 1 77 89Z" fill="url(#nwImg1)"/>
+  <g clip-path="url(#nwImgClip)">
+    <circle cx="81" cy="101.5" r="5.2" fill="url(#nwInk)"/>
+    <path d="M64 134V125Q76 108 86 118.5Q91 123.5 96.5 117.5Q102 111.5 116 124V134Z" fill="url(#nwInk)"/>
+  </g>
+
+  <!-- text : white clay bars -->
+  <path d="M126 90H162A4 4 0 0 1 166 94V94A4 4 0 0 1 162 98H126A4 4 0 0 1 122 94V94A4 4 0 0 1 126 90Z" fill="url(#nwBar)" opacity="0.95"/>
+  <path d="M126 105.5H152A4 4 0 0 1 156 109.5V109.5A4 4 0 0 1 152 113.5H126A4 4 0 0 1 122 109.5V109.5A4 4 0 0 1 126 105.5Z" fill="url(#nwBar)" opacity="0.8"/>
+  <path d="M126 121H162A4 4 0 0 1 166 125V125A4 4 0 0 1 162 129H126A4 4 0 0 1 122 125V125A4 4 0 0 1 126 121Z" fill="url(#nwBar)" opacity="0.8"/>
+  <path d="M72 145H162A4 4 0 0 1 166 149V149A4 4 0 0 1 162 153H72A4 4 0 0 1 68 149V149A4 4 0 0 1 72 145Z" fill="url(#nwBar)" opacity="0.7"/>
+  <path d="M72 160H134A4 4 0 0 1 138 164V164A4 4 0 0 1 134 168H72A4 4 0 0 1 68 164V164A4 4 0 0 1 72 160Z" fill="url(#nwBar)" opacity="0.5"/>
+
+  <!-- badge : white clay disc, violet glyph -->
+  <g opacity="0.45" filter="url(#nwBBlur)">
+    <circle cx="183" cy="51" r="27" fill="#3A1850"/>
+  </g>
+  <circle cx="182" cy="47" r="28" fill="url(#nwB0)"/>
+  <circle cx="182" cy="47" r="28" fill="url(#nwB1)"/>
+  <circle cx="182" cy="47" r="28" fill="url(#nwB2)"/>
+  <path d="M180.5 32C183.8 45.2 183.8 45.2 197 48.5C183.8 51.8 183.8 51.8 180.5 65C177.2 51.8 177.2 51.8 164 48.5C177.2 45.2 177.2 45.2 180.5 32Z" fill="url(#nwBG)"/>
+  <path d="M194 29.4C195.23 33.77 195.23 33.77 199.6 35C195.23 36.23 195.23 36.23 194 40.6C192.77 36.23 192.77 36.23 188.4 35C192.77 33.77 192.77 33.77 194 29.4Z" fill="url(#nwBG)"/>
+
+  <defs>
+    <filter id="nwFloor" x="30" y="190" width="156" height="42" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.5"/>
+    </filter>
+    <filter id="nwSoft" x="20" y="30" width="180" height="180" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="2.6"/>
+    </filter>
+    <filter id="nwPrintBlur" x="58" y="50" width="120" height="130" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="1.6"/>
+    </filter>
+    <filter id="nwGlint" x="30" y="20" width="20" height="20" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="1.8"/>
+    </filter>
+    <filter id="nwBBlur" x="144" y="13" width="78" height="78" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.2"/>
+    </filter>
+    <clipPath id="nwFlapClip"><path d="M40 84H58A16 16 0 0 1 74 100V182A16 16 0 0 1 58 198H40A16 16 0 0 1 24 182V100A16 16 0 0 1 40 84Z"/></clipPath>
+    <clipPath id="nwImgClip"><path d="M77 89H103A9 9 0 0 1 112 98V121A9 9 0 0 1 103 130H77A9 9 0 0 1 68 121V98A9 9 0 0 1 77 89Z"/></clipPath>
+
+    <!-- inner pages : deeper lilac, they sit in the page's shade -->
+    <radialGradient id="nwFl0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(44 109.08) scale(36 82.08)">
+      <stop stop-color="#E5C3F0"/><stop offset="0.3" stop-color="#D4A2E6"/><stop offset="0.7" stop-color="#B570CC"/><stop offset="1" stop-color="#7A3E96"/>
+    </radialGradient>
+    <radialGradient id="nwFl1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(51.5 183.18) scale(27.5 62.7)">
+      <stop stop-opacity="0"/><stop offset="0.65" stop-opacity="0"/><stop offset="1" stop-color="#472858" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="nwFl2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(39 102.24) scale(13.5 30.78)">
+      <stop stop-color="white" stop-opacity="0.55"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- page thickness (as keypad.svg) -->
+    <linearGradient id="nwSide" x1="118" y1="170" x2="118" y2="198" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A866C2"/>
+      <stop offset="1" stop-color="#6A3286"/>
+    </linearGradient>
+    <radialGradient id="nwSideShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(132 190) scale(80 70)">
+      <stop stop-opacity="0"/><stop offset="0.6" stop-opacity="0"/><stop offset="1" stop-color="#3A1850" stop-opacity="0.5"/>
+    </radialGradient>
+
+    <!-- front page : lilac clay, lit from top-left -->
+    <radialGradient id="nwPg0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(104.4 73) scale(97.92 108)">
+      <stop stop-color="#F0D6F8"/><stop offset="0.3" stop-color="#E5C3F0"/><stop offset="0.7" stop-color="#C48DD8"/><stop offset="1" stop-color="#8E56A8"/>
+    </radialGradient>
+    <radialGradient id="nwPg1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(124.8 175) scale(74.8 82.5)">
+      <stop stop-opacity="0"/><stop offset="0.65" stop-opacity="0"/><stop offset="1" stop-color="#472858" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="nwPg2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(90.8 64) scale(36.72 40.5)">
+      <stop stop-color="white" stop-opacity="0.7"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- headline : soft violet clay (a thin bar, so the falloff runs along it and the shade sits on its lower lip) -->
+    <radialGradient id="nwHd0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(82 60) scale(92 34)">
+      <stop stop-color="#D8D4FA"/><stop offset="0.35" stop-color="#B5B7F6"/><stop offset="0.7" stop-color="#8A7EE8"/><stop offset="1" stop-color="#6E60C8"/>
+    </radialGradient>
+    <linearGradient id="nwHd1" x1="0" y1="58" x2="0" y2="75" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2E2470" stop-opacity="0"/>
+      <stop offset="0.55" stop-color="#2E2470" stop-opacity="0"/>
+      <stop offset="1" stop-color="#2E2470" stop-opacity="0.32"/>
+    </linearGradient>
+    <radialGradient id="nwHd2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(82 62.5) scale(22 6)">
+      <stop stop-color="white" stop-opacity="0.6"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- white clay (image block, text bars) -->
+    <radialGradient id="nwImg0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(78 96) scale(42 40)">
+      <stop stop-color="white"/><stop offset="0.5" stop-color="#F0EDF8"/><stop offset="1" stop-color="#D6D1EA"/>
+    </radialGradient>
+    <radialGradient id="nwImg1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(92 126) scale(30 28)">
+      <stop stop-color="#5A3C86" stop-opacity="0"/><stop offset="0.7" stop-color="#5A3C86" stop-opacity="0"/><stop offset="1" stop-color="#5A3C86" stop-opacity="0.22"/>
+    </radialGradient>
+    <radialGradient id="nwInk" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(76 104) scale(44 30)">
+      <stop stop-color="#C9C4F8"/><stop offset="0.35" stop-color="#9C92EE"/><stop offset="0.7" stop-color="#7E70DE"/><stop offset="1" stop-color="#6E60C8"/>
+    </radialGradient>
+    <radialGradient id="nwBar" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(84 96) scale(110 90)">
+      <stop stop-color="white"/><stop offset="0.5" stop-color="#F0EDF8"/><stop offset="1" stop-color="#D6D1EA"/>
+    </radialGradient>
+
+    <!-- badge -->
+    <radialGradient id="nwB0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(176.4 33) scale(36.4 35.56)">
+      <stop stop-color="white"/><stop offset="0.5" stop-color="#F0EDF8"/><stop offset="1" stop-color="#D6D1EA"/>
+    </radialGradient>
+    <radialGradient id="nwB1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(185.64 58.2) scale(32.76 30.8)">
+      <stop stop-color="#5A3C86" stop-opacity="0"/><stop offset="0.7" stop-color="#5A3C86" stop-opacity="0"/><stop offset="1" stop-color="#5A3C86" stop-opacity="0.22"/>
+    </radialGradient>
+    <radialGradient id="nwB2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(173.6 31.04) scale(15.96 15.4)">
+      <stop stop-color="white" stop-opacity="0.6"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nwBG" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(173.6 35.8) scale(35 35)">
+      <stop stop-color="#8A7EE8"/><stop offset="0.45" stop-color="#6E60C8"/><stop offset="1" stop-color="#4227B8"/>
+    </radialGradient>
+  </defs>
+</svg>

@@ -1,0 +1,144 @@
+<svg width="232" height="235" viewBox="0 0 232 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- humAIne clay: lilac desk calendar (violet binder rings, one day highlighted) with the glossy green success badge. Auto-renew back on. -->
+
+  <!-- floor shadow -->
+  <g opacity="0.3" filter="url(#cr_floor)">
+    <ellipse cx="110" cy="214" rx="68" ry="9.5" fill="black"/>
+  </g>
+
+  <!-- slab thickness -->
+  <path d="M38 96Q38 68 66 68L152 68Q180 68 180 96L180 176Q180 204 152 204L66 204Q38 204 38 176Z" fill="url(#cr_side)"/>
+  <path d="M38 96Q38 68 66 68L152 68Q180 68 180 96L180 176Q180 204 152 204L66 204Q38 204 38 176Z" fill="url(#cr_sideShade)"/>
+
+  <!-- calendar face : base, bottom shade, specular -->
+  <path d="M38 88Q38 60 66 60L152 60Q180 60 180 88L180 168Q180 196 152 196L66 196Q38 196 38 168Z" fill="url(#cr_face)"/>
+  <path d="M38 88Q38 60 66 60L152 60Q180 60 180 88L180 168Q180 196 152 196L66 196Q38 196 38 168Z" fill="url(#cr_faceShade)"/>
+
+  <!-- header band -->
+  <g clip-path="url(#cr_faceClip)">
+    <rect x="30" y="52" width="160" height="46" fill="url(#cr_head)"/>
+    <rect x="30" y="52" width="160" height="46" fill="url(#cr_headHi)"/>
+    <rect x="30" y="98" width="160" height="8" fill="url(#cr_seam)"/>
+  </g>
+  <path d="M38 88Q38 60 66 60L152 60Q180 60 180 88L180 168Q180 196 152 196L66 196Q38 196 38 168Z" fill="url(#cr_faceHi)"/>
+
+  <!-- day cells -->
+  <g filter="url(#cr_cell)" fill="url(#cr_day)" opacity="0.6">
+    <rect x="53" y="112" width="22" height="18" rx="6"/>
+    <rect x="83" y="112" width="22" height="18" rx="6"/>
+    <rect x="113" y="112" width="22" height="18" rx="6"/>
+    <rect x="143" y="112" width="22" height="18" rx="6"/>
+    <rect x="53" y="138" width="22" height="18" rx="6"/>
+    <rect x="83" y="138" width="22" height="18" rx="6"/>
+    <rect x="143" y="138" width="22" height="18" rx="6"/>
+    <rect x="53" y="164" width="22" height="18" rx="6"/>
+    <rect x="83" y="164" width="22" height="18" rx="6"/>
+    <rect x="113" y="164" width="22" height="18" rx="6"/>
+    <rect x="143" y="164" width="22" height="18" rx="6"/>
+  </g>
+  <g filter="url(#cr_lift)">
+    <rect x="111" y="136" width="26" height="22" rx="7" fill="url(#cr_today)"/>
+    <rect x="111" y="136" width="26" height="22" rx="7" fill="url(#cr_todayHi)"/>
+  </g>
+
+  <!-- binder rings -->
+  <g transform="translate(78 0)">
+    <ellipse cx="0" cy="76" rx="10.5" ry="5.4" fill="#5E2A7A" opacity="0.5"/>
+    <g filter="url(#cr_lift)" transform="translate(0 57)">
+      <rect x="-8.5" y="-18" width="17" height="36" rx="8.5" fill="url(#cr_ring)"/>
+      <rect x="-8.5" y="-18" width="17" height="36" rx="8.5" fill="url(#cr_ringHi)"/>
+    </g>
+  </g>
+  <g transform="translate(126 0)">
+    <ellipse cx="0" cy="76" rx="10.5" ry="5.4" fill="#5E2A7A" opacity="0.5"/>
+    <g filter="url(#cr_lift)" transform="translate(0 57)">
+      <rect x="-8.5" y="-18" width="17" height="36" rx="8.5" fill="url(#cr_ring)"/>
+      <rect x="-8.5" y="-18" width="17" height="36" rx="8.5" fill="url(#cr_ringHi)"/>
+    </g>
+  </g>
+
+  <!-- glossy green success badge (from password-reset-success.svg) with a soft contact shadow -->
+  <g opacity="0.4" filter="url(#cr_bdgBlur)">
+    <circle cx="183" cy="70" r="26" fill="#0B3A2A"/>
+  </g>
+  <g transform="translate(182 66) scale(0.76) translate(-168.688 -90.718)">
+    <path d="M168.688 126.326C188.217 126.326 204.048 110.384 204.048 90.7179C204.048 71.0523 188.217 55.1101 168.688 55.1101C149.159 55.1101 133.328 71.0523 133.328 90.7179C133.328 110.384 149.159 126.326 168.688 126.326Z" fill="url(#cr_grn)"/>
+    <path d="M168.688 126.326C188.217 126.326 204.048 110.384 204.048 90.7179C204.048 71.0523 188.217 55.1101 168.688 55.1101C149.159 55.1101 133.328 71.0523 133.328 90.7179C133.328 110.384 149.159 126.326 168.688 126.326Z" fill="url(#cr_grnHi)"/>
+    <path d="M153.729 90.7179L164.609 103.044L185.009 78.3922" stroke="url(#cr_grnTick)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <defs>
+    <filter id="cr_floor" x="26" y="196" width="168" height="42" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.5"/>
+    </filter>
+    <filter id="cr_cell" x="-40%" y="-40%" width="180%" height="200%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="1.6" stdDeviation="1.4" flood-color="#44185C" flood-opacity="0.22"/>
+    </filter>
+    <filter id="cr_lift" x="-60%" y="-60%" width="220%" height="240%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="3" stdDeviation="2.4" flood-color="#2A0F3A" flood-opacity="0.4"/>
+    </filter>
+    <clipPath id="cr_faceClip"><path d="M38 88Q38 60 66 60L152 60Q180 60 180 88L180 168Q180 196 152 196L66 196Q38 196 38 168Z"/></clipPath>
+
+    <!-- slab thickness (as keypad.svg tile) -->
+    <linearGradient id="cr_side" x1="109" y1="176" x2="109" y2="204" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A866C2"/><stop offset="1" stop-color="#6A3286"/>
+    </linearGradient>
+    <radialGradient id="cr_sideShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(122 196) scale(90 72)">
+      <stop stop-opacity="0"/><stop offset="0.6" stop-opacity="0"/><stop offset="1" stop-color="#3A1850" stop-opacity="0.5"/>
+    </radialGradient>
+
+    <!-- lilac clay face -->
+    <radialGradient id="cr_face" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(72 84) scale(150 146)">
+      <stop stop-color="#F0D6F8"/><stop offset="0.3" stop-color="#E5C3F0"/><stop offset="0.7" stop-color="#C48DD8"/><stop offset="1" stop-color="#8E56A8"/>
+    </radialGradient>
+    <radialGradient id="cr_faceShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(112 166) scale(106 100)">
+      <stop stop-opacity="0"/><stop offset="0.65" stop-opacity="0"/><stop offset="1" stop-color="#3A1850" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="cr_faceHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(66 118) scale(30 22)">
+      <stop stop-color="white" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- header band : deeper lilac (body ramp) -->
+    <radialGradient id="cr_head" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(70 64) scale(150 60)">
+      <stop stop-color="#E5C3F0"/><stop offset="0.3" stop-color="#D4A2E6"/><stop offset="0.7" stop-color="#B570CC"/><stop offset="1" stop-color="#7A3E96"/>
+    </radialGradient>
+    <radialGradient id="cr_headHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(64 70) scale(40 18)">
+      <stop stop-color="white" stop-opacity="0.6"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cr_seam" x1="0" y1="96" x2="0" y2="104" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5E2A7A" stop-opacity="0.32"/><stop offset="1" stop-color="#5E2A7A" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- day cells : soft pale clay, low relief -->
+    <radialGradient id="cr_day" cx="38%" cy="28%" r="80%">
+      <stop stop-color="#FFFFFF"/><stop offset="0.5" stop-color="#F6E9FA"/><stop offset="1" stop-color="#E4CDEF"/>
+    </radialGradient>
+    <!-- highlighted day : violet ramp -->
+    <radialGradient id="cr_today" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(117 140) scale(28 26)">
+      <stop stop-color="#C9C4F8"/><stop offset="0.3" stop-color="#A9A5F2"/><stop offset="0.7" stop-color="#7E70DE"/><stop offset="1" stop-color="#5B4CC0"/>
+    </radialGradient>
+    <radialGradient id="cr_todayHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(119 142) scale(9 7)">
+      <stop stop-color="white" stop-opacity="0.65"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- binder rings : violet ramp -->
+    <radialGradient id="cr_ring" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-3.5 -12) scale(16 32)">
+      <stop stop-color="#D8D4FA"/><stop offset="0.35" stop-color="#B5B7F6"/><stop offset="0.7" stop-color="#8A7EE8"/><stop offset="1" stop-color="#6E60C8"/>
+    </radialGradient>
+    <radialGradient id="cr_ringHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-3 -10) scale(4.5 9)">
+      <stop stop-color="white" stop-opacity="0.7"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="cr_bdgBlur" x="143" y="29" width="78" height="82" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.2"/>
+    </filter>
+    <radialGradient id="cr_grn" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(161.616 72.914) scale(45.968 46.2902)">
+      <stop stop-color="#78F0C0"/><stop offset="0.5" stop-color="#2ECB8C"/><stop offset="1" stop-color="#0C6E48"/>
+    </radialGradient>
+    <radialGradient id="cr_grnHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(158.08 69.3532) scale(19.8016 19.9404)">
+      <stop stop-color="white" stop-opacity="0.7"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cr_grnTick" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(166.241 85.7876) scale(18.768 14.7909)">
+      <stop stop-color="white"/><stop offset="1" stop-color="#E8F8F0"/>
+    </radialGradient>
+  </defs>
+</svg>

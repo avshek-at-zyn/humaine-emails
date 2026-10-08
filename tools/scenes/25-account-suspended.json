@@ -1,0 +1,18 @@
+{
+  "name": "25-account-suspended",
+  "icon": "img/src/icons/account-paused.svg",
+  "iconSize": 292,
+  "iconY": 224,
+  "height": 460,
+  "seed": 25,
+  "planets": [
+    { "type": "pink", "x": 312, "y": 106, "r": 22, "ring": true, "tilt": 30, "ringScale": 2.15 },
+    { "type": "blue", "x": 1000, "y": 290, "r": 40 },
+    { "type": "glass", "x": 884, "y": 96, "r": 11 },
+    { "type": "cyan", "x": 196, "y": 312, "r": 8 }
+  ],
+  "orbit": { "scale": 1.26, "tilt": 12, "moon": "lilac", "moonR": 8, "moonAt": 0.33 },
+  "pinkGlow": { "x": 740, "y": 253, "r": 200 },
+  "shootingStar": { "x": 1010, "y": 88, "len": 130, "angle": 24 },
+  "sparkles": [[456, 344, 6], [1080, 181, 5], [168, 201, 5]]
+}

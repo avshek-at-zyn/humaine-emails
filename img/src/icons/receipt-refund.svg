@@ -1,0 +1,113 @@
+<svg width="232" height="235" viewBox="0 0 232 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- humAIne clay: lilac paper receipt (zig-zag tear, violet printed lines) with a white badge and a violet return arrow. Refund issued. -->
+
+  <!-- floor shadow -->
+  <g opacity="0.3" filter="url(#rr_floor)">
+    <ellipse cx="108" cy="214" rx="58" ry="9" fill="black"/>
+  </g>
+
+  <!-- paper thickness -->
+  <path d="M48 61Q48 55 54 55L156 55Q162 55 162 61L162 187Q162 190 159.93 192.17L153.35 199.1Q150.6 202 147.85 199.1L141.61 192.54Q139.2 190 136.79 192.54L130.55 199.1Q127.8 202 125.05 199.1L118.81 192.54Q116.4 190 113.99 192.54L107.75 199.1Q105 202 102.25 199.1L96.01 192.54Q93.6 190 91.19 192.54L84.95 199.1Q82.2 202 79.45 199.1L73.21 192.54Q70.8 190 68.39 192.54L62.15 199.1Q59.4 202 56.65 199.1L50.07 192.17Q48 190 48 187Z" fill="url(#rr_side)"/>
+  <path d="M48 61Q48 55 54 55L156 55Q162 55 162 61L162 187Q162 190 159.93 192.17L153.35 199.1Q150.6 202 147.85 199.1L141.61 192.54Q139.2 190 136.79 192.54L130.55 199.1Q127.8 202 125.05 199.1L118.81 192.54Q116.4 190 113.99 192.54L107.75 199.1Q105 202 102.25 199.1L96.01 192.54Q93.6 190 91.19 192.54L84.95 199.1Q82.2 202 79.45 199.1L73.21 192.54Q70.8 190 68.39 192.54L62.15 199.1Q59.4 202 56.65 199.1L50.07 192.17Q48 190 48 187Z" fill="url(#rr_sideShade)"/>
+
+  <!-- receipt face : base, bottom shade, specular -->
+  <path d="M48 53Q48 47 54 47L156 47Q162 47 162 53L162 179Q162 182 159.93 184.17L153.35 191.1Q150.6 194 147.85 191.1L141.61 184.54Q139.2 182 136.79 184.54L130.55 191.1Q127.8 194 125.05 191.1L118.81 184.54Q116.4 182 113.99 184.54L107.75 191.1Q105 194 102.25 191.1L96.01 184.54Q93.6 182 91.19 184.54L84.95 191.1Q82.2 194 79.45 191.1L73.21 184.54Q70.8 182 68.39 184.54L62.15 191.1Q59.4 194 56.65 191.1L50.07 184.17Q48 182 48 179Z" fill="url(#rr_face)"/>
+  <path d="M48 53Q48 47 54 47L156 47Q162 47 162 53L162 179Q162 182 159.93 184.17L153.35 191.1Q150.6 194 147.85 191.1L141.61 184.54Q139.2 182 136.79 184.54L130.55 191.1Q127.8 194 125.05 191.1L118.81 184.54Q116.4 182 113.99 184.54L107.75 191.1Q105 194 102.25 191.1L96.01 184.54Q93.6 182 91.19 184.54L84.95 191.1Q82.2 194 79.45 191.1L73.21 184.54Q70.8 182 68.39 184.54L62.15 191.1Q59.4 194 56.65 191.1L50.07 184.17Q48 182 48 179Z" fill="url(#rr_faceShade)"/>
+  <path d="M48 53Q48 47 54 47L156 47Q162 47 162 53L162 179Q162 182 159.93 184.17L153.35 191.1Q150.6 194 147.85 191.1L141.61 184.54Q139.2 182 136.79 184.54L130.55 191.1Q127.8 194 125.05 191.1L118.81 184.54Q116.4 182 113.99 184.54L107.75 191.1Q105 194 102.25 191.1L96.01 184.54Q93.6 182 91.19 184.54L84.95 191.1Q82.2 194 79.45 191.1L73.21 184.54Q70.8 182 68.39 184.54L62.15 191.1Q59.4 194 56.65 191.1L50.07 184.17Q48 182 48 179Z" fill="url(#rr_faceHi)"/>
+
+  <!-- printed lines -->
+  <g filter="url(#rr_bar)">
+    <rect x="68" y="74" width="48" height="10" rx="5" fill="url(#rr_ink)" opacity="0.95"/>
+    <rect x="68" y="98" width="62" height="8" rx="4" fill="url(#rr_ink)" opacity="0.7"/>
+    <rect x="68" y="114" width="42" height="8" rx="4" fill="url(#rr_ink)" opacity="0.5"/>
+    <rect x="68" y="146" width="32" height="11" rx="5.5" fill="url(#rr_ink)" opacity="0.95"/>
+    <rect x="112" y="146" width="32" height="11" rx="5.5" fill="url(#rr_ink)" opacity="0.95"/>
+  </g>
+  <g fill="url(#rr_ink)" opacity="0.5">
+    <rect x="68" y="131" width="7" height="3.4" rx="1.7"/>
+    <rect x="80.5" y="131" width="7" height="3.4" rx="1.7"/>
+    <rect x="93" y="131" width="7" height="3.4" rx="1.7"/>
+    <rect x="105.5" y="131" width="7" height="3.4" rx="1.7"/>
+    <rect x="118" y="131" width="7" height="3.4" rx="1.7"/>
+    <rect x="130.5" y="131" width="7" height="3.4" rx="1.7"/>
+  </g>
+
+  <!-- the curl -->
+  <g filter="url(#rr_rollLift)">
+    <rect x="48" y="35" width="114" height="24" rx="12" fill="url(#rr_roll)"/>
+    <rect x="48" y="35" width="114" height="24" rx="12" fill="url(#rr_rollShade)"/>
+    <rect x="48" y="35" width="114" height="24" rx="12" fill="url(#rr_rollHi)"/>
+  </g>
+
+  <!-- badge : soft plum contact shadow, white clay disc, specular, violet glyph -->
+  <g opacity="0.45" filter="url(#rr_bdgBlur)">
+    <circle cx="163" cy="55" r="20.5" fill="#3A1850"/>
+  </g>
+  <circle cx="162" cy="51" r="21.5" fill="url(#rr_bdg)"/>
+  <circle cx="162" cy="51" r="21.5" fill="url(#rr_bdgShade)"/>
+  <circle cx="162" cy="51" r="21.5" fill="url(#rr_bdgHi)"/>
+  <path d="M154.14 47.28H164.48C169.94 47.28 171.92 50.59 171.92 53.89C171.92 57.2 169.94 60.51 164.48 60.51H158.69" stroke="url(#rr_glyph)" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M159.52 41.49L153.73 47.28L159.52 53.07" stroke="url(#rr_glyph)" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <defs>
+    <filter id="rr_floor" x="34" y="196" width="146" height="40" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.5"/>
+    </filter>
+    <filter id="rr_bar" x="-30%" y="-60%" width="160%" height="260%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.6" flood-color="#44185C" flood-opacity="0.32"/>
+    </filter>
+    <filter id="rr_rollLift" x="-10%" y="-30%" width="120%" height="190%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#3A1850" flood-opacity="0.45"/>
+    </filter>
+
+    <!-- paper thickness (as keypad.svg tile) -->
+    <linearGradient id="rr_side" x1="106" y1="150" x2="106" y2="202" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A866C2"/><stop offset="1" stop-color="#6A3286"/>
+    </linearGradient>
+    <radialGradient id="rr_sideShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(116 190) scale(84 70)">
+      <stop stop-opacity="0"/><stop offset="0.6" stop-opacity="0"/><stop offset="1" stop-color="#3A1850" stop-opacity="0.5"/>
+    </radialGradient>
+
+    <!-- lilac clay face, lit from top-left -->
+    <radialGradient id="rr_face" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(78 78) scale(108 136)">
+      <stop stop-color="#F0D6F8"/><stop offset="0.3" stop-color="#E5C3F0"/><stop offset="0.7" stop-color="#C48DD8"/><stop offset="1" stop-color="#8E56A8"/>
+    </radialGradient>
+    <radialGradient id="rr_faceShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(110 156) scale(84 120)">
+      <stop stop-opacity="0"/><stop offset="0.65" stop-opacity="0"/><stop offset="1" stop-color="#3A1850" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="rr_faceHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(72 82) scale(30 38)">
+      <stop stop-color="white" stop-opacity="0.65"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- the curl : paper rolling forward over the top edge, lighter clay catching the light -->
+    <linearGradient id="rr_roll" x1="0" y1="35" x2="0" y2="59" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8ECFC"/><stop offset="0.35" stop-color="#EDD2F5"/><stop offset="0.75" stop-color="#D4A2E6"/><stop offset="1" stop-color="#9C62B8"/>
+    </linearGradient>
+    <radialGradient id="rr_rollShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(88 40) scale(78 21)">
+      <stop stop-opacity="0"/><stop offset="0.6" stop-opacity="0"/><stop offset="1" stop-color="#472858" stop-opacity="0.45"/>
+    </radialGradient>
+    <radialGradient id="rr_rollHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(74 40) scale(32 6)">
+      <stop stop-color="white" stop-opacity="0.75"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- soft violet text bars (as invitation-mail-sent.svg) -->
+    <radialGradient id="rr_ink" cx="40%" cy="25%" r="65%">
+      <stop stop-color="#D0CCF8"/><stop offset="0.5" stop-color="#B5B7F6"/><stop offset="1" stop-color="#8A7EE8"/>
+    </radialGradient>
+    <filter id="rr_bdgBlur" x="128.5" y="19.5" width="67" height="71" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.2"/>
+    </filter>
+    <radialGradient id="rr_bdg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(157.7 40.25) scale(27.95 27.3)">
+      <stop stop-color="white"/><stop offset="0.5" stop-color="#F0EDF8"/><stop offset="1" stop-color="#D6D1EA"/>
+    </radialGradient>
+    <radialGradient id="rr_bdgShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(164.58 59.6) scale(24.72 23.65)">
+      <stop stop-color="#5A3C86" stop-opacity="0"/><stop offset="0.7" stop-color="#5A3C86" stop-opacity="0"/><stop offset="1" stop-color="#5A3C86" stop-opacity="0.22"/>
+    </radialGradient>
+    <radialGradient id="rr_bdgHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(155.55 38.75) scale(12.04 11.83)">
+      <stop stop-color="white" stop-opacity="0.6"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rr_glyph" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(155.55 42.4) scale(25.8 25.8)">
+      <stop stop-color="#8A7EE8"/><stop offset="0.45" stop-color="#6E60C8"/><stop offset="1" stop-color="#4227B8"/>
+    </radialGradient>
+  </defs>
+</svg>

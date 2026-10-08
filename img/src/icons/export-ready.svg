@@ -1,0 +1,70 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- humAIne clay: the document from the app's export-data icon, its upload glyph turned into a violet download arrow on a white clay badge. Your data export is ready. -->
+<defs>
+  <!-- document : copied from export-data-C4iNTgYS.svg -->
+  <linearGradient id="er_face" x1="10%" y1="0%" x2="90%" y2="100%">
+    <stop offset="0%" stop-color="#9C8FFF"/><stop offset="45%" stop-color="#6E5AF0"/><stop offset="100%" stop-color="#4227B8"/>
+  </linearGradient>
+  <linearGradient id="er_side" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#38227A"/><stop offset="100%" stop-color="#241456"/>
+  </linearGradient>
+  <linearGradient id="er_fold" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#C2B6FF"/><stop offset="100%" stop-color="#8C7CF5"/>
+  </linearGradient>
+  <radialGradient id="er_faceHi" cx="28%" cy="14%" r="55%">
+    <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/><stop offset="60%" stop-color="#FFFFFF" stop-opacity="0.04"/><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+  </radialGradient>
+  <filter id="er_dsMain" x="-80%" y="-50%" width="260%" height="260%">
+    <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#08041A" flood-opacity="0.5"/>
+  </filter>
+  <filter id="er_dsBadge" x="-100%" y="-60%" width="300%" height="300%">
+    <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#08041A" flood-opacity="0.45"/>
+  </filter>
+
+  <!-- badge : white clay disc, soft contact shade, specular, violet glyph -->
+  <radialGradient id="er_badge" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(143.6 41.2) scale(28.7 28)">
+    <stop stop-color="white"/><stop offset="0.5" stop-color="#F0EDF8"/><stop offset="1" stop-color="#D6D1EA"/>
+  </radialGradient>
+  <radialGradient id="er_badgeShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(150.7 60.7) scale(25.3 24)">
+    <stop stop-color="#5A3C86" stop-opacity="0"/><stop offset="0.7" stop-color="#5A3C86" stop-opacity="0"/><stop offset="1" stop-color="#5A3C86" stop-opacity="0.16"/>
+  </radialGradient>
+  <radialGradient id="er_badgeHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(141.3 39) scale(12.3 12)">
+    <stop stop-color="white" stop-opacity="0.6"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="er_glyph" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(143 42) scale(18)">
+    <stop stop-color="#7F72E6"/><stop offset="0.45" stop-color="#5B47D4"/><stop offset="1" stop-color="#4227B8"/>
+  </radialGradient>
+</defs>
+
+<!-- floor shadow -->
+<ellipse cx="100" cy="178" rx="46" ry="8" fill="#000000" opacity="0.25"/>
+
+<!-- back sheet -->
+<g filter="url(#er_dsMain)">
+  <path d="M58 48 L58 152 Q58 160 66 160 L142 160 Q150 160 150 152 L150 68 L130 48 Z" fill="url(#er_side)"/>
+</g>
+
+<!-- front sheet : base, specular -->
+<g filter="url(#er_dsMain)">
+  <path d="M50 40 L50 144 Q50 152 58 152 L134 152 Q142 152 142 144 L142 60 L122 40 Z" fill="url(#er_face)"/>
+  <path d="M50 40 L50 144 Q50 152 58 152 L134 152 Q142 152 142 144 L142 60 L122 40 Z" fill="url(#er_faceHi)"/>
+</g>
+
+<!-- folded corner -->
+<path d="M122 40 L122 60 L142 60 Z" fill="url(#er_fold)"/>
+
+<!-- text lines -->
+<line x1="68" y1="78" x2="112" y2="78" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<line x1="68" y1="94" x2="124" y2="94" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
+<line x1="68" y1="110" x2="100" y2="110" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+
+<!-- download badge -->
+<g filter="url(#er_dsBadge)">
+  <circle cx="148" cy="52" r="22" fill="url(#er_badge)"/>
+</g>
+<circle cx="148" cy="52" r="22" fill="url(#er_badgeShade)"/>
+<circle cx="148" cy="52" r="22" fill="url(#er_badgeHi)"/>
+<path d="M148 41.5V56" stroke="url(#er_glyph)" stroke-width="3.4" stroke-linecap="round"/>
+<path d="M140.5 49L148 56.5L155.5 49" stroke="url(#er_glyph)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M138.5 62.5H157.5" stroke="url(#er_glyph)" stroke-width="3.4" stroke-linecap="round"/>
+</svg>

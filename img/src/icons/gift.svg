@@ -1,0 +1,183 @@
+<svg width="232" height="235" viewBox="0 0 232 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- humAIne clay: lilac gift box with a violet ribbon and bow, and a white badge carrying a violet star. An offer worth opening. -->
+
+  <!-- celebration rays + confetti, as in the app's success art -->
+  <g opacity="0.3" stroke="#FFE9B3" stroke-width="1.6" stroke-linecap="round">
+    <path d="M108 20V34"/>
+    <path d="M44 34L54 44"/>
+    <path d="M172 34L162 44"/>
+  </g>
+  <path d="M24.4 98.6L21.3 97.2C20.4 96.8 19.4 97.2 19 98L17.5 101.2C17.1 102.1 17.5 103.1 18.3 103.5L21.5 105C22.4 105.4 23.4 105 23.8 104.1L25.2 101C25.7 100.1 25.3 99.1 24.4 98.6Z" fill="#FFD166"/>
+  <path d="M203.6 94.4L201.4 95.2C200.5 95.5 200.1 96.5 200.4 97.4L201.2 99.6C201.5 100.5 202.5 100.9 203.4 100.6L205.6 99.8C206.5 99.5 206.9 98.5 206.6 97.6L205.8 95.4C205.5 94.5 204.5 94.1 203.6 94.4Z" fill="#7DE8FF"/>
+  <circle cx="24" cy="186" r="3.4" fill="#FF9AC4"/>
+  <rect x="200" y="134" width="6" height="6" rx="1.6" transform="rotate(18 203 137)" fill="#8B7FFF"/>
+  <g opacity="0.6" filter="url(#gfGlint)"><circle cx="190" cy="62" r="1.8" fill="white"/></g>
+
+  <!-- floor shadow -->
+  <g opacity="0.3" filter="url(#gfFloor)">
+    <ellipse cx="108" cy="209" rx="66" ry="9" fill="black"/>
+  </g>
+
+  <!-- box : deeper lilac body clay -->
+  <path d="M64 112H152A16 16 0 0 1 168 128V184A16 16 0 0 1 152 200H64A16 16 0 0 1 48 184V128A16 16 0 0 1 64 112Z" fill="url(#gfBx0)"/>
+  <path d="M64 112H152A16 16 0 0 1 168 128V184A16 16 0 0 1 152 200H64A16 16 0 0 1 48 184V128A16 16 0 0 1 64 112Z" fill="url(#gfBx1)"/>
+  <path d="M64 112H152A16 16 0 0 1 168 128V184A16 16 0 0 1 152 200H64A16 16 0 0 1 48 184V128A16 16 0 0 1 64 112Z" fill="url(#gfBx2)"/>
+  <g clip-path="url(#gfBoxClip)">
+    <path d="M95 112H121V200H95Z" fill="url(#gfRb0)"/>
+    <path d="M95 112H121V200H95Z" fill="url(#gfRb1)"/>
+    <path d="M95 112H121V200H95Z" fill="url(#gfRb2)"/>
+    <!-- the lid's contact shadow on the box -->
+    <path d="M40 112H176V126H40Z" fill="#3A1850" opacity="0.5" filter="url(#gfSoft)"/>
+  </g>
+
+  <!-- bow : two violet loops and a knot, behind the lid's front edge -->
+  <g filter="url(#gfLift)">
+    <path d="M104 84C101.88 66.64 84.83 45.91 67.98 49.35C56 51.68 49.59 68.53 59.43 78.39C69.27 88.24 90.29 87.75 104 84Z" fill="url(#gfLl0)"/>
+  <path d="M104 84C101.88 66.64 84.83 45.91 67.98 49.35C56 51.68 49.59 68.53 59.43 78.39C69.27 88.24 90.29 87.75 104 84Z" fill="url(#gfLl1)"/>
+  <path d="M104 84C101.88 66.64 84.83 45.91 67.98 49.35C56 51.68 49.59 68.53 59.43 78.39C69.27 88.24 90.29 87.75 104 84Z" fill="url(#gfLl2)"/>
+    <path d="M112 84C114.12 66.64 131.17 45.91 148.02 49.35C160 51.68 166.41 68.53 156.57 78.39C146.73 88.24 125.71 87.75 112 84Z" fill="url(#gfLr0)"/>
+  <path d="M112 84C114.12 66.64 131.17 45.91 148.02 49.35C160 51.68 166.41 68.53 156.57 78.39C146.73 88.24 125.71 87.75 112 84Z" fill="url(#gfLr1)"/>
+  <path d="M112 84C114.12 66.64 131.17 45.91 148.02 49.35C160 51.68 166.41 68.53 156.57 78.39C146.73 88.24 125.71 87.75 112 84Z" fill="url(#gfLr2)"/>
+  </g>
+  <g filter="url(#gfHoleBlur)" fill="#2E2470" fill-opacity="0.42">
+    <path d="M82.69 67.94C80.56 60.43 71.43 56.36 66.75 61.94C63.4 67.02 69.08 73.93 75.37 74.54C78.52 74.85 81.97 72 82.69 67.94Z"/>
+    <path d="M133.31 67.94C135.44 60.43 144.57 56.36 149.25 61.94C152.6 67.02 146.92 73.93 140.63 74.54C137.48 74.85 134.03 72 133.31 67.94Z"/>
+  </g>
+
+  <!-- lid : lighter lilac clay, violet band -->
+  <g filter="url(#gfLift)">
+    <path d="M50 88H166A14 14 0 0 1 180 102V108A14 14 0 0 1 166 122H50A14 14 0 0 1 36 108V102A14 14 0 0 1 50 88Z" fill="url(#gfLd0)"/>
+  <path d="M50 88H166A14 14 0 0 1 180 102V108A14 14 0 0 1 166 122H50A14 14 0 0 1 36 108V102A14 14 0 0 1 50 88Z" fill="url(#gfLd1)"/>
+  <path d="M50 88H166A14 14 0 0 1 180 102V108A14 14 0 0 1 166 122H50A14 14 0 0 1 36 108V102A14 14 0 0 1 50 88Z" fill="url(#gfLd2)"/>
+  </g>
+  <g clip-path="url(#gfLidClip)">
+    <path d="M93 88H123V122H93Z" fill="url(#gfRl0)"/>
+    <path d="M93 88H123V122H93Z" fill="url(#gfRl1)"/>
+    <path d="M93 88H123V122H93Z" fill="url(#gfRl2)"/>
+  </g>
+
+  <g filter="url(#gfLiftS)">
+    <path d="M104 70H112A9 9 0 0 1 121 79V83A9 9 0 0 1 112 92H104A9 9 0 0 1 95 83V79A9 9 0 0 1 104 70Z" fill="url(#gfKn0)"/>
+  <path d="M104 70H112A9 9 0 0 1 121 79V83A9 9 0 0 1 112 92H104A9 9 0 0 1 95 83V79A9 9 0 0 1 104 70Z" fill="url(#gfKn1)"/>
+  <path d="M104 70H112A9 9 0 0 1 121 79V83A9 9 0 0 1 112 92H104A9 9 0 0 1 95 83V79A9 9 0 0 1 104 70Z" fill="url(#gfKn2)"/>
+  </g>
+
+  <!-- badge : white clay disc, violet star -->
+  <g opacity="0.45" filter="url(#gfBBlur)">
+    <circle cx="171" cy="181" r="25" fill="#3A1850"/>
+  </g>
+  <circle cx="170" cy="177" r="26" fill="url(#gfB0)"/>
+  <circle cx="170" cy="177" r="26" fill="url(#gfB1)"/>
+  <circle cx="170" cy="177" r="26" fill="url(#gfB2)"/>
+  <path d="M170 164.6L173.35 172.99L182.36 173.58L175.42 179.36L177.64 188.12L170 183.3L162.36 188.12L164.58 179.36L157.64 173.58L166.65 172.99Z" fill="url(#gfBG)" stroke="url(#gfBG)" stroke-width="2.6" stroke-linejoin="round"/>
+
+  <defs>
+    <filter id="gfFloor" x="30" y="188" width="156" height="42" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.5"/>
+    </filter>
+    <filter id="gfSoft" x="30" y="100" width="156" height="36" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="gfLift" x="-20%" y="-30%" width="140%" height="170%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#2A0F3A" flood-opacity="0.35"/>
+    </filter>
+    <filter id="gfLiftS" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#2A0F3A" flood-opacity="0.35"/>
+    </filter>
+    <filter id="gfHoleBlur" x="50" y="40" width="116" height="56" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="1.6"/>
+    </filter>
+    <filter id="gfGlint" x="180" y="52" width="20" height="20" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="1.8"/>
+    </filter>
+    <filter id="gfBBlur" x="134" y="145" width="74" height="74" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.2"/>
+    </filter>
+    <clipPath id="gfBoxClip"><path d="M64 112H152A16 16 0 0 1 168 128V184A16 16 0 0 1 152 200H64A16 16 0 0 1 48 184V128A16 16 0 0 1 64 112Z"/></clipPath>
+    <clipPath id="gfLidClip"><path d="M50 88H166A14 14 0 0 1 180 102V108A14 14 0 0 1 166 122H50A14 14 0 0 1 36 108V102A14 14 0 0 1 50 88Z"/></clipPath>
+
+    <!-- box body -->
+    <radialGradient id="gfBx0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(96 120.8) scale(86.4 63.36)">
+      <stop stop-color="#E5C3F0"/><stop offset="0.3" stop-color="#D4A2E6"/><stop offset="0.7" stop-color="#B570CC"/><stop offset="1" stop-color="#7A3E96"/>
+    </radialGradient>
+    <radialGradient id="gfBx1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(114 188.56) scale(66 48.4)">
+      <stop stop-opacity="0"/><stop offset="0.65" stop-opacity="0"/><stop offset="1" stop-color="#472858" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="gfBx2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(84 126.08) scale(32.4 23.76)">
+      <stop stop-color="white" stop-opacity="0.55"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <!-- lid -->
+    <radialGradient id="gfLd0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(93.6 95.48) scale(103.68 24.48)">
+      <stop stop-color="#F0D6F8"/><stop offset="0.3" stop-color="#E5C3F0"/><stop offset="0.7" stop-color="#C48DD8"/><stop offset="1" stop-color="#8E56A8"/>
+    </radialGradient>
+    <radialGradient id="gfLd1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(115.2 117.58) scale(79.2 18.7)">
+      <stop stop-opacity="0"/><stop offset="0.65" stop-opacity="0"/><stop offset="1" stop-color="#472858" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="gfLd2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(79.2 94.8) scale(43.2 10.2)">
+      <stop stop-color="white" stop-opacity="0.7"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <!-- ribbon bands -->
+    <radialGradient id="gfRb0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(99 118) scale(30 92)">
+      <stop stop-color="#D8D4FA"/><stop offset="0.35" stop-color="#B5B7F6"/><stop offset="0.7" stop-color="#8A7EE8"/><stop offset="1" stop-color="#6E60C8"/>
+    </radialGradient>
+    <linearGradient id="gfRb1" x1="0" y1="112" x2="0" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2E2470" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#2E2470" stop-opacity="0"/>
+      <stop offset="1" stop-color="#2E2470" stop-opacity="0.38"/>
+    </linearGradient>
+    <radialGradient id="gfRb2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(102 140) scale(9 26)">
+      <stop stop-color="white" stop-opacity="0.3"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gfRl0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(105 95.48) scale(21.6 24.48)">
+      <stop stop-color="#D8D4FA"/><stop offset="0.35" stop-color="#B5B7F6"/><stop offset="0.7" stop-color="#8A7EE8"/><stop offset="1" stop-color="#6E60C8"/>
+    </radialGradient>
+    <radialGradient id="gfRl1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(109.5 117.58) scale(16.5 18.7)">
+      <stop stop-opacity="0"/><stop offset="0.65" stop-opacity="0"/><stop offset="1" stop-color="#2E2470" stop-opacity="0.45"/>
+    </radialGradient>
+    <radialGradient id="gfRl2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(102 93.44) scale(8.1 9.18)">
+      <stop stop-color="white" stop-opacity="0.6"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <!-- bow loops + knot -->
+    <radialGradient id="gfLl0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(76 55.24) scale(36 30.24)">
+      <stop stop-color="#D8D4FA"/><stop offset="0.35" stop-color="#B5B7F6"/><stop offset="0.7" stop-color="#8A7EE8"/><stop offset="1" stop-color="#6E60C8"/>
+    </radialGradient>
+    <radialGradient id="gfLl1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(83.5 82.54) scale(27.5 23.1)">
+      <stop stop-opacity="0"/><stop offset="0.65" stop-opacity="0"/><stop offset="1" stop-color="#2E2470" stop-opacity="0.45"/>
+    </radialGradient>
+    <radialGradient id="gfLl2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(71 55.24) scale(13.5 11.34)">
+      <stop stop-color="white" stop-opacity="0.6"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gfLr0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(130 55.24) scale(36 30.24)">
+      <stop stop-color="#D8D4FA"/><stop offset="0.35" stop-color="#B5B7F6"/><stop offset="0.7" stop-color="#8A7EE8"/><stop offset="1" stop-color="#6E60C8"/>
+    </radialGradient>
+    <radialGradient id="gfLr1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(137.5 82.54) scale(27.5 23.1)">
+      <stop stop-opacity="0"/><stop offset="0.65" stop-opacity="0"/><stop offset="1" stop-color="#2E2470" stop-opacity="0.45"/>
+    </radialGradient>
+    <radialGradient id="gfLr2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(125 55.24) scale(13.5 11.34)">
+      <stop stop-color="white" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gfKn0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(105.4 74.84) scale(18.72 15.84)">
+      <stop stop-color="#D8D4FA"/><stop offset="0.35" stop-color="#B5B7F6"/><stop offset="0.7" stop-color="#8A7EE8"/><stop offset="1" stop-color="#6E60C8"/>
+    </radialGradient>
+    <radialGradient id="gfKn1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(109.3 89.14) scale(14.3 12.1)">
+      <stop stop-opacity="0"/><stop offset="0.65" stop-opacity="0"/><stop offset="1" stop-color="#2E2470" stop-opacity="0.45"/>
+    </radialGradient>
+    <radialGradient id="gfKn2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(102.8 73.52) scale(10.4 8.8)">
+      <stop stop-color="white" stop-opacity="0.65"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- badge -->
+    <radialGradient id="gfB0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(164.8 164) scale(33.8 33.02)">
+      <stop stop-color="white"/><stop offset="0.5" stop-color="#F0EDF8"/><stop offset="1" stop-color="#D6D1EA"/>
+    </radialGradient>
+    <radialGradient id="gfB1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(173.38 187.4) scale(30.42 28.6)">
+      <stop stop-color="#5A3C86" stop-opacity="0"/><stop offset="0.7" stop-color="#5A3C86" stop-opacity="0"/><stop offset="1" stop-color="#5A3C86" stop-opacity="0.22"/>
+    </radialGradient>
+    <radialGradient id="gfB2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(162.2 162.18) scale(14.82 14.3)">
+      <stop stop-color="white" stop-opacity="0.6"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gfBG" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(162.2 166.6) scale(32.5 32.5)">
+      <stop stop-color="#8A7EE8"/><stop offset="0.45" stop-color="#6E60C8"/><stop offset="1" stop-color="#4227B8"/>
+    </radialGradient>
+  </defs>
+</svg>

@@ -20,13 +20,18 @@
 
   .layout { display: flex; flex: 1; min-height: 0; }
 
-  .sidebar { width: 340px; flex-shrink: 0; border-right: 1px solid #1C1E27; overflow-y: auto; background: #0C0E17; }
-  .sidebar::-webkit-scrollbar { width: 6px; }
-  .sidebar::-webkit-scrollbar-thumb { background: #23252E; border-radius: 3px; }
-  .section { padding: 18px 20px 8px; font-size: 11px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: #565869; }
-  .section + .item { margin-top: 2px; }
+  .sidebar { width: 350px; flex-shrink: 0; border-right: 1px solid #1C1E27; display: flex; flex-direction: column; background: #0C0E17; }
+  .search { padding: 14px 16px 6px; }
+  .search input { width: 100%; background: #15171F; border: 1px solid #23252E; border-radius: 12px; color: #FFFFFF; font: 500 13px 'DM Sans', sans-serif; padding: 10px 12px; outline: none; transition: border-color .15s; }
+  .search input::placeholder { color: #565869; }
+  .search input:focus { border-color: #A78BFA; }
+  .list { overflow-y: auto; flex: 1; padding-bottom: 16px; }
+  .list::-webkit-scrollbar { width: 6px; }
+  .list::-webkit-scrollbar-thumb { background: #23252E; border-radius: 3px; }
+  .section { padding: 16px 20px 6px; font-size: 11px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: #565869; display: flex; justify-content: space-between; }
+  .section span { letter-spacing: 0; color: #3A3C48; }
 
-  .item { display: flex; gap: 12px; align-items: center; padding: 11px 16px 11px 18px; cursor: pointer; border-left: 2px solid transparent; transition: background .15s, border-color .15s; }
+  .item { display: flex; gap: 12px; align-items: center; padding: 10px 16px 10px 18px; cursor: pointer; border-left: 2px solid transparent; transition: background .15s, border-color .15s; }
   .item:hover { background: rgba(255,255,255,0.03); }
   .item.active { background: rgba(167,139,250,0.10); border-left-color: #A78BFA; }
   .thumb { width: 64px; height: 44px; flex-shrink: 0; border-radius: 10px; border: 1px solid #23252E; background: #15171F center/cover no-repeat; }
@@ -42,8 +47,9 @@
   .tag.alert   { color: #FCA5A5; background: #26171F; border-color: #5D2F35; }
   .tag.success { color: #4ADE80; background: #08241F; border-color: #0B5236; }
   .tag.release { color: #F9A8D4; background: #26192B; border-color: #5A3358; }
+  .empty { padding: 24px 20px; font-size: 13px; color: #565869; }
 
-  .viewer { flex: 1; min-width: 0; display: flex; flex-direction: column; background: #090B14; }
+  .viewer { flex: 1; min-width: 0; display: flex; flex-direction: column; background: #090B14; position: relative; }
   .viewer-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 22px; border-bottom: 1px solid #1C1E27; flex-shrink: 0; }
   .viewer-head h2 { font-family: 'Hahmlet', Georgia, serif; font-size: 16px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .viewer-head .meta-line { font-size: 12px; color: #7D7F8F; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -51,15 +57,23 @@
   .btn { font-size: 12.5px; font-weight: 600; color: #FFFFFF; text-decoration: none; border: 1px solid #23252E; background: #15171F; border-radius: 12px; padding: 8px 14px; white-space: nowrap; cursor: pointer; transition: border-color .15s; }
   .btn:hover { border-color: #A78BFA; }
   .btn.seg.on { background: #1C1A30; border-color: #383159; color: #C4B5FD; }
+  .group { display: flex; }
+  .group .btn { border-radius: 0; }
+  .group .btn:first-child { border-radius: 12px 0 0 12px; }
+  .group .btn + .btn { border-radius: 0 12px 12px 0; margin-left: -1px; }
+  .group .btn.on { position: relative; z-index: 1; }
   .stage { flex: 1; min-height: 0; display: flex; justify-content: center; overflow: auto; }
   .stage iframe { width: 100%; height: 100%; border: 0; background: #090B14; transition: width .25s ease; }
   .stage.mobile iframe { width: 390px; border-left: 1px solid #1C1E27; border-right: 1px solid #1C1E27; }
+  .toast { position: absolute; left: 50%; bottom: 22px; transform: translate(-50%, 8px); max-width: calc(100% - 48px); background: #15171F; border: 1px solid #383159; border-radius: 12px;
+    padding: 10px 14px; font-size: 12.5px; color: #B4B5C4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0; pointer-events: none; transition: opacity .18s, transform .18s; }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+  .toast code { font: 600 12px ui-monospace, 'SF Mono', Menlo, monospace; color: #C4B5FD; }
 
   @media (max-width: 860px) {
     .sidebar { width: 96px; }
-    .meta, .section { display: none; }
+    .meta, .section, .search, .topbar .label, .viewer-head .meta-line, .group { display: none; }
     .item { justify-content: center; padding: 10px 0; }
-    .topbar .label, .viewer-head .meta-line, .seg { display: none; }
   }
 </style>
 </head>
@@ -67,26 +81,13 @@
 
 <div class="topbar">
   <img src="img/brand/lockup@2x.png" alt="humAIne">
-  <div class="label"><b>12</b> email templates &middot; dark, app-native</div>
+  <div class="label"><b id="count">43</b> email templates &middot; every flow in the app</div>
 </div>
 
 <div class="layout">
-  <aside class="sidebar" id="sidebar">
-    <div class="section">Lifecycle &middot; 4</div>
-    <div class="item" data-src="01-early-access.html" data-sender="humAIne" data-tag="info" data-label="Early access"></div>
-    <div class="item" data-src="07-welcome.html" data-sender="humAIne" data-tag="success" data-label="Welcome"></div>
-    <div class="item" data-src="09-onboarding-abandoned.html" data-sender="humAIne" data-tag="info" data-label="Abandoned setup"></div>
-    <div class="item" data-src="12-product-update.html" data-sender="humAIne" data-tag="release" data-label="Product update"></div>
-
-    <div class="section">Transactional &middot; 8</div>
-    <div class="item" data-src="02-security-alert.html" data-sender="humAIne Security" data-tag="alert" data-label="New device"></div>
-    <div class="item" data-src="03-document-shared.html" data-sender="humAIne" data-tag="info" data-label="Document shared"></div>
-    <div class="item" data-src="04-password-reset.html" data-sender="humAIne Security" data-tag="info" data-label="Password reset"></div>
-    <div class="item" data-src="05-pin-reset.html" data-sender="humAIne Security" data-tag="info" data-label="PIN reset"></div>
-    <div class="item" data-src="06-mfa-change.html" data-sender="humAIne Security" data-tag="alert" data-label="MFA reset"></div>
-    <div class="item" data-src="08-otp-code.html" data-sender="humAIne Security" data-tag="info" data-label="Sign-in code"></div>
-    <div class="item" data-src="10-org-invite.html" data-sender="humAIne" data-tag="info" data-label="Org invite"></div>
-    <div class="item" data-src="11-password-changed.html" data-sender="humAIne Security" data-tag="success" data-label="Password changed"></div>
+  <aside class="sidebar">
+    <div class="search"><input id="q" type="search" placeholder="Search emails…" aria-label="Search emails" autocomplete="off"></div>
+    <div class="list" id="list"></div>
   </aside>
 
   <main class="viewer">
@@ -96,80 +97,258 @@
         <div class="meta-line" id="viewer-pre">&nbsp;</div>
       </div>
       <div class="actions">
-        <button class="btn seg on" id="btn-desktop" type="button">Desktop</button>
-        <button class="btn seg" id="btn-mobile" type="button">Mobile</button>
-        <a class="btn" id="viewer-file" href="#" target="_blank" rel="noopener">Open &nearr;</a>
+        <div class="group" title="Fill merge tags with sample values, or show the raw tags">
+          <button class="btn seg on" id="btn-sample" type="button">Sample data</button>
+          <button class="btn seg" id="btn-tags" type="button">Merge tags</button>
+        </div>
+        <div class="group">
+          <button class="btn seg on" id="btn-desktop" type="button">Desktop</button>
+          <button class="btn seg" id="btn-mobile" type="button">Mobile</button>
+        </div>
+        <a class="btn" id="viewer-file" href="#" target="_blank" rel="noopener" title="Open the raw template">Open &nearr;</a>
       </div>
     </div>
     <div class="stage" id="stage"><iframe id="viewer-frame" title="Email preview"></iframe></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
   </main>
 </div>
 
 <script>
-  const items = [...document.querySelectorAll('.item')];
+  // Every email, grouped the way the app groups notifications. Subject and preheader are read live from each file.
+  const SEC = 'humAIne Security', HUM = 'humAIne', BILL = 'humAIne Billing', NEWS = 'humAIne News', SUP = 'humAIne Support';
+  const GROUPS = [
+    ['Onboarding', [
+      ['13-verify-email', HUM, 'info', 'Verify email'],
+      ['01-early-access', HUM, 'info', 'Early access'],
+      ['07-welcome', HUM, 'success', 'Welcome'],
+      ['09-onboarding-abandoned', HUM, 'info', 'Abandoned setup'],
+    ]],
+    ['Sign-in & recovery', [
+      ['04-password-reset', SEC, 'info', 'Forgot password'],
+      ['11-password-changed', SEC, 'success', 'Password changed'],
+      ['05-pin-reset', SEC, 'info', 'Forgot PIN'],
+      ['14-pin-changed', SEC, 'success', 'PIN changed'],
+      ['08-otp-code', SEC, 'info', 'Sign-in code'],
+      ['15-sign-in-paused', SEC, 'alert', 'Sign-in paused'],
+      ['16-recovery-admin-requested', SEC, 'info', 'Admin recovery'],
+      ['17-recovery-admin-alert', SEC, 'alert', 'Admin: member locked out'],
+    ]],
+    ['Security updates', [
+      ['02-security-alert', SEC, 'alert', 'New sign-in'],
+      ['06-mfa-change', SEC, 'info', 'Authenticator reset'],
+      ['18-backup-codes-new', SEC, 'info', 'Backup codes renewed'],
+      ['19-backup-codes-viewed', SEC, 'info', 'Backup codes viewed'],
+      ['20-recovery-phone-updated', SEC, 'info', 'Recovery phone'],
+      ['21-alternate-email-verify', SEC, 'info', 'Alternate email code'],
+      ['22-alternate-email-updated', SEC, 'info', 'Alternate email changed'],
+      ['23-address-updated', SEC, 'info', 'Address changed'],
+    ]],
+    ['Account & data', [
+      ['10-org-invite', HUM, 'info', 'Organisation invite'],
+      ['03-document-shared', HUM, 'info', 'Document shared'],
+      ['26-data-export-ready', HUM, 'success', 'Data export'],
+      ['24-account-deleted', HUM, 'info', 'Account deleted'],
+      ['25-account-suspended', SEC, 'alert', 'Account suspended'],
+    ]],
+    ['Billing', [
+      ['27-subscription-confirmed', BILL, 'success', 'Subscription active'],
+      ['28-payment-receipt', BILL, 'success', 'Payment receipt'],
+      ['29-renewal-reminder', BILL, 'info', 'Renewal reminder'],
+      ['30-payment-failed', BILL, 'alert', 'Payment failed'],
+      ['31-card-expiring', BILL, 'info', 'Card expiring'],
+      ['32-billing-details-updated', BILL, 'success', 'Billing details'],
+      ['33-plan-changed', BILL, 'success', 'Plan changed'],
+      ['34-subscription-cancelled', BILL, 'info', 'Cancelled'],
+      ['35-subscription-resumed', BILL, 'success', 'Resumed'],
+      ['36-subscription-ended', BILL, 'alert', 'Subscription ended'],
+      ['37-refund-issued', BILL, 'success', 'Refund'],
+    ]],
+    ['App updates', [
+      ['12-product-update', HUM, 'release', 'New release'],
+      ['38-feature-retiring', HUM, 'info', 'Feature retiring'],
+      ['39-planned-maintenance', HUM, 'info', 'Maintenance'],
+    ]],
+    ['News & offers', [
+      ['40-weekly-briefing', NEWS, 'info', 'Weekly briefing'],
+      ['41-org-in-the-news', NEWS, 'info', 'Organisation in the news'],
+      ['42-annual-offer', HUM, 'release', 'Annual offer'],
+    ]],
+    ['Support', [
+      ['43-support-received', SUP, 'success', 'Support reply'],
+    ]],
+  ];
+
+  const list = document.getElementById('list');
   const frame = document.getElementById('viewer-frame');
   const titleEl = document.getElementById('viewer-title');
   const preEl = document.getElementById('viewer-pre');
   const fileEl = document.getElementById('viewer-file');
   const stage = document.getElementById('stage');
-  const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const toastEl = document.getElementById('toast');
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const TAG = /\{\{\s*(\w+)\s*\}\}/g;
 
-  // Build each sidebar row from the template itself: subject from <title>, snippet from the preheader.
-  items.forEach(item => {
-    const src = item.dataset.src, stem = src.replace('.html', '');
-    item.innerHTML =
-      `<div class="thumb" style="background-image:url('img/hero/${stem}.jpg')"></div>
-       <div class="meta">
-         <div class="row1"><span class="sender">${esc(item.dataset.sender)}</span><span class="num">${stem.slice(0, 2)}</span></div>
-         <div class="subject">${esc(item.dataset.label)}</div>
-         <div class="snippet">&nbsp;</div>
-         <span class="tag ${item.dataset.tag}">${esc(item.dataset.label)}</span>
-       </div>`;
-    fetch(src).then(r => r.text()).then(html => {
-      const doc = new DOMParser().parseFromString(html, 'text/html');
-      const subject = (doc.querySelector('title')?.textContent || '').trim();
-      const pre = (doc.body.querySelector('div')?.textContent || '').replace(/[‌ ]+/g, ' ').trim();
-      item.dataset.subject = subject; item.dataset.pre = pre;
-      if (subject) item.querySelector('.subject').textContent = subject;
-      if (pre) item.querySelector('.snippet').textContent = pre;
-      if (item.classList.contains('active')) showMeta(item);
-    }).catch(() => {});
+  // Templates point at the production image host. Served from anywhere else (localhost, a preview deploy),
+  // swap in this origin so the preview shows the images that sit next to this page.
+  const PROD = 'https://humaine-email.vercel.app/';
+  const HERE = /^https?:$/.test(location.protocol) ? location.origin + '/' : PROD;
+
+  // Sample mode fills every {{merge_tag}} from samples.json. The templates themselves are never changed.
+  let samples = {};
+  const samplesReady = fetch('samples.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : {}).then(j => { samples = j; }).catch(() => {});
+  let mode = 'sample';
+  try { if (localStorage.getItem('humaine-preview-data') === 'tags') mode = 'tags'; } catch (e) {}
+  const fill = s => mode === 'sample' ? String(s || '').replace(TAG, (m, k) => k in samples ? samples[k] : m) : String(s || '');
+
+  const pages = new Map();
+  const load = stem => {
+    if (!pages.has(stem)) pages.set(stem, fetch(stem + '.html', { cache: 'no-cache' }).then(r => r.ok ? r.text() : '').catch(() => ''));
+    return pages.get(stem);
+  };
+
+  function render(html) {
+    // Remember which merge tag each link uses, so a click can say where it would go.
+    html = html.replace(/<a\b([^>]*?)\shref="([^"]*)"/g, (m, attrs, href) => {
+      const tags = [...href.matchAll(TAG)].map(t => t[1]).join(' ');
+      return `<a${attrs} href="${href}"${tags ? ` data-merge="${tags}"` : ''}`;
+    });
+    if (mode === 'sample') html = html.replace(TAG, (m, k) => k in samples ? esc(samples[k]) : m);
+    if (HERE !== PROD) html = html.split(PROD).join(HERE);
+    // Preview copy only: links report their merge tag to this page instead of navigating.
+    const hook = '<base target="_blank"><script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a");' +
+      'if(!a)return;e.preventDefault();parent.postMessage({mergeLink:a.getAttribute("data-merge")||"",href:a.getAttribute("href")||""},"*")},true)<\/script>';
+    return html.replace(/<head([^>]*)>/i, '<head$1>' + hook);
+  }
+
+  let toastTimer;
+  function toast(markup) {
+    toastEl.innerHTML = markup;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2600);
+  }
+
+  const items = [];
+  for (const [name, emails] of GROUPS) {
+    const head = document.createElement('div');
+    head.className = 'section';
+    head.innerHTML = `${esc(name)}<span>${emails.length}</span>`;
+    list.appendChild(head);
+    for (const [stem, sender, tag, label] of emails) {
+      const el = document.createElement('div');
+      el.className = 'item';
+      el.dataset.stem = stem;
+      el.dataset.label = label;
+      el.dataset.group = name;
+      el.innerHTML =
+        `<div class="thumb" style="background-image:url('img/hero/${stem}.jpg')"></div>
+         <div class="meta">
+           <div class="row1"><span class="sender">${esc(sender)}</span><span class="num">${stem.slice(0, 2)}</span></div>
+           <div class="subject">${esc(label)}</div>
+           <div class="snippet">&nbsp;</div>
+           <span class="tag ${tag}">${esc(label)}</span>
+         </div>`;
+      el.addEventListener('click', () => select(el));
+      list.appendChild(el);
+      items.push(el);
+      Promise.all([load(stem), samplesReady]).then(([html]) => {
+        if (!html) return;
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        el.dataset.subject = (doc.querySelector('title')?.textContent || '').trim();
+        el.dataset.pre = (doc.body.querySelector('div')?.textContent || '').replace(/[‌ \s]+/g, ' ').trim();
+        paint(el);
+      });
+    }
+  }
+  document.getElementById('count').textContent = items.length;
+
+  // Inbox line for one email: subject + preheader, filled or raw to match the current mode.
+  function paint(el) {
+    if (el.dataset.subject) el.querySelector('.subject').textContent = fill(el.dataset.subject);
+    if (el.dataset.pre) el.querySelector('.snippet').textContent = fill(el.dataset.pre);
+    if (el.classList.contains('active')) {
+      titleEl.textContent = fill(el.dataset.subject) || el.dataset.label;
+      preEl.textContent = fill(el.dataset.pre);
+    }
+  }
+
+  let current = null;
+  async function select(el, keepScroll) {
+    const y = keepScroll && current === el ? (frame.contentWindow?.scrollY || 0) : 0;
+    items.forEach(i => i.classList.remove('active'));
+    el.classList.add('active');
+    current = el;
+    fileEl.href = el.dataset.stem + '.html';
+    paint(el);
+    if (!el.dataset.subject) titleEl.textContent = el.dataset.label;
+    history.replaceState(null, '', '#' + el.dataset.stem.slice(0, 2));
+    const [html] = await Promise.all([load(el.dataset.stem), samplesReady]);
+    if (current !== el || !html) return;
+    frame.onload = () => { if (y) frame.contentWindow.scrollTo(0, y); };
+    frame.srcdoc = render(html);
+  }
+
+  window.addEventListener('message', e => {
+    if (e.source !== frame.contentWindow || !e.data || typeof e.data.href !== 'string') return;
+    const tags = e.data.mergeLink ? e.data.mergeLink.split(' ') : [];
+    toast('Links to ' + (tags.length ? tags.map(t => `<code>{{${esc(t)}}}</code>`).join(' ') : `<code>${esc(e.data.href)}</code>`));
   });
 
-  function showMeta(item) {
-    titleEl.textContent = item.dataset.subject || item.dataset.label;
-    preEl.textContent = item.dataset.pre || '';
-  }
+  // Search: filters on label, group, subject and preheader (raw and filled).
+  const q = document.getElementById('q');
+  const runSearch = () => {
+    const term = q.value.trim().toLowerCase();
+    let shown = 0;
+    items.forEach(el => {
+      const d = el.dataset;
+      const hay = [d.label, d.group, d.stem, d.subject, d.pre, fill(d.subject), fill(d.pre)].join(' ').toLowerCase();
+      const hit = !term || hay.includes(term);
+      el.style.display = hit ? '' : 'none';
+      if (hit) shown++;
+    });
+    list.querySelectorAll('.section').forEach(sec => {
+      let n = sec.nextElementSibling, any = false;
+      while (n && !n.classList.contains('section')) { if (n.style.display !== 'none') any = true; n = n.nextElementSibling; }
+      sec.style.display = any ? '' : 'none';
+    });
+    let empty = list.querySelector('.empty');
+    if (!shown && !empty) { empty = document.createElement('div'); empty.className = 'empty'; empty.textContent = 'No emails match that.'; list.appendChild(empty); }
+    if (shown && empty) empty.remove();
+  };
+  q.addEventListener('input', runSearch);
 
-  function select(item) {
-    items.forEach(i => i.classList.remove('active'));
-    item.classList.add('active');
-    frame.src = item.dataset.src;
-    fileEl.href = item.dataset.src;
-    showMeta(item);
-    history.replaceState(null, '', '#' + item.dataset.src.slice(0, 2));
-  }
-
-  items.forEach(item => item.addEventListener('click', () => select(item)));
-
-  const setMode = mobile => {
+  const setView = mobile => {
     stage.classList.toggle('mobile', mobile);
     document.getElementById('btn-mobile').classList.toggle('on', mobile);
     document.getElementById('btn-desktop').classList.toggle('on', !mobile);
   };
-  document.getElementById('btn-desktop').addEventListener('click', () => setMode(false));
-  document.getElementById('btn-mobile').addEventListener('click', () => setMode(true));
+  document.getElementById('btn-desktop').addEventListener('click', () => setView(false));
+  document.getElementById('btn-mobile').addEventListener('click', () => setView(true));
+
+  const setData = next => {
+    mode = next;
+    try { localStorage.setItem('humaine-preview-data', mode); } catch (e) {}
+    document.getElementById('btn-sample').classList.toggle('on', mode === 'sample');
+    document.getElementById('btn-tags').classList.toggle('on', mode === 'tags');
+    items.forEach(paint);
+    if (q.value) runSearch();
+    if (current) select(current, true);
+  };
+  document.getElementById('btn-sample').addEventListener('click', () => mode !== 'sample' && setData('sample'));
+  document.getElementById('btn-tags').addEventListener('click', () => mode !== 'tags' && setData('tags'));
+  document.getElementById('btn-sample').classList.toggle('on', mode === 'sample');
+  document.getElementById('btn-tags').classList.toggle('on', mode === 'tags');
 
   const hash = location.hash.slice(1);
-  select(items.find(i => hash && i.dataset.src.startsWith(hash)) || items[0]);
+  select(items.find(i => hash && i.dataset.stem.startsWith(hash)) || items[0]);
 
   document.addEventListener('keydown', e => {
-    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    if (e.target === q || (e.key !== 'ArrowDown' && e.key !== 'ArrowUp')) return;
     e.preventDefault();
-    const idx = items.findIndex(i => i.classList.contains('active'));
-    const next = items[e.key === 'ArrowDown' ? Math.min(idx + 1, items.length - 1) : Math.max(idx - 1, 0)];
-    select(next);
-    next.scrollIntoView({ block: 'nearest' });
+    const visible = items.filter(i => i.style.display !== 'none');
+    const idx = visible.findIndex(i => i.classList.contains('active'));
+    const next = visible[e.key === 'ArrowDown' ? Math.min(idx + 1, visible.length - 1) : Math.max(idx - 1, 0)];
+    if (next) { select(next); next.scrollIntoView({ block: 'nearest' }); }
   });
 </script>
 </body>

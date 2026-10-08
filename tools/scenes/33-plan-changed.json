@@ -1,0 +1,17 @@
+{
+  "name": "33-plan-changed",
+  "icon": "img/src/icons/card-swap.svg",
+  "iconSize": 300,
+  "iconY": 242,
+  "height": 500,
+  "seed": 33,
+  "planets": [
+    {"type": "pink", "x": 1000, "y": 250, "r": 34, "ring": true, "tilt": -20, "ringScale": 2.0},
+    {"type": "blue", "x": 300, "y": 112, "r": 20, "ring": true, "tilt": 20, "ringScale": 2.0},
+    {"type": "cyan", "x": 196, "y": 327, "r": 10}
+  ],
+  "orbit": {"scale": 1.28, "tilt": -4, "moon": "lilac", "moonR": 8, "moonAt": 0.36},
+  "pinkGlow": {"x": 990, "y": 258, "r": 207},
+  "shootingStar": {"x": 790, "y": 83, "len": 150, "angle": -16},
+  "sparkles": [[440, 392, 6], [880, 100, 6], [1080, 358, 5]]
+}

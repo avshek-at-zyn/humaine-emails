@@ -1,0 +1,107 @@
+<svg width="232" height="235" viewBox="0 0 232 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- humAIne clay: lilac archive box (lid + box, recessed hand-hold) with a white clock badge (glyph from lock-clock.svg). A feature retiring on a date. -->
+
+  <!-- floor shadow -->
+  <g opacity="0.3" filter="url(#ac_floor)">
+    <ellipse cx="106" cy="209" rx="66" ry="9.5" fill="black"/>
+  </g>
+
+  <!-- box : base, bottom shade, specular -->
+  <path d="M62 86H150A22 22 0 0 1 172 108V178A22 22 0 0 1 150 200H62A22 22 0 0 1 40 178V108A22 22 0 0 1 62 86Z" fill="url(#ac_box)"/>
+  <path d="M62 86H150A22 22 0 0 1 172 108V178A22 22 0 0 1 150 200H62A22 22 0 0 1 40 178V108A22 22 0 0 1 62 86Z" fill="url(#ac_boxShade)"/>
+  <path d="M62 86H150A22 22 0 0 1 172 108V178A22 22 0 0 1 150 200H62A22 22 0 0 1 40 178V108A22 22 0 0 1 62 86Z" fill="url(#ac_boxHi)"/>
+
+  <!-- hand-hold : soft recess, darker inner wall up top, lit lip below -->
+  <path d="M91 124H121A8 8 0 0 1 121 140H91A8 8 0 0 1 91 124Z" fill="url(#ac_slot)"/>
+  <path d="M91 124H121A8 8 0 0 1 121 140H91A8 8 0 0 1 91 124Z" fill="url(#ac_slotShade)"/>
+  <path d="M90 141.6H122" stroke="white" stroke-opacity="0.32" stroke-width="2.2" stroke-linecap="round" filter="url(#ac_soft)"/>
+
+  <!-- lid : soft contact shadow, clipped to the box so it never haloes onto the background -->
+  <g clip-path="url(#ac_boxClip)">
+    <path d="M45 61H167A17 17 0 0 1 184 78V92A17 17 0 0 1 167 109H45A17 17 0 0 1 28 92V78A17 17 0 0 1 45 61Z" fill="#3A1850" opacity="0.55" filter="url(#ac_lift)"/>
+  </g>
+  <path d="M45 54H167A17 17 0 0 1 184 71V85A17 17 0 0 1 167 102H45A17 17 0 0 1 28 85V71A17 17 0 0 1 45 54Z" fill="url(#ac_lid)"/>
+  <path d="M45 54H167A17 17 0 0 1 184 71V85A17 17 0 0 1 167 102H45A17 17 0 0 1 28 85V71A17 17 0 0 1 45 54Z" fill="url(#ac_lidShade)"/>
+  <path d="M45 54H167A17 17 0 0 1 184 71V85A17 17 0 0 1 167 102H45A17 17 0 0 1 28 85V71A17 17 0 0 1 45 54Z" fill="url(#ac_lidHi)"/>
+
+  <!-- clock badge : plum contact shadow, then lock-clock.svg's badge scaled to r=28 -->
+  <g opacity="0.45" filter="url(#ac_badgeBlur)">
+    <circle cx="178" cy="65" r="27" fill="#3A1850"/>
+  </g>
+  <g transform="translate(177 61) scale(0.8485) translate(-168 -93)">
+    <circle cx="168" cy="93" r="33" fill="url(#ac_badge)"/>
+    <circle cx="168" cy="93" r="33" fill="url(#ac_badgeShade)"/>
+    <circle cx="168" cy="93" r="33" fill="url(#ac_badgeHi)"/>
+    <circle cx="168" cy="93" r="22.5" stroke="url(#ac_glyph)" stroke-width="3.6"/>
+    <path d="M168 78.5V93L179.5 99" stroke="url(#ac_glyph)" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="168" cy="93" r="3" fill="#4B33C2"/>
+  </g>
+
+  <!-- confetti, as in the app set -->
+  <path d="M22.4 128.6L19.3 127.2C18.4 126.8 17.4 127.2 17 128L15.5 131.2C15.1 132.1 15.5 133.1 16.3 133.5L19.5 135C20.4 135.4 21.4 135 21.8 134.1L23.2 131C23.7 130.1 23.3 129.1 22.4 128.6Z" fill="#FFD166"/>
+  <rect x="190" y="132" width="6" height="6" rx="1.6" fill="#8B7FFF" transform="rotate(18 193 135)"/>
+  <circle cx="198" cy="188" r="3.4" fill="#FF9AC4"/>
+  <rect x="30" y="30" width="6" height="6" rx="1.6" fill="#7DE8FF" opacity="0.9" transform="rotate(-20 33 33)"/>
+
+  <defs>
+    <filter id="ac_floor" x="30" y="190" width="152" height="38" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.5"/>
+    </filter>
+    <filter id="ac_lift" x="10" y="44" width="192" height="84" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="4.5"/>
+    </filter>
+    <clipPath id="ac_boxClip">
+      <path d="M62 86H150A22 22 0 0 1 172 108V178A22 22 0 0 1 150 200H62A22 22 0 0 1 40 178V108A22 22 0 0 1 62 86Z"/>
+    </clipPath>
+    <filter id="ac_soft" x="-20%" y="-300%" width="140%" height="700%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="0.8"/>
+    </filter>
+    <filter id="ac_badgeBlur" x="144" y="26" width="74" height="74" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.2"/>
+    </filter>
+
+    <!-- box : deeper lilac clay, lit from top-left -->
+    <radialGradient id="ac_box" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(76 104) scale(132 118)">
+      <stop stop-color="#E5C3F0"/><stop offset="0.3" stop-color="#D4A2E6"/><stop offset="0.7" stop-color="#B570CC"/><stop offset="1" stop-color="#7A3E96"/>
+    </radialGradient>
+    <radialGradient id="ac_boxShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(112 194) scale(94 82)">
+      <stop stop-opacity="0"/><stop offset="0.65" stop-opacity="0"/><stop offset="1" stop-color="#3A1850" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="ac_boxHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(60 114) scale(34 28)">
+      <stop stop-color="white" stop-opacity="0.6"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- hand-hold recess -->
+    <linearGradient id="ac_slot" x1="0" y1="124" x2="0" y2="140" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3E1656"/><stop offset="0.55" stop-color="#5E2A7A"/><stop offset="1" stop-color="#8A4EA6"/>
+    </linearGradient>
+    <radialGradient id="ac_slotShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(106 124) scale(26 9)">
+      <stop stop-color="#2A0F3E" stop-opacity="0.45"/><stop offset="1" stop-color="#2A0F3E" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- lid : lighter lilac clay -->
+    <radialGradient id="ac_lid" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(82 60) scale(122 46)">
+      <stop stop-color="#F0D6F8"/><stop offset="0.3" stop-color="#E5C3F0"/><stop offset="0.7" stop-color="#C48DD8"/><stop offset="1" stop-color="#8E56A8"/>
+    </radialGradient>
+    <radialGradient id="ac_lidShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(112 100) scale(98 40)">
+      <stop stop-opacity="0"/><stop offset="0.65" stop-opacity="0"/><stop offset="1" stop-color="#472858" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="ac_lidHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(58 63) scale(36 14)">
+      <stop stop-color="white" stop-opacity="0.7"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- badge (lock-clock.svg, original coordinates) -->
+    <radialGradient id="ac_badge" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(161.4 76.8) scale(43 42)">
+      <stop stop-color="white"/><stop offset="0.5" stop-color="#F0EDF8"/><stop offset="1" stop-color="#D6D1EA"/>
+    </radialGradient>
+    <radialGradient id="ac_badgeShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(172 106) scale(38 36)">
+      <stop stop-color="#5A3C86" stop-opacity="0"/><stop offset="0.7" stop-color="#5A3C86" stop-opacity="0"/><stop offset="1" stop-color="#5A3C86" stop-opacity="0.22"/>
+    </radialGradient>
+    <radialGradient id="ac_badgeHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(158 73.5) scale(18.5 18)">
+      <stop stop-color="white" stop-opacity="0.6"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ac_glyph" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(158 80) scale(40 40)">
+      <stop stop-color="#8A7EE8"/><stop offset="0.45" stop-color="#6E60C8"/><stop offset="1" stop-color="#4227B8"/>
+    </radialGradient>
+  </defs>
+</svg>

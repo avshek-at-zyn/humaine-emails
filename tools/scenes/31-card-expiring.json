@@ -1,0 +1,17 @@
+{
+  "name": "31-card-expiring",
+  "icon": "img/src/icons/card-clock.svg",
+  "iconSize": 300,
+  "iconY": 242,
+  "height": 500,
+  "seed": 31,
+  "planets": [
+    {"type": "cyan", "x": 1004, "y": 197, "r": 32, "ring": true, "tilt": 24, "ringScale": 2.0},
+    {"type": "blue", "x": 280, "y": 338, "r": 20},
+    {"type": "pink", "x": 338, "y": 102, "r": 9}
+  ],
+  "orbit": {"scale": 1.32, "tilt": -10, "moon": "lilac", "moonR": 8, "moonAt": 0.62},
+  "pinkGlow": {"x": 996, "y": 203, "r": 207},
+  "shootingStar": {"x": 472, "y": 80, "len": 130, "angle": -18},
+  "sparkles": [[820, 390, 6], [152, 250, 5], [1078, 337, 5]]
+}

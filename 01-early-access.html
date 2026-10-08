@@ -8,7 +8,7 @@
 <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
 <meta name="color-scheme" content="dark">
 <meta name="supported-color-schemes" content="dark">
-<title>You&rsquo;re in.</title>
+<title>Your humAIne early access is approved</title>
 <!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
 <![endif]-->
@@ -26,12 +26,17 @@
     .px{padding-left:24px!important;padding-right:24px!important;}
     .h1{font-size:27px!important;line-height:1.25!important;}
     .lead{font-size:15px!important;}
+    .split{padding:6px 24px 0!important;}
+    .split-img,.split-img img{max-width:280px!important;}
+    .split-copy{max-width:100%!important;}
+    .split-pad{padding:0!important;}
+    .inc-l{width:92px!important;}
   }
 </style>
 </head>
 <body class="body" style="margin:0;padding:0;background-color:#090B14;">
 
-<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#090B14;">No waitlist, no sales call. Chat, news, and documents from minute one.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#090B14;">Your invite is valid until {{expiry_date}}. Chat, News and Documents, on one sign-in.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#090B14" style="background-color:#090B14;">
 <tr><td align="center" style="padding:0 0 8px;">
@@ -44,74 +49,67 @@
     <img src="https://humaine-email.vercel.app/img/brand/lockup@2x.png" width="144" height="36" alt="humAIne" style="display:block;width:144px;height:36px;border:0;">
   </td></tr>
 
-  <!-- hero : app clay illustration in a planetary scene, edges fade into the canvas -->
-  <tr><td>
-    <img src="https://humaine-email.vercel.app/img/hero/01-early-access.jpg" width="600" alt="A lilac clay person wearing a star badge, circled by an orbit and small ringed planets" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
+  <!-- signature : split hero. Copy and the primary action left (~60%), a compact square scene right (~40%) that bleeds to the edge.
+       Fluid inline-block columns (240 + 320) sit side by side at 560px and stack on narrow screens without media queries;
+       dir="rtl" puts the scene first in source order, so it lands on the right on desktop and above the copy on mobile. -->
+  <tr><td class="split" dir="rtl" align="center" style="padding:22px 0 0 40px;font-size:0;line-height:0;text-align:center;">
+    <!--[if mso]><table role="presentation" width="560" cellpadding="0" cellspacing="0" border="0" dir="rtl"><tr><td width="240" valign="middle" dir="ltr"><![endif]-->
+    <div class="split-img" dir="ltr" style="display:inline-block;width:100%;max-width:240px;vertical-align:middle;">
+          <img src="https://humaine-email.vercel.app/img/hero/01-early-access.jpg" width="240" alt="A lilac clay person wearing a white star badge, on a faint orbit beside a ringed blue planet" style="display:block;width:100%;max-width:240px;height:auto;border:0;margin:0 auto;">
+    </div>
+    <!--[if mso]></td><td width="320" valign="middle" dir="ltr"><![endif]-->
+    <div class="split-copy" dir="ltr" style="display:inline-block;width:100%;max-width:320px;vertical-align:middle;text-align:left;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="split-pad" align="left" style="padding:0 16px 0 0;text-align:left;">
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+            <td style="padding:7px 14px;background-color:#1C1A30;border:1px solid #383159;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:14px;font-weight:600;color:#C4B5FD;">&#10022;&nbsp; Invite valid until {{expiry_date}}</td>
+          </tr></table>
+          <h1 class="h1" style="margin:20px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;text-align:left;text-wrap:balance;">{{first_name}}, you&rsquo;re approved for early&nbsp;access</h1>
+          <p class="lead" style="margin:14px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#B4B5C4;text-align:left;">You get a security companion that reads what&rsquo;s happening across your estate and shows its&nbsp;working.</p>
+          <!-- primary action : sits in the copy column (VML width = column width) -->
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 0 0;">
+            <!--[if mso]>
+            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{activation_url}}" style="height:52px;v-text-anchor:middle;width:304px;" arcsize="31%" stroke="f" fillcolor="#768AFF">
+              <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
+              <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Activate my account</center>
+            </v:roundrect>
+            <![endif]-->
+            <!--[if !mso]><!-->
+            <a href="{{activation_url}}" style="display:block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:16px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:600;line-height:52px;text-align:center;text-decoration:none;">Activate my account</a>
+            <!--<![endif]-->
+          </td></tr></table>
+          <p style="margin:12px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:1.55;color:#7D7F8F;text-align:left;">Set-up asks for a 6&ndash;8 digit PIN and pairs your authenticator&nbsp;app.</p>
+      </td></tr></table>
+    </div>
+    <!--[if mso]></td></tr></table><![endif]-->
   </td></tr>
 
-  <!-- status chip -->
-  <tr><td align="center" class="px" style="padding:4px 40px 0;">
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
-      <td style="padding:7px 14px;background-color:#1C1A30;border:1px solid #383159;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:14px;font-weight:600;color:#C4B5FD;">&#10022;&nbsp; Early access approved</td>
-    </tr></table>
-  </td></tr>
-
-  <!-- headline + lead -->
-  <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;">You&rsquo;re in, {{first_name}}.</h1>
-    <p class="lead" style="margin:16px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#B4B5C4;">No waitlist. No sales call. No forty-slide deck. Your early access to humAIne is switched on &mdash; here&rsquo;s what&rsquo;s waiting.</p>
-  </td></tr>
-
-  <!-- what you get : set's feature-row pattern (lilac label, bold title, body) -->
-  <tr><td class="px" style="padding:28px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#15171F;border:1px solid #23252E;border-radius:16px;">
-      <tr><td style="padding:18px 22px;border-bottom:1px solid #1F2129;">
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#C4B5FD;">Chat</p>
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:600;color:#FFFFFF;">Answers that show their working</p>
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6;color:#B4B5C4;">Ask the awkward questions. See the reasoning, not just a&nbsp;verdict.</p>
-      </td></tr>
-      <tr><td style="padding:18px 22px;border-bottom:1px solid #1F2129;">
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#C4B5FD;">News</p>
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:600;color:#FFFFFF;">The day, already sorted</p>
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6;color:#B4B5C4;">What actually moved your industry today, minus the fourteen&nbsp;tabs.</p>
-      </td></tr>
-      <tr><td style="padding:18px 22px;border-bottom:1px solid #1F2129;">
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#C4B5FD;">Documents</p>
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:600;color:#FFFFFF;">First drafts, handled</p>
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6;color:#B4B5C4;">Reports, memos and proposals in minutes rather than afternoons. You bring the final&nbsp;polish.</p>
-      </td></tr>
-      <tr><td style="padding:14px 22px 16px;">
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;font-weight:500;color:#C4B5FD;">&#10022;&nbsp; One sign-in opens all three. Start wherever your day&nbsp;does.</p>
-      </td></tr>
+  <!-- what early access includes : compact, quiet rows on the canvas -->
+  <tr><td class="px" style="padding:44px 40px 0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr><td colspan="2" style="padding:0 0 10px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:14px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:#7D7F8F;">Included</td></tr>
+      <tr>
+        <td class="inc-l" width="112" valign="top" style="width:112px;padding:13px 0;border-top:1px solid #1F2129;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:20px;font-weight:600;color:#C4B5FD;">Chat</td>
+        <td valign="top" style="padding:13px 0;border-top:1px solid #1F2129;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;color:#B4B5C4;">Ask by text or voice. Private mode keeps a conversation out of&nbsp;history.</td>
+      </tr>
+      <tr>
+        <td class="inc-l" width="112" valign="top" style="width:112px;padding:13px 0;border-top:1px solid #1F2129;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:20px;font-weight:600;color:#C4B5FD;">News</td>
+        <td valign="top" style="padding:13px 0;border-top:1px solid #1F2129;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;color:#B4B5C4;">The week&rsquo;s security briefings, each with its source&nbsp;articles.</td>
+      </tr>
+      <tr>
+        <td class="inc-l" width="112" valign="top" style="width:112px;padding:13px 0;border-top:1px solid #1F2129;border-bottom:1px solid #1F2129;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:20px;font-weight:600;color:#C4B5FD;">Documents</td>
+        <td valign="top" style="padding:13px 0;border-top:1px solid #1F2129;border-bottom:1px solid #1F2129;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;color:#B4B5C4;">Attach a file to ask about it, or have humAIne draft&nbsp;one.</td>
+      </tr>
     </table>
   </td></tr>
 
-  <!-- activation nudge -->
-  <tr><td align="center" class="px" style="padding:24px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#B4B5C4;">Your invite is good until {{expiry_date}}. Activation takes about two minutes &mdash; we&rsquo;ll&nbsp;time&nbsp;you.</p>
-  </td></tr>
-
-  <!-- primary action -->
-  <tr><td class="px" style="padding:28px 40px 0;">
-    <!--[if mso]>
-    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{activation_url}}" style="height:52px;v-text-anchor:middle;width:520px;" arcsize="31%" stroke="f" fillcolor="#768AFF">
-      <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
-      <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Activate my account</center>
-    </v:roundrect>
-    <![endif]-->
-    <!--[if !mso]><!-->
-    <a href="{{activation_url}}" style="display:block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:16px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:600;line-height:52px;text-align:center;text-decoration:none;">Activate my account</a>
-    <!--<![endif]-->
-  </td></tr>
-
   <!-- ask humAIne -->
-  <tr><td class="px" style="padding:28px 40px 0;">
+  <tr><td class="px" style="padding:32px 40px 0;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#12131C;border:1px solid #2A2547;border-radius:16px;">
       <tr>
         <td width="52" valign="middle" style="padding:14px 0 14px 16px;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="36" height="35" alt="" style="display:block;width:36px;height:35px;border:0;"></td>
         <td valign="middle" style="padding:14px 12px;">
           <p style="margin:0 0 3px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#8E86C9;">Ask humAIne</p>
-          <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:16px;line-height:22px;color:#FFFFFF;text-decoration:none;">&ldquo;What can you help&nbsp;me&nbsp;with?&rdquo;</a>
+          <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:16px;line-height:22px;color:#FFFFFF;text-decoration:none;">&ldquo;Was I in a breach?&rdquo;</a>
         </td>
         <td width="40" valign="middle" align="right" style="padding:14px 18px 14px 0;"><a href="{{chat_url}}" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;line-height:20px;color:#A78BFA;text-decoration:none;">&rarr;</a></td>
       </tr>
@@ -120,10 +118,10 @@
 
   <!-- fine print -->
   <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">Button being stubborn? Paste this instead:<br><a href="{{activation_url}}" style="color:#A78BFA;word-break:break-all;">{{activation_url}}</a><br>Questions? <a href="{{help_url}}" style="color:#A78BFA;">Talk to a human</a>.</p>
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">Button not working? Paste this link:<br><a href="{{activation_url}}" style="color:#A78BFA;word-break:break-all;">{{activation_url}}</a></p>
   </td></tr>
 
-  <!-- footer : marketing (with unsubscribe) -->
+  <!-- footer : lifecycle -->
   <tr><td class="px" style="padding:44px 40px 0;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#1C1E27;">&nbsp;</td></tr></table>
   </td></tr>

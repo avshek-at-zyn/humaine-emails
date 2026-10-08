@@ -1,0 +1,17 @@
+{
+  "name": "18-backup-codes-new",
+  "icon": "img/src/icons/codes-new.svg",
+  "iconSize": 270,
+  "iconY": 250,
+  "height": 480,
+  "seed": 18,
+  "planets": [
+    { "type": "cyan", "x": 238, "y": 140, "r": 18, "ring": true, "tilt": -16, "ringScale": 2.1 },
+    { "type": "lilac", "x": 996, "y": 318, "r": 46 },
+    { "type": "pink", "x": 872, "y": 104, "r": 12 }
+  ],
+  "orbit": { "scale": 1.26, "tilt": -9, "moon": "blue", "moonR": 8, "moonAt": 0.58 },
+  "pinkGlow": { "x": 984, "y": 310, "r": 220 },
+  "shootingStar": { "x": 430, "y": 86, "len": 150, "angle": 18 },
+  "sparkles": [[812, 404, 7], [356, 250, 5], [1078, 196, 5], [196, 336, 5]]
+}

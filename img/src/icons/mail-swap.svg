@@ -1,0 +1,144 @@
+<svg width="232" height="235" viewBox="0 0 232 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- humAIne clay: two lilac envelopes (the app's invitation-mail-sent.svg envelope, drawn once in mail-code.svg), the old one tucked behind the new, with the glossy green success badge. Alternate email swapped. -->
+  <defs>
+    <!-- old envelope body : deeper lilac clay, lit from top-left (app envB / envAO / envHi) -->
+    <radialGradient id="msb_envB" cx="38%" cy="25%" r="72%">
+      <stop offset="0" stop-color="#E5C3F0"/>
+      <stop offset="0.3" stop-color="#D4A2E6"/>
+      <stop offset="0.7" stop-color="#B570CC"/>
+      <stop offset="1" stop-color="#7A3E96"/>
+    </radialGradient>
+    <radialGradient id="msb_envAO" cx="55%" cy="88%" r="55%">
+      <stop offset="0" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.65" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#472858" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="msb_envHi" cx="28%" cy="16%" r="28%">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <!-- flap : lighter lilac clay (app flapG / flapHi) -->
+    <radialGradient id="msb_flapG" cx="38%" cy="22%" r="68%">
+      <stop offset="0" stop-color="#F5E4FB"/>
+      <stop offset="0.3" stop-color="#EDD2F5"/>
+      <stop offset="0.7" stop-color="#D4A2E6"/>
+      <stop offset="1" stop-color="#9C62B8"/>
+    </radialGradient>
+    <radialGradient id="msb_flapAO" cx="50%" cy="100%" r="60%">
+      <stop offset="0" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.65" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#472858" stop-opacity="0.3"/>
+    </radialGradient>
+    <radialGradient id="msb_flapHi" cx="30%" cy="15%" r="26%">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <!-- new envelope body : lilac clay, lit from top-left (app envB / envAO / envHi) -->
+    <radialGradient id="msf_envB" cx="38%" cy="25%" r="72%">
+      <stop offset="0" stop-color="#F0D6F8"/>
+      <stop offset="0.3" stop-color="#E5C3F0"/>
+      <stop offset="0.7" stop-color="#C48DD8"/>
+      <stop offset="1" stop-color="#8E56A8"/>
+    </radialGradient>
+    <radialGradient id="msf_envAO" cx="55%" cy="88%" r="55%">
+      <stop offset="0" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.65" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#472858" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="msf_envHi" cx="28%" cy="16%" r="28%">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <!-- flap : lighter lilac clay (app flapG / flapHi) -->
+    <radialGradient id="msf_flapG" cx="38%" cy="22%" r="68%">
+      <stop offset="0" stop-color="#F5E4FB"/>
+      <stop offset="0.3" stop-color="#EDD2F5"/>
+      <stop offset="0.7" stop-color="#D4A2E6"/>
+      <stop offset="1" stop-color="#9C62B8"/>
+    </radialGradient>
+    <radialGradient id="msf_flapAO" cx="50%" cy="100%" r="60%">
+      <stop offset="0" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.65" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#472858" stop-opacity="0.3"/>
+    </radialGradient>
+    <radialGradient id="msf_flapHi" cx="30%" cy="15%" r="26%">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <!-- glossy green success badge (app password-reset-success.svg) -->
+    <radialGradient id="ms_grn" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(166.2 167.41) scale(37.7 37.96)">
+      <stop stop-color="#78F0C0"/>
+      <stop offset="0.5" stop-color="#2ECB8C"/>
+      <stop offset="1" stop-color="#0C6E48"/>
+    </radialGradient>
+    <radialGradient id="ms_grnHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(163.3 164.48) scale(16.24 16.36)">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ms_tick" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(170 177.97) scale(15.4 12.12)">
+      <stop stop-color="white"/>
+      <stop offset="1" stop-color="#E8F8F0"/>
+    </radialGradient>
+    <filter id="ms_grnBlur" x="129" y="143" width="88" height="88" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.2"/>
+    </filter>
+    <filter id="ms_lift" x="-30%" y="-20%" width="160%" height="160%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#08041A" flood-opacity="0.4"/>
+    </filter>
+    <filter id="ms_liftS" x="-40%" y="-30%" width="180%" height="180%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#08041A" flood-opacity="0.35"/>
+    </filter>
+    <filter id="ms_floor" x="20" y="180" width="200" height="40" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.5"/>
+    </filter>
+    <filter id="ms_glint" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="1.85"/></filter>
+  </defs>
+
+  <!-- floor shadow -->
+  <g opacity="0.3" filter="url(#ms_floor)">
+    <ellipse cx="104" cy="205" rx="70" ry="8.5" fill="black"/>
+  </g>
+
+  <!-- the old envelope, tucked behind : deeper lilac clay -->
+  <g transform="translate(62 -5.6) scale(0.8)">
+    <g filter="url(#ms_lift)">
+      <path d="M52 72H164A22 22 0 0 1 186 94V155A22 22 0 0 1 164 177H52A22 22 0 0 1 30 155V94A22 22 0 0 1 52 72Z" fill="url(#msb_envB)"/>
+      <path d="M52 72H164A22 22 0 0 1 186 94V155A22 22 0 0 1 164 177H52A22 22 0 0 1 30 155V94A22 22 0 0 1 52 72Z" fill="url(#msb_envAO)"/>
+      <path d="M52 72H164A22 22 0 0 1 186 94V155A22 22 0 0 1 164 177H52A22 22 0 0 1 30 155V94A22 22 0 0 1 52 72Z" fill="url(#msb_envHi)"/>
+    </g>
+    <g filter="url(#ms_liftS)">
+      <path d="M30 72Q30 64.7 39.8 64.7L108 106.2L176.2 64.7Q186 64.7 186 72V81.8L108 123.2L30 81.8Z" fill="url(#msb_flapG)"/>
+      <path d="M30 72Q30 64.7 39.8 64.7L108 106.2L176.2 64.7Q186 64.7 186 72V81.8L108 123.2L30 81.8Z" fill="url(#msb_flapAO)"/>
+      <path d="M30 72Q30 64.7 39.8 64.7L108 106.2L176.2 64.7Q186 64.7 186 72V81.8L108 123.2L30 81.8Z" fill="url(#msb_flapHi)"/>
+    </g>
+  </g>
+
+  <!-- the new envelope, in front : the same base as mail-code.svg -->
+  <g transform="translate(-10 14)">
+    <g filter="url(#ms_lift)">
+      <path d="M52 72H164A22 22 0 0 1 186 94V155A22 22 0 0 1 164 177H52A22 22 0 0 1 30 155V94A22 22 0 0 1 52 72Z" fill="url(#msf_envB)"/>
+      <path d="M52 72H164A22 22 0 0 1 186 94V155A22 22 0 0 1 164 177H52A22 22 0 0 1 30 155V94A22 22 0 0 1 52 72Z" fill="url(#msf_envAO)"/>
+      <path d="M52 72H164A22 22 0 0 1 186 94V155A22 22 0 0 1 164 177H52A22 22 0 0 1 30 155V94A22 22 0 0 1 52 72Z" fill="url(#msf_envHi)"/>
+    </g>
+    <g filter="url(#ms_liftS)">
+      <path d="M30 72Q30 64.7 39.8 64.7L108 106.2L176.2 64.7Q186 64.7 186 72V81.8L108 123.2L30 81.8Z" fill="url(#msf_flapG)"/>
+      <path d="M30 72Q30 64.7 39.8 64.7L108 106.2L176.2 64.7Q186 64.7 186 72V81.8L108 123.2L30 81.8Z" fill="url(#msf_flapAO)"/>
+      <path d="M30 72Q30 64.7 39.8 64.7L108 106.2L176.2 64.7Q186 64.7 186 72V81.8L108 123.2L30 81.8Z" fill="url(#msf_flapHi)"/>
+    </g>
+  </g>
+
+  <!-- green badge : soft contact shadow, glossy disc, specular, white check -->
+  <g opacity="0.4" filter="url(#ms_grnBlur)">
+    <circle cx="173" cy="186" r="29" fill="#062A1E"/>
+  </g>
+  <circle cx="172" cy="182" r="29" fill="url(#ms_grn)"/>
+  <circle cx="172" cy="182" r="29" fill="url(#ms_grnHi)"/>
+  <path d="M159.73 182L168.66 192.12L185.38 171.88" stroke="url(#ms_tick)" stroke-width="4.93" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- confetti + glint, as in the app's success set -->
+  <rect x="18.8" y="62.8" width="6.4" height="6.4" rx="1.6" fill="#FFD166" transform="rotate(-20 22 66)"/>
+  <circle cx="16" cy="204" r="3.4" fill="#FF9AC4"/>
+  <rect x="214.8" y="146.8" width="6.4" height="6.4" rx="1.6" fill="#7DE8FF" transform="rotate(18 218 150)"/>
+  <rect x="196.8" y="20.8" width="6.4" height="6.4" rx="1.6" fill="#8B7FFF" transform="rotate(-12 200 24)"/>
+  <g opacity="0.6" filter="url(#ms_glint)"><circle cx="60" cy="40" r="1.8" fill="white"/></g>
+</svg>

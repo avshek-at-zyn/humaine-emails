@@ -1,0 +1,17 @@
+{
+  "name": "17-recovery-admin-alert",
+  "icon": "img/src/icons/admin-alert.svg",
+  "iconSize": 270,
+  "height": 480,
+  "seed": 17,
+  "planets": [
+    { "type": "lilac", "x": 204, "y": 260, "r": 36 },
+    { "type": "pink", "x": 400, "y": 100, "r": 16, "ring": true, "tilt": -14, "ringScale": 2.2 },
+    { "type": "cyan", "x": 1010, "y": 294, "r": 13 },
+    { "type": "blue", "x": 888, "y": 108, "r": 8 }
+  ],
+  "orbit": { "scale": 1.24, "tilt": 9, "moon": "lilac", "moonR": 8, "moonAt": 0.08 },
+  "pinkGlow": { "x": 780, "y": 294, "r": 200 },
+  "shootingStar": { "x": 840, "y": 88, "len": 140, "angle": -20 },
+  "sparkles": [[330, 166, 5], [1060, 190, 5], [760, 370, 6]]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "42-annual-offer",
+  "icon": "img/src/icons/gift.svg",
+  "iconSize": 290,
+  "iconY": 246,
+  "height": 500,
+  "seed": 42,
+  "planets": [
+    { "type": "pink", "x": 334, "y": 268, "r": 32, "ring": true, "tilt": -10, "ringScale": 2.0 },
+    { "type": "blue", "x": 800, "y": 106, "r": 12 }
+  ],
+  "orbit": { "scale": 1.36, "ry": 100, "tilt": -4, "moon": "lilac", "moonR": 10, "moonAt": 0.0 },
+  "pinkGlow": { "x": 600, "y": 360, "r": 240 },
+  "shootingStar": { "x": 960, "y": 110, "len": 150, "angle": -18 },
+  "sparkles": [[470, 98, 6], [1080, 210, 6], [170, 200, 5], [820, 392, 7], [280, 384, 5]]
+}

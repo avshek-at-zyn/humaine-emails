@@ -8,7 +8,7 @@
 <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
 <meta name="color-scheme" content="dark">
 <meta name="supported-color-schemes" content="dark">
-<title>Set a new humAIne device PIN</title>
+<title>Reset your humAIne PIN</title>
 <!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
 <![endif]-->
@@ -26,12 +26,15 @@
     .px{padding-left:24px!important;padding-right:24px!important;}
     .h1{font-size:27px!important;line-height:1.25!important;}
     .lead{font-size:15px!important;}
+    .split-img,.split-img-el{max-width:260px!important;}
+    .split-copy{max-width:100%!important;}
+    .split-pad{padding:6px 0 0!important;}
   }
 </style>
 </head>
 <body class="body" style="margin:0;padding:0;background-color:#090B14;">
 
-<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#090B14;">Set a new PIN for {{device_name}}. The setup window closes in {{expiry_minutes}} minutes.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#090B14;">Choose a new PIN with the link inside. It expires in {{expiry_minutes}} minutes.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#090B14" style="background-color:#090B14;">
 <tr><td align="center" style="padding:0 0 8px;">
@@ -44,106 +47,69 @@
     <img src="https://humaine-email.vercel.app/img/brand/lockup@2x.png" width="144" height="36" alt="humAIne" style="display:block;width:144px;height:36px;border:0;">
   </td></tr>
 
-  <!-- hero : app clay illustration in a planetary scene, edges fade into the canvas -->
-  <tr><td>
-    <img src="https://humaine-email.vercel.app/img/hero/05-pin-reset.jpg" width="600" alt="A soft lilac clay keypad with nine raised keys and a white badge showing three PIN dots, framed by small planets" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
+  <!-- signature move : split hero. Copy + action left (304), compact square keypad scene right (216).
+       The image comes first in source and dir="rtl" puts it on the right, so on mobile it stacks above the copy. -->
+  <tr><td class="px" dir="rtl" align="center" style="padding:22px 40px 0;font-size:0;line-height:0;text-align:center;">
+    <!--[if mso]><table role="presentation" width="520" cellpadding="0" cellspacing="0" border="0" dir="rtl"><tr><td width="216" valign="middle" dir="ltr"><![endif]-->
+    <div class="split-img" dir="ltr" style="display:inline-block;width:100%;max-width:216px;vertical-align:middle;">
+      <img class="split-img-el" src="https://humaine-email.vercel.app/img/hero/05-pin-reset.jpg" width="216" alt="A lilac clay keypad with a white badge showing three PIN dots, inside a faint orbit" style="display:block;width:100%;max-width:216px;height:auto;border:0;margin:0 auto;">
+    </div>
+    <!--[if mso]></td><td width="304" valign="middle" dir="ltr"><![endif]-->
+    <div class="split-copy" dir="ltr" style="display:inline-block;width:100%;max-width:304px;vertical-align:middle;text-align:left;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="split-pad" align="left" style="padding:0 16px 0 0;text-align:left;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td style="padding:7px 14px;background-color:#1C1A30;border:1px solid #383159;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:14px;font-weight:600;color:#C4B5FD;">&#10022;&nbsp; PIN reset requested</td>
+        </tr></table>
+        <h1 class="h1" style="margin:18px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;text-align:left;text-wrap:balance;">Reset your humAIne&nbsp;PIN</h1>
+        <p class="lead" style="margin:14px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#B4B5C4;text-align:left;">We received a request to reset the unique PIN for your humAIne account. Choose a new PIN using the button&nbsp;below.</p>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:22px 0 0;">
+          <!--[if mso]>
+          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{set_pin_url}}" style="height:52px;v-text-anchor:middle;width:288px;" arcsize="31%" stroke="f" fillcolor="#768AFF">
+            <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
+            <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Reset PIN</center>
+          </v:roundrect>
+          <![endif]-->
+          <!--[if !mso]><!-->
+          <a href="{{set_pin_url}}" style="display:block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:16px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:600;line-height:52px;text-align:center;text-decoration:none;">Reset PIN</a>
+          <!--<![endif]-->
+        </td></tr></table>
+        <p style="margin:12px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;color:#7D7F8F;text-align:left;">This link expires in {{expiry_minutes}} minutes.</p>
+      </td></tr></table>
+    </div>
+    <!--[if mso]></td></tr></table><![endif]-->
   </td></tr>
 
-  <!-- status chip -->
-  <tr><td align="center" class="px" style="padding:4px 40px 0;">
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
-      <td style="padding:7px 14px;background-color:#1C1A30;border:1px solid #383159;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:14px;font-weight:600;color:#C4B5FD;">&#10022;&nbsp; PIN reset requested</td>
-    </tr></table>
-  </td></tr>
-
-  <!-- headline + lead -->
-  <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;">Six new digits.</h1>
-    <p class="lead" style="margin:16px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#B4B5C4;">Hi {{first_name}} &mdash; you asked to reset the PIN that unlocks humAIne on one of your devices. Pick something you&rsquo;ll actually remember, but your flatmate wouldn&rsquo;t&nbsp;guess.</p>
-  </td></tr>
-
-  <!-- request card -->
-  <tr><td class="px" style="padding:28px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#15171F;border:1px solid #23252E;border-radius:16px;">
-      <tr><td style="padding:16px 22px;border-bottom:1px solid #1F2129;">
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Device</p>
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">{{device_name}}</p>
-      </td></tr>
-      <tr><td style="padding:16px 22px;border-bottom:1px solid #1F2129;">
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Setup window</p>
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">Closes in {{expiry_minutes}} minutes</p>
-      </td></tr>
-      <tr><td style="padding:14px 22px 16px;">
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;font-weight:500;color:#C4B5FD;">&#10022;&nbsp; Your current PIN keeps working until you pick the new one.</p>
-      </td></tr>
-    </table>
-  </td></tr>
-
-  <!-- primary action -->
-  <tr><td class="px" style="padding:28px 40px 0;">
+  <!-- the app's PIN rules : compact chips (rule in white, the example it rules out struck through) -->
+  <tr><td class="px" style="padding:30px 40px 0;">
+    <p style="margin:0 0 10px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Rules for the new PIN</p>
     <!--[if mso]>
-    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{set_pin_url}}" style="height:52px;v-text-anchor:middle;width:520px;" arcsize="31%" stroke="f" fillcolor="#768AFF">
-      <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
-      <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Set a new PIN</center>
-    </v:roundrect>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td style="padding:6px 11px;background-color:#15171F;border:1px solid #23252E;font-family:Arial,sans-serif;font-size:12px;line-height:16px;font-weight:bold;color:#FFFFFF;">6&ndash;8 digits</td><td width="6">&nbsp;</td>
+      <td style="padding:6px 11px;background-color:#15171F;border:1px solid #23252E;font-family:Arial,sans-serif;font-size:12px;line-height:16px;font-weight:bold;color:#FFFFFF;">Numbers only</td><td width="6">&nbsp;</td>
+      <td style="padding:6px 11px;background-color:#15171F;border:1px solid #23252E;font-family:Arial,sans-serif;font-size:12px;line-height:16px;font-weight:bold;color:#FFFFFF;">No repeats <span style="color:#7D7F8F;font-weight:normal;text-decoration:line-through;">111111</span></td><td width="6">&nbsp;</td>
+      <td style="padding:6px 11px;background-color:#15171F;border:1px solid #23252E;font-family:Arial,sans-serif;font-size:12px;line-height:16px;font-weight:bold;color:#FFFFFF;">No sequences <span style="color:#7D7F8F;font-weight:normal;text-decoration:line-through;">123456</span></td>
+    </tr></table>
     <![endif]-->
     <!--[if !mso]><!-->
-    <a href="{{set_pin_url}}" style="display:block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:16px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:600;line-height:52px;text-align:center;text-decoration:none;">Set a new PIN</a>
+    <div style="font-size:0;line-height:0;">
+      <span style="display:inline-block;margin:0 6px 6px 0;padding:6px 11px;background-color:#15171F;border:1px solid #23252E;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#FFFFFF;white-space:nowrap;">6&ndash;8 digits</span><span style="display:inline-block;margin:0 6px 6px 0;padding:6px 11px;background-color:#15171F;border:1px solid #23252E;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#FFFFFF;white-space:nowrap;">Numbers only</span><span style="display:inline-block;margin:0 6px 6px 0;padding:6px 11px;background-color:#15171F;border:1px solid #23252E;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#FFFFFF;white-space:nowrap;">No repeats <span style="color:#7D7F8F;font-weight:500;text-decoration:line-through;">111111</span></span><span style="display:inline-block;margin:0 6px 6px 0;padding:6px 11px;background-color:#15171F;border:1px solid #23252E;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#FFFFFF;white-space:nowrap;">No sequences <span style="color:#7D7F8F;font-weight:500;text-decoration:line-through;">123456</span></span>
+    </div>
     <!--<![endif]-->
   </td></tr>
 
-  <!-- PIN tips -->
-  <tr><td class="px" style="padding:24px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#15171F;border:1px solid #23252E;border-radius:16px;">
-      <tr><td style="padding:18px 22px 16px;border-bottom:1px solid #1F2129;">
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:600;color:#FFFFFF;">A quick word on 123456</p>
-      </td></tr>
-      <tr><td style="padding:15px 22px;border-bottom:1px solid #1F2129;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-          <td width="38" valign="top" style="padding:0;">
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="24" height="24" align="center" style="width:24px;height:24px;background-color:#1C1A30;border:1px solid #383159;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:24px;font-weight:600;color:#C4B5FD;">1</td></tr></table>
-          </td>
-          <td valign="top" style="padding:3px 0 0;">
-            <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.55;color:#B4B5C4;"><span style="color:#FFFFFF;font-weight:600;">No runs, no repeats.</span> 123456 and 000000 are the first things anyone tries.</p>
-          </td>
-        </tr></table>
-      </td></tr>
-      <tr><td style="padding:15px 22px;border-bottom:1px solid #1F2129;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-          <td width="38" valign="top" style="padding:0;">
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="24" height="24" align="center" style="width:24px;height:24px;background-color:#1C1A30;border:1px solid #383159;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:24px;font-weight:600;color:#C4B5FD;">2</td></tr></table>
-          </td>
-          <td valign="top" style="padding:3px 0 0;">
-            <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.55;color:#B4B5C4;"><span style="color:#FFFFFF;font-weight:600;">Not your birthday.</span> It&rsquo;s on the internet. Probably in several places.</p>
-          </td>
-        </tr></table>
-      </td></tr>
-      <tr><td style="padding:15px 22px 18px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-          <td width="38" valign="top" style="padding:0;">
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="24" height="24" align="center" style="width:24px;height:24px;background-color:#1C1A30;border:1px solid #383159;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:24px;font-weight:600;color:#C4B5FD;">3</td></tr></table>
-          </td>
-          <td valign="top" style="padding:3px 0 0;">
-            <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.55;color:#B4B5C4;"><span style="color:#FFFFFF;font-weight:600;">Not your password.</span> This PIN unlocks humAIne on {{device_name}} only &mdash; keep the two different.</p>
-          </td>
-        </tr></table>
-      </td></tr>
-    </table>
-  </td></tr>
-
-  <!-- didn't request it -->
-  <tr><td align="center" class="px" style="padding:24px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#B4B5C4;">Didn&rsquo;t request this? Ignore this email and the link quietly expires. If something feels off, write to <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a>.</p>
+  <!-- didn't request it : the app's own footnote (this email's one em dash) -->
+  <tr><td class="px" style="padding:20px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.65;color:#B4B5C4;">If you didn&rsquo;t request a PIN reset, you can safely ignore this email &mdash; your PIN won&rsquo;t change. If it keeps happening, tell us at <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a>.</p>
   </td></tr>
 
   <!-- ask humAIne -->
-  <tr><td class="px" style="padding:24px 40px 0;">
+  <tr><td class="px" style="padding:28px 40px 0;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#12131C;border:1px solid #2A2547;border-radius:16px;">
       <tr>
         <td width="52" valign="middle" style="padding:14px 0 14px 16px;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="36" height="35" alt="" style="display:block;width:36px;height:35px;border:0;"></td>
         <td valign="middle" style="padding:14px 12px;">
           <p style="margin:0 0 3px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#8E86C9;">Ask humAIne</p>
-          <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:16px;line-height:22px;color:#FFFFFF;text-decoration:none;">&ldquo;What makes a PIN hard to guess?&rdquo;</a>
+          <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:16px;line-height:22px;color:#FFFFFF;text-decoration:none;">&ldquo;What&rsquo;s a strong PIN?&rdquo;</a>
         </td>
         <td width="40" valign="middle" align="right" style="padding:14px 18px 14px 0;"><a href="{{chat_url}}" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;line-height:20px;color:#A78BFA;text-decoration:none;">&rarr;</a></td>
       </tr>
@@ -155,7 +121,7 @@
     <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">Button not working? Paste this link:<br><a href="{{set_pin_url}}" style="color:#A78BFA;word-break:break-all;">{{set_pin_url}}</a></p>
   </td></tr>
 
-  <!-- footer : transactional (no unsubscribe) -->
+  <!-- footer : security -->
   <tr><td class="px" style="padding:44px 40px 0;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#1C1E27;">&nbsp;</td></tr></table>
   </td></tr>
@@ -166,7 +132,7 @@
     <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;">
       <a href="{{help_url}}" style="color:#A3A5B5;text-decoration:none;">Help centre</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{security_url}}" style="color:#A3A5B5;text-decoration:none;">Security</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{privacy_url}}" style="color:#A3A5B5;text-decoration:none;">Privacy</a>
     </p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;">Account security email sent to {{recipient_email}} because a PIN reset was requested. These can&rsquo;t be switched off while your account is active.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
+    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;">Security notification sent to {{recipient_email}} because a PIN reset was requested. These can&rsquo;t be switched off while your account is active.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
   </td></tr>
 
 </table>

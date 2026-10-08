@@ -8,7 +8,7 @@
 <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
 <meta name="color-scheme" content="dark">
 <meta name="supported-color-schemes" content="dark">
-<title>{{inviter_name}} saved you a seat at {{org_name}}</title>
+<title>{{inviter_name}} invited you to join {{org_name}}</title>
 <!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
 <![endif]-->
@@ -26,12 +26,16 @@
     .px{padding-left:24px!important;padding-right:24px!important;}
     .h1{font-size:27px!important;line-height:1.25!important;}
     .lead{font-size:15px!important;}
+    .org{font-size:28px!important;}
+    .pl{padding-left:20px!important;}
+    .pr{padding-right:20px!important;}
+    .stk{display:block!important;width:auto!important;padding-left:20px!important;padding-right:20px!important;}
   }
 </style>
 </head>
 <body class="body" style="margin:0;padding:0;background-color:#090B14;">
 
-<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#090B14;">{{inviter_name}} invited you to join {{org_name}} on humAIne. Your seat is saved until {{expiry_date}}.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#090B14;">You&rsquo;d join as {{role_name}}. The invitation expires on {{expiry_date}}.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#090B14" style="background-color:#090B14;">
 <tr><td align="center" style="padding:0 0 8px;">
@@ -56,33 +60,66 @@
     </tr></table>
   </td></tr>
 
-  <!-- headline + lead -->
+  <!-- headline -->
   <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;">{{inviter_name}} saved you&nbsp;a&nbsp;seat.</h1>
-    <p class="lead" style="margin:16px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#B4B5C4;">Hi {{first_name}} &mdash; you&rsquo;re invited to join {{org_name}} on humAIne. Accept, and you&rsquo;re in: chat, news and document generation, all under one roof.</p>
+    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;text-wrap:balance;">An invitation from {{inviter_name}}</h1>
   </td></tr>
 
-  <!-- invitation card -->
+  <!-- signature : the invitation as a pass. Tinted top with the issuer mark and the organisation,
+       a perforation with notches cut in canvas colour, then the stub with its fields. -->
   <tr><td class="px" style="padding:28px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#15171F;border:1px solid #23252E;border-radius:16px;">
-      <tr><td style="padding:18px 22px 18px;border-bottom:1px solid #1F2129;">
-        <p style="margin:0 0 5px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Organisation</p>
-        <p style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:18px;line-height:24px;font-weight:500;color:#FFFFFF;">{{org_name}}</p>
+    <!-- pass : top -->
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#1E1B38" style="background-color:#1E1B38;background-image:linear-gradient(120deg,#272152 0%,#1E1B38 55%,#2A1C3A 100%);border-radius:16px 16px 0 0;">
+      <tr><td class="pl pr" style="padding:22px 24px 26px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td valign="middle" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:10.5px;line-height:14px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#A99EE8;">Organisation invitation</td>
+          <td width="26" valign="middle" align="right"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="26" height="25" alt="" style="display:block;width:26px;height:25px;border:0;"></td>
+        </tr></table>
+        <p class="org" style="margin:20px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:34px;line-height:1.15;font-weight:500;letter-spacing:-0.4px;color:#FFFFFF;word-wrap:break-word;overflow-wrap:anywhere;">{{org_name}}</p>
       </td></tr>
-      <tr><td style="padding:16px 22px;border-bottom:1px solid #1F2129;">
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Invited by</p>
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">{{inviter_name}}<br><span style="font-size:14px;font-weight:400;color:#B4B5C4;word-wrap:break-word;overflow-wrap:anywhere;word-break:break-word;">{{inviter_email}}</span></p>
+    </table>
+    <!-- pass : perforation -->
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#17182A" style="background-color:#17182A;">
+      <tr>
+        <td width="10" height="20" bgcolor="#090B14" style="width:10px;height:20px;background-color:#090B14;border-radius:0 10px 10px 0;font-size:1px;line-height:20px;">&nbsp;</td>
+        <td valign="middle" style="padding:0 12px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;border-top:1px dashed #3B3570;">&nbsp;</td></tr></table>
+        </td>
+        <td width="10" height="20" bgcolor="#090B14" style="width:10px;height:20px;background-color:#090B14;border-radius:10px 0 0 10px;font-size:1px;line-height:20px;">&nbsp;</td>
+      </tr>
+    </table>
+    <!-- pass : stub -->
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#17182A" style="background-color:#17182A;border-radius:0 0 16px 16px;">
+      <tr>
+        <td class="pl" width="50%" valign="top" style="padding:12px 12px 0 24px;">
+          <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:10.5px;line-height:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#7D7F8F;">Role</p>
+          <p style="margin:5px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:600;color:#FFFFFF;">{{role_name}}</p>
+        </td>
+        <td class="pr" width="50%" valign="top" style="padding:12px 24px 0 12px;">
+          <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:10.5px;line-height:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#7D7F8F;">Expires</p>
+          <p style="margin:5px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:600;color:#FFFFFF;">{{expiry_date}}</p>
+        </td>
+      </tr>
+      <!-- people : own table, so the two fields can stack to full width on mobile -->
+      <tr><td colspan="2" style="padding:0;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="stk" width="50%" valign="top" style="padding:20px 12px 0 24px;">
+            <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:10.5px;line-height:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#7D7F8F;">Invited by</p>
+            <p style="margin:5px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:600;color:#FFFFFF;">{{inviter_name}}</p>
+            <p style="margin:2px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:18px;color:#B4B5C4;word-wrap:break-word;overflow-wrap:anywhere;word-break:break-word;">{{inviter_email}}</p>
+          </td>
+          <td class="stk" width="50%" valign="top" style="padding:20px 24px 0 12px;">
+            <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:10.5px;line-height:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#7D7F8F;">For</p>
+            <p style="margin:5px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:600;color:#FFFFFF;">{{first_name}}</p>
+            <p style="margin:2px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:18px;color:#B4B5C4;word-wrap:break-word;overflow-wrap:anywhere;word-break:break-word;">{{recipient_email}}</p>
+          </td>
+        </tr></table>
       </td></tr>
-      <tr><td style="padding:16px 22px;border-bottom:1px solid #1F2129;">
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Your role</p>
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">{{role_name}}</p>
+      <tr><td class="pl pr" colspan="2" style="padding:22px 24px 0;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#262840;">&nbsp;</td></tr></table>
       </td></tr>
-      <tr><td style="padding:16px 22px;border-bottom:1px solid #1F2129;">
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Invite expires</p>
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">{{expiry_date}}</p>
-      </td></tr>
-      <tr><td style="padding:14px 22px 16px;">
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;font-weight:500;color:#C4B5FD;">&#10022;&nbsp; If it all checks out, joining is one click. No forms, no setup marathon.</p>
+      <tr><td class="pl pr" colspan="2" style="padding:14px 24px 18px;">
+        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;color:#8F90A3;">Not expecting this? Ignore it. You only join if you accept, and nothing is shared before&nbsp;then.</p>
       </td></tr>
     </table>
   </td></tr>
@@ -100,9 +137,9 @@
     <!--<![endif]-->
   </td></tr>
 
-  <!-- reassurance -->
+  <!-- what joining changes -->
   <tr><td align="center" class="px" style="padding:24px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#B4B5C4;">Didn&rsquo;t expect this? Ignore it and the seat quietly folds itself away. Nothing is shared with {{org_name}}, and you won&rsquo;t join unless you&nbsp;accept.</p>
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#B4B5C4;">Once you join, {{org_name}} can set a shorter retention period for your conversations, and its administrator can help if you&rsquo;re ever locked&nbsp;out.</p>
   </td></tr>
 
   <!-- ask humAIne -->
@@ -112,7 +149,7 @@
         <td width="52" valign="middle" style="padding:14px 0 14px 16px;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="36" height="35" alt="" style="display:block;width:36px;height:35px;border:0;"></td>
         <td valign="middle" style="padding:14px 12px;">
           <p style="margin:0 0 3px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#8E86C9;">Ask humAIne</p>
-          <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:16px;line-height:22px;color:#FFFFFF;text-decoration:none;">&ldquo;What happens when I join an organisation?&rdquo;</a>
+          <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:16px;line-height:22px;color:#FFFFFF;text-decoration:none;">&ldquo;Who sees my chats?&rdquo;</a>
         </td>
         <td width="40" valign="middle" align="right" style="padding:14px 18px 14px 0;"><a href="{{chat_url}}" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;line-height:20px;color:#A78BFA;text-decoration:none;">&rarr;</a></td>
       </tr>
@@ -121,10 +158,10 @@
 
   <!-- fine print -->
   <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">Button not working? Paste this link:<br><a href="{{accept_invite_url}}" style="color:#A78BFA;word-break:break-all;">{{accept_invite_url}}</a><br>Getting invites you didn&rsquo;t ask for? Tell us at <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a>.</p>
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">Button not working? Paste this link:<br><a href="{{accept_invite_url}}" style="color:#A78BFA;word-break:break-all;">{{accept_invite_url}}</a><br>Getting invitations you didn&rsquo;t ask for? Tell us at <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a>.</p>
   </td></tr>
 
-  <!-- footer : transactional (no unsubscribe) -->
+  <!-- footer : account -->
   <tr><td class="px" style="padding:44px 40px 0;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#1C1E27;">&nbsp;</td></tr></table>
   </td></tr>
@@ -135,7 +172,7 @@
     <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;">
       <a href="{{help_url}}" style="color:#A3A5B5;text-decoration:none;">Help centre</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{privacy_url}}" style="color:#A3A5B5;text-decoration:none;">Privacy</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{terms_url}}" style="color:#A3A5B5;text-decoration:none;">Terms</a>
     </p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;">One-off invitation sent to {{recipient_email}} at the request of {{inviter_email}}. It isn&rsquo;t a mailing list, so there&rsquo;s nothing to unsubscribe from.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
+    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;">Sent to {{recipient_email}} because {{inviter_email}} invited you to {{org_name}}. It&rsquo;s a one-off service message, so there&rsquo;s nothing to unsubscribe from.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
   </td></tr>
 
 </table>

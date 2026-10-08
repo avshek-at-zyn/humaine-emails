@@ -1,0 +1,144 @@
+<svg width="232" height="235" viewBox="0 0 232 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- humAIne clay: lilac credit card (thickness as keypad.svg), violet clay chip, soft stripe; no text or numbers.
+       Badge: white clay badge with a violet pencil. Billing details changed. -->
+
+  <!-- ambient flecks (same vocabulary as the app set) -->
+  <g opacity="0.3">
+    <path d="M36 30L44 38" stroke="#FFE9B3" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M112 22V36" stroke="#FFE9B3" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+  <g opacity="0.6" filter="url(#cc_glint)"><circle cx="70" cy="50" r="1.8" fill="white"/></g>
+  <g opacity="0.35" filter="url(#cc_glint)"><circle cx="12" cy="150" r="3.5" fill="white"/></g>
+  <rect x="9" y="96" width="7" height="7" rx="1.8" transform="rotate(-20 12.5 99.5)" fill="#7DE8FF"/>
+  <rect x="203" y="190" width="6.5" height="6.5" rx="1.6" transform="rotate(22 206.25 193.25)" fill="#8B7FFF"/>
+  <circle cx="214" cy="146" r="3.4" fill="#FF9AC4"/>
+  <rect x="22" y="206" width="6" height="6" rx="1.5" transform="rotate(-14 25 209)" fill="#FFD166"/>
+
+  <!-- floor shadow -->
+  <g opacity="0.3" filter="url(#cc_floor)">
+    <ellipse cx="108" cy="207" rx="76" ry="9" fill="black"/>
+  </g>
+
+  <!-- card thickness -->
+  <rect x="20" y="83" width="172" height="112" rx="24" fill="url(#cc_side)"/>
+  <rect x="20" y="83" width="172" height="112" rx="24" fill="url(#cc_sideShade)"/>
+
+  <!-- card face : base, soft stripe, bottom shade, specular -->
+  <rect x="20" y="74" width="172" height="112" rx="24" fill="url(#cc_body)"/>
+  <g clip-path="url(#cc_faceClip)">
+    <rect x="16" y="103" width="180" height="19" fill="url(#cc_stripe)" filter="url(#cc_soft)"/>
+    <rect x="16" y="122" width="180" height="2" fill="white" fill-opacity="0.17" filter="url(#cc_soft)"/>
+  </g>
+  <rect x="20" y="74" width="172" height="112" rx="24" fill="url(#cc_bodyShade)"/>
+  <rect x="20" y="74" width="172" height="112" rx="24" fill="url(#cc_bodyHi)"/>
+
+  <!-- chip : soft plum contact shadow, violet clay, grooves -->
+  <g opacity="0.5" filter="url(#cc_chipBlur)">
+    <rect x="41" y="138" width="40" height="30" rx="8" fill="#44185C"/>
+  </g>
+  <rect x="40" y="134" width="40" height="30" rx="8" fill="url(#cc_chip)"/>
+  <rect x="40" y="134" width="40" height="30" rx="8" fill="url(#cc_chipShade)"/>
+  <rect x="40" y="134" width="40" height="30" rx="8" fill="url(#cc_chipHi)"/>
+  <g stroke="#5B4BB8" stroke-opacity="0.4" stroke-width="1.5" stroke-linecap="round">
+    <path d="M43 149H53M67 149H77"/>
+    <rect x="53" y="141" width="14" height="16" rx="3.5"/>
+  </g>
+
+  <!-- badge -->
+  <g transform="translate(186 78)">
+    <g opacity="0.45" filter="url(#cc_badgeBlur)"><circle cx="1" cy="4" r="29" fill="#3A1850"/></g>
+    <circle r="30" fill="url(#ed_disc)"/>
+    <circle r="30" fill="url(#ed_discShade)"/>
+    <circle r="30" fill="url(#ed_discHi)"/>
+
+    <g transform="rotate(-45)">
+      <path d="M-8 -5.6H9.4V5.6H-8Z" fill="url(#ed_glyph)"/>
+      <path d="M-10.6 -5.6L-20.2 -1.4Q-22 0 -20.2 1.4L-10.6 5.6Z" fill="url(#ed_glyph)"/>
+      <path d="M12.2 -5.6H15.4Q19.4 -5.6 19.4 -1.6V1.6Q19.4 5.6 15.4 5.6H12.2Z" fill="url(#ed_glyph)"/>
+    </g>
+  </g>
+
+  <defs>
+    <filter id="cc_floor" x="20" y="188" width="180" height="40" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.5"/>
+    </filter>
+    <filter id="cc_soft" x="0" y="74" width="232" height="112" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="0.6"/>
+    </filter>
+    <filter id="cc_chipBlur" x="28" y="124" width="66" height="56" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="2.1"/>
+    </filter>
+    <filter id="cc_badgeBlur" x="-60%" y="-60%" width="220%" height="220%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.2"/>
+    </filter>
+    <filter id="cc_glint" x="-100%" y="-100%" width="300%" height="300%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="1.85"/>
+    </filter>
+    <clipPath id="cc_faceClip"><rect x="20" y="74" width="172" height="112" rx="24"/></clipPath>
+
+    <!-- thickness (as keypad.svg tile) -->
+    <linearGradient id="cc_side" x1="106" y1="150" x2="106" y2="195" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A866C2"/>
+      <stop offset="1" stop-color="#6A3286"/>
+    </linearGradient>
+    <radialGradient id="cc_sideShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(118 190) scale(104 78)">
+      <stop stop-opacity="0"/>
+      <stop offset="0.6" stop-opacity="0"/>
+      <stop offset="1" stop-color="#3A1850" stop-opacity="0.5"/>
+    </radialGradient>
+
+    <!-- card face : lilac clay, lit from top-left -->
+    <radialGradient id="cc_body" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(58 94) scale(180 142)">
+      <stop stop-color="#F0D6F8"/>
+      <stop offset="0.3" stop-color="#E5C3F0"/>
+      <stop offset="0.7" stop-color="#C48DD8"/>
+      <stop offset="1" stop-color="#8E56A8"/>
+    </radialGradient>
+    <radialGradient id="cc_bodyShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(114 172) scale(120 88)">
+      <stop stop-opacity="0"/>
+      <stop offset="0.65" stop-opacity="0"/>
+      <stop offset="1" stop-color="#472858" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="cc_bodyHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(56 90) scale(48 32)">
+      <stop stop-color="white" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- soft stripe : a band of deeper lilac clay pressed into the face -->
+    <linearGradient id="cc_stripe" x1="0" y1="103" x2="0" y2="122" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5E2A7A" stop-opacity="0.62"/>
+      <stop offset="0.55" stop-color="#6A3286" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#7A3E96" stop-opacity="0.42"/>
+    </linearGradient>
+
+    <!-- chip : violet clay -->
+    <radialGradient id="cc_chip" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(48 140) scale(44 37)">
+      <stop stop-color="#D8D4FA"/>
+      <stop offset="0.35" stop-color="#B5B7F6"/>
+      <stop offset="0.7" stop-color="#8A7EE8"/>
+      <stop offset="1" stop-color="#6E60C8"/>
+    </radialGradient>
+    <radialGradient id="cc_chipShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(62 167) scale(32 23)">
+      <stop stop-opacity="0"/>
+      <stop offset="0.65" stop-opacity="0"/>
+      <stop offset="1" stop-color="#2A1A5E" stop-opacity="0.45"/>
+    </radialGradient>
+    <radialGradient id="cc_chipHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(47 139) scale(15 9.5)">
+      <stop stop-color="white" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="ed_disc" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-6 -15) scale(39 38)">
+      <stop stop-color="white"/><stop offset="0.5" stop-color="#F0EDF8"/><stop offset="1" stop-color="#D6D1EA"/>
+    </radialGradient>
+    <radialGradient id="ed_discShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(4 12) scale(35 33)">
+      <stop stop-color="#5A3C86" stop-opacity="0"/><stop offset="0.7" stop-color="#5A3C86" stop-opacity="0"/><stop offset="1" stop-color="#5A3C86" stop-opacity="0.22"/>
+    </radialGradient>
+    <radialGradient id="ed_discHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-9 -17) scale(17 16.5)">
+      <stop stop-color="white" stop-opacity="0.6"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ed_glyph" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-9 -12) scale(37 37)">
+      <stop stop-color="#8A7EE8"/><stop offset="0.45" stop-color="#6E60C8"/><stop offset="1" stop-color="#4227B8"/>
+    </radialGradient>
+  </defs>
+</svg>

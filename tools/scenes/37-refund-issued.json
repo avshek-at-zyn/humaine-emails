@@ -1,0 +1,71 @@
+{
+  "name": "37-refund-issued",
+  "icon": "img/src/icons/receipt-refund.svg",
+  "iconSize": 300,
+  "height": 520,
+  "seed": 37,
+  "planets": [
+    {
+      "type": "lilac",
+      "x": 830,
+      "y": 96,
+      "r": 22,
+      "ring": true,
+      "tilt": -18,
+      "ringScale": 2.0
+    },
+    {
+      "type": "pink",
+      "x": 210,
+      "y": 286,
+      "r": 34
+    },
+    {
+      "type": "blue",
+      "x": 1012,
+      "y": 216,
+      "r": 11
+    },
+    {
+      "type": "cyan",
+      "x": 380,
+      "y": 378,
+      "r": 9
+    }
+  ],
+  "orbit": {
+    "scale": 1.24,
+    "tilt": 7,
+    "moon": "pink",
+    "moonR": 7,
+    "moonAt": 0.15
+  },
+  "pinkGlow": {
+    "x": 230,
+    "y": 286,
+    "r": 200
+  },
+  "shootingStar": {
+    "x": 500,
+    "y": 84,
+    "len": 150,
+    "angle": -12
+  },
+  "sparkles": [
+    [
+      1066,
+      296,
+      6
+    ],
+    [
+      700,
+      410,
+      6
+    ],
+    [
+      300,
+      160,
+      5
+    ]
+  ]
+}

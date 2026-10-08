@@ -1,0 +1,18 @@
+{
+  "name": "22-alternate-email-updated",
+  "icon": "img/src/icons/mail-swap.svg",
+  "iconSize": 296,
+  "iconY": 240,
+  "height": 500,
+  "seed": 22,
+  "planets": [
+    { "type": "glass", "x": 372, "y": 120, "r": 30, "ring": true, "tilt": 24, "ringScale": 1.9 },
+    { "type": "lilac", "x": 990, "y": 312, "r": 26 },
+    { "type": "pink", "x": 1050, "y": 264, "r": 8 },
+    { "type": "blue", "x": 190, "y": 318, "r": 11, "ring": true, "tilt": -18, "ringScale": 2.1 }
+  ],
+  "orbit": { "scale": 1.24, "tilt": 10, "moon": "cyan", "moonR": 7, "moonAt": 0.55 },
+  "pinkGlow": { "x": 980, "y": 300, "r": 210 },
+  "shootingStar": { "x": 880, "y": 92, "len": 150, "angle": -10 },
+  "sparkles": [[760, 396, 6], [130, 220, 5], [1076, 166, 5]]
+}

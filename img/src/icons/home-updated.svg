@@ -1,0 +1,163 @@
+<svg width="232" height="235" viewBox="0 0 232 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- humAIne clay: a chunky lilac house with the glossy green success badge. Registered address updated. -->
+  <defs>
+    <!-- walls : lilac clay -->
+    <radialGradient id="hu_wall" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(78 116) scale(128 118)">
+      <stop offset="0" stop-color="#F0D6F8"/>
+      <stop offset="0.3" stop-color="#E5C3F0"/>
+      <stop offset="0.7" stop-color="#C48DD8"/>
+      <stop offset="1" stop-color="#8E56A8"/>
+    </radialGradient>
+    <radialGradient id="hu_wallAO" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(112 188) scale(84 70)">
+      <stop offset="0" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.65" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#472858" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="hu_wallHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(70 120) scale(40 30)">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hu_wallSide" x1="108" y1="170" x2="108" y2="204" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A866C2"/>
+      <stop offset="1" stop-color="#6A3286"/>
+    </linearGradient>
+
+    <!-- roof : deeper lilac clay -->
+    <radialGradient id="hu_roof" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(84 58) scale(132 92)">
+      <stop offset="0" stop-color="#E5C3F0"/>
+      <stop offset="0.3" stop-color="#D4A2E6"/>
+      <stop offset="0.7" stop-color="#B570CC"/>
+      <stop offset="1" stop-color="#7A3E96"/>
+    </radialGradient>
+    <radialGradient id="hu_roofAO" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(112 108) scale(92 56)">
+      <stop offset="0" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.65" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#3A1850" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="hu_roofHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(88 62) scale(34 22)">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hu_roofSide" x1="108" y1="96" x2="108" y2="121" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9A5AB4"/>
+      <stop offset="1" stop-color="#5E2A78"/>
+    </linearGradient>
+
+    <!-- chimney -->
+    <radialGradient id="hu_chim" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(64 54) scale(30 36)">
+      <stop offset="0" stop-color="#E5C3F0"/>
+      <stop offset="0.3" stop-color="#D4A2E6"/>
+      <stop offset="0.7" stop-color="#B570CC"/>
+      <stop offset="1" stop-color="#7A3E96"/>
+    </radialGradient>
+    <radialGradient id="hu_chimAO" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(72 84) scale(20 24)">
+      <stop offset="0" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.65" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#3A1850" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="hu_chimHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(63 50) scale(9 9)">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- door : white clay -->
+    <radialGradient id="hu_door" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(102 156) scale(34 46)">
+      <stop stop-color="white"/>
+      <stop offset="0.5" stop-color="#F0EDF8"/>
+      <stop offset="1" stop-color="#D6D1EA"/>
+    </radialGradient>
+    <radialGradient id="hu_doorShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(112 196) scale(30 40)">
+      <stop stop-color="#5A3C86" stop-opacity="0"/>
+      <stop offset="0.7" stop-color="#5A3C86" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5A3C86" stop-opacity="0.22"/>
+    </radialGradient>
+    <radialGradient id="hu_knob" cx="36%" cy="30%" r="78%">
+      <stop stop-color="#C9C4F8"/>
+      <stop offset="0.35" stop-color="#9C92EE"/>
+      <stop offset="0.7" stop-color="#7E70DE"/>
+      <stop offset="1" stop-color="#6E60C8"/>
+    </radialGradient>
+
+    <radialGradient id="hu_win" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(104 72) scale(18 18)">
+      <stop stop-color="white"/>
+      <stop offset="0.5" stop-color="#F0EDF8"/>
+      <stop offset="1" stop-color="#D6D1EA"/>
+    </radialGradient>
+    <filter id="hu_winDrop" x="90" y="62" width="36" height="38" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#2A0F3A" flood-opacity="0.3"/>
+    </filter>
+    <filter id="hu_roofDrop" x="0" y="30" width="232" height="120" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#2A0F3A" flood-opacity="0.45"/>
+    </filter>
+    <filter id="hu_doorDrop" x="80" y="136" width="56" height="70" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#08041A" flood-opacity="0.25"/>
+    </filter>
+    <!-- glossy green success badge (app password-reset-success.svg) -->
+    <radialGradient id="hu_grn" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(170.2 77.41) scale(37.7 37.96)">
+      <stop stop-color="#78F0C0"/>
+      <stop offset="0.5" stop-color="#2ECB8C"/>
+      <stop offset="1" stop-color="#0C6E48"/>
+    </radialGradient>
+    <radialGradient id="hu_grnHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(167.3 74.48) scale(16.24 16.36)">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hu_tick" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(174 87.97) scale(15.4 12.12)">
+      <stop stop-color="white"/>
+      <stop offset="1" stop-color="#E8F8F0"/>
+    </radialGradient>
+    <filter id="hu_grnBlur" x="133" y="53" width="88" height="88" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.2"/>
+    </filter>
+    <filter id="hu_floor" x="30" y="192" width="160" height="40" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.5"/>
+    </filter>
+    <filter id="hu_glint" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="1.85"/></filter>
+  </defs>
+
+  <!-- floor shadow -->
+  <g opacity="0.3" filter="url(#hu_floor)">
+    <ellipse cx="108" cy="210" rx="66" ry="9" fill="black"/>
+  </g>
+
+  <!-- chimney (behind the roof) -->
+  <path d="M58 50A6 6 0 0 1 64 44H74A6 6 0 0 1 80 50V84H58Z" fill="url(#hu_chim)"/>
+  <path d="M58 50A6 6 0 0 1 64 44H74A6 6 0 0 1 80 50V84H58Z" fill="url(#hu_chimAO)"/>
+  <path d="M58 50A6 6 0 0 1 64 44H74A6 6 0 0 1 80 50V84H58Z" fill="url(#hu_chimHi)"/>
+
+  <!-- walls : thickness, then base, bottom shade, specular -->
+  <path d="M62 106H154A10 10 0 0 1 164 116V186A18 18 0 0 1 146 204H70A18 18 0 0 1 52 186V116A10 10 0 0 1 62 106Z" fill="url(#hu_wallSide)"/>
+  <path d="M62 100H154A10 10 0 0 1 164 110V180A18 18 0 0 1 146 198H70A18 18 0 0 1 52 180V110A10 10 0 0 1 62 100Z" fill="url(#hu_wall)"/>
+  <path d="M62 100H154A10 10 0 0 1 164 110V180A18 18 0 0 1 146 198H70A18 18 0 0 1 52 180V110A10 10 0 0 1 62 100Z" fill="url(#hu_wallAO)"/>
+  <path d="M62 100H154A10 10 0 0 1 164 110V180A18 18 0 0 1 146 198H70A18 18 0 0 1 52 180V110A10 10 0 0 1 62 100Z" fill="url(#hu_wallHi)"/>
+
+  <!-- door : white clay, violet knob -->
+  <g filter="url(#hu_doorDrop)">
+    <path d="M92 198V160A16 16 0 0 1 124 160V198Z" fill="url(#hu_door)"/>
+    <path d="M92 198V160A16 16 0 0 1 124 160V198Z" fill="url(#hu_doorShade)"/>
+  </g>
+  <circle cx="116.5" cy="178" r="3.4" fill="url(#hu_knob)"/>
+
+  <!-- roof slab : thickness, then base, bottom shade, specular; casts a soft shade on the walls -->
+  <g filter="url(#hu_roofDrop)">
+    <path d="M99.4 52Q108 45.6 116.6 52L178.4 100.6Q186 106.6 183.2 114.4Q181 120.4 174.6 120.4H41.4Q35 120.4 32.8 114.4Q30 106.6 37.6 100.6Z" fill="url(#hu_roofSide)"/>
+    <path d="M99.4 42Q108 35.6 116.6 42L178.4 90.6Q186 96.6 183.2 104.4Q181 110.4 174.6 110.4H41.4Q35 110.4 32.8 104.4Q30 96.6 37.6 90.6Z" fill="url(#hu_roof)"/>
+    <path d="M99.4 42Q108 35.6 116.6 42L178.4 90.6Q186 96.6 183.2 104.4Q181 110.4 174.6 110.4H41.4Q35 110.4 32.8 104.4Q30 96.6 37.6 90.6Z" fill="url(#hu_roofAO)"/>
+    <path d="M99.4 42Q108 35.6 116.6 42L178.4 90.6Q186 96.6 183.2 104.4Q181 110.4 174.6 110.4H41.4Q35 110.4 32.8 104.4Q30 96.6 37.6 90.6Z" fill="url(#hu_roofHi)"/>
+  </g>
+
+  <!-- green badge : soft contact shadow, glossy disc, specular, white check -->
+  <g opacity="0.4" filter="url(#hu_grnBlur)">
+    <circle cx="177" cy="96" r="29" fill="#062A1E"/>
+  </g>
+  <circle cx="176" cy="92" r="29" fill="url(#hu_grn)"/>
+  <circle cx="176" cy="92" r="29" fill="url(#hu_grnHi)"/>
+  <path d="M163.73 92L172.66 102.12L189.38 81.88" stroke="url(#hu_tick)" stroke-width="4.93" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- confetti + glint, as in the app's success set -->
+  <rect x="18.8" y="60.8" width="6.4" height="6.4" rx="1.6" fill="#FFD166" transform="rotate(-20 22 64)"/>
+  <circle cx="30" cy="190" r="3.4" fill="#FF9AC4"/>
+  <rect x="192.8" y="146.8" width="6.4" height="6.4" rx="1.6" fill="#7DE8FF" transform="rotate(18 196 150)"/>
+  <rect x="182.8" y="194.8" width="6.4" height="6.4" rx="1.6" fill="#8B7FFF" transform="rotate(-12 186 198)"/>
+  <g opacity="0.6" filter="url(#hu_glint)"><circle cx="140" cy="34" r="1.8" fill="white"/></g>
+</svg>

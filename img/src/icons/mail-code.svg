@@ -1,0 +1,98 @@
+<svg width="232" height="235" viewBox="0 0 232 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- humAIne clay: lilac envelope (body + chevron flap from the app's invitation-mail-sent.svg) with a white badge of three violet dots. A code is on its way to this address. -->
+  <defs>
+    <!-- envelope body : lilac clay, lit from top-left (app envB / envAO / envHi) -->
+    <radialGradient id="mc_envB" cx="38%" cy="25%" r="72%">
+      <stop offset="0" stop-color="#F0D6F8"/>
+      <stop offset="0.3" stop-color="#E5C3F0"/>
+      <stop offset="0.7" stop-color="#C48DD8"/>
+      <stop offset="1" stop-color="#8E56A8"/>
+    </radialGradient>
+    <radialGradient id="mc_envAO" cx="55%" cy="88%" r="55%">
+      <stop offset="0" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.65" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#472858" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="mc_envHi" cx="28%" cy="16%" r="28%">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <!-- flap : lighter lilac clay (app flapG / flapHi) -->
+    <radialGradient id="mc_flapG" cx="38%" cy="22%" r="68%">
+      <stop offset="0" stop-color="#F5E4FB"/>
+      <stop offset="0.3" stop-color="#EDD2F5"/>
+      <stop offset="0.7" stop-color="#D4A2E6"/>
+      <stop offset="1" stop-color="#9C62B8"/>
+    </radialGradient>
+    <radialGradient id="mc_flapAO" cx="50%" cy="100%" r="60%">
+      <stop offset="0" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.65" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#472858" stop-opacity="0.3"/>
+    </radialGradient>
+    <radialGradient id="mc_flapHi" cx="30%" cy="15%" r="26%">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <!-- white clay badge -->
+    <radialGradient id="mc_badge" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(176.4 62.52) scale(37.24 36.4)">
+      <stop stop-color="white"/>
+      <stop offset="0.5" stop-color="#F0EDF8"/>
+      <stop offset="1" stop-color="#D6D1EA"/>
+    </radialGradient>
+    <radialGradient id="mc_badgeShade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(185.92 86.04) scale(32.76 30.8)">
+      <stop stop-color="#5A3C86" stop-opacity="0"/>
+      <stop offset="0.7" stop-color="#5A3C86" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5A3C86" stop-opacity="0.22"/>
+    </radialGradient>
+    <radialGradient id="mc_badgeHi" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(173.6 60) scale(15.68 15.12)">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mc_dot" cx="36%" cy="30%" r="78%">
+      <stop stop-color="#C9C4F8"/>
+      <stop offset="0.35" stop-color="#9C92EE"/>
+      <stop offset="0.7" stop-color="#7E70DE"/>
+      <stop offset="1" stop-color="#6E60C8"/>
+    </radialGradient>
+    <filter id="mc_badgeBlur" x="140" y="36" width="86" height="86" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.2"/>
+    </filter>
+    <filter id="mc_lift" x="-30%" y="-20%" width="160%" height="160%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#08041A" flood-opacity="0.4"/>
+    </filter>
+    <filter id="mc_liftS" x="-40%" y="-30%" width="180%" height="180%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#08041A" flood-opacity="0.35"/>
+    </filter>
+    <filter id="mc_floor" x="30" y="176" width="160" height="40" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.5"/>
+    </filter>
+  </defs>
+
+  <!-- floor shadow -->
+  <g opacity="0.3" filter="url(#mc_floor)">
+    <ellipse cx="108" cy="194" rx="66" ry="8.5" fill="black"/>
+  </g>
+
+  <!-- envelope : base, bottom shade, specular; then the app's chevron flap -->
+  <g filter="url(#mc_lift)">
+      <path d="M52 72H164A22 22 0 0 1 186 94V155A22 22 0 0 1 164 177H52A22 22 0 0 1 30 155V94A22 22 0 0 1 52 72Z" fill="url(#mc_envB)"/>
+      <path d="M52 72H164A22 22 0 0 1 186 94V155A22 22 0 0 1 164 177H52A22 22 0 0 1 30 155V94A22 22 0 0 1 52 72Z" fill="url(#mc_envAO)"/>
+      <path d="M52 72H164A22 22 0 0 1 186 94V155A22 22 0 0 1 164 177H52A22 22 0 0 1 30 155V94A22 22 0 0 1 52 72Z" fill="url(#mc_envHi)"/>
+    </g>
+    <g filter="url(#mc_liftS)">
+      <path d="M30 72Q30 64.7 39.8 64.7L108 106.2L176.2 64.7Q186 64.7 186 72V81.8L108 123.2L30 81.8Z" fill="url(#mc_flapG)"/>
+      <path d="M30 72Q30 64.7 39.8 64.7L108 106.2L176.2 64.7Q186 64.7 186 72V81.8L108 123.2L30 81.8Z" fill="url(#mc_flapAO)"/>
+      <path d="M30 72Q30 64.7 39.8 64.7L108 106.2L176.2 64.7Q186 64.7 186 72V81.8L108 123.2L30 81.8Z" fill="url(#mc_flapHi)"/>
+    </g>
+
+  <!-- badge : soft plum contact shadow, white clay disc, specular, three violet dots -->
+  <g opacity="0.45" filter="url(#mc_badgeBlur)">
+    <circle cx="183" cy="78" r="28" fill="#3A1850"/>
+  </g>
+  <circle cx="182" cy="74" r="28" fill="url(#mc_badge)"/>
+  <circle cx="182" cy="74" r="28" fill="url(#mc_badgeShade)"/>
+  <circle cx="182" cy="74" r="28" fill="url(#mc_badgeHi)"/>
+  <circle cx="167.44" cy="74.6" r="6.02" fill="url(#mc_dot)"/>
+  <circle cx="182" cy="74.6" r="6.02" fill="url(#mc_dot)"/>
+  <circle cx="196.56" cy="74.6" r="6.02" fill="url(#mc_dot)"/>
+</svg>

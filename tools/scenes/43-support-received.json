@@ -1,0 +1,18 @@
+{
+  "name": "43-support-received",
+  "icon": "img/src/app/thankyou-bubble.svg",
+  "iconSize": 268,
+  "iconY": 254,
+  "height": 500,
+  "seed": 43,
+  "planets": [
+    { "type": "lilac", "x": 232, "y": 272, "r": 32, "ring": true, "tilt": 14, "ringScale": 2.15 },
+    { "type": "blue", "x": 990, "y": 152, "r": 17 },
+    { "type": "pink", "x": 1032, "y": 336, "r": 10 },
+    { "type": "cyan", "x": 372, "y": 118, "r": 7 }
+  ],
+  "orbit": { "scale": 1.34, "tilt": 7, "moon": "blue", "moonR": 8, "moonAt": 0.12 },
+  "pinkGlow": { "x": 250, "y": 284, "r": 230 },
+  "shootingStar": { "x": 830, "y": 104, "len": 210, "angle": 20 },
+  "sparkles": [[906, 388, 7], [150, 168, 5], [474, 396, 5]]
+}

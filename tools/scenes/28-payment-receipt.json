@@ -1,0 +1,71 @@
+{
+  "name": "28-payment-receipt",
+  "icon": "img/src/icons/receipt-check.svg",
+  "iconSize": 300,
+  "height": 520,
+  "seed": 28,
+  "planets": [
+    {
+      "type": "pink",
+      "x": 432,
+      "y": 100,
+      "r": 20,
+      "ring": true,
+      "tilt": -14,
+      "ringScale": 2.0
+    },
+    {
+      "type": "glass",
+      "x": 990,
+      "y": 330,
+      "r": 42
+    },
+    {
+      "type": "blue",
+      "x": 176,
+      "y": 244,
+      "r": 13
+    },
+    {
+      "type": "cyan",
+      "x": 1020,
+      "y": 132,
+      "r": 9
+    }
+  ],
+  "orbit": {
+    "scale": 1.22,
+    "tilt": -8,
+    "moon": "lilac",
+    "moonR": 8,
+    "moonAt": 0.6
+  },
+  "pinkGlow": {
+    "x": 980,
+    "y": 330,
+    "r": 220
+  },
+  "shootingStar": {
+    "x": 790,
+    "y": 84,
+    "len": 150,
+    "angle": -18
+  },
+  "sparkles": [
+    [
+      318,
+      190,
+      6
+    ],
+    [
+      790,
+      410,
+      7
+    ],
+    [
+      1080,
+      230,
+      5
+    ]
+  ]
+}

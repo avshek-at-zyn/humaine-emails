@@ -8,7 +8,7 @@
 <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
 <meta name="color-scheme" content="dark">
 <meta name="supported-color-schemes" content="dark">
-<title>Confirm: turn off two-factor on your humAIne account</title>
+<title>Your authenticator was reset</title>
 <!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
 <![endif]-->
@@ -31,7 +31,7 @@
 </head>
 <body class="body" style="margin:0;padding:0;background-color:#090B14;">
 
-<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#090B14;">Someone asked to switch off two-factor on your account from {{device_name}}. We&rsquo;ve paused it &mdash; confirm or stop the request.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#090B14;">{{device_name}} was paired on {{change_date}} and your previous authenticator is retired. If that was you, there&rsquo;s nothing to do.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#090B14" style="background-color:#090B14;">
 <tr><td align="center" style="padding:0 0 8px;">
@@ -44,78 +44,64 @@
     <img src="https://humaine-email.vercel.app/img/brand/lockup@2x.png" width="144" height="36" alt="humAIne" style="display:block;width:144px;height:36px;border:0;">
   </td></tr>
 
-  <!-- hero : app clay illustration in a planetary scene, edges fade into the canvas -->
-  <tr><td>
-    <img src="https://humaine-email.vercel.app/img/hero/06-mfa-change.jpg" width="600" alt="A lilac clay shield with a keyhole and a coral alert badge, circled by a faint orbit and small planets" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
-  </td></tr>
+  <!-- hero : clay phone with a sync badge in a planetary scene, edges fade into the canvas -->
+  <tr><td><img src="https://humaine-email.vercel.app/img/hero/06-mfa-change.jpg" width="600" alt="A lilac clay phone with a white sync badge, floating on a faint orbit among small ringed planets" style="display:block;width:100%;max-width:600px;height:auto;border:0;"></td></tr>
 
-  <!-- status chip : alert -->
+  <!-- status chip : info -->
   <tr><td align="center" class="px" style="padding:4px 40px 0;">
     <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
-      <td style="padding:7px 14px;background-color:#26171F;border:1px solid #5D2F35;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:14px;font-weight:600;color:#FCA5A5;">&#9679;&nbsp; Action required</td>
+      <td style="padding:7px 14px;background-color:#1C1A30;border:1px solid #383159;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:14px;font-weight:600;color:#C4B5FD;">&#10022;&nbsp; Authenticator re-paired</td>
     </tr></table>
   </td></tr>
 
   <!-- headline + lead -->
   <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;">Someone&rsquo;s removing the second&nbsp;lock.</h1>
-    <p class="lead" style="margin:16px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#B4B5C4;">Hi {{first_name}} &mdash; someone asked to switch off two-factor on your account. We&rsquo;ve paused it until you say the&nbsp;word.</p>
+    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;text-wrap:balance;">Sign-in codes now come from {{device_name}}</h1>
+    <p class="lead" style="margin:16px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#B4B5C4;">Hi {{first_name}}. Reset Auth Code was completed on your account: QR&nbsp;code scanned, number matched.</p>
   </td></tr>
 
-  <!-- request card -->
+  <!-- signature : before / after, one row per change -->
   <tr><td class="px" style="padding:28px 40px 0;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#15171F;border:1px solid #23252E;border-radius:16px;">
-      <tr><td style="padding:16px 22px;border-bottom:1px solid #1F2129;">
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Requested</p>
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">{{request_date}} at {{request_time}} ({{timezone}})</p>
+      <tr><td style="padding:18px 22px;border-bottom:1px solid #1F2129;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td width="52%" valign="middle" style="width:52%;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:21px;color:#565869;text-decoration:line-through;">Previous authenticator</td>
+          <td width="28" align="center" valign="middle" style="width:28px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:18px;line-height:21px;color:#A78BFA;">&rarr;</td>
+          <td valign="middle" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">Retired</td>
+        </tr></table>
       </td></tr>
-      <tr><td style="padding:16px 22px;border-bottom:1px solid #1F2129;">
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">From</p>
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">{{device_name}} &middot; {{city}}, {{country}}</p>
-      </td></tr>
-      <tr><td style="padding:16px 22px;border-bottom:1px solid #1F2129;">
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Current method</p>
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">{{current_mfa_method}}</p>
+      <tr><td style="padding:18px 22px;border-bottom:1px solid #1F2129;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td width="52%" valign="middle" style="width:52%;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:21px;color:#B4B5C4;">{{device_name}}</td>
+          <td width="28" align="center" valign="middle" style="width:28px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:18px;line-height:21px;color:#A78BFA;">&rarr;</td>
+          <td valign="middle" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">Paired<br><span style="font-size:13px;line-height:18px;font-weight:400;color:#B4B5C4;">{{change_date}}</span></td>
+        </tr></table>
       </td></tr>
       <tr><td style="padding:14px 22px 16px;">
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;font-weight:500;color:#FCA5A5;">&#9679;&nbsp; On hold &mdash; your second lock stays put.</p>
+        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;color:#7D7F8F;">At {{change_time}} ({{timezone}}) from {{city}}, {{country}}.</p>
       </td></tr>
     </table>
   </td></tr>
 
-  <!-- the risk, in one breath -->
+  <!-- what stays the same -->
   <tr><td align="center" class="px" style="padding:24px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#B4B5C4;">With two-factor off, your password is the only thing standing between your account and the internet. Just switching phones? Pair the new one instead &mdash; it takes about thirty&nbsp;seconds.</p>
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#B4B5C4;">Two-factor stays on. humAIne asks for a code at every sign&#8209;in.</p>
   </td></tr>
 
-  <!-- primary action -->
-  <tr><td class="px" style="padding:28px 40px 0;">
+  <!-- not you : one sentence and a secondary button, no card -->
+  <tr><td align="center" class="px" style="padding:20px 48px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#B4B5C4;">If you didn&rsquo;t do this, someone else can now generate your&nbsp;codes.</p>
+  </td></tr>
+  <tr><td class="px" style="padding:18px 40px 0;">
     <!--[if mso]>
-    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{confirm_change_url}}" style="height:52px;v-text-anchor:middle;width:520px;" arcsize="31%" stroke="f" fillcolor="#768AFF">
-      <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
-      <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Yes, turn it off</center>
+    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{secure_account_url}}" style="height:48px;v-text-anchor:middle;width:520px;" arcsize="30%" strokecolor="#2E3040" fillcolor="#1B1D26">
+      <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;">Secure my account</center>
     </v:roundrect>
     <![endif]-->
     <!--[if !mso]><!-->
-    <a href="{{confirm_change_url}}" style="display:block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:16px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:600;line-height:52px;text-align:center;text-decoration:none;">Yes, turn it off</a>
+    <a href="{{secure_account_url}}" style="display:block;background-color:#1B1D26;border:1px solid #2E3040;border-radius:14px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;font-weight:600;line-height:46px;text-align:center;text-decoration:none;">Secure my account</a>
     <!--<![endif]-->
-  </td></tr>
-
-  <!-- secondary action -->
-  <tr><td class="px" style="padding:12px 40px 0;">
-    <!--[if mso]>
-    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{reject_change_url}}" style="height:48px;v-text-anchor:middle;width:520px;" arcsize="30%" strokecolor="#2E3040" fillcolor="#1B1D26">
-      <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;">I didn&rsquo;t request this</center>
-    </v:roundrect>
-    <![endif]-->
-    <!--[if !mso]><!-->
-    <a href="{{reject_change_url}}" style="display:block;background-color:#1B1D26;border:1px solid #2E3040;border-radius:14px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;font-weight:600;line-height:46px;text-align:center;text-decoration:none;">I didn&rsquo;t request this</a>
-    <!--<![endif]-->
-  </td></tr>
-
-  <!-- what the buttons do -->
-  <tr><td align="center" class="px" style="padding:18px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:1.65;color:#7D7F8F;">The confirmation link expires in {{expiry_minutes}} minutes. Choosing &ldquo;I didn&rsquo;t request this&rdquo; cancels the request and locks your security settings for review.</p>
+    <p style="margin:16px 0 0;text-align:center;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;"><a href="{{sessions_url}}" style="color:#A78BFA;font-weight:600;text-decoration:none;">Review active sessions&nbsp;&rarr;</a></p>
   </td></tr>
 
   <!-- ask humAIne -->
@@ -125,7 +111,7 @@
         <td width="52" valign="middle" style="padding:14px 0 14px 16px;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="36" height="35" alt="" style="display:block;width:36px;height:35px;border:0;"></td>
         <td valign="middle" style="padding:14px 12px;">
           <p style="margin:0 0 3px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#8E86C9;">Ask humAIne</p>
-          <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:16px;line-height:22px;color:#FFFFFF;text-decoration:none;">&ldquo;What are my <span style="white-space:nowrap;">two-factor</span> options?&rdquo;</a>
+          <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:16px;line-height:22px;color:#FFFFFF;text-decoration:none;">&ldquo;Why do I need MFA?&rdquo;</a>
         </td>
         <td width="40" valign="middle" align="right" style="padding:14px 18px 14px 0;"><a href="{{chat_url}}" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;line-height:20px;color:#A78BFA;text-decoration:none;">&rarr;</a></td>
       </tr>
@@ -134,10 +120,10 @@
 
   <!-- fine print -->
   <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">Buttons not working? Paste a link instead.<br>Keep two-factor on: <a href="{{reject_change_url}}" style="color:#A78BFA;word-break:break-all;">{{reject_change_url}}</a><br>Turn it off: <a href="{{confirm_change_url}}" style="color:#A78BFA;word-break:break-all;">{{confirm_change_url}}</a><br>Stuck anyway? Write to <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a>.</p>
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">Button not working? Paste this link:<br><a href="{{secure_account_url}}" style="color:#A78BFA;word-break:break-all;">{{secure_account_url}}</a><br>Stuck anyway? Write to <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a>.</p>
   </td></tr>
 
-  <!-- footer : transactional (no unsubscribe) -->
+  <!-- footer : security -->
   <tr><td class="px" style="padding:44px 40px 0;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#1C1E27;">&nbsp;</td></tr></table>
   </td></tr>
@@ -148,7 +134,7 @@
     <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;">
       <a href="{{help_url}}" style="color:#A3A5B5;text-decoration:none;">Help centre</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{security_url}}" style="color:#A3A5B5;text-decoration:none;">Security</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{privacy_url}}" style="color:#A3A5B5;text-decoration:none;">Privacy</a>
     </p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;">Security notification sent to {{recipient_email}} because someone asked to turn off two-factor on your account. These can&rsquo;t be switched off while your account is active.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
+    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;">Security notification sent to {{recipient_email}} because the authenticator on your account was reset. These can&rsquo;t be switched off while your account is active.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
   </td></tr>
 
 </table>

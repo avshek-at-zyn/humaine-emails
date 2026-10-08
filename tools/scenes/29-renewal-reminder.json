@@ -1,0 +1,72 @@
+{
+  "name": "29-renewal-reminder",
+  "icon": "img/src/icons/calendar-clock.svg",
+  "iconSize": 290,
+  "iconX": 592,
+  "height": 520,
+  "seed": 29,
+  "planets": [
+    {
+      "type": "blue",
+      "x": 858,
+      "y": 372,
+      "r": 28,
+      "ring": true,
+      "tilt": -10,
+      "ringScale": 2.1
+    },
+    {
+      "type": "lilac",
+      "x": 174,
+      "y": 230,
+      "r": 26
+    },
+    {
+      "type": "pink",
+      "x": 1006,
+      "y": 112,
+      "r": 11
+    },
+    {
+      "type": "cyan",
+      "x": 350,
+      "y": 104,
+      "r": 10
+    }
+  ],
+  "orbit": {
+    "scale": 1.26,
+    "tilt": 9,
+    "moon": "pink",
+    "moonR": 7,
+    "moonAt": 0.9
+  },
+  "pinkGlow": {
+    "x": 850,
+    "y": 360,
+    "r": 210
+  },
+  "shootingStar": {
+    "x": 560,
+    "y": 82,
+    "len": 150,
+    "angle": 14
+  },
+  "sparkles": [
+    [
+      300,
+      380,
+      7
+    ],
+    [
+      1072,
+      270,
+      5
+    ],
+    [
+      720,
+      92,
+      5
+    ]
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "40-weekly-briefing",
+  "icon": "img/src/icons/news.svg",
+  "iconSize": 284,
+  "iconY": 238,
+  "height": 480,
+  "seed": 40,
+  "planets": [
+    { "type": "blue", "x": 400, "y": 112, "r": 28, "ring": true, "tilt": -16, "ringScale": 1.9 },
+    { "type": "pink", "x": 1016, "y": 250, "r": 36 },
+    { "type": "cyan", "x": 236, "y": 262, "r": 10 }
+  ],
+  "orbit": { "scale": 1.18, "ry": 92, "tilt": 6, "moon": "lilac", "moonR": 8, "moonAt": 0.12 },
+  "pinkGlow": { "x": 1010, "y": 250, "r": 220 },
+  "shootingStar": { "x": 830, "y": 100, "len": 150, "angle": -16 },
+  "sparkles": [[310, 372, 6], [1076, 150, 5], [780, 380, 6]]
+}

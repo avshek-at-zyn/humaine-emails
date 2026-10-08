@@ -1,0 +1,16 @@
+{
+  "name": "13-verify-email",
+  "icon": "img/src/icons/mail-at.svg",
+  "iconSize": 308,
+  "height": 500,
+  "seed": 13,
+  "planets": [
+    { "type": "pink", "x": 262, "y": 118, "r": 28, "ring": true, "tilt": -16, "ringScale": 2.0 },
+    { "type": "blue", "x": 1004, "y": 318, "r": 44 },
+    { "type": "cyan", "x": 884, "y": 110, "r": 10 }
+  ],
+  "orbit": { "scale": 1.26, "tilt": -7, "moon": "lilac", "moonR": 8, "moonAt": 0.3 },
+  "pinkGlow": { "x": 330, "y": 150, "r": 210 },
+  "shootingStar": { "x": 760, "y": 88, "len": 150, "angle": -20 },
+  "sparkles": [[420, 400, 6], [1080, 220, 5], [700, 100, 5]]
+}

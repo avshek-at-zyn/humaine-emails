@@ -8,6 +8,9 @@
 //   cd tools && npm i && node scene.mjs            # all scenes
 //   node scene.mjs 07-welcome 11-password-changed  # just these
 //
+// Orbit options: scale (rx = iconSize x scale), ry (px, default iconSize x 0.34), tilt, moon, moonR, moonAt.
+// Canvas: width (default 1200) and height (default 600) — e.g. 560x560 for a compact square scene beside the headline.
+//
 // One scene per file in scenes/<name>.json. Output: ../img/hero/<name>.jpg at 2x.
 
 import sharp from 'sharp';
@@ -102,7 +105,7 @@ function sparkle(x, y, s, color = '#E9E2FF', o = 0.9) {
 }
 
 async function renderScene(sc) {
-  const W = 1200, H = sc.height ?? 600;
+  const W = sc.width ?? 1200, H = sc.height ?? 600;
   const rand = rng(sc.seed ?? 7);
   const icon = sc.icon ? { size: sc.iconSize ?? 300, x: sc.iconX ?? W / 2, y: sc.iconY ?? H * 0.49 } : null;
 
@@ -117,7 +120,7 @@ async function renderScene(sc) {
   const glowX = icon ? icon.x : W / 2, glowY = icon ? icon.y : H * 0.45;
   const glowR = sc.glowRadius ?? (icon ? icon.size * 1.15 : 320);
   const orbit = sc.orbit && icon ? (() => {
-    const rx = icon.size * (sc.orbit.scale ?? 1.28), ry = icon.size * 0.34;
+    const rx = icon.size * (sc.orbit.scale ?? 1.28), ry = sc.orbit.ry ?? icon.size * 0.34;
     const tilt = sc.orbit.tilt ?? -10;
     const t = (sc.orbit.moonAt ?? 0.18) * Math.PI * 2;
     const mx = icon.x + rx * Math.cos(t), my = icon.y + ry * Math.sin(t);
@@ -171,8 +174,14 @@ async function renderScene(sc) {
     </linearGradient>
     <linearGradient id="fadeX" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="${BG}" stop-opacity="1"/>
-      <stop offset="0.1" stop-color="${BG}" stop-opacity="0"/>
-      <stop offset="0.9" stop-color="${BG}" stop-opacity="0"/>
+      <stop offset="0.04" stop-color="${BG}" stop-opacity="0.82"/>
+      <stop offset="0.1" stop-color="${BG}" stop-opacity="0.38"/>
+      <stop offset="0.17" stop-color="${BG}" stop-opacity="0.1"/>
+      <stop offset="0.23" stop-color="${BG}" stop-opacity="0"/>
+      <stop offset="0.77" stop-color="${BG}" stop-opacity="0"/>
+      <stop offset="0.83" stop-color="${BG}" stop-opacity="0.1"/>
+      <stop offset="0.9" stop-color="${BG}" stop-opacity="0.38"/>
+      <stop offset="0.96" stop-color="${BG}" stop-opacity="0.82"/>
       <stop offset="1" stop-color="${BG}" stop-opacity="1"/>
     </linearGradient>
     <linearGradient id="shoot" x1="0" y1="0" x2="1" y2="0">

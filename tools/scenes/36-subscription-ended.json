@@ -1,0 +1,66 @@
+{
+  "name": "36-subscription-ended",
+  "icon": "img/src/icons/calendar-paused.svg",
+  "iconSize": 250,
+  "iconX": 592,
+  "height": 440,
+  "seed": 36,
+  "planets": [
+    {
+      "type": "dark",
+      "x": 236,
+      "y": 292,
+      "r": 38,
+      "ring": true,
+      "tilt": 14,
+      "ringScale": 1.9
+    },
+    {
+      "type": "glass",
+      "x": 1004,
+      "y": 124,
+      "r": 16
+    },
+    {
+      "type": "blue",
+      "x": 842,
+      "y": 316,
+      "r": 8
+    }
+  ],
+  "orbit": {
+    "scale": 1.2,
+    "tilt": 6,
+    "moon": "cyan",
+    "moonR": 6,
+    "moonAt": 0.3
+  },
+  "pinkGlow": {
+    "x": 250,
+    "y": 290,
+    "r": 170
+  },
+  "shootingStar": {
+    "x": 420,
+    "y": 80,
+    "len": 130,
+    "angle": -22
+  },
+  "sparkles": [
+    [
+      860,
+      100,
+      6
+    ],
+    [
+      1070,
+      280,
+      5
+    ],
+    [
+      520,
+      350,
+      5
+    ]
+  ]
+}

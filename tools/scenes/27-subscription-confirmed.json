@@ -1,0 +1,18 @@
+{
+  "name": "27-subscription-confirmed",
+  "icon": "img/src/icons/card-check.svg",
+  "iconSize": 300,
+  "iconY": 242,
+  "height": 500,
+  "seed": 27,
+  "planets": [
+    {"type": "pink", "x": 236, "y": 300, "r": 40},
+    {"type": "blue", "x": 432, "y": 87, "r": 17, "ring": true, "tilt": -14, "ringScale": 2.2},
+    {"type": "lilac", "x": 944, "y": 115, "r": 22},
+    {"type": "cyan", "x": 1030, "y": 280, "r": 11}
+  ],
+  "orbit": {"scale": 1.24, "tilt": 8, "moon": "glass", "moonR": 8, "moonAt": 0.86},
+  "pinkGlow": {"x": 250, "y": 292, "r": 216},
+  "shootingStar": {"x": 790, "y": 80, "len": 150, "angle": 16},
+  "sparkles": [[862, 377, 7], [150, 188, 5], [700, 392, 5]]
+}
