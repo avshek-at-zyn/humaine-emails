@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- hero : the clay code bubble inside a dashed, hand-drawn whisper balloon (comics draw a whisper with a dashed outline) -->
+<div class="stage" data-out="hero/08-otp-code.jpg" style="height:370px">
+  <div class="glow violet" style="left:220px;top:70px;width:300px;height:210px;opacity:.5"></div>
+  <div class="glow pink" style="left:60px;top:40px;width:170px;height:120px;opacity:.22"></div>
+  <svg id="sky" width="600" height="370" style="left:0;top:0"></svg>
+  <div class="planet glass" style="left:84px;top:236px;width:44px;height:44px"></div>
+  <div class="planet lilac" style="left:500px;top:58px;width:26px;height:26px"></div>
+  <div class="planet cyan" style="left:528px;top:256px;width:10px;height:10px"></div>
+  <div class="planet pink" style="left:214px;top:52px;width:12px;height:12px"></div>
+  <svg id="balloon" width="600" height="370" style="left:0;top:0"></svg>
+  <img class="icon" src="../../img/src/icons/code-bubble.svg" style="left:252px;top:72px;width:206px;transform:rotate(7deg)">
+  <svg id="ink" width="600" height="370" style="left:0;top:0"></svg>
+  <div class="note pink" style="left:52px;top:84px;transform:rotate(-8deg);font-size:34px">keep this one
+  to yourself</div>
+</div>
+
+<!-- ink stamp for the code slip's header row -->
+<div class="mark" data-out="marks/08-stamp.png" style="width:180px;height:124px">
+  <div class="stamp violet" style="left:30px;top:22px;transform:rotate(-8deg);font-size:23px;line-height:1.02;letter-spacing:4px;text-align:center;padding:9px 12px 8px 16px">Works<br>once</div>
+</div>
+
+<script src="kit.js"></script>
+<script>
+  K.init(808);
+  const stage = document.querySelector('.stage');
+  K.stars(document.getElementById('sky'), { w: 600, h: 370, count: 66, sparkles: 4, avoid: [[352, 178, 160], [130, 110, 90]] });
+  const b = document.getElementById('balloon');
+  const dash = g => g.querySelectorAll('path').forEach((p, i) => p.setAttribute('stroke-dasharray', i ? '6 11' : '11 9'));
+  // whisper balloon: one dashed outline, oval round to a tail that runs down to the left
+  const bx = 356, by = 172, brx = 150, bry = 112, brot = -6 * Math.PI / 180;
+  const at = d => { const t = d * Math.PI / 180, x = brx * Math.cos(t), y = bry * Math.sin(t); return [bx + x * Math.cos(brot) - y * Math.sin(brot), by + x * Math.sin(brot) + y * Math.cos(brot)]; };
+  const outline = [];
+  for (let d = 142; d <= 118 + 360; d += 7) outline.push(at(d + Math.sin(d / 23) * 1.5));
+  outline.push(at(118 + 360), [192, 304], at(142));
+  dash(K.line(b, { points: outline, width: 2.6, color: ['#B5B7F6', '#F9A8D4'], jitter: 1.2 }));
+  const ink = document.getElementById('ink');
+  // note arrow curls down into the balloon
+  K.line(ink, { points: [[150, 172], [170, 196], [202, 206], [232, 198]], arrow: true, color: '#F9A8D4', width: 2.6, head: 11 });
+  K.ellipse(ink, { cx: 106, cy: 258, rx: 44, ry: 10, rot: 14, loops: 1.1, width: 1.6, opacity: .7, color: '#B5B7F6' });
+  K.ellipse(ink, { cx: 513, cy: 71, rx: 30, ry: 8, rot: -24, loops: 1.1, width: 1.4, opacity: .7, color: '#B5B7F6' });
+  K.doodle(ink, { kind: 'asterisk', x: 528, y: 178, s: 8, color: '#C4B5FD', width: 2 });
+  K.finish(stage, { top: 0.08, bottom: 0.18, sides: 0.06 });
+  K.done();
+</script>
+</body></html>

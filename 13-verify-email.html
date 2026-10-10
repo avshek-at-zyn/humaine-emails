@@ -12,7 +12,7 @@
 <!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
 <![endif]-->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{color-scheme:dark;supported-color-schemes:dark;}
   body,table,td,a{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
@@ -24,7 +24,7 @@
   u + .body a, #MessageViewBody a{color:inherit;text-decoration:none;}
   @media screen and (max-width:620px){
     .px{padding-left:24px!important;padding-right:24px!important;}
-    .h1{font-size:27px!important;line-height:1.25!important;}
+    .h1{font-size:34px!important;line-height:1.1!important;letter-spacing:-0.8px!important;}
     .lead{font-size:15px!important;}
   }
 </style>
@@ -44,137 +44,124 @@
     <img src="https://humaine-email.vercel.app/img/brand/lockup@2x.png" width="144" height="36" alt="humAIne" style="display:block;width:144px;height:36px;border:0;">
   </td></tr>
 
-  <!-- hero : app clay illustration in a planetary scene (shorter, so the timeline sits higher) -->
-  <tr><td><img src="https://humaine-email.vercel.app/img/hero/13-verify-email.jpg" width="600" alt="A lilac envelope with a white @ badge, on a faint orbit between a ringed pink planet and a large blue one" style="display:block;width:100%;max-width:600px;height:auto;border:0;"></td></tr>
-
-  <!-- headline + lead -->
-  <tr><td align="center" class="px" style="padding:8px 48px 0;">
-    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;text-wrap:balance;">Confirm your email to finish signing&nbsp;up</h1>
-    <p class="lead" style="margin:16px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#B4B5C4;">Security updates and anything you&rsquo;re charged for will go to {{recipient_email}}, so we check the address&nbsp;first.</p>
+  <!-- hero : collage. The clay envelope franked with a hand-inked postmark, a handwritten aside pointing at it -->
+  <tr><td style="padding:4px 0 0;">
+    <img src="https://humaine-email.vercel.app/img/hero/13-verify-email.jpg" width="600" alt="A lilac clay envelope with a white @ badge, franked with an inked postmark and wavy lines, with a handwritten note: making sure it&rsquo;s yours" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
   </td></tr>
 
-  <!-- signature move : timeline. Vertical, with fixed-height hairline connectors (58px per step) so it holds at 390px. -->
-  <tr><td class="px" style="padding:28px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#15171F;border:1px solid #23252E;border-radius:16px;">
-      <tr><td style="padding:22px 22px 20px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+  <!-- kicker : a log line, not a badge -->
+  <tr><td align="center" class="px" style="padding:0 40px 14px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:14px;letter-spacing:1.6px;text-transform:uppercase;color:#C4B5FD;">&#10022;&nbsp; Step 2 of 3</td></tr>
 
-          <!-- step 1 : done (filled lilac dot) -->
-          <tr>
-            <td width="16" valign="top" style="width:16px;">
-              <table role="presentation" width="16" cellpadding="0" cellspacing="0" border="0">
-                <tr><td height="4" style="height:4px;font-size:0;line-height:0;">&nbsp;</td></tr>
-                <tr><td align="center"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="12" height="12" bgcolor="#C48DD8" style="width:12px;height:12px;border-radius:999px;background-color:#C48DD8;font-size:0;line-height:0;">&nbsp;</td></tr></table></td></tr>
-                <tr><td height="4" style="height:4px;font-size:0;line-height:0;">&nbsp;</td></tr>
-                <tr><td align="center"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="2" height="34" bgcolor="#4D3E73" style="width:2px;height:34px;background-color:#4D3E73;font-size:0;line-height:0;">&nbsp;</td></tr></table></td></tr>
-                <tr><td height="4" style="height:4px;font-size:0;line-height:0;">&nbsp;</td></tr>
-              </table>
-            </td>
-            <td valign="top" style="padding:0 0 18px 14px;">
-              <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:20px;font-weight:500;color:#B4B5C4;">Account created</p>
-              <p style="margin:2px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;color:#7D7F8F;">{{signup_date}} at {{signup_time}}</p>
-            </td>
-          </tr>
-
-          <!-- step 2 : current (ringed dot, bold label) -->
-          <tr>
-            <td width="16" valign="top" style="width:16px;">
-              <table role="presentation" width="16" cellpadding="0" cellspacing="0" border="0">
-                <tr><td height="2" style="height:2px;font-size:0;line-height:0;">&nbsp;</td></tr>
-                <tr><td align="center">
-                  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-                    <td style="padding:2px;border:2px solid #A78BFA;border-radius:999px;background-color:#15171F;">
-                      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="8" height="8" bgcolor="#E5C3F0" style="width:8px;height:8px;border-radius:999px;background-color:#E5C3F0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
-                    </td>
-                  </tr></table>
-                </td></tr>
-                <tr><td height="4" style="height:4px;font-size:0;line-height:0;">&nbsp;</td></tr>
-                <tr><td align="center"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="2" height="32" bgcolor="#2A2C37" style="width:2px;height:32px;background-color:#2A2C37;font-size:0;line-height:0;">&nbsp;</td></tr></table></td></tr>
-                <tr><td height="4" style="height:4px;font-size:0;line-height:0;">&nbsp;</td></tr>
-              </table>
-            </td>
-            <td valign="top" style="padding:0 0 18px 14px;">
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-                <td valign="middle" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:20px;font-weight:600;color:#FFFFFF;">Confirm your email</td>
-                <td align="right" valign="middle" style="padding-left:8px;white-space:nowrap;">
-                  <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="right"><tr>
-                    <td style="padding:2px 9px;background-color:#1C1A30;border:1px solid #383159;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:14px;font-weight:600;color:#C4B5FD;white-space:nowrap;">You&rsquo;re here</td>
-                  </tr></table>
-                </td>
-              </tr></table>
-              <p style="margin:2px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;color:#7D7F8F;">Link expires in {{expiry_minutes}} min</p>
-            </td>
-          </tr>
-
-          <!-- step 3 : next (hollow dim dot) -->
-          <tr>
-            <td width="16" valign="top" style="width:16px;">
-              <table role="presentation" width="16" cellpadding="0" cellspacing="0" border="0">
-                <tr><td height="4" style="height:4px;font-size:0;line-height:0;">&nbsp;</td></tr>
-                <tr><td align="center"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="8" height="8" style="width:8px;height:8px;border:2px solid #3A3D52;border-radius:999px;background-color:#15171F;font-size:0;line-height:0;">&nbsp;</td></tr></table></td></tr>
-              </table>
-            </td>
-            <td valign="top" style="padding:0 0 0 14px;">
-              <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:20px;font-weight:500;color:#7D7F8F;">Sign in on your phone</p>
-              <p style="margin:2px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;color:#565869;">humAIne app &middot; same email and password</p>
-            </td>
-          </tr>
-
-        </table>
-      </td></tr>
-    </table>
+  <!-- headline : the word that matters, ringed by hand -->
+  <tr><td class="px" style="padding:0 40px 0;">
+    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:44px;line-height:1.12;letter-spacing:-1.2px;color:#FFFFFF;text-align:center;">Confirm your <span style="background-image:url('https://humaine-email.vercel.app/img/marks/ring.png');background-repeat:no-repeat;background-size:100% 100%;padding:2px 10px 6px;">email</span> to finish <span style="white-space:nowrap;">signing up</span></h1>
+    <p class="lead" style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#B4B5C4;text-align:center;">Security updates and anything you&rsquo;re charged for will go to {{recipient_email}}, so we check the address&nbsp;first.</p>
   </td></tr>
 
-  <!-- primary action : the "you're here" step -->
-  <tr><td class="px" style="padding:28px 40px 0;">
-    <!--[if mso]>
-    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{verify_email_url}}" style="height:52px;v-text-anchor:middle;width:520px;" arcsize="31%" stroke="f" fillcolor="#768AFF">
-      <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
-      <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Confirm my email</center>
-    </v:roundrect>
-    <![endif]-->
-    <!--[if !mso]><!-->
-    <a href="{{verify_email_url}}" style="display:block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:16px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:600;line-height:52px;text-align:center;text-decoration:none;">Confirm my email</a>
-    <!--<![endif]-->
-  </td></tr>
-
-  <!-- the alternative : code for the web sign-up page -->
-  <tr><td align="center" class="px" style="padding:20px 40px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;color:#7D7F8F;">Or enter this code on the web</p>
-    <p style="margin:6px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:26px;line-height:34px;font-weight:700;letter-spacing:6px;padding-left:6px;word-break:break-all;color:#FFFFFF;">{{verification_code}}</p>
-  </td></tr>
-
-  <!-- ask humAIne -->
-  <tr><td class="px" style="padding:28px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#12131C;border:1px solid #2A2547;border-radius:16px;">
+  <!-- signature, part 1 : a hand-drawn timeline. Done / now / next dots joined by drawn lines (firm for done, dashed for next) -->
+  <tr><td class="px" align="center" style="padding:30px 40px 0;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+      <!-- step 1 : done -->
       <tr>
-        <td width="52" valign="middle" style="padding:14px 0 14px 16px;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="36" height="35" alt="" style="display:block;width:36px;height:35px;border:0;"></td>
-        <td valign="middle" style="padding:14px 12px;">
-          <p style="margin:0 0 3px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#8E86C9;">Ask humAIne</p>
-          <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:16px;line-height:22px;color:#FFFFFF;text-decoration:none;">&ldquo;What can you do?&rdquo;</a>
+        <td width="28" valign="top" align="center" style="width:28px;padding:3px 0 0;">
+          <img src="https://humaine-email.vercel.app/img/marks/dot-done.png" width="14" height="14" alt="" style="display:block;width:14px;height:14px;border:0;margin:0 auto;">
+          <img src="https://humaine-email.vercel.app/img/marks/13-line-done.png" width="14" height="52" alt="" style="display:block;width:14px;height:52px;border:0;margin:4px auto 0;">
         </td>
-        <td width="40" valign="middle" align="right" style="padding:14px 18px 14px 0;"><a href="{{chat_url}}" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;line-height:20px;color:#A78BFA;text-decoration:none;">&rarr;</a></td>
+        <td valign="top" style="padding:0 0 0 14px;">
+          <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:21px;font-weight:500;color:#B4B5C4;">Account created</p>
+          <p style="margin:3px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:12.5px;line-height:18px;color:#7D7F8F;">{{signup_date}} at {{signup_time}}</p>
+        </td>
+      </tr>
+      <!-- step 2 : you're here -->
+      <tr>
+        <td width="28" valign="top" align="center" style="width:28px;padding:3px 0 0;">
+          <img src="https://humaine-email.vercel.app/img/marks/dot-now.png" width="14" height="14" alt="" style="display:block;width:14px;height:14px;border:0;margin:0 auto;">
+          <img src="https://humaine-email.vercel.app/img/marks/13-line-next.png" width="14" height="52" alt="" style="display:block;width:14px;height:52px;border:0;margin:4px auto 0;">
+        </td>
+        <td valign="top" style="padding:0 0 0 14px;">
+          <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:21px;font-weight:700;color:#FFFFFF;">Confirm your email</p>
+          <p style="margin:3px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:12.5px;line-height:18px;color:#F9A8D4;">Link expires in {{expiry_minutes}} min</p>
+        </td>
+      </tr>
+      <!-- step 3 : next -->
+      <tr>
+        <td width="28" valign="top" align="center" style="width:28px;padding:3px 0 0;">
+          <img src="https://humaine-email.vercel.app/img/marks/dot-next.png" width="14" height="14" alt="" style="display:block;width:14px;height:14px;border:0;margin:0 auto;">
+        </td>
+        <td valign="top" style="padding:0 0 0 14px;">
+          <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:21px;font-weight:500;color:#7D7F8F;">Sign in on your phone</p>
+          <p style="margin:3px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:12.5px;line-height:18px;color:#565869;">humAIne app &middot; same email and password</p>
+        </td>
       </tr>
     </table>
   </td></tr>
 
-  <!-- fine print : didn't sign up, link fallback -->
-  <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">Didn&rsquo;t sign up? Ignore this email. Nothing goes live until the address is confirmed.<br>Button not working? Paste this link:<br><a href="{{verify_email_url}}" style="color:#A78BFA;word-break:break-all;">{{verify_email_url}}</a></p>
+  <!-- action : the "now" step -->
+  <tr><td class="px" align="center" style="padding:30px 40px 0;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td>
+      <!--[if mso]>
+      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{verify_email_url}}" style="height:52px;v-text-anchor:middle;width:230px;" arcsize="27%" stroke="f" fillcolor="#768AFF">
+        <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
+        <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Confirm my email &rarr;</center>
+      </v:roundrect>
+      <![endif]-->
+      <!--[if !mso]><!-->
+      <a href="{{verify_email_url}}" style="display:inline-block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:14px;padding:0 28px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;line-height:52px;text-decoration:none;white-space:nowrap;">Confirm my email&nbsp;&rarr;</a>
+      <!--<![endif]-->
+    </td></tr></table>
   </td></tr>
 
-  <!-- footer : account -->
-  <tr><td class="px" style="padding:44px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#1C1E27;">&nbsp;</td></tr></table>
+  <!-- signature, part 2 : the alternative, the code on a small taped paper slip with a tear-off stub -->
+  <tr><td class="px" align="center" style="padding:28px 40px 0;">
+    <table role="presentation" width="300" cellpadding="0" cellspacing="0" border="0" align="center" style="width:300px;max-width:100%;">
+      <tr><td style="padding:0;font-size:0;line-height:0;"><img src="https://humaine-email.vercel.app/img/marks/13-slip-top.png" width="300" alt="" style="display:block;width:100%;max-width:300px;height:auto;border:0;"></td></tr>
+      <tr><td align="center" bgcolor="#EEE8F6" style="padding:0 18px 12px;background-color:#EEE8F6;">
+        <p style="margin:0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:14px;letter-spacing:1.4px;text-transform:uppercase;color:#6E6790;">Or enter this code on the web</p>
+        <p style="margin:10px 0 0;padding-left:8px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:30px;line-height:38px;font-weight:500;letter-spacing:8px;color:#1B1730;word-break:break-all;">{{verification_code}}</p>
+      </td></tr>
+      <tr><td style="padding:0;font-size:0;line-height:0;"><img src="https://humaine-email.vercel.app/img/marks/13-slip-perf.png" width="300" alt="" style="display:block;width:100%;max-width:300px;height:auto;border:0;"></td></tr>
+      <tr><td bgcolor="#EEE8F6" style="padding:2px 18px 0;background-color:#EEE8F6;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td valign="middle" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:13px;line-height:18px;font-weight:600;color:#2B2350;">hum<span style="color:#5B62B4;">AI</span>ne</td>
+          <td valign="middle" align="right" style="font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10px;line-height:18px;letter-spacing:1.2px;text-transform:uppercase;color:#6E6790;">Sign-up code</td>
+        </tr></table>
+      </td></tr>
+      <tr><td style="padding:0;font-size:0;line-height:0;"><img src="https://humaine-email.vercel.app/img/marks/13-slip-bottom.png" width="300" alt="" style="display:block;width:100%;max-width:300px;height:auto;border:0;"></td></tr>
+    </table>
   </td></tr>
-  <tr><td align="center" class="px" style="padding:30px 40px 40px;">
+
+  <!-- ask humAIne : a chat bubble from humAIne, the way the app shows it -->
+  <tr><td class="px" align="center" style="padding:36px 40px 0;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
+      <td width="34" valign="bottom" style="width:34px;padding:0 10px 2px 0;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="34" height="33" alt="" style="display:block;width:34px;height:33px;border:0;"></td>
+      <td valign="bottom">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td style="padding:11px 18px 13px 16px;background-color:#1C1A30;border:1px solid #383159;border-radius:18px 18px 18px 4px;">
+            <p style="margin:0 0 3px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:14px;letter-spacing:0.4px;color:#8E86C9;">Ask humAIne</p>
+            <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:17px;line-height:23px;color:#FFFFFF;text-decoration:none;">&ldquo;What can you do?&rdquo;&nbsp;<span style="color:#A78BFA;">&rarr;</span></a>
+          </td>
+        </tr></table>
+      </td>
+    </tr></table>
+  </td></tr>
+
+  <!-- fine print : didn't sign up, link fallback -->
+  <tr><td class="px" style="padding:26px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;text-align:center;">Didn&rsquo;t sign up? Ignore this email. Nothing goes live until the address is confirmed.<br>Button not working? Paste this link:<br><a href="{{verify_email_url}}" style="color:#A78BFA;word-break:break-all;">{{verify_email_url}}</a></p>
+  </td></tr>
+
+  <!-- footer : account (under a hand-drawn rule) -->
+  <tr><td class="px" style="padding:40px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/divider.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
+  </td></tr>
+  <tr><td align="center" class="px" style="padding:26px 40px 40px;">
     <img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="40" height="39" alt="humAIne" style="display:block;width:40px;height:39px;border:0;margin:0 auto;">
     <p style="margin:12px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:15px;line-height:20px;color:#C9C3F2;">hum<span style="color:#8FA0FF;">AI</span>ne</p>
     <p style="margin:4px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:18px;color:#7D7F8F;">Disruptively Human . Trust Co-created.</p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;">
+    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;text-align:center;">
       <a href="{{help_url}}" style="color:#A3A5B5;text-decoration:none;">Help centre</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{privacy_url}}" style="color:#A3A5B5;text-decoration:none;">Privacy</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{terms_url}}" style="color:#A3A5B5;text-decoration:none;">Terms</a>
     </p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;">Sent to {{recipient_email}} because this address was used to create a humAIne account. It&rsquo;s a one-off service message, so there&rsquo;s nothing to unsubscribe from.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
+    <p style="margin:14px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;text-align:center;">Sent to {{recipient_email}} because this address was used to create a humAIne account. It&rsquo;s a one-off service message, so there&rsquo;s nothing to unsubscribe from.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
   </td></tr>
 
 </table>

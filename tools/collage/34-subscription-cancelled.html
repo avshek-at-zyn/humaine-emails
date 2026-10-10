@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- 0 clay calendar (cancel badge) as a die-cut sticker, a strip of tape holding its corner down -->
+<div class="mark" data-out="marks/34-sticker.png" style="width:200px;height:200px">
+  <img src="../../img/src/icons/calendar-cancel.svg" style="left:28px;top:30px;width:146px;transform:rotate(-8deg);filter:url(#diecut)">
+  <div class="tape" style="left:18px;top:50px;width:74px;height:22px;transform:rotate(-36deg)"></div>
+</div>
+<!-- 1 notepad page top: ripped off a ring-bound pad, punched holes left in the paper -->
+<div class="mark" data-out="marks/34-paper-top.png" data-exact style="width:520px;height:34px"></div>
+<!-- 2 the stamp -->
+<div class="mark" data-out="marks/34-stamp.png" style="width:236px;height:100px">
+  <div class="stamp violet" style="left:16px;top:25px;transform:rotate(-8deg);color:#7A69EC;font-size:23px;letter-spacing:3.5px;padding:8px 11px 7px 15px;border-width:3px;outline-offset:3px">Cancelled</div>
+</div>
+<!-- 3-5 ink timeline dots for paper: done / now / next -->
+<div class="mark" data-out="marks/34-dot-done.png" data-exact style="width:28px;height:28px"></div>
+<div class="mark" data-out="marks/34-dot-now.png" data-exact style="width:28px;height:28px"></div>
+<div class="mark" data-out="marks/34-dot-next.png" data-exact style="width:28px;height:28px"></div>
+<!-- 6 the rail between dots: one wobbly pen stroke, tiles vertically (repeat-y); the dots sit on a paper disc over it -->
+<div class="mark" data-out="marks/34-rail.png" style="width:28px;height:36px"></div>
+<!-- 7 an ink ring for the date on paper (stretched round the value) -->
+<div class="mark" data-out="marks/34-ring.png" style="width:300px;height:72px"></div>
+<!-- 8 the pointer to the resume button -->
+<div class="mark" data-out="marks/34-note.png" style="width:330px;height:100px">
+  <div class="note" style="left:30px;top:8px;transform:rotate(-4deg);font-size:31px">changed your mind?</div>
+</div>
+<script src="kit.js"></script>
+<script>
+  K.init(3434);
+  const NS = 'http://www.w3.org/2000/svg';
+  const m = [...document.querySelectorAll('.mark')];
+
+  // sticker: a small cross doodle off its corner
+  K.doodle(K.svg(m[0], 200, 200), { kind: 'asterisk', x: 182, y: 152, s: 7, color: '#C4B5FD', width: 2 });
+
+  // notepad top: ragged paper edge with a row of punched holes cut out of it (true transparency)
+  const edge = K.svg(m[1], 520, 34);
+  const mask = document.createElementNS(NS, 'mask'); mask.setAttribute('id', 'holes');
+  edge.querySelector("defs").appendChild(mask);
+  K.tornTop(mask, { w: 520, h: 34, y: 9, fill: '#fff', amp: 1.6 });
+  for (let x = 30; x <= 490; x += 28) {
+    const c = document.createElementNS(NS, 'circle');
+    c.setAttribute('cx', x); c.setAttribute('cy', 21); c.setAttribute('r', 4.6); c.setAttribute('fill', '#000');
+    mask.appendChild(c);
+  }
+  const r = document.createElementNS(NS, 'rect');
+  r.setAttribute('width', 520); r.setAttribute('height', 34); r.setAttribute('fill', '#EEE8F6'); r.setAttribute('mask', 'url(#holes)');
+  edge.appendChild(r);
+
+  // dots, each on a paper disc so the rail can run behind: done = scribbled-in ink, now = pink ring round an ink dot, next = a hollow loop
+  const disc = svg => { const c = document.createElementNS(NS, 'circle'); c.setAttribute('cx', 14); c.setAttribute('cy', 14); c.setAttribute('r', 13); c.setAttribute('fill', '#EEE8F6'); svg.appendChild(c); return svg; };
+  const dd = disc(K.svg(m[3], 28, 28));
+  K.ellipse(dd, { cx: 14, cy: 14, rx: 6.4, ry: 6.4, loops: 3, wobble: .08, width: 4.6, color: '#5B4FB0', passes: 1 });
+  K.ellipse(dd, { cx: 14, cy: 14, rx: 2.6, ry: 2.6, loops: 3, wobble: .1, width: 4.6, color: '#5B4FB0', passes: 1 });
+  const dn = disc(K.svg(m[4], 28, 28));
+  K.ellipse(dn, { cx: 14, cy: 14, rx: 11.2, ry: 11.2, loops: 1.15, wobble: .05, width: 2.6, color: '#E879B9' });
+  K.ellipse(dn, { cx: 14, cy: 14, rx: 4.2, ry: 4.2, loops: 3, wobble: .08, width: 4, color: '#3B2F7A', passes: 1 });
+  K.ellipse(disc(K.svg(m[5], 28, 28)), { cx: 14, cy: 14, rx: 8, ry: 8, loops: 1.1, wobble: .06, width: 2.2, color: '#9C93BE' });
+
+  // rail: a continuous pen stroke whose ends meet x = 14 exactly, so tiles join
+  K.line(K.svg(m[6], 28, 36), { points: [[14, 0], [13.1, 12], [14.9, 24], [14, 36]], jitter: 0, width: 2, color: '#8D82C8' });
+
+  // ink ring
+  K.ellipse(K.svg(m[7], 300, 72), { cx: 150, cy: 36, rx: 140, ry: 28, rot: -1.8, loops: 1.24, wobble: .03, width: 2.6, color: ['#7C6FD6', '#E879B9'] });
+
+  // pointer: arrow from the end of the line, down and in towards the button
+  K.line(K.svg(m[8], 330, 100), { points: [[262, 46], [272, 64], [254, 82], [222, 94]], arrow: true, color: '#C4B5FD', width: 2.6, head: 11 });
+  K.done();
+</script>
+</body></html>

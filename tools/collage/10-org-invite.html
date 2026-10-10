@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- the clay invitation envelope as a die-cut sticker -->
+<div class="mark" data-out="marks/10-sticker.png" style="width:200px;height:200px">
+  <img src="../../img/src/app/invitation-mail-sent.svg" style="left:26px;top:18px;width:146px;transform:rotate(-8deg);filter:url(#diecut)">
+</div>
+<!-- ticket top and bottom: paper with its corners punched out round -->
+<div class="mark" data-out="marks/10-ticket-top.png" data-exact style="width:520px;height:20px"></div>
+<div class="mark" data-out="marks/10-ticket-bottom.png" data-exact style="width:520px;height:20px"></div>
+<!-- the stamp -->
+<div class="mark" data-out="marks/10-stamp.png" style="width:180px;height:104px">
+  <div class="stamp violet" style="left:28px;top:24px;transform:rotate(-8deg)">Rsvp</div>
+</div>
+<!-- an ink note on the ticket, under the For row, pointing up at the recipient -->
+<div class="mark" data-out="marks/10-note.png" style="width:150px;height:52px">
+  <div class="note ink" style="left:4px;top:18px;transform:rotate(-5deg);font-size:27px;color:#4B3F8F">that's you</div>
+</div>
+
+<script src="kit.js"></script>
+<script>
+  K.init(1010);
+  const m = document.querySelectorAll('.mark');
+  K.doodle(K.svg(m[0], 200, 200, 'left:0;top:0'), { kind: 'star', x: 172, y: 34, s: 9, color: '#F9A8D4', width: 2.2 });
+  K.doodle(K.svg(m[0], 200, 200, 'left:0;top:0'), { kind: 'asterisk', x: 26, y: 170, s: 6, color: '#C4B5FD', width: 2 });
+  // punched corners: quarter circles cut from the paper (transparent, so the canvas shows)
+  K.svg(m[1], 520, 20).insertAdjacentHTML('beforeend', '<path d="M14,0 H506 A14,14 0 0 0 520,14 V20 H0 V14 A14,14 0 0 0 14,0 Z" fill="#EEE8F6"/>');
+  K.svg(m[2], 520, 20).insertAdjacentHTML('beforeend', '<path d="M0,0 H520 V6 A14,14 0 0 0 506,20 H14 A14,14 0 0 0 0,6 Z" fill="#EEE8F6"/>');
+  K.line(K.svg(m[4], 150, 52), { points: [[112, 34], [126, 30], [135, 20], [139, 5]], arrow: true, color: '#4B3F8F', width: 2.2, head: 9, jitter: .8 });
+  K.done();
+</script>
+</body></html>

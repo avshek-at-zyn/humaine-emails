@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- the clay code card with the refresh badge, as a die-cut sticker -->
+<div class="mark" data-out="marks/18-sticker.png" style="width:200px;height:200px">
+  <img id="icon" data-src="../../img/src/icons/codes-new.svg" style="left:28px;top:20px;width:148px;transform:rotate(7deg);filter:url(#diecut)">
+</div>
+
+<!-- the code sheet's torn top, one long strip of tape holding it down -->
+<div class="mark" data-out="marks/18-paper-top.png" data-exact style="width:520px;height:46px">
+  <div class="tape" style="left:150px;top:8px;width:220px;height:26px;transform:rotate(-2.5deg)"></div>
+</div>
+
+<!-- an ink note at the foot of the sheet -->
+<div class="mark" data-out="marks/18-note.png" style="width:300px;height:56px">
+  <div class="note" style="left:12px;top:6px;transform:rotate(-2deg);font-size:27px;color:#4B3F8F">cross each off once used</div>
+</div>
+
+<!-- an ink strike for the old set (the shared pink strike is too faint on paper) -->
+<div class="mark" data-out="marks/18-strike.png" style="width:300px;height:40px"></div>
+
+<script src="kit.js"></script>
+<script>
+  function clean(img) {
+    return new Promise(res => {
+      const x = new XMLHttpRequest();
+      x.open('GET', img.getAttribute('data-src'));
+      x.onload = () => {
+        const s = x.responseText.replace(/<!-- ambient flecks[\s\S]*?(?=\s*<!-- floor shadow)/, '');
+        img.onload = img.onerror = () => res();
+        img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(s);
+      };
+      x.onerror = () => { img.onload = img.onerror = () => res(); img.src = img.getAttribute('data-src'); };
+      x.send();
+    });
+  }
+
+  K.init(1818);
+  const m = document.querySelectorAll('.mark');
+  const st = K.svg(m[0], 200, 200, 'left:0;top:0');
+  K.doodle(st, { kind: 'star', x: 30, y: 44, s: 11, color: '#F9A8D4', width: 2.2 });
+  K.doodle(st, { kind: 'asterisk', x: 182, y: 168, s: 6, color: '#C4B5FD', width: 1.8 });
+
+  const edge = K.svg(m[1], 520, 46); m[1].insertBefore(edge, m[1].firstChild);
+  K.tornTop(edge, { w: 520, h: 46, y: 28 });
+
+  const sk = K.svg(m[3], 300, 40);
+  K.line(sk, { points: [[6, 23], [100, 19], [200, 22], [294, 16]], jitter: 1.3, width: 3, color: '#4B3F8F' });
+  K.line(sk, { points: [[14, 18], [150, 25], [286, 20]], jitter: 1.1, width: 2, color: '#4B3F8F', opacity: .6 });
+
+  clean(document.getElementById('icon')).then(() => K.done());
+</script>
+</body></html>

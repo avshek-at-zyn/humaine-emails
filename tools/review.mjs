@@ -45,14 +45,15 @@ try {
         }
         req.continue();
       });
-      await page.setContent(html, { waitUntil: 'networkidle0', timeout: 30000 });
+      try { await page.setContent(html, { waitUntil: 'networkidle0', timeout: 45000 }); }
+      catch { await page.setContent(html, { waitUntil: 'load', timeout: 60000 }); }  // slow font CDN: settle for 'load'
       await page.evaluate(() => document.fonts.ready);
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
       // Ask humAIne prompt should sit on one line; the headline's last line shouldn't be a single word.
       const fit = await page.evaluate(() => {
         const label = [...document.querySelectorAll('p')].find(p => p.textContent.trim() === 'Ask humAIne');
         const a = label && label.parentElement.querySelector('a');
-        const askWraps = a ? a.getClientRects().length > 1 : false;
+        const askWraps = a ? a.getBoundingClientRect().height > (parseFloat(getComputedStyle(a).lineHeight) || 22) * 1.5 : false;
         const h1 = document.querySelector('h1');
         let orphan = false;
         if (h1) {

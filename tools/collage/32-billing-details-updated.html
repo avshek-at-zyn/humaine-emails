@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css">
+<style>
+  /* a paper form: label stubs, value lines; one value crossed out and written again above */
+  .form { background: #EEE8F6; box-shadow: 0 16px 30px rgba(0,0,0,.5); }
+  .form .lb { position: absolute; left: 20px; width: 46px; height: 6px; border-radius: 3px; background: #B8AFD3; }
+  .form .rule { position: absolute; left: 20px; right: 20px; height: 1px; background: #CFC6E2; }
+  .form .val { position: absolute; left: 20px; height: 9px; border-radius: 4px; background: #8E86B0; opacity: .8; }
+  .form .new { position: absolute; left: 22px; height: 10px; border-radius: 5px; background: #7C6FD6; }
+</style></head>
+<body>
+<div class="stage" data-out="hero/32-billing-details-updated.jpg" style="height:350px">
+  <div class="glow violet" style="left:200px;top:70px;width:300px;height:210px;opacity:.46"></div>
+  <div class="glow pink" style="left:420px;top:20px;width:150px;height:120px;opacity:.26"></div>
+  <svg id="sky" width="600" height="350" style="left:0;top:0"></svg>
+  <div class="planet lilac" style="left:478px;top:40px;width:44px;height:44px"></div>
+  <div class="planet cyan" style="left:96px;top:96px;width:16px;height:16px"></div>
+  <div class="planet blue" style="left:540px;top:286px;width:9px;height:9px"></div>
+  <div class="planet glass" style="left:300px;top:292px;width:12px;height:12px"></div>
+  <svg id="back" width="600" height="350" style="left:0;top:0"></svg>
+  <div class="form" style="left:208px;top:64px;width:236px;height:170px;transform:rotate(-4deg)">
+    <span class="lb" style="top:22px"></span><span class="val" style="top:36px;width:150px"></span><span class="rule" style="top:52px"></span>
+    <span class="lb" style="top:72px;width:38px"></span><span class="new" style="top:80px;width:120px"></span><span class="val" style="top:96px;width:168px"></span><span class="rule" style="top:112px"></span>
+    <span class="lb" style="top:130px;width:54px"></span><span class="val" style="top:144px;width:110px"></span><span class="rule" style="top:160px"></span>
+  </div>
+  <div class="tape" style="left:278px;top:50px;width:96px;height:24px;transform:rotate(-7deg)"></div>
+  <svg id="pen" width="600" height="350" style="left:0;top:0"></svg>
+  <img data-src="../../img/src/icons/card-edit.svg" style="left:372px;top:132px;width:176px;transform:rotate(9deg);filter:url(#diecut)">
+  <div class="note pink" style="left:46px;top:198px;transform:rotate(-6deg);font-size:33px">new details,
+same plan</div>
+</div>
+
+<script src="kit.js"></script>
+<script>
+  const clay = () => Promise.all([...document.querySelectorAll('img[data-src]')].map(img => new Promise(res => {
+    const x = new XMLHttpRequest(); x.open('GET', img.dataset.src);
+    x.onload = () => { const t = x.responseText.replace(/<!-- ambient flecks[\s\S]*?(?=<!-- floor shadow)/, ''); img.onload = res; img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(t); };
+    x.send();
+  })));
+  K.init(32 * 101);
+  const stage = document.querySelector('.stage');
+  K.stars(document.getElementById('sky'), { w: 600, h: 350, count: 66, sparkles: 4, avoid: [[320, 170, 170]] });
+  const back = document.getElementById('back');
+  K.ellipse(back, { cx: 104, cy: 104, rx: 30, ry: 7, rot: -10, loops: 1.1, width: 1.4, opacity: .7, color: '#B5B7F6' });
+  // the correction: scribble over the old value on the form (second row), in the form's rotated frame
+  const pen = document.getElementById('pen');
+  const fx = 208, fy = 64, fw = 236, fh = 170, ang = -4 * Math.PI / 180;
+  const P = (x, y) => { const dx = x - fw / 2, dy = y - fh / 2; return [fx + fw / 2 + dx * Math.cos(ang) - dy * Math.sin(ang), fy + fh / 2 + dx * Math.sin(ang) + dy * Math.cos(ang)]; };
+  K.line(pen, { points: [P(14, 102), P(70, 98), P(130, 101), P(196, 97)], color: '#E0567A', width: 2.8, jitter: 1 });
+  K.line(pen, { points: [P(20, 98), P(110, 103), P(192, 100)], color: '#E0567A', width: 2, jitter: .9, opacity: .75 });
+  // caret where the new line went in
+  K.line(pen, { points: [P(10, 92), P(16, 84), P(22, 92)], color: '#E0567A', width: 2.2, jitter: .4 });
+  // note arrow to the correction
+  K.line(pen, { points: [[156, 204], [170, 180], [186, 160], P(-6, 92)], arrow: true, color: '#F9A8D4', width: 2.8, head: 12 });
+  K.doodle(pen, { kind: 'asterisk', x: 476, y: 118, s: 7, color: '#C4B5FD', width: 2 });
+  K.finish(stage, { top: 0.1, bottom: 0.22, sides: 0.06 });
+  clay().then(() => K.done());
+</script>
+</body></html>

@@ -12,7 +12,7 @@
 <!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
 <![endif]-->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{color-scheme:dark;supported-color-schemes:dark;}
   body,table,td,a{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
@@ -24,13 +24,15 @@
   u + .body a, #MessageViewBody a{color:inherit;text-decoration:none;}
   @media screen and (max-width:620px){
     .px{padding-left:24px!important;padding-right:24px!important;}
-    .h1{font-size:27px!important;line-height:1.25!important;}
+    .h1{font-size:34px!important;line-height:1.1!important;letter-spacing:-0.8px!important;}
     .lead{font-size:15px!important;}
-    .fig{font-size:36px!important;line-height:44px!important;letter-spacing:6px!important;padding-left:6px!important;}
-    .figbox{padding-top:30px!important;padding-bottom:30px!important;}
+    .pp{padding-left:18px!important;padding-right:18px!important;}
+    .plbl{width:88px!important;}
+    .code{font-size:40px!important;line-height:48px!important;letter-spacing:7px!important;padding-left:7px!important;}
+    .stamp{width:104px!important;height:72px!important;}
   }
   @media screen and (max-width:380px){
-    .fig{font-size:32px!important;line-height:40px!important;letter-spacing:4px!important;padding-left:4px!important;}
+    .code{font-size:34px!important;letter-spacing:5px!important;padding-left:5px!important;}
   }
 </style>
 </head>
@@ -49,83 +51,98 @@
     <img src="https://humaine-email.vercel.app/img/brand/lockup@2x.png" width="144" height="36" alt="humAIne" style="display:block;width:144px;height:36px;border:0;">
   </td></tr>
 
-  <!-- hero : app clay illustration in a planetary scene, edges fade into the canvas -->
-  <tr><td>
-    <img src="https://humaine-email.vercel.app/img/hero/08-otp-code.jpg" width="600" alt="A violet chat bubble holding a row of six code dots, with a clock badge, orbiting among small ringed planets" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
+  <!-- hero : collage. The clay code bubble inside a dashed whisper balloon, a handwritten aside -->
+  <tr><td style="padding:4px 0 0;">
+    <img src="https://humaine-email.vercel.app/img/hero/08-otp-code.jpg" width="600" alt="A lilac clay chat bubble holding six code dots inside a dashed, hand-drawn whisper balloon, and a handwritten note: keep this one to yourself" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
   </td></tr>
 
-  <!-- status chip : info -->
-  <tr><td align="center" class="px" style="padding:4px 40px 0;">
+  <!-- kicker : a log line, not a badge -->
+  <tr><td align="center" class="px" style="padding:0 40px 14px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:14px;letter-spacing:1.6px;text-transform:uppercase;color:#C4B5FD;">&#10022;&nbsp; Sign-in code</td></tr>
+
+  <!-- headline -->
+  <tr><td class="px" align="center" style="padding:0 40px 0;">
+    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:44px;line-height:1.1;letter-spacing:-1.2px;color:#FFFFFF;text-align:center;">Enter <span style="white-space:nowrap;background-image:url('https://humaine-email.vercel.app/img/marks/swash.png');background-repeat:no-repeat;background-position:0 96%;background-size:100% 0.3em;">this code</span> to finish signing&nbsp;in</h1>
+  </td></tr>
+
+  <!-- signature : the code slip. Taped down, the code in mono, a perforated stub with the expiry.
+       No spaces are inserted between digits, so it pastes cleanly. -->
+  <tr><td class="px" style="padding:30px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/paper-top-taped.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#EEE8F6" style="background-color:#EEE8F6;">
+      <tr><td class="pp" style="padding:0 26px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td valign="middle">
+            <p style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:21px;line-height:24px;font-weight:600;color:#2B2350;">hum<span style="color:#5B62B4;">AI</span>ne</p>
+            <p style="margin:2px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:14px;letter-spacing:1.6px;text-transform:uppercase;color:#6E6790;">One-time code</p>
+          </td>
+          <td valign="middle" align="right" width="126" style="width:126px;"><img class="stamp" src="https://humaine-email.vercel.app/img/marks/08-stamp.png" width="126" height="87" alt="Stamped: works once" style="display:block;width:126px;height:87px;border:0;"></td>
+        </tr></table>
+        <p class="code" style="margin:18px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:48px;line-height:56px;font-weight:500;letter-spacing:10px;padding-left:10px;color:#1B1730;text-align:center;word-break:break-all;">{{otp_code}}</p>
+        <p style="margin:10px 0 0;padding:0 0 22px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#4B3F8F;text-align:center;">Expires in {{expiry_minutes}} minutes &middot; works once</p>
+      </td></tr>
+    </table>
+    <img src="https://humaine-email.vercel.app/img/marks/paper-perf.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#EEE8F6" style="background-color:#EEE8F6;">
+      <tr><td class="pp" style="padding:8px 26px 4px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td class="plbl" width="104" valign="top" style="width:104px;padding:5px 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:18px;letter-spacing:1.2px;text-transform:uppercase;color:#6E6790;">Requested</td>
+            <td valign="top" align="right" style="padding:5px 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:13px;line-height:18px;color:#1B1730;">{{request_time}} ({{timezone}})</td>
+          </tr>
+          <tr>
+            <td class="plbl" width="104" valign="top" style="width:104px;padding:5px 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:18px;letter-spacing:1.2px;text-transform:uppercase;color:#6E6790;">Device</td>
+            <td valign="top" align="right" style="padding:5px 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:13px;line-height:18px;color:#1B1730;">{{device_name}}</td>
+          </tr>
+          <tr>
+            <td class="plbl" width="104" valign="top" style="width:104px;padding:5px 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:18px;letter-spacing:1.2px;text-transform:uppercase;color:#6E6790;">Where</td>
+            <td valign="top" align="right" style="padding:5px 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:13px;line-height:18px;color:#1B1730;">{{city}}, {{country}}</td>
+          </tr>
+        </table>
+      </td></tr>
+    </table>
+    <img src="https://humaine-email.vercel.app/img/marks/paper-bottom.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
+  </td></tr>
+
+  <!-- safety : the line that matters most, then the not-you sentence with its inline link -->
+  <tr><td class="px" style="padding:28px 40px 0;">
+    <p class="lead" style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#B4B5C4;text-align:center;"><span style="color:#FFFFFF;font-weight:600;">Nobody from humAIne will ever ask you for this code, {{first_name}}.</span> Not on a call, in a chat or by email. Anyone who asks isn&rsquo;t&nbsp;us.</p>
+  </td></tr>
+  <tr><td class="px" style="padding:14px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6;color:#B4B5C4;text-align:center;">Didn&rsquo;t ask for it? Someone may know your password, but they can&rsquo;t get in without this code. <a href="{{secure_account_url}}" style="color:#C4B5FD;font-weight:600;text-decoration:underline;text-decoration-color:#5B4E9E;white-space:nowrap;">Secure your account&nbsp;&rarr;</a></p>
+  </td></tr>
+
+  <!-- ask humAIne : a chat bubble from humAIne, the way the app shows it -->
+  <tr><td class="px" align="center" style="padding:36px 40px 0;">
     <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
-      <td style="padding:7px 14px;background-color:#1C1A30;border:1px solid #383159;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:14px;font-weight:600;color:#C4B5FD;">&#10022;&nbsp; Sign-in code</td>
+      <td width="34" valign="bottom" style="width:34px;padding:0 10px 2px 0;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="34" height="33" alt="" style="display:block;width:34px;height:33px;border:0;"></td>
+      <td valign="bottom">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td style="padding:11px 18px 13px 16px;background-color:#1C1A30;border:1px solid #383159;border-radius:18px 18px 18px 4px;">
+            <p style="margin:0 0 3px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:14px;letter-spacing:0.4px;color:#8E86C9;">Ask humAIne</p>
+            <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:17px;line-height:23px;color:#FFFFFF;text-decoration:none;">&ldquo;Is this email real?&rdquo;&nbsp;<span style="color:#A78BFA;">&rarr;</span></a>
+          </td>
+        </tr></table>
+      </td>
     </tr></table>
   </td></tr>
 
-  <!-- headline -->
-  <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;text-wrap:balance;">Enter this code to finish signing&nbsp;in</h1>
-  </td></tr>
-
-  <!-- signature : the code as the figure. Hairlines, not a card; nothing else at this size.
-       No spaces are inserted between digits, so it pastes cleanly. -->
-  <tr><td class="px" style="padding:30px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-      <tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#23252E;">&nbsp;</td></tr>
-      <tr><td class="figbox" align="center" style="padding:38px 0 36px;">
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#8E86C9;">One-time code</p>
-        <p class="fig" style="margin:14px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:54px;line-height:62px;font-weight:500;letter-spacing:12px;padding-left:12px;color:#FFFFFF;word-break:break-all;">{{otp_code}}</p>
-        <p style="margin:14px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;color:#7D7F8F;">Expires in {{expiry_minutes}} minutes &middot; works once</p>
-      </td></tr>
-      <tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#23252E;">&nbsp;</td></tr>
-    </table>
-  </td></tr>
-
-  <!-- request : one quiet line -->
-  <tr><td align="center" class="px" style="padding:16px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.6;color:#7D7F8F;">Requested at {{request_time}} ({{timezone}}) from {{device_name}}, {{city}}, {{country}}</p>
-  </td></tr>
-
-  <!-- safety -->
-  <tr><td align="center" class="px" style="padding:30px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#B4B5C4;"><span style="color:#FFFFFF;font-weight:600;">Nobody from humAIne will ever ask you for this code, {{first_name}}.</span> Not on a call, in a chat or by email. Anyone who asks isn&rsquo;t&nbsp;us.</p>
-  </td></tr>
-
-  <!-- didn't ask : one sentence, inline link -->
-  <tr><td align="center" class="px" style="padding:14px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.65;color:#B4B5C4;">Didn&rsquo;t ask for it? Someone may know your password, but they can&rsquo;t get in without this code. <a href="{{secure_account_url}}" style="color:#A78BFA;font-weight:600;text-decoration:none;white-space:nowrap;">Secure your account&nbsp;&rarr;</a></p>
-  </td></tr>
-
-  <!-- ask humAIne -->
-  <tr><td class="px" style="padding:30px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#12131C;border:1px solid #2A2547;border-radius:16px;">
-      <tr>
-        <td width="52" valign="middle" style="padding:14px 0 14px 16px;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="36" height="35" alt="" style="display:block;width:36px;height:35px;border:0;"></td>
-        <td valign="middle" style="padding:14px 12px;">
-          <p style="margin:0 0 3px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#8E86C9;">Ask humAIne</p>
-          <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:16px;line-height:22px;color:#FFFFFF;text-decoration:none;">&ldquo;Is this email real?&rdquo;</a>
-        </td>
-        <td width="40" valign="middle" align="right" style="padding:14px 18px 14px 0;"><a href="{{chat_url}}" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;line-height:20px;color:#A78BFA;text-decoration:none;">&rarr;</a></td>
-      </tr>
-    </table>
-  </td></tr>
-
   <!-- fine print -->
-  <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">Someone asking for your code? Tell us at <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a>.</p>
+  <tr><td class="px" style="padding:26px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;text-align:center;">Someone asking for your code? Tell us at <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a>.</p>
   </td></tr>
 
-  <!-- footer : security -->
-  <tr><td class="px" style="padding:44px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#1C1E27;">&nbsp;</td></tr></table>
+  <!-- footer : security (under a hand-drawn rule) -->
+  <tr><td class="px" style="padding:40px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/divider.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
   </td></tr>
-  <tr><td align="center" class="px" style="padding:30px 40px 40px;">
+  <tr><td align="center" class="px" style="padding:26px 40px 40px;">
     <img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="40" height="39" alt="humAIne" style="display:block;width:40px;height:39px;border:0;margin:0 auto;">
     <p style="margin:12px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:15px;line-height:20px;color:#C9C3F2;">hum<span style="color:#8FA0FF;">AI</span>ne</p>
     <p style="margin:4px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:18px;color:#7D7F8F;">Disruptively Human . Trust Co-created.</p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;">
+    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;text-align:center;">
       <a href="{{help_url}}" style="color:#A3A5B5;text-decoration:none;">Help centre</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{security_url}}" style="color:#A3A5B5;text-decoration:none;">Security</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{privacy_url}}" style="color:#A3A5B5;text-decoration:none;">Privacy</a>
     </p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;">Sign-in code sent to {{recipient_email}} because someone asked for one. Account security emails can&rsquo;t be switched off while your account is active.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
+    <p style="margin:14px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;text-align:center;">Sign-in code sent to {{recipient_email}} because someone asked for one. Account security emails can&rsquo;t be switched off while your account is active.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
   </td></tr>
 
 </table>

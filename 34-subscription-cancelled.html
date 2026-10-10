@@ -12,7 +12,7 @@
 <!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
 <![endif]-->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{color-scheme:dark;supported-color-schemes:dark;}
   body,table,td,a{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
@@ -24,9 +24,10 @@
   u + .body a, #MessageViewBody a{color:inherit;text-decoration:none;}
   @media screen and (max-width:620px){
     .px{padding-left:24px!important;padding-right:24px!important;}
-    .h1{font-size:27px!important;line-height:1.25!important;}
+    .h1{font-size:34px!important;line-height:1.1!important;letter-spacing:-0.8px!important;}
     .lead{font-size:15px!important;}
-    .row{padding-left:18px!important;padding-right:18px!important;}
+    .pp{padding-left:18px!important;padding-right:18px!important;}
+    .stamp{width:142px!important;height:60px!important;}
   }
 </style>
 </head>
@@ -45,146 +46,137 @@
     <img src="https://humaine-email.vercel.app/img/brand/lockup@2x.png" width="144" height="36" alt="humAIne" style="display:block;width:144px;height:36px;border:0;">
   </td></tr>
 
-  <!-- hero : app clay illustration in a planetary scene, edges fade into the canvas -->
-  <tr><td>
-    <img src="https://humaine-email.vercel.app/img/hero/34-subscription-cancelled.jpg" width="600" alt="A lilac desk calendar with violet binder rings and a cross badge, orbiting beside a ringed planet" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
+  <!-- the clay calendar, taped down like a die-cut sticker -->
+  <tr><td align="center" style="padding:20px 0 12px;"><img src="https://humaine-email.vercel.app/img/marks/34-sticker.png" width="150" height="150" alt="A lilac clay calendar with a cross badge, taped down as a die-cut sticker" style="display:block;width:150px;height:150px;border:0;margin:0 auto;"></td></tr>
+
+  <!-- kicker : a log line, not a badge -->
+  <tr><td align="center" class="px" style="padding:0 40px 14px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:14px;letter-spacing:1.6px;text-transform:uppercase;color:#C4B5FD;">&#10022;&nbsp; Subscription cancelled</td></tr>
+
+  <!-- headline : a marker stroke under the part that matters -->
+  <tr><td class="px" align="center" style="padding:0 40px 0;">
+    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:44px;line-height:1.1;letter-spacing:-1.2px;color:#FFFFFF;text-align:center;"><span style="white-space:nowrap;background-image:url('https://humaine-email.vercel.app/img/marks/swash.png');background-repeat:no-repeat;background-position:0 96%;background-size:100% 0.3em;">No further charges</span> to your&nbsp;{{card_brand}}</h1>
+    <p class="lead" style="margin:16px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#B4B5C4;text-align:center;">Your subscription is cancelled, {{first_name}}. You keep everything you&rsquo;ve paid for, right up to the last&nbsp;day.</p>
   </td></tr>
 
-  <!-- status chip : info -->
-  <tr><td align="center" class="px" style="padding:4px 40px 0;">
+  <!-- signature : a cancellation slip torn off a ring-bound pad. Stamped, the timeline drawn in pen down the margin -->
+  <tr><td class="px" style="padding:30px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/34-paper-top.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#EEE8F6" style="background-color:#EEE8F6;">
+      <tr><td class="pp" style="padding:6px 26px 0;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td valign="middle">
+            <p style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:21px;line-height:24px;font-weight:600;color:#2B2350;">hum<span style="color:#5B62B4;">AI</span>ne</p>
+            <p style="margin:2px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:14px;letter-spacing:1.6px;text-transform:uppercase;color:#6E6790;">Cancellation</p>
+          </td>
+          <td valign="middle" align="right" width="177" style="width:177px;"><img class="stamp" src="https://humaine-email.vercel.app/img/marks/34-stamp.png" width="177" height="75" alt="Stamped: cancelled" style="display:block;width:177px;height:75px;border:0;"></td>
+        </tr></table>
+
+        <!-- the timeline : dots and a dashed pen rail in the margin, ruled lines across the page -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;border-top:1px solid #DCD4EA;">
+          <!-- done -->
+          <tr>
+            <td width="26" valign="middle" style="width:26px;padding:16px 0 0;background-image:url('https://humaine-email.vercel.app/img/marks/34-rail.png');background-repeat:no-repeat;background-position:center 27px;background-size:28px 36px;"><img src="https://humaine-email.vercel.app/img/marks/34-dot-done.png" width="16" height="16" alt="" style="display:block;width:16px;height:16px;border:0;margin:0 auto;"></td>
+            <td valign="middle" style="padding:16px 0 0 10px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:22px;font-weight:500;color:#6E6790;">Cancelled today</td>
+            <td valign="middle" align="right" style="padding:16px 0 0 8px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:13px;line-height:22px;color:#6E6790;white-space:nowrap;">{{cancel_date}}</td>
+          </tr>
+          <tr>
+            <td width="26" style="width:26px;height:18px;background-image:url('https://humaine-email.vercel.app/img/marks/34-rail.png');background-repeat:repeat-y;background-position:center top;background-size:28px 36px;border-bottom:1px solid #DCD4EA;font-size:0;line-height:0;">&nbsp;</td>
+            <td colspan="2" style="padding:0 0 0 10px;height:18px;border-bottom:1px solid #DCD4EA;font-size:0;line-height:0;">&nbsp;</td>
+          </tr>
+          <!-- now -->
+          <tr>
+            <td width="26" valign="middle" style="width:26px;padding:10px 0 0;background-image:url('https://humaine-email.vercel.app/img/marks/34-rail.png');background-repeat:repeat-y;background-position:center top;background-size:28px 36px;"><img src="https://humaine-email.vercel.app/img/marks/34-dot-now.png" width="16" height="16" alt="" style="display:block;width:16px;height:16px;border:0;margin:0 auto;"></td>
+            <td valign="middle" style="padding:10px 0 0 10px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:22px;font-weight:700;color:#1B1730;">Full access until</td>
+            <td valign="middle" align="right" style="padding:10px 0 0 8px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="right"><tr>
+                <td style="padding:8px 15px 9px 14px;background-image:url('https://humaine-email.vercel.app/img/marks/34-ring.png');background-repeat:no-repeat;background-size:100% 100%;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:14px;line-height:20px;font-weight:500;color:#1B1730;white-space:nowrap;">{{access_until}}</td>
+              </tr></table>
+            </td>
+          </tr>
+          <tr>
+            <td width="26" style="width:26px;background-image:url('https://humaine-email.vercel.app/img/marks/34-rail.png');background-repeat:repeat-y;background-position:center top;background-size:28px 36px;border-bottom:1px solid #DCD4EA;font-size:0;line-height:0;">&nbsp;</td>
+            <td colspan="2" style="padding:0 0 14px 10px;border-bottom:1px solid #DCD4EA;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;color:#4A4466;">Everything works as it does&nbsp;now.</td>
+          </tr>
+          <!-- next -->
+          <tr>
+            <td width="26" valign="middle" style="width:26px;padding:12px 0 0;background-image:url('https://humaine-email.vercel.app/img/marks/34-rail.png');background-repeat:no-repeat;background-position:center -13px;background-size:28px 36px;"><img src="https://humaine-email.vercel.app/img/marks/34-dot-next.png" width="16" height="16" alt="" style="display:block;width:16px;height:16px;border:0;margin:0 auto;"></td>
+            <td colspan="2" valign="middle" style="padding:12px 0 0 10px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:22px;font-weight:500;color:#6E6790;">Read-only after that</td>
+          </tr>
+          <tr>
+            <td width="26" style="width:26px;font-size:0;line-height:0;">&nbsp;</td>
+            <td colspan="2" style="padding:2px 0 16px 10px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;color:#4A4466;">Your chats, files and invoices stay. No&nbsp;new&nbsp;chats.</td>
+          </tr>
+        </table>
+
+        <!-- the money, reconciled -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td valign="top" style="padding:14px 0 4px;border-top:1px dashed #B8AFD3;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:18px;letter-spacing:1.2px;text-transform:uppercase;color:#6E6790;">Paid for this term</td>
+            <td valign="top" align="right" style="padding:14px 0 4px 12px;border-top:1px dashed #B8AFD3;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:14px;line-height:18px;color:#1B1730;white-space:nowrap;">{{amount_paid}}</td>
+          </tr>
+          <tr>
+            <td valign="top" style="padding:6px 0 20px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:18px;letter-spacing:1.2px;text-transform:uppercase;color:#6E6790;">Refunded today</td>
+            <td valign="top" align="right" style="padding:6px 0 20px 12px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:14px;line-height:18px;color:#1B1730;white-space:nowrap;">{{cancel_refund_amount}}</td>
+          </tr>
+        </table>
+      </td></tr>
+    </table>
+    <img src="https://humaine-email.vercel.app/img/marks/paper-bottom.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
+  </td></tr>
+
+  <!-- change of mind : a handwritten pointer down to the one button -->
+  <tr><td class="px" align="center" style="padding:30px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/34-note.png" width="330" alt="Handwritten: changed your mind?" style="display:block;width:330px;max-width:100%;height:auto;border:0;margin:0 auto;">
+  </td></tr>
+  <tr><td class="px" align="center" style="padding:2px 40px 0;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td>
+      <!--[if mso]>
+      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{resume_url}}" style="height:52px;v-text-anchor:middle;width:250px;" arcsize="27%" stroke="f" fillcolor="#768AFF">
+        <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
+        <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Resume subscription &rarr;</center>
+      </v:roundrect>
+      <![endif]-->
+      <!--[if !mso]><!-->
+      <a href="{{resume_url}}" style="display:inline-block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:14px;padding:0 28px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;line-height:52px;text-decoration:none;white-space:nowrap;">Resume subscription&nbsp;&rarr;</a>
+      <!--<![endif]-->
+    </td></tr></table>
+  </td></tr>
+  <tr><td class="px" style="padding:14px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6;color:#B4B5C4;text-align:center;">Resume before <span style="white-space:nowrap;">{{access_until}}</span>. Auto-renew comes back on and nothing else about the plan&nbsp;changes.</p>
+  </td></tr>
+
+  <!-- ask humAIne : a chat bubble from humAIne, the way the app shows it -->
+  <tr><td class="px" align="center" style="padding:36px 40px 0;">
     <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
-      <td style="padding:7px 14px;background-color:#1C1A30;border:1px solid #383159;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:14px;font-weight:600;color:#C4B5FD;">&#10022;&nbsp; Subscription cancelled</td>
+      <td width="34" valign="bottom" style="width:34px;padding:0 10px 2px 0;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="34" height="33" alt="" style="display:block;width:34px;height:33px;border:0;"></td>
+      <td valign="bottom">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td style="padding:11px 18px 13px 16px;background-color:#1C1A30;border:1px solid #383159;border-radius:18px 18px 18px 4px;">
+            <p style="margin:0 0 3px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:14px;letter-spacing:0.4px;color:#8E86C9;">Ask humAIne</p>
+            <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:17px;line-height:23px;color:#FFFFFF;text-decoration:none;">&ldquo;What happens next?&rdquo;&nbsp;<span style="color:#A78BFA;">&rarr;</span></a>
+          </td>
+        </tr></table>
+      </td>
     </tr></table>
   </td></tr>
 
-  <!-- headline + lead -->
-  <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;text-wrap:balance;">No further charges to your&nbsp;{{card_brand}}</h1>
-    <p class="lead" style="margin:16px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#B4B5C4;">Your subscription is cancelled, {{first_name}}. You keep everything you&rsquo;ve paid for, right up to the last&nbsp;day.</p>
-  </td></tr>
-
-  <!-- signature move : timeline. Done = filled lilac dot, now = ringed dot + bold label, next = hollow dim dot.
-       Each step is two rows: the dot beside its label, then a 2px hairline cell beside the meta, which stretches to any text height. -->
-  <tr><td class="px" style="padding:28px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#15171F;border:1px solid #23252E;border-radius:16px;">
-      <tr><td class="row" style="padding:22px 22px 20px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-
-          <!-- step 1 : done -->
-          <tr>
-            <td colspan="3" width="22" valign="middle" style="width:22px;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-                <td width="22" height="22" align="center" valign="middle" bgcolor="#B48BD9" style="width:22px;height:22px;border-radius:999px;background-color:#B48BD9;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:22px;font-weight:700;color:#FFFFFF;text-align:center;">&#10003;</td>
-              </tr></table>
-            </td>
-            <td valign="middle" style="padding-left:16px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:22px;font-weight:500;color:#B4B5C4;">Cancelled today</td>
-          </tr>
-          <tr>
-            <td width="10" style="width:10px;font-size:0;line-height:0;">&nbsp;</td>
-            <td width="2" bgcolor="#4A3F73" style="width:2px;background-color:#4A3F73;font-size:0;line-height:0;">&nbsp;</td>
-            <td width="10" style="width:10px;font-size:0;line-height:0;">&nbsp;</td>
-            <td valign="top" style="padding:4px 0 22px 16px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:18px;color:#7D7F8F;">{{cancel_date}}</td>
-          </tr>
-
-          <!-- step 2 : now -->
-          <tr>
-            <td colspan="3" width="22" valign="middle" style="width:22px;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-                <td width="18" height="18" align="center" valign="middle" bgcolor="#1C1A30" style="width:18px;height:18px;border:2px solid #C4B5FD;border-radius:999px;background-color:#1C1A30;font-family:Arial,sans-serif;font-size:8px;line-height:18px;color:#C4B5FD;text-align:center;">&#9679;</td>
-              </tr></table>
-            </td>
-            <td valign="middle" style="padding-left:16px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:22px;font-weight:700;color:#FFFFFF;">Full access until <span style="white-space:nowrap;">{{access_until}}</span></td>
-          </tr>
-          <tr>
-            <td width="10" style="width:10px;font-size:0;line-height:0;">&nbsp;</td>
-            <td width="2" bgcolor="#2A2C38" style="width:2px;background-color:#2A2C38;font-size:0;line-height:0;">&nbsp;</td>
-            <td width="10" style="width:10px;font-size:0;line-height:0;">&nbsp;</td>
-            <td valign="top" style="padding:4px 0 22px 16px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:18px;color:#B4B5C4;">Everything works as it does now.</td>
-          </tr>
-
-          <!-- step 3 : next -->
-          <tr>
-            <td colspan="3" width="22" valign="middle" align="center" style="width:22px;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
-                <td width="12" height="12" bgcolor="#15171F" style="width:12px;height:12px;border:2px solid #3A3D52;border-radius:999px;background-color:#15171F;font-size:1px;line-height:12px;">&nbsp;</td>
-              </tr></table>
-            </td>
-            <td valign="middle" style="padding-left:16px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:22px;font-weight:500;color:#7D7F8F;">Read-only after that</td>
-          </tr>
-          <tr>
-            <td width="10" style="width:10px;font-size:0;line-height:0;">&nbsp;</td>
-            <td width="2" style="width:2px;font-size:0;line-height:0;">&nbsp;</td>
-            <td width="10" style="width:10px;font-size:0;line-height:0;">&nbsp;</td>
-            <td valign="top" style="padding:4px 0 0 16px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:18px;color:#7D7F8F;">Your chats, files and invoices stay. No&nbsp;new&nbsp;chats.</td>
-          </tr>
-
-        </table>
-      </td></tr>
-      <!-- the money, reconciled -->
-      <tr><td style="border-top:1px solid #1F2129;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-          <td width="50%" valign="top" class="row" style="width:50%;padding:14px 18px 16px 22px;border-right:1px solid #1F2129;">
-            <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Paid for this term</p>
-            <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">{{amount_paid}}</p>
-          </td>
-          <td width="50%" valign="top" class="row" style="width:50%;padding:14px 22px 16px 18px;">
-            <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Refunded today</p>
-            <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">{{cancel_refund_amount}}</p>
-          </td>
-        </tr></table>
-      </td></tr>
-    </table>
-  </td></tr>
-
-  <!-- change of mind -->
-  <tr><td align="center" class="px" style="padding:24px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#B4B5C4;">Changed your mind? Resume before <span style="white-space:nowrap;">{{access_until}}</span>. Auto-renew comes back on and nothing else about the plan&nbsp;changes.</p>
-  </td></tr>
-
-  <!-- primary CTA -->
-  <tr><td class="px" style="padding:28px 40px 0;">
-    <!--[if mso]>
-    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{resume_url}}" style="height:52px;v-text-anchor:middle;width:520px;" arcsize="31%" stroke="f" fillcolor="#768AFF">
-      <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
-      <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Resume subscription</center>
-    </v:roundrect>
-    <![endif]-->
-    <!--[if !mso]><!-->
-    <a href="{{resume_url}}" style="display:block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:16px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:600;line-height:52px;text-align:center;text-decoration:none;">Resume subscription</a>
-    <!--<![endif]-->
-  </td></tr>
-
-  <!-- ask humAIne -->
-  <tr><td class="px" style="padding:24px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#12131C;border:1px solid #2A2547;border-radius:16px;">
-      <tr>
-        <td width="52" valign="middle" style="padding:14px 0 14px 16px;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="36" height="35" alt="" style="display:block;width:36px;height:35px;border:0;"></td>
-        <td valign="middle" style="padding:14px 12px;">
-          <p style="margin:0 0 3px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#8E86C9;">Ask humAIne</p>
-          <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:16px;line-height:22px;color:#FFFFFF;text-decoration:none;">&ldquo;What happens next?&rdquo;</a>
-        </td>
-        <td width="40" valign="middle" align="right" style="padding:14px 18px 14px 0;"><a href="{{chat_url}}" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;line-height:20px;color:#A78BFA;text-decoration:none;">&rarr;</a></td>
-      </tr>
-    </table>
-  </td></tr>
-
   <!-- fine print -->
-  <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">Button not working? Paste this link:<br><a href="{{resume_url}}" style="color:#A78BFA;word-break:break-all;">{{resume_url}}</a><br>Didn&rsquo;t cancel this yourself? Write to <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a>.<br>Your statutory rights are unaffected.</p>
+  <tr><td class="px" style="padding:26px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;text-align:center;">Button not working? Paste this link:<br><a href="{{resume_url}}" style="color:#A78BFA;word-break:break-all;">{{resume_url}}</a><br>Didn&rsquo;t cancel this yourself? Write to <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a>.<br>Your statutory rights are unaffected.</p>
   </td></tr>
 
-  <!-- footer : billing -->
-  <tr><td class="px" style="padding:44px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#1C1E27;">&nbsp;</td></tr></table>
+  <!-- footer : billing (under a hand-drawn rule) -->
+  <tr><td class="px" style="padding:40px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/divider.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
   </td></tr>
-  <tr><td align="center" class="px" style="padding:30px 40px 40px;">
+  <tr><td align="center" class="px" style="padding:26px 40px 40px;">
     <img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="40" height="39" alt="humAIne" style="display:block;width:40px;height:39px;border:0;margin:0 auto;">
     <p style="margin:12px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:15px;line-height:20px;color:#C9C3F2;">hum<span style="color:#8FA0FF;">AI</span>ne</p>
     <p style="margin:4px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:18px;color:#7D7F8F;">Disruptively Human . Trust Co-created.</p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;">
+    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;text-align:center;">
       <a href="{{help_url}}" style="color:#A3A5B5;text-decoration:none;">Help centre</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{billing_url}}" style="color:#A3A5B5;text-decoration:none;">Billing</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{privacy_url}}" style="color:#A3A5B5;text-decoration:none;">Privacy</a>
     </p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;">Sent to your billing email, {{billing_email}}. Emails about charges always reach you while you have a humAIne plan.<br>humAIne Personal is operated by Zyn Global.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}</p>
+    <p style="margin:14px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;text-align:center;">Sent to your billing email, {{billing_email}}. Emails about charges always reach you while you have a humAIne plan.<br>humAIne Personal is operated by Zyn Global.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}</p>
   </td></tr>
 
 </table>

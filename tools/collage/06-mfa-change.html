@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css">
+<style>
+  /* a scrap of paper with the pairing QR code, printed in ink */
+  .qr { background: #EEE8F6; box-shadow: 0 14px 26px rgba(0,0,0,.5); }
+  .qr svg { position: absolute; left: 0; top: 0; }
+</style></head>
+<body>
+<!-- hero : the old authenticator as a crossed-out sketch, a hand-drawn arrow over to the clay phone, the QR scrap tucked behind it -->
+<div class="stage" data-out="hero/06-mfa-change.jpg" style="height:360px">
+  <div class="glow violet" style="left:196px;top:66px;width:300px;height:230px"></div>
+  <div class="glow pink" style="left:30px;top:150px;width:200px;height:150px;opacity:.22"></div>
+  <svg id="sky" width="600" height="360" style="left:0;top:0"></svg>
+  <div class="planet blue" style="left:76px;top:62px;width:24px;height:24px"></div>
+  <div class="planet lilac" style="left:504px;top:284px;width:14px;height:14px"></div>
+  <div class="planet cyan" style="left:530px;top:70px;width:10px;height:10px"></div>
+  <svg id="back" width="600" height="360" style="left:0;top:0"></svg>
+  <div class="qr" style="left:340px;top:192px;width:98px;height:98px;transform:rotate(11deg)"><svg id="qr" width="98" height="98"></svg></div>
+  <img class="icon" src="../../img/src/icons/authenticator-reset.svg" style="left:182px;top:56px;width:238px;transform:rotate(5deg)">
+  <div class="tape" style="left:398px;top:198px;width:66px;height:20px;transform:rotate(40deg)"></div>
+  <svg id="ink" width="600" height="360" style="left:0;top:0"></svg>
+  <div class="note pink" style="left:420px;top:62px;transform:rotate(-6deg);font-size:36px">codes live
+here now</div>
+</div>
+
+<script src="kit.js"></script>
+<script>
+  K.init(606);
+  const stage = document.querySelector('.stage');
+  K.stars(document.getElementById('sky'), { w: 600, h: 360, count: 70, sparkles: 5, avoid: [[300, 180, 140]] });
+
+  // a rounded-rectangle outline as points, rotated about its centre (for the hand-drawn ghost phone)
+  const rrect = (cx, cy, w, h, r, rot) => {
+    const pts = [], a = rot * Math.PI / 180, hw = w / 2 - r, hh = h / 2 - r;
+    const corners = [[hw, -hh, -90], [hw, hh, 0], [-hw, hh, 90], [-hw, -hh, 180]];
+    for (const [x, y, start] of corners) for (let i = 0; i <= 6; i++) {
+      const t = (start + i * 15) * Math.PI / 180;
+      pts.push([x + r * Math.cos(t), y + r * Math.sin(t)]);
+    }
+    pts.push(pts[0], pts[1]);
+    return pts.map(([x, y]) => [cx + x * Math.cos(a) - y * Math.sin(a), cy + x * Math.sin(a) + y * Math.cos(a)]);
+  };
+  const rot = (cx, cy, x, y, deg) => { const a = deg * Math.PI / 180, dx = x - cx, dy = y - cy; return [cx + dx * Math.cos(a) - dy * Math.sin(a), cy + dx * Math.sin(a) + dy * Math.cos(a)]; };
+
+  const back = document.getElementById('back');
+  K.ellipse(back, { cx: 88, cy: 74, rx: 30, ry: 8, rot: -18, loops: 1.1, width: 1.6, opacity: .7, color: '#B5B7F6' });
+
+  // the previous authenticator: a quick pencil sketch of a phone, then struck out
+  const ink = document.getElementById('ink');
+  const G = [112, 198], GR = -10;
+  K.line(ink, { points: rrect(G[0], G[1], 84, 148, 16, GR), color: '#8E86C9', width: 2.2, jitter: 1.1, opacity: .75 });
+  K.line(ink, { points: [rot(...G, 100, 136, GR), rot(...G, 124, 136, GR)], color: '#8E86C9', width: 2.2, jitter: .4, opacity: .75 });
+  K.ellipse(ink, { cx: rot(...G, 112, 182, GR)[0], cy: rot(...G, 112, 182, GR)[1], rx: 10, ry: 10, loops: 1.1, width: 1.8, color: '#8E86C9', opacity: .6, passes: 1 });
+  K.line(ink, { points: [rot(...G, 92, 214, GR), rot(...G, 100, 202, GR), rot(...G, 124, 202, GR), rot(...G, 132, 214, GR)], color: '#8E86C9', width: 1.8, jitter: .5, opacity: .6 });
+  K.line(ink, { points: [[62, 222], [110, 204], [168, 182]], color: '#F9A8D4', width: 3, jitter: 1.4 });
+  K.line(ink, { points: [[66, 210], [118, 196], [164, 172]], color: '#F9A8D4', width: 2, jitter: 1.2, opacity: .7 });
+
+  // old -> new
+  K.line(ink, { points: [[160, 236], [182, 230], [204, 224], [226, 220]], arrow: true, color: '#C4B5FD', width: 2.6, head: 11 });
+  // the note points at the phone
+  K.line(ink, { points: [[456, 138], [446, 154], [420, 164], [388, 162]], arrow: true, color: '#F9A8D4', width: 2.6, head: 11 });
+  K.doodle(ink, { kind: 'asterisk', x: 544, y: 214, s: 8, color: '#C4B5FD', width: 2 });
+  K.doodle(ink, { kind: 'star', x: 64, y: 106, s: 9, color: '#F9A8D4', width: 2 });
+
+  // QR modules, printed in ink on the scrap
+  let s = 0x6060;
+  const r = () => { s ^= s << 13; s >>>= 0; s ^= s >>> 17; s ^= s << 5; s >>>= 0; return s / 4294967296; };
+  const qr = document.getElementById('qr');
+  const NS = 'http://www.w3.org/2000/svg';
+  const g = document.createElementNS(NS, 'g'); g.setAttribute('filter', 'url(#ink)'); g.setAttribute('fill', '#2B2350'); qr.appendChild(g);
+  const N = 21, M = 4, O = 7;
+  const finder = (fx, fy) => (x, y) => x >= fx && x < fx + 7 && y >= fy && y < fy + 7;
+  const inF = [finder(0, 0), finder(14, 0), finder(0, 14)];
+  const cell = (x, y) => { const q = document.createElementNS(NS, 'rect'); q.setAttribute('x', O + x * M); q.setAttribute('y', O + y * M); q.setAttribute('width', M + .2); q.setAttribute('height', M + .2); g.appendChild(q); };
+  for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
+    const f = inF.find(t => t(x, y));
+    if (f) {
+      const fx = x < 7 ? 0 : 14, fy = y < 7 ? 0 : 14, lx = x - fx, ly = y - fy;
+      const ring = lx === 0 || ly === 0 || lx === 6 || ly === 6, core = lx >= 2 && lx <= 4 && ly >= 2 && ly <= 4;
+      if (ring || core) cell(x, y);
+    } else if ((x < 8 && y < 8) || (x > 12 && y < 8) || (x < 8 && y > 12)) {
+      // quiet separator round each finder
+    } else if (r() < 0.47) cell(x, y);
+  }
+
+  K.finish(stage, { top: 0.1, bottom: 0.22, sides: 0.06 });
+  K.done();
+</script>
+</body></html>

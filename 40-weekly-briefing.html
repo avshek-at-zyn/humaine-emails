@@ -12,7 +12,7 @@
 <!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
 <![endif]-->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{color-scheme:dark;supported-color-schemes:dark;}
   body,table,td,a{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
@@ -24,12 +24,10 @@
   u + .body a, #MessageViewBody a{color:inherit;text-decoration:none;}
   @media screen and (max-width:620px){
     .px{padding-left:24px!important;padding-right:24px!important;}
-    .h1{font-size:27px!important;line-height:1.25!important;}
+    .h1{font-size:34px!important;line-height:1.1!important;letter-spacing:-0.8px!important;}
     .lead{font-size:15px!important;}
-    .idx-num{width:44px!important;font-size:26px!important;}
-    .idx-title{font-size:18px!important;}
-    .idx-stk{display:block!important;}
-    .idx-ask{padding:10px 0 0!important;}
+    .num{font-size:48px!important;line-height:48px!important;}
+    .stitle{font-size:20px!important;}
   }
 </style>
 </head>
@@ -48,134 +46,98 @@
     <img src="https://humaine-email.vercel.app/img/brand/lockup@2x.png" width="144" height="36" alt="humAIne" style="display:block;width:144px;height:36px;border:0;">
   </td></tr>
 
-  <!-- hero : app clay illustration in a planetary scene (short, so the index sits higher) -->
-  <tr><td><img src="https://humaine-email.vercel.app/img/hero/40-weekly-briefing.jpg" width="600" alt="A lilac clay newspaper with a violet headline and a sparkle badge, on an orbit between a ringed blue planet and a pink one" style="display:block;width:100%;max-width:600px;height:auto;border:0;"></td></tr>
+  <!-- hero : press clippings, taped down, the clay paper stuck on top -->
+  <tr><td style="padding:6px 0 0;">
+    <img src="https://humaine-email.vercel.app/img/hero/40-weekly-briefing.jpg" width="600" alt="Two taped paper clippings with a lilac clay newspaper stuck over them like a sticker" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
+  </td></tr>
 
-  <!-- status chip : info -->
-  <tr><td align="center" class="px" style="padding:4px 40px 0;">
+  <!-- kicker : a log line, not a badge -->
+  <tr><td align="center" class="px" style="padding:0 40px 14px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:14px;letter-spacing:1.6px;text-transform:uppercase;color:#F9A8D4;">The weekly briefing</td></tr>
+
+  <!-- headline : the count, ringed by hand -->
+  <tr><td class="px" style="padding:0 40px 0;">
+    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:44px;line-height:1.12;letter-spacing:-1.2px;color:#FFFFFF;text-align:center;"><span style="background-image:url('https://humaine-email.vercel.app/img/marks/ring.png');background-repeat:no-repeat;background-size:100% 100%;padding:2px 12px 6px;">Three</span> stories from <span style="white-space:nowrap;">{{week_range}}</span></h1>
+    <p class="lead" style="margin:16px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#B4B5C4;text-align:center;">The gist of each and where it came from, {{first_name}}. Ask humAIne what any of it means for&nbsp;you.</p>
+  </td></tr>
+
+  <!-- signature : a zine contents page -->
+  <tr><td class="px" align="center" style="padding:20px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/40-note.png" width="320" alt="Handwritten: start with this one" style="display:block;width:320px;max-width:100%;height:auto;border:0;margin:0 auto;">
+  </td></tr>
+  <tr><td class="px" align="center" style="padding:4px 40px 0;">
+    <p class="num" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:62px;line-height:60px;font-weight:500;color:#A78BFA;text-align:center;">1</p>
+        <p align="center" style="margin:8px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:16px;letter-spacing:1.4px;text-transform:uppercase;color:#F9A8D4;">{{story_1_tag}}</p>
+        <p align="center" class="stitle" style="margin:6px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:22px;line-height:1.25;font-weight:500;color:#FFFFFF;">{{story_1_title}}</p>
+        <p align="center" style="margin:8px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#B4B5C4;">{{story_1_summary}}</p>
+        <p align="center" style="margin:10px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11.5px;line-height:18px;color:#7D7F8F;">{{story_1_source}}&nbsp;&nbsp;/&nbsp;&nbsp;<a href="{{story_1_url}}" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;color:#C4B5FD;font-weight:600;text-decoration:none;white-space:nowrap;">Ask humAIne about this&nbsp;&rarr;</a></p>
+  </td></tr>
+  <tr><td class="px" style="padding:24px 40px 0;"><img src="https://humaine-email.vercel.app/img/marks/divider.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;"></td></tr>
+  <tr><td class="px" align="center" style="padding:24px 40px 0;">
+    <p class="num" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:62px;line-height:60px;font-weight:500;color:#A78BFA;text-align:center;">2</p>
+        <p align="center" style="margin:8px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:16px;letter-spacing:1.4px;text-transform:uppercase;color:#F9A8D4;">{{story_2_tag}}</p>
+        <p align="center" class="stitle" style="margin:6px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:22px;line-height:1.25;font-weight:500;color:#FFFFFF;">{{story_2_title}}</p>
+        <p align="center" style="margin:8px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#B4B5C4;">{{story_2_summary}}</p>
+        <p align="center" style="margin:10px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11.5px;line-height:18px;color:#7D7F8F;">{{story_2_source}}&nbsp;&nbsp;/&nbsp;&nbsp;<a href="{{story_2_url}}" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;color:#C4B5FD;font-weight:600;text-decoration:none;white-space:nowrap;">Ask humAIne about this&nbsp;&rarr;</a></p>
+  </td></tr>
+  <tr><td class="px" style="padding:24px 40px 0;"><img src="https://humaine-email.vercel.app/img/marks/divider.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;"></td></tr>
+  <tr><td class="px" align="center" style="padding:24px 40px 0;">
+    <p class="num" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:62px;line-height:60px;font-weight:500;color:#A78BFA;text-align:center;">3</p>
+        <p align="center" style="margin:8px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:16px;letter-spacing:1.4px;text-transform:uppercase;color:#F9A8D4;">{{story_3_tag}}</p>
+        <p align="center" class="stitle" style="margin:6px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:22px;line-height:1.25;font-weight:500;color:#FFFFFF;">{{story_3_title}}</p>
+        <p align="center" style="margin:8px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#B4B5C4;">{{story_3_summary}}</p>
+        <p align="center" style="margin:10px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11.5px;line-height:18px;color:#7D7F8F;">{{story_3_source}}&nbsp;&nbsp;/&nbsp;&nbsp;<a href="{{story_3_url}}" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;color:#C4B5FD;font-weight:600;text-decoration:none;white-space:nowrap;">Ask humAIne about this&nbsp;&rarr;</a></p>
+  </td></tr>
+
+  <!-- action -->
+  <tr><td class="px" align="center" style="padding:34px 40px 0;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td>
+      <!--[if mso]>
+      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{news_url}}" style="height:52px;v-text-anchor:middle;width:200px;" arcsize="27%" stroke="f" fillcolor="#768AFF">
+        <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
+        <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Open News &rarr;</center>
+      </v:roundrect>
+      <![endif]-->
+      <!--[if !mso]><!-->
+      <a href="{{news_url}}" style="display:inline-block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:14px;padding:0 28px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;line-height:52px;text-decoration:none;white-space:nowrap;">Open News&nbsp;&rarr;</a>
+      <!--<![endif]-->
+    </td></tr></table>
+  </td></tr>
+  <tr><td class="px" style="padding:14px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6;color:#B4B5C4;text-align:center;">In News, each story has its source articles, a translation and a summary you can&nbsp;share.</p>
+  </td></tr>
+
+  <!-- ask humAIne : a chat bubble from humAIne, the way the app shows it -->
+  <tr><td class="px" align="center" style="padding:36px 40px 0;">
     <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
-      <td style="padding:7px 14px;background-color:#1C1A30;border:1px solid #383159;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:14px;font-weight:600;color:#C4B5FD;">&#10022;&nbsp; This week in security</td>
+      <td width="34" valign="bottom" style="width:34px;padding:0 10px 2px 0;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="34" height="33" alt="" style="display:block;width:34px;height:33px;border:0;"></td>
+      <td valign="bottom">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td style="padding:11px 18px 13px 16px;background-color:#1C1A30;border:1px solid #383159;border-radius:18px 18px 18px 4px;">
+            <p style="margin:0 0 3px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:14px;letter-spacing:0.4px;color:#8E86C9;">Ask humAIne</p>
+            <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:17px;line-height:23px;color:#FFFFFF;text-decoration:none;">&ldquo;What should I act on?&rdquo;&nbsp;<span style="color:#A78BFA;">&rarr;</span></a>
+          </td>
+        </tr></table>
+      </td>
     </tr></table>
   </td></tr>
 
-  <!-- headline + lead -->
-  <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;text-wrap:balance;">Three stories from<br>{{week_range}}</h1>
-    <p class="lead" style="margin:16px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#B4B5C4;">The gist of each and where it came from, {{first_name}}. Ask humAIne what any of it means for&nbsp;you.</p>
-  </td></tr>
-
-  <!-- signature : editorial index. Magazine contents on the canvas: big numerals, hairlines, a tag kicker and a source chip per story -->
-  <tr><td class="px" style="padding:34px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-      <tr>
-        <td colspan="2" style="padding:0 0 12px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:14px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:#7D7F8F;">In this briefing</td>
-      </tr>
-
-      <!-- 01 -->
-      <tr>
-        <td class="idx-num" width="58" valign="top" style="width:58px;padding:22px 0 24px;border-top:1px solid #23252E;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:30px;line-height:30px;font-weight:500;color:#A78BFA;">01</td>
-        <td valign="top" style="padding:22px 0 24px;border-top:1px solid #23252E;">
-          <p style="margin:0 0 8px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:14px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:#C4B5FD;">{{story_1_tag}}</p>
-          <p class="idx-title" style="margin:0 0 6px;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:19px;line-height:1.32;font-weight:500;color:#FFFFFF;">{{story_1_title}}</p>
-          <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6;color:#B4B5C4;">{{story_1_summary}}</p>
-          <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:14px;"><tr>
-            <td class="idx-stk" valign="middle">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-                <td style="padding:3px 9px;background-color:#15171F;border:1px solid #2A2C37;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:14px;font-weight:500;color:#A3A5B5;white-space:nowrap;">{{story_1_source}}</td>
-              </tr></table>
-            </td>
-            <td class="idx-stk idx-ask" valign="middle" style="padding-left:14px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;"><a href="{{story_1_url}}" style="color:#A78BFA;font-weight:600;text-decoration:none;white-space:nowrap;">Ask humAIne about this&nbsp;&rarr;</a></td>
-          </tr></table>
-        </td>
-      </tr>
-
-      <!-- 02 -->
-      <tr>
-        <td class="idx-num" width="58" valign="top" style="width:58px;padding:22px 0 24px;border-top:1px solid #23252E;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:30px;line-height:30px;font-weight:500;color:#A78BFA;">02</td>
-        <td valign="top" style="padding:22px 0 24px;border-top:1px solid #23252E;">
-          <p style="margin:0 0 8px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:14px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:#C4B5FD;">{{story_2_tag}}</p>
-          <p class="idx-title" style="margin:0 0 6px;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:19px;line-height:1.32;font-weight:500;color:#FFFFFF;">{{story_2_title}}</p>
-          <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6;color:#B4B5C4;">{{story_2_summary}}</p>
-          <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:14px;"><tr>
-            <td class="idx-stk" valign="middle">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-                <td style="padding:3px 9px;background-color:#15171F;border:1px solid #2A2C37;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:14px;font-weight:500;color:#A3A5B5;white-space:nowrap;">{{story_2_source}}</td>
-              </tr></table>
-            </td>
-            <td class="idx-stk idx-ask" valign="middle" style="padding-left:14px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;"><a href="{{story_2_url}}" style="color:#A78BFA;font-weight:600;text-decoration:none;white-space:nowrap;">Ask humAIne about this&nbsp;&rarr;</a></td>
-          </tr></table>
-        </td>
-      </tr>
-
-      <!-- 03 -->
-      <tr>
-        <td class="idx-num" width="58" valign="top" style="width:58px;padding:22px 0 24px;border-top:1px solid #23252E;border-bottom:1px solid #23252E;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:30px;line-height:30px;font-weight:500;color:#A78BFA;">03</td>
-        <td valign="top" style="padding:22px 0 24px;border-top:1px solid #23252E;border-bottom:1px solid #23252E;">
-          <p style="margin:0 0 8px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:14px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:#C4B5FD;">{{story_3_tag}}</p>
-          <p class="idx-title" style="margin:0 0 6px;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:19px;line-height:1.32;font-weight:500;color:#FFFFFF;">{{story_3_title}}</p>
-          <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6;color:#B4B5C4;">{{story_3_summary}}</p>
-          <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:14px;"><tr>
-            <td class="idx-stk" valign="middle">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-                <td style="padding:3px 9px;background-color:#15171F;border:1px solid #2A2C37;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:14px;font-weight:500;color:#A3A5B5;white-space:nowrap;">{{story_3_source}}</td>
-              </tr></table>
-            </td>
-            <td class="idx-stk idx-ask" valign="middle" style="padding-left:14px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;"><a href="{{story_3_url}}" style="color:#A78BFA;font-weight:600;text-decoration:none;white-space:nowrap;">Ask humAIne about this&nbsp;&rarr;</a></td>
-          </tr></table>
-        </td>
-      </tr>
-    </table>
-  </td></tr>
-
-  <!-- primary CTA -->
-  <tr><td class="px" style="padding:30px 40px 0;">
-    <!--[if mso]>
-    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{news_url}}" style="height:52px;v-text-anchor:middle;width:520px;" arcsize="31%" stroke="f" fillcolor="#768AFF">
-      <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
-      <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Open News</center>
-    </v:roundrect>
-    <![endif]-->
-    <!--[if !mso]><!-->
-    <a href="{{news_url}}" style="display:block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:16px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:600;line-height:52px;text-align:center;text-decoration:none;">Open News</a>
-    <!--<![endif]-->
-  </td></tr>
-
-  <!-- what News adds -->
-  <tr><td align="center" class="px" style="padding:16px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:1.6;color:#7D7F8F;">In News, each story has its source articles, a translation and a summary you can&nbsp;share.</p>
-  </td></tr>
-
-  <!-- ask humAIne -->
-  <tr><td class="px" style="padding:28px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#12131C;border:1px solid #2A2547;border-radius:16px;">
-      <tr>
-        <td width="52" valign="middle" style="padding:14px 0 14px 16px;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="36" height="35" alt="" style="display:block;width:36px;height:35px;border:0;"></td>
-        <td valign="middle" style="padding:14px 12px;">
-          <p style="margin:0 0 3px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#8E86C9;">Ask humAIne</p>
-          <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:16px;line-height:22px;color:#FFFFFF;text-decoration:none;">&ldquo;What should I act on?&rdquo;</a>
-        </td>
-        <td width="40" valign="middle" align="right" style="padding:14px 18px 14px 0;"><a href="{{chat_url}}" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;line-height:20px;color:#A78BFA;text-decoration:none;">&rarr;</a></td>
-      </tr>
-    </table>
-  </td></tr>
-
   <!-- fine print -->
-  <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">Button not working? Paste this link:<br><a href="{{news_url}}" style="color:#A78BFA;word-break:break-all;">{{news_url}}</a></p>
+  <tr><td class="px" style="padding:26px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;text-align:center;">Button not working? Paste this link:<br><a href="{{news_url}}" style="color:#A78BFA;word-break:break-all;">{{news_url}}</a></p>
   </td></tr>
 
-  <!-- footer : optin -->
-  <tr><td class="px" style="padding:44px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#1C1E27;">&nbsp;</td></tr></table>
+  <!-- footer : optin (under a hand-drawn rule) -->
+  <tr><td class="px" style="padding:40px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/divider.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
   </td></tr>
-  <tr><td align="center" class="px" style="padding:30px 40px 40px;">
+  <tr><td align="center" class="px" style="padding:26px 40px 40px;">
     <img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="40" height="39" alt="humAIne" style="display:block;width:40px;height:39px;border:0;margin:0 auto;">
     <p style="margin:12px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:15px;line-height:20px;color:#C9C3F2;">hum<span style="color:#8FA0FF;">AI</span>ne</p>
     <p style="margin:4px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:18px;color:#7D7F8F;">Disruptively Human . Trust Co-created.</p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;">
+    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;text-align:center;">
       <a href="{{help_url}}" style="color:#A3A5B5;text-decoration:none;">Help centre</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{privacy_url}}" style="color:#A3A5B5;text-decoration:none;">Privacy</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{terms_url}}" style="color:#A3A5B5;text-decoration:none;">Terms</a>
     </p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;">You&rsquo;re receiving this because you turned on News &amp; PR emails for {{recipient_email}}.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br><a href="{{preferences_url}}" style="color:#7D7F8F;">Email preferences</a>&nbsp;&middot;&nbsp;<a href="{{unsubscribe_url}}" style="color:#7D7F8F;">Unsubscribe</a><br>humAIne is a Zyn Global product.</p>
+    <p style="margin:14px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;text-align:center;">You&rsquo;re receiving this because you turned on News &amp; PR emails for {{recipient_email}}.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br><a href="{{preferences_url}}" style="color:#7D7F8F;">Email preferences</a>&nbsp;&middot;&nbsp;<a href="{{unsubscribe_url}}" style="color:#7D7F8F;">Unsubscribe</a><br>humAIne is a Zyn Global product.</p>
   </td></tr>
 
 </table>

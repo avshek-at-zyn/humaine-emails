@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- the clay account-deleted disc as a die-cut sticker. Serious email: no doodles -->
+<div class="mark" data-out="marks/24-sticker.png" style="width:200px;height:200px">
+  <img src="../../img/src/icons/account-deleted-clean.svg" style="left:25px;top:24px;width:150px;transform:rotate(6deg);filter:url(#diecut)">
+</div>
+<!-- record slip top: a straight cut with rounded corners and two filing punch holes (transparent) -->
+<div class="mark" data-out="marks/24-paper-top.png" data-exact style="width:520px;height:30px"></div>
+<!-- ink strike-through for paper (the shared pink strike is too faint on #EEE8F6) -->
+<div class="mark" data-out="marks/24-strike.png" style="width:300px;height:40px"></div>
+<!-- the record's stamp -->
+<div class="mark" data-out="marks/24-stamp.png" style="width:220px;height:100px">
+  <div class="stamp violet" style="left:24px;top:24px;transform:rotate(-8deg);font-size:24px;letter-spacing:4px;padding:9px 12px 8px 16px;color:#6F5FDC">Closed</div>
+</div>
+<script src="kit.js"></script>
+<script>
+  K.init(2424);
+  const m = document.querySelectorAll('.mark');
+  const edge = K.svg(m[1], 520, 30);
+  const hole = (cx, cy, r) => `M${cx - r},${cy} a${r},${r} 0 1,0 ${2 * r},0 a${r},${r} 0 1,0 ${-2 * r},0 Z`;
+  const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  p.setAttribute('d', 'M0,30 L0,12 Q0,2 10,2 L510,2 Q520,2 520,12 L520,30 Z ' + hole(226, 16, 5.5) + ' ' + hole(294, 16, 5.5));
+  p.setAttribute('fill', '#EEE8F6');
+  p.setAttribute('fill-rule', 'evenodd');
+  edge.appendChild(p);
+  const st = K.svg(m[2], 300, 40);
+  K.line(st, { points: [[6, 23], [100, 19], [200, 22], [294, 16]], jitter: 1.2, width: 2.8, color: '#5B4FA8', opacity: .85 });
+  K.line(st, { points: [[14, 18], [150, 24], [286, 20]], jitter: 1, width: 1.8, color: '#5B4FA8', opacity: .55 });
+  K.done();
+</script>
+</body></html>

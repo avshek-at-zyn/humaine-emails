@@ -1,0 +1,57 @@
+/* Collage kit: hand-made pieces for the humAIne emails, rendered to images by tools/collage.mjs.
+   Everything here ends up as a JPG/PNG, so any CSS is fair game. */
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,800&family=Hahmlet:wght@500;600&display=block');
+
+* { box-sizing: border-box; }
+html, body { margin: 0; background: transparent; }
+body { padding: 24px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+
+/* hero stage: 600 css px wide, rendered at 2x */
+.stage { position: relative; width: 600px; overflow: hidden; background: #090B14; isolation: isolate; }
+.stage > * { position: absolute; }
+.stage svg { overflow: visible; }
+
+/* soft nebula glows from the app */
+.glow { border-radius: 50%; filter: blur(46px); opacity: .55; }
+.glow.violet { background: #5B45C9; }
+.glow.pink   { background: #B0418F; }
+.glow.blue   { background: #3346B8; }
+
+/* planets: the app's sphere recipe */
+.planet { border-radius: 50%; box-shadow: inset -8px -10px 18px rgba(5,6,15,.55), 0 0 24px rgba(139,147,232,.18); }
+.planet.blue  { background: radial-gradient(circle at 34% 30%, #CFD6FF, #8B93E8 60%, #5B62B4); }
+.planet.pink  { background: radial-gradient(circle at 34% 30%, #F6D3EE, #E08FD0 60%, #A8548F); }
+.planet.cyan  { background: radial-gradient(circle at 34% 30%, #DCFBFF, #4FD6EA 60%, #2B8FA8); }
+.planet.lilac { background: radial-gradient(circle at 34% 30%, #F0D6F8, #C48DD8 60%, #8E56A8); }
+.planet.glass { background: radial-gradient(circle at 34% 30%, rgba(199,202,255,.55), rgba(96,126,255,.22) 60%, rgba(40,50,110,.12)); box-shadow: inset 0 0 0 1px rgba(199,202,255,.25); }
+.planet.dark  { background: radial-gradient(circle at 34% 30%, #2A2C37, #16181F 60%, #0A0C1A); box-shadow: inset 0 0 0 1px rgba(181,183,246,.16); }
+
+.icon { filter: drop-shadow(0 22px 26px rgba(0,0,0,.5)); }
+
+/* handwriting */
+.note { font-family: 'Covered By Your Grace', cursive; color: #C4B5FD; font-size: 30px; line-height: .95; white-space: pre; letter-spacing: .2px; }
+.note.pink  { color: #F9A8D4; }
+.note.white { color: #F2F0FA; }
+.note.ink   { color: #2B2350; }
+.note.green { color: #4ADE80; }
+.note.coral { color: #FCA5A5; }
+
+/* sticker: die-cut label with a white edge */
+.sticker { font: 800 15px/1 'DM Sans', sans-serif; letter-spacing: .6px; text-transform: uppercase; padding: 10px 14px; border-radius: 999px;
+  color: #241A3D; background: #E5C3F0; box-shadow: 0 0 0 4px #F7F3FB, 0 10px 18px rgba(0,0,0,.45); }
+
+/* masking tape */
+.tape { width: 120px; height: 30px; background: rgba(229,214,248,.42); backdrop-filter: blur(1px);
+  clip-path: polygon(2% 8%, 9% 0, 17% 7%, 26% 1%, 35% 6%, 46% 0, 57% 7%, 68% 1%, 79% 6%, 90% 0, 98% 7%, 100% 50%, 98% 93%, 90% 100%, 80% 94%, 69% 100%, 58% 93%, 47% 100%, 36% 94%, 25% 100%, 15% 93%, 7% 100%, 0 92%, 1% 50%); }
+
+/* ink stamp */
+.stamp { font: 800 30px/1 'DM Sans', sans-serif; letter-spacing: 5px; text-transform: uppercase; padding: 10px 14px 9px 19px;
+  border: 4px solid currentColor; border-radius: 10px; outline: 2px solid currentColor; outline-offset: 4px; filter: url(#ink); opacity: .92; }
+.stamp.green { color: #2FBF6B; } .stamp.coral { color: #F07A7A; } .stamp.violet { color: #8B7CF0; } .stamp.pink { color: #E879B9; }
+
+/* a single mark exported on transparent: wrap it in .mark with an explicit size */
+.mark { position: relative; }
+.mark > * { position: absolute; }
+
+/* paper (receipts, notes) */
+.paper { background: #EEE8F6; color: #1B1730; }

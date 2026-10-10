@@ -1,3 +1,6 @@
+> **Superseded for layout and illustration** by `handmade.md` (the centred, hand-made system with collage heroes and paper artefacts).
+> The tokens, merge-tag, button/VML and Outlook rules below still apply. `scene.mjs` and `tools/scenes/` no longer exist; heroes come from `tools/collage.mjs`.
+
 # humAIne email system — build brief
 
 REPO: /Users/abhishek/Desktop/email-template  (static HTML emails, auto-deployed to https://humaine-email.vercel.app on push — DO NOT push or commit)

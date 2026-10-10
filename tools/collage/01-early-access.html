@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- hero : the clay person steps out in front of a hand-drawn queue of doodled people -->
+<div class="stage" data-out="hero/01-early-access.jpg" style="height:350px">
+  <div class="glow violet" style="left:180px;top:70px;width:270px;height:220px;opacity:.5"></div>
+  <div class="glow pink" style="left:30px;top:96px;width:210px;height:150px;opacity:.2"></div>
+  <div class="glow blue" style="left:420px;top:200px;width:150px;height:110px;opacity:.3"></div>
+  <svg id="sky" width="600" height="350" style="left:0;top:0"></svg>
+  <div class="planet blue" style="left:476px;top:238px;width:32px;height:32px"></div>
+  <div class="planet pink" style="left:432px;top:294px;width:11px;height:11px"></div>
+  <div class="planet glass" style="left:100px;top:262px;width:20px;height:20px"></div>
+  <svg id="queue" width="600" height="350" style="left:0;top:0"></svg>
+  <img class="icon" src="../../img/src/app/administrator-icon.svg" style="left:188px;top:56px;width:236px;transform:rotate(-4deg)">
+  <svg id="ink" width="600" height="350" style="left:0;top:0"></svg>
+  <div class="note pink" style="left:398px;top:40px;transform:rotate(-6deg);font-size:36px">front of
+the queue</div>
+</div>
+
+<script src="kit.js"></script>
+<script>
+  K.init(101);
+  const stage = document.querySelector('.stage');
+  K.stars(document.getElementById('sky'), { w: 600, h: 350, count: 66, sparkles: 5, avoid: [[304, 170, 150], [470, 80, 70]] });
+
+  // the queue: doodled people receding up and to the left, getting fainter
+  const q = document.getElementById('queue');
+  const people = [[178, 142, 15, .78], [130, 124, 12, .62], [94, 110, 9.6, .5], [66, 100, 7.8, .4]];
+  for (const [x, y, r, o] of people) {
+    K.ellipse(q, { cx: x, cy: y, rx: r, ry: r * 1.04, loops: 1.15, wobble: .05, width: 2.1, color: '#A99EE8', opacity: o, passes: 1 });
+    K.line(q, { points: [[x - 2.3 * r, y + 3.3 * r], [x - 1.7 * r, y + 2.0 * r], [x, y + 1.5 * r], [x + 1.7 * r, y + 2.0 * r], [x + 2.3 * r, y + 3.3 * r]], color: '#A99EE8', width: 2.1, jitter: .5, opacity: o });
+  }
+
+  const ink = document.getElementById('ink');
+  K.ellipse(ink, { cx: 492, cy: 254, rx: 36, ry: 9, rot: -16, loops: 1.1, width: 1.7, opacity: .75, color: '#B5B7F6' });
+  K.line(ink, { points: [[452, 128], [440, 148], [414, 160], [374, 160]], arrow: true, color: '#F9A8D4', width: 2.8, head: 12 });
+  K.doodle(ink, { kind: 'star', x: 432, y: 214, s: 9, color: '#F9A8D4', width: 2.2 });
+  K.doodle(ink, { kind: 'asterisk', x: 130, y: 60, s: 7, color: '#C4B5FD', width: 2 });
+  K.finish(stage, { top: 0.1, bottom: 0.22, sides: 0.06 });
+  K.done();
+</script>
+</body></html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- serious email: the clay paused lock as a small die-cut sticker, no doodles -->
+<div class="mark" data-out="marks/15-sticker.png" style="width:200px;height:200px">
+  <img src="../../img/src/icons/lock-paused.svg" style="left:24px;top:22px;width:152px;transform:rotate(-6deg);filter:url(#diecut)">
+</div>
+<!-- functional pointer only: down to the reset button -->
+<div class="mark" data-out="marks/15-note.png" style="width:300px;height:92px">
+  <div class="note" style="left:28px;top:8px;transform:rotate(-2deg);font-size:29px">quickest way back in</div>
+</div>
+<script src="kit.js"></script>
+<script>
+  K.init(1515);
+  const m = document.querySelectorAll('.mark');
+  K.line(K.svg(m[1], 300, 92), { points: [[236, 40], [240, 58], [218, 74], [182, 86]], arrow: true, color: '#C4B5FD', width: 2.6, head: 11 });
+  K.done();
+</script>
+</body></html>

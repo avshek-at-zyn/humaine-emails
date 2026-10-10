@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- 0 clay calendar (pause badge) as a die-cut sticker. Serious email: no doodles, just the sticker -->
+<div class="mark" data-out="marks/36-sticker.png" style="width:200px;height:200px">
+  <img src="../../img/src/icons/calendar-paused.svg" style="left:24px;top:22px;width:150px;transform:rotate(7deg);filter:url(#diecut)">
+</div>
+<!-- 1 a functional pointer to the renew button -->
+<div class="mark" data-out="marks/36-note.png" style="width:260px;height:96px">
+  <div class="note" style="left:22px;top:30px;transform:rotate(-3deg);font-size:31px">renew here</div>
+</div>
+<script src="kit.js"></script>
+<script>
+  K.init(3636);
+  const m = [...document.querySelectorAll('.mark')];
+  // pointer: from the end of the words, a short hook down towards the button
+  K.line(K.svg(m[1], 260, 96), { points: [[166, 46], [190, 50], [204, 66], [196, 88]], arrow: true, color: '#C4B5FD', width: 2.6, head: 11 });
+  K.done();
+</script>
+</body></html>

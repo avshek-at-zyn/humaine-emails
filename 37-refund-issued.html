@@ -12,7 +12,7 @@
 <!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
 <![endif]-->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{color-scheme:dark;supported-color-schemes:dark;}
   body,table,td,a{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
@@ -24,10 +24,11 @@
   u + .body a, #MessageViewBody a{color:inherit;text-decoration:none;}
   @media screen and (max-width:620px){
     .px{padding-left:24px!important;padding-right:24px!important;}
-    .h1{font-size:27px!important;line-height:1.25!important;}
+    .h1{font-size:34px!important;line-height:1.1!important;letter-spacing:-0.8px!important;}
     .lead{font-size:15px!important;}
-    .row{padding-left:18px!important;padding-right:18px!important;}
-    .fig{font-size:36px!important;line-height:1.1!important;}
+    .pp{padding-left:18px!important;padding-right:18px!important;}
+    .ptotal{font-size:44px!important;line-height:52px!important;}
+    .stamp{width:130px!important;height:60px!important;}
   }
 </style>
 </head>
@@ -46,96 +47,118 @@
     <img src="https://humaine-email.vercel.app/img/brand/lockup@2x.png" width="144" height="36" alt="humAIne" style="display:block;width:144px;height:36px;border:0;">
   </td></tr>
 
-  <!-- hero : app clay illustration in a planetary scene, edges fade into the canvas -->
-  <tr><td>
-    <img src="https://humaine-email.vercel.app/img/hero/37-refund-issued.jpg" width="600" alt="A lilac paper receipt with a curled top and a return-arrow badge, floating among small planets" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
+  <!-- hero : collage. The clay refund receipt, a pen arrow carrying it back to a taped-down paper card -->
+  <tr><td style="padding:4px 0 0;">
+    <img src="https://humaine-email.vercel.app/img/hero/37-refund-issued.jpg" width="600" alt="A lilac clay receipt with a return badge, and a hand-drawn arrow curving back to a taped-down paper card, with a handwritten note: on its way back" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
   </td></tr>
 
-  <!-- headline + lead (no chip: the figure's own label and pill carry the status) -->
-  <tr><td align="center" class="px" style="padding:6px 48px 0;">
-    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;text-wrap:balance;">Refund issued for <span style="white-space:nowrap;">{{invoice_number}}</span></h1>
-    <p class="lead" style="margin:16px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#B4B5C4;">It goes back to the card you paid with, {{first_name}}. Depending on your bank, it can take {{refund_days}} to show on your&nbsp;statement.</p>
+  <!-- kicker : a log line, not a badge -->
+  <tr><td align="center" class="px" style="padding:0 40px 14px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:14px;letter-spacing:1.6px;text-transform:uppercase;color:#4ADE80;">&#10003;&nbsp; Refund issued</td></tr>
+
+  <!-- headline : a marker stroke under the invoice it belongs to -->
+  <tr><td class="px" align="center" style="padding:0 40px 0;">
+    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:44px;line-height:1.1;letter-spacing:-1.2px;color:#FFFFFF;text-align:center;">Refund issued <span style="white-space:nowrap;">for <span style="background-image:url('https://humaine-email.vercel.app/img/marks/swash.png');background-repeat:no-repeat;background-position:0 96%;background-size:100% 0.3em;">{{invoice_number}}</span></span></h1>
+    <p class="lead" style="margin:16px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#B4B5C4;text-align:center;">It goes back to the card you paid with, {{first_name}}. Depending on your bank, it can take {{refund_days}} to show on your&nbsp;statement.</p>
   </td></tr>
 
-  <!-- signature move : big-figure, amount-led. Left-aligned slip: label + status, the refunded amount, then the paper trail. -->
-  <tr><td class="px" style="padding:28px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#15171F;border:1px solid #23252E;border-radius:16px;">
-      <tr><td class="row" style="padding:22px 24px 22px;border-bottom:1px solid #1F2129;">
+  <!-- signature : a credit note, torn off and clipped, the refund centred and double-underlined in pen, stamped -->
+  <tr><td class="px" style="padding:30px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/37-paper-top.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#EEE8F6" style="background-color:#EEE8F6;">
+      <tr><td class="pp" style="padding:0 26px;">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-          <td valign="middle" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:14px;font-weight:700;letter-spacing:1.8px;color:#7D7F8F;">TOTAL REFUNDED</td>
-          <td valign="middle" align="right">
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="right"><tr>
-              <td style="padding:4px 10px;background-color:#08241F;border:1px solid #0B5236;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:13px;font-weight:600;color:#4ADE80;white-space:nowrap;">&#10003;&nbsp; Refunded</td>
+          <td valign="middle">
+            <p style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:21px;line-height:24px;font-weight:600;color:#2B2350;">hum<span style="color:#5B62B4;">AI</span>ne</p>
+            <p style="margin:2px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:14px;letter-spacing:1.6px;text-transform:uppercase;color:#6E6790;">Credit note</p>
+          </td>
+          <td valign="middle" align="right" width="162" style="width:162px;"><img class="stamp" src="https://humaine-email.vercel.app/img/marks/37-stamp.png" width="162" height="75" alt="Stamped: refunded" style="display:block;width:162px;height:75px;border:0;"></td>
+        </tr></table>
+
+        <!-- the amount, centred -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;">
+          <tr><td align="center" style="padding:20px 0 0;border-top:1px dashed #B8AFD3;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:16px;letter-spacing:1.6px;text-transform:uppercase;color:#6E6790;">Total refunded</td></tr>
+          <tr><td align="center" style="padding:4px 0 0;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
+              <td class="ptotal" style="padding:0 6px 12px;background-image:url('https://humaine-email.vercel.app/img/marks/37-total-line.png');background-repeat:no-repeat;background-position:0 100%;background-size:100% 10px;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:56px;line-height:64px;font-weight:600;letter-spacing:-1px;color:#1B1730;white-space:nowrap;">{{refund_amount}}</td>
             </tr></table>
+          </td></tr>
+          <tr><td align="center" style="padding:10px 0 20px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:13px;line-height:18px;color:#4A4466;">back to {{card_brand}} &bull;&bull;&bull;&bull;&nbsp;{{card_last4}}</td></tr>
+        </table>
+
+        <!-- the paper trail : a two-up grid, then the reason -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td width="50%" valign="top" style="width:50%;padding:13px 12px 13px 0;border-top:1px dashed #B8AFD3;">
+              <p style="margin:0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:16px;letter-spacing:1.2px;text-transform:uppercase;color:#6E6790;">Invoice</p>
+              <p style="margin:3px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:13px;line-height:18px;color:#1B1730;">{{invoice_number}}</p>
+            </td>
+            <td width="50%" valign="top" style="width:50%;padding:13px 0 13px 14px;border-top:1px dashed #B8AFD3;border-left:1px dashed #B8AFD3;">
+              <p style="margin:0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:16px;letter-spacing:1.2px;text-transform:uppercase;color:#6E6790;">Issued</p>
+              <p style="margin:3px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:13px;line-height:18px;color:#1B1730;white-space:nowrap;">{{refund_date}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" valign="top" style="padding:13px 0 18px;border-top:1px dashed #B8AFD3;">
+              <p style="margin:0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:16px;letter-spacing:1.2px;text-transform:uppercase;color:#6E6790;">Reason</p>
+              <p style="margin:3px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;color:#1B1730;">{{refund_reason}}</p>
+            </td>
+          </tr>
+        </table>
+      </td></tr>
+    </table>
+    <img src="https://humaine-email.vercel.app/img/marks/paper-teeth.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
+  </td></tr>
+
+  <!-- action -->
+  <tr><td class="px" align="center" style="padding:28px 40px 0;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td>
+      <!--[if mso]>
+      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{invoice_url}}" style="height:52px;v-text-anchor:middle;width:184px;" arcsize="27%" stroke="f" fillcolor="#768AFF">
+        <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
+        <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">View invoice &rarr;</center>
+      </v:roundrect>
+      <![endif]-->
+      <!--[if !mso]><!-->
+      <a href="{{invoice_url}}" style="display:inline-block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:14px;padding:0 28px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;line-height:52px;text-decoration:none;white-space:nowrap;">View invoice&nbsp;&rarr;</a>
+      <!--<![endif]-->
+    </td></tr></table>
+  </td></tr>
+  <tr><td class="px" style="padding:14px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6;color:#B4B5C4;text-align:center;">It&rsquo;s also in Billing &amp;&nbsp;Payments under Billing history, marked&nbsp;Refunded.</p>
+  </td></tr>
+
+  <!-- ask humAIne : a chat bubble from humAIne, the way the app shows it -->
+  <tr><td class="px" align="center" style="padding:36px 40px 0;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
+      <td width="34" valign="bottom" style="width:34px;padding:0 10px 2px 0;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="34" height="33" alt="" style="display:block;width:34px;height:33px;border:0;"></td>
+      <td valign="bottom">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td style="padding:11px 18px 13px 16px;background-color:#1C1A30;border:1px solid #383159;border-radius:18px 18px 18px 4px;">
+            <p style="margin:0 0 3px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:14px;letter-spacing:0.4px;color:#8E86C9;">Ask humAIne</p>
+            <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:17px;line-height:23px;color:#FFFFFF;text-decoration:none;">&ldquo;Explain my billing&rdquo;&nbsp;<span style="color:#A78BFA;">&rarr;</span></a>
           </td>
         </tr></table>
-        <p class="fig" style="margin:12px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:46px;line-height:1.05;font-weight:500;letter-spacing:-1px;color:#FFFFFF;word-break:break-word;">{{refund_amount}}</p>
-        <p style="margin:12px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:21px;color:#B4B5C4;">To {{card_brand}} &bull;&bull;&bull;&bull;&nbsp;{{card_last4}} &middot; issued <span style="white-space:nowrap;">{{refund_date}}</span></p>
-      </td></tr>
-      <tr><td class="row" style="padding:14px 24px;border-bottom:1px solid #1F2129;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-          <td valign="top" style="padding-right:16px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:21px;color:#7D7F8F;white-space:nowrap;">Invoice</td>
-          <td valign="top" align="right" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;text-align:right;">{{invoice_number}}</td>
-        </tr></table>
-      </td></tr>
-      <tr><td class="row" style="padding:14px 24px 16px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-          <td valign="top" style="padding-right:16px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:21px;color:#7D7F8F;white-space:nowrap;">Reason</td>
-          <td valign="top" align="right" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;text-align:right;">{{refund_reason}}</td>
-        </tr></table>
-      </td></tr>
-    </table>
-  </td></tr>
-
-  <!-- where it shows up -->
-  <tr><td align="center" class="px" style="padding:24px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#B4B5C4;">It&rsquo;s also in Billing &amp;&nbsp;Payments under Billing history, marked&nbsp;Refunded.</p>
-  </td></tr>
-
-  <!-- primary CTA -->
-  <tr><td class="px" style="padding:28px 40px 0;">
-    <!--[if mso]>
-    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{invoice_url}}" style="height:52px;v-text-anchor:middle;width:520px;" arcsize="31%" stroke="f" fillcolor="#768AFF">
-      <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
-      <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">View invoice</center>
-    </v:roundrect>
-    <![endif]-->
-    <!--[if !mso]><!-->
-    <a href="{{invoice_url}}" style="display:block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:16px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:600;line-height:52px;text-align:center;text-decoration:none;">View invoice</a>
-    <!--<![endif]-->
-  </td></tr>
-
-  <!-- ask humAIne -->
-  <tr><td class="px" style="padding:24px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#12131C;border:1px solid #2A2547;border-radius:16px;">
-      <tr>
-        <td width="52" valign="middle" style="padding:14px 0 14px 16px;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="36" height="35" alt="" style="display:block;width:36px;height:35px;border:0;"></td>
-        <td valign="middle" style="padding:14px 12px;">
-          <p style="margin:0 0 3px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#8E86C9;">Ask humAIne</p>
-          <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:16px;line-height:22px;color:#FFFFFF;text-decoration:none;">&ldquo;Explain my billing&rdquo;</a>
-        </td>
-        <td width="40" valign="middle" align="right" style="padding:14px 18px 14px 0;"><a href="{{chat_url}}" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;line-height:20px;color:#A78BFA;text-decoration:none;">&rarr;</a></td>
-      </tr>
-    </table>
+      </td>
+    </tr></table>
   </td></tr>
 
   <!-- fine print -->
-  <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">Button not working? Paste this link:<br><a href="{{invoice_url}}" style="color:#A78BFA;word-break:break-all;">{{invoice_url}}</a><br>Nothing on your statement after {{refund_days}}? Write to <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a> with invoice <span style="white-space:nowrap;">{{invoice_number}}</span>.</p>
+  <tr><td class="px" style="padding:26px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;text-align:center;">Button not working? Paste this link:<br><a href="{{invoice_url}}" style="color:#A78BFA;word-break:break-all;">{{invoice_url}}</a><br>Nothing on your statement after {{refund_days}}? Write to <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a> with invoice <span style="white-space:nowrap;">{{invoice_number}}</span>.</p>
   </td></tr>
 
-  <!-- footer : billing -->
-  <tr><td class="px" style="padding:44px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#1C1E27;">&nbsp;</td></tr></table>
+  <!-- footer : billing (under a hand-drawn rule) -->
+  <tr><td class="px" style="padding:40px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/divider.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
   </td></tr>
-  <tr><td align="center" class="px" style="padding:30px 40px 40px;">
+  <tr><td align="center" class="px" style="padding:26px 40px 40px;">
     <img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="40" height="39" alt="humAIne" style="display:block;width:40px;height:39px;border:0;margin:0 auto;">
     <p style="margin:12px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:15px;line-height:20px;color:#C9C3F2;">hum<span style="color:#8FA0FF;">AI</span>ne</p>
     <p style="margin:4px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:18px;color:#7D7F8F;">Disruptively Human . Trust Co-created.</p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;">
+    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;text-align:center;">
       <a href="{{help_url}}" style="color:#A3A5B5;text-decoration:none;">Help centre</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{billing_url}}" style="color:#A3A5B5;text-decoration:none;">Billing</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{privacy_url}}" style="color:#A3A5B5;text-decoration:none;">Privacy</a>
     </p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;">Sent to your billing email, {{billing_email}}. Emails about charges always reach you while you have a humAIne plan.<br>humAIne Personal is operated by Zyn Global.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}</p>
+    <p style="margin:14px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;text-align:center;">Sent to your billing email, {{billing_email}}. Emails about charges always reach you while you have a humAIne plan.<br>humAIne Personal is operated by Zyn Global.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}</p>
   </td></tr>
 
 </table>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css">
+<style>
+  .scrap { background: #E9E2F4; box-shadow: 0 14px 28px rgba(0,0,0,.45); }
+  .scrap i { position: absolute; left: 14px; right: 14px; height: 5px; border-radius: 3px; background: #CFC6E2; }
+  .scrap b { position: absolute; left: 14px; height: 9px; border-radius: 3px; background: #7C6FD6; opacity: .75; }
+</style></head>
+<body>
+<div class="stage" data-out="hero/40-weekly-briefing.jpg" style="height:340px">
+  <div class="glow violet" style="left:150px;top:70px;width:320px;height:200px;opacity:.45"></div>
+  <div class="glow pink" style="left:420px;top:150px;width:160px;height:140px;opacity:.25"></div>
+  <svg id="sky" width="600" height="340" style="left:0;top:0"></svg>
+  <div class="planet blue" style="left:500px;top:62px;width:34px;height:34px"></div>
+  <div class="planet lilac" style="left:72px;top:250px;width:14px;height:14px"></div>
+  <!-- clippings -->
+  <div class="scrap" style="left:136px;top:78px;width:170px;height:150px;transform:rotate(-9deg)">
+    <b style="top:18px;width:96px"></b><i style="top:40px"></i><i style="top:52px;right:40px"></i><i style="top:64px"></i><i style="top:76px;right:60px"></i><i style="top:98px"></i><i style="top:110px;right:30px"></i>
+  </div>
+  <div class="scrap" style="left:318px;top:98px;width:150px;height:128px;transform:rotate(6deg)">
+    <b style="top:16px;width:80px;background:#E879B9"></b><i style="top:36px"></i><i style="top:48px;right:30px"></i><i style="top:60px"></i><i style="top:82px;right:50px"></i><i style="top:94px"></i>
+  </div>
+  <div class="tape" style="left:150px;top:66px;width:90px;height:24px;transform:rotate(-22deg)"></div>
+  <div class="tape" style="left:400px;top:88px;width:84px;height:22px;transform:rotate(18deg)"></div>
+  <img src="../../img/src/icons/news.svg" style="left:226px;top:96px;width:176px;transform:rotate(-6deg);filter:url(#diecut)">
+  <svg id="ink" width="600" height="340" style="left:0;top:0"></svg>
+</div>
+
+<div class="mark" data-out="marks/40-note.png" style="width:320px;height:90px">
+  <div class="note pink" style="left:18px;top:6px;transform:rotate(-4deg);font-size:28px">start with this one</div>
+</div>
+
+<script src="kit.js"></script>
+<script>
+  K.init(4040);
+  K.stars(document.getElementById('sky'), { w: 600, h: 340, count: 64, sparkles: 4, avoid: [[300, 160, 170]] });
+  const ink = document.getElementById('ink');
+  K.ellipse(ink, { cx: 517, cy: 79, rx: 40, ry: 10, rot: -14, loops: 1.1, width: 1.6, opacity: .7, color: '#B5B7F6' });
+  K.doodle(ink, { kind: 'star', x: 486, y: 214, s: 13, color: '#F9A8D4', width: 2.4 });
+  K.doodle(ink, { kind: 'asterisk', x: 112, y: 92, s: 8, color: '#C4B5FD', width: 2 });
+  K.line(ink, { points: [[470, 262], [500, 268], [528, 262]], color: '#C4B5FD', width: 2, jitter: .8 });
+  K.finish(document.querySelector('.stage'), { top: 0.08, bottom: 0.22, sides: 0.05 });
+  const note = document.querySelector('.mark');
+  K.line(K.svg(note, 320, 90), { points: [[222, 26], [234, 46], [204, 68], [166, 84]], arrow: true, color: '#F9A8D4', width: 2.6, head: 11 });
+  K.done();
+</script>
+</body></html>

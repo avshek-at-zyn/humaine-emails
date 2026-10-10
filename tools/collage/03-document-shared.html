@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- hero : a dashed flight path loops out of a small planet and lands on the clay document -->
+<div class="stage" data-out="hero/03-document-shared.jpg" style="height:340px">
+  <div class="glow violet" style="left:300px;top:70px;width:240px;height:210px;opacity:.5"></div>
+  <div class="glow pink" style="left:40px;top:170px;width:200px;height:140px;opacity:.26"></div>
+  <svg id="sky" width="600" height="340" style="left:0;top:0"></svg>
+  <div class="planet pink" style="left:58px;top:250px;width:24px;height:24px"></div>
+  <div class="planet lilac" style="left:500px;top:222px;width:36px;height:36px"></div>
+  <div class="planet blue" style="left:512px;top:66px;width:15px;height:15px"></div>
+  <div class="planet cyan" style="left:258px;top:280px;width:9px;height:9px"></div>
+  <svg id="trail" width="600" height="340" style="left:0;top:0"></svg>
+  <img class="icon" src="../../img/src/icons/doc-shared.svg" style="left:300px;top:52px;width:220px;transform:rotate(7deg)">
+  <svg id="ink" width="600" height="340" style="left:0;top:0"></svg>
+  <div class="note" style="left:60px;top:46px;transform:rotate(-6deg);font-size:36px">sent your way</div>
+</div>
+
+<!-- the page, taped at its top corners, torn across the top -->
+<div class="mark" data-out="marks/03-paper-top.png" data-exact style="width:520px;height:60px">
+  <div class="tape" style="left:4px;top:18px;width:80px;height:24px;transform:rotate(-24deg)"></div>
+  <div class="tape" style="left:436px;top:18px;width:80px;height:24px;transform:rotate(22deg)"></div>
+</div>
+<!-- torn across the bottom, taped at its bottom corners -->
+<div class="mark" data-out="marks/03-paper-bottom.png" data-exact style="width:520px;height:56px">
+  <div class="tape" style="left:6px;top:16px;width:78px;height:24px;transform:rotate(22deg)"></div>
+  <div class="tape" style="left:434px;top:16px;width:78px;height:24px;transform:rotate(-25deg)"></div>
+</div>
+<!-- sticky note : tape across its top edge (the upper half sits on the page, so it stays transparent) -->
+<div class="mark" data-out="marks/03-sticky-top.png" data-exact style="width:280px;height:28px">
+  <div style="left:0;top:14px;width:280px;height:14px;background:#F6D3EE"></div>
+  <div class="tape" style="left:92px;top:3px;width:96px;height:22px;transform:rotate(-3deg);background:rgba(214,200,240,.62)"></div>
+</div>
+<!-- sticky note : the bottom edge, lifting a little at the right corner -->
+<div class="mark" data-out="marks/03-sticky-bottom.png" data-exact style="width:280px;height:18px"></div>
+
+<script src="kit.js"></script>
+<script>
+  K.init(303);
+  const stage = document.querySelector('.stage');
+  K.stars(document.getElementById('sky'), { w: 600, h: 340, count: 66, sparkles: 5, avoid: [[410, 165, 125]] });
+
+  // the flight path: out of the pink planet, one loop, then onto the page
+  const tr = document.getElementById('trail');
+  const loop = [];
+  for (let a = 75; a >= -250; a -= 20) loop.push([182 + 30 * Math.cos(a * Math.PI / 180), 138 + 28 * Math.sin(a * Math.PI / 180)]);
+  const g = K.line(tr, { points: [[86, 252], [122, 236], [154, 214], [180, 190], ...loop, [214, 170], [252, 172], [290, 170], [326, 166]], arrow: true, color: ['#B5B7F6', '#F9A8D4'], width: 2.6, head: 12, jitter: 1.1 });
+  g.querySelector('path').setAttribute('stroke-dasharray', '9 8');
+
+  const ink = document.getElementById('ink');
+  K.ellipse(ink, { cx: 518, cy: 240, rx: 42, ry: 10, rot: -18, loops: 1.1, width: 1.7, opacity: .75, color: '#B5B7F6' });
+  K.doodle(ink, { kind: 'asterisk', x: 548, y: 150, s: 7, color: '#F9A8D4', width: 2 });
+  K.doodle(ink, { kind: 'star', x: 330, y: 270, s: 8, color: '#C4B5FD', width: 2 });
+  K.finish(stage, { top: 0.1, bottom: 0.22, sides: 0.06 });
+
+  const m = document.querySelectorAll('.mark');
+  const pt = K.svg(m[0], 520, 60); m[0].insertBefore(pt, m[0].firstChild);
+  K.tornTop(pt, { w: 520, h: 60, y: 36 });
+  const bot = K.svg(m[1], 520, 56); m[1].insertBefore(bot, m[1].firstChild);
+  K.tornBottom(bot, { w: 520, h: 56, y: 20 });
+  // sticky bottom: pink strip, the right corner curls up and casts a soft shadow
+  const sb = K.svg(m[3], 280, 18);
+  sb.insertAdjacentHTML('beforeend', `
+    <defs><linearGradient id="curl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E9B6DD"/><stop offset="1" stop-color="#F6D3EE"/></linearGradient>
+    <filter id="soft" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="2.2"/></filter></defs>
+    <path d="M10,6 L262,6 Q272,8 276,14 L14,14 Z" fill="#000" opacity=".22" filter="url(#soft)"/>
+    <path d="M0,0 L280,0 L280,2 Q271,4 262,10 L0,10 Z" fill="#F6D3EE"/>
+    <path d="M262,10 Q271,4 280,2 Q276,9 266,12 Z" fill="url(#curl)"/>`);
+  K.done();
+</script>
+</body></html>

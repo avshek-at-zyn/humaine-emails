@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- the two clay envelopes as a die-cut sticker, a hand-drawn swap arrow curling round the corner -->
+<div class="mark" data-out="marks/22-sticker.png" style="width:200px;height:200px">
+  <img src="../../img/src/icons/mail-swap.svg" style="left:22px;top:30px;width:150px;transform:rotate(-8deg);filter:url(#diecut)">
+</div>
+<!-- pointer up at the new address -->
+<div class="mark" data-out="marks/22-note.png" style="width:340px;height:100px">
+  <div class="note" style="left:10px;top:52px;transform:rotate(-2deg);font-size:30px">recovery codes go here now</div>
+</div>
+<script src="kit.js"></script>
+<script>
+  K.init(2222);
+  const m = document.querySelectorAll('.mark');
+  // swap arrow: a quick curl over the top-right corner
+  const s = K.svg(m[0], 200, 200);
+  const arc = [];
+  for (let i = 0; i <= 14; i++) { const a = (-200 + i * 15) * Math.PI / 180; arc.push([160 + Math.cos(a) * 22, 40 + Math.sin(a) * 18]); }
+  K.line(s, { points: arc, arrow: true, color: '#F9A8D4', width: 2.6, head: 9, jitter: .5 });
+  K.doodle(s, { kind: 'asterisk', x: 26, y: 172, s: 6, color: '#C4B5FD', width: 1.8 });
+  // the note's arrow rises from the word "here" and points straight up at the address above
+  K.line(K.svg(m[1], 340, 100), { points: [[226, 50], [236, 36], [238, 22], [246, 6]], arrow: true, color: '#C4B5FD', width: 2.6, head: 10 });
+  K.done();
+</script>
+</body></html>

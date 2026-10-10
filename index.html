@@ -241,7 +241,7 @@
       el.dataset.label = label;
       el.dataset.group = name;
       el.innerHTML =
-        `<div class="thumb" style="background-image:url('img/hero/${stem}.jpg')"></div>
+        `<div class="thumb"></div>
          <div class="meta">
            <div class="row1"><span class="sender">${esc(sender)}</span><span class="num">${stem.slice(0, 2)}</span></div>
            <div class="subject">${esc(label)}</div>
@@ -256,6 +256,13 @@
         const doc = new DOMParser().parseFromString(html, 'text/html');
         el.dataset.subject = (doc.querySelector('title')?.textContent || '').trim();
         el.dataset.pre = (doc.body.querySelector('div')?.textContent || '').replace(/[‌ \s]+/g, ' ').trim();
+        // Thumbnail: the email's own artwork (a hero scene, or a die-cut sticker when there isn't one).
+        const art = [...doc.images].map(n => n.getAttribute('src') || '').find(u => /\/img\/hero\/|\/img\/marks\/[^/]*sticker/.test(u));
+        if (art) {
+          const thumb = el.querySelector('.thumb');
+          thumb.style.backgroundImage = `url('${art.replace(PROD, HERE)}')`;
+          if (art.includes('sticker')) thumb.style.backgroundSize = 'contain';
+        }
         paint(el);
       });
     }
@@ -341,6 +348,10 @@
 
   const hash = location.hash.slice(1);
   select(items.find(i => hash && i.dataset.stem.startsWith(hash)) || items[0]);
+  window.addEventListener('hashchange', () => {
+    const h = location.hash.slice(1), el = items.find(i => h && i.dataset.stem.startsWith(h));
+    if (el && el !== current) { select(el); el.scrollIntoView({ block: 'nearest' }); }
+  });
 
   document.addEventListener('keydown', e => {
     if (e.target === q || (e.key !== 'ArrowDown' && e.key !== 'ArrowUp')) return;

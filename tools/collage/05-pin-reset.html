@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- clay keypad as a die-cut sticker, a scribbled sparkle beside it -->
+<div class="mark" data-out="marks/05-sticker.png" style="width:200px;height:200px">
+  <img src="../../img/src/icons/keypad.svg" style="left:26px;top:22px;width:148px;transform:rotate(-8deg);filter:url(#diecut)">
+</div>
+<!-- handwritten aside under the struck-out examples, arrow up at them -->
+<div class="mark" data-out="marks/05-note.png" style="width:300px;height:92px">
+  <div class="note" style="left:92px;top:44px;transform:rotate(-3deg);font-size:30px">too easy to guess</div>
+</div>
+<script src="kit.js"></script>
+<script>
+  K.init(505);
+  const m = document.querySelectorAll('.mark');
+  const st = K.svg(m[0], 200, 200, 'left:0;top:0');
+  K.doodle(st, { kind: 'star', x: 30, y: 168, s: 10, color: '#C4B5FD', width: 2.2 });
+  K.doodle(st, { kind: 'asterisk', x: 178, y: 40, s: 7, color: '#F9A8D4', width: 2 });
+  K.line(K.svg(m[1], 300, 92), { points: [[84, 60], [62, 52], [50, 34], [54, 8]], arrow: true, color: '#C4B5FD', width: 2.6, head: 11 });
+  K.done();
+</script>
+</body></html>

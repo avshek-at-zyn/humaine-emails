@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css">
+<style>
+  /* loose tear-off calendar leaves drifting behind the clay calendar */
+  .leaf { background: #E9E2F4; box-shadow: 0 12px 24px rgba(0,0,0,.45);
+    clip-path: polygon(0 6%, 8% 2%, 15% 7%, 24% 1%, 33% 6%, 43% 2%, 52% 7%, 61% 1%, 70% 6%, 80% 2%, 89% 7%, 100% 3%, 100% 100%, 0 100%); }
+  .leaf b { position: absolute; left: 0; right: 0; top: 7%; height: 22%; background: #6E60C8; }
+  .leaf i { position: absolute; left: 30%; right: 30%; top: 44%; height: 26%; border-radius: 6px; background: #CFC6E2; }
+  .leaf u { position: absolute; left: 38%; right: 38%; top: 78%; height: 6%; border-radius: 3px; background: #CFC6E2; }
+</style></head>
+<body>
+<div class="stage" data-out="hero/29-renewal-reminder.jpg" style="height:360px">
+  <div class="glow violet" style="left:100px;top:96px;width:300px;height:220px;opacity:.5"></div>
+  <div class="glow pink" style="left:390px;top:170px;width:170px;height:140px;opacity:.24"></div>
+  <svg id="sky" width="600" height="360" style="left:0;top:0"></svg>
+  <div class="planet blue" style="left:500px;top:44px;width:26px;height:26px"></div>
+  <div class="planet lilac" style="left:78px;top:282px;width:16px;height:16px"></div>
+  <div class="planet cyan" style="left:430px;top:304px;width:9px;height:9px"></div>
+  <div class="leaf" style="left:62px;top:70px;width:66px;height:76px;transform:rotate(-16deg)"><b></b><i></i><u></u></div>
+  <div class="leaf" style="left:470px;top:226px;width:56px;height:64px;transform:rotate(11deg)"><b style="background:#C48DD8"></b><i></i><u></u></div>
+  <svg id="back" width="600" height="360" style="left:0;top:0"></svg>
+  <img id="cal" class="icon" src="../../img/src/icons/calendar-clock.svg" style="left:120px;top:62px;width:236px;transform:rotate(-6deg)">
+  <svg id="pen" width="600" height="360" style="left:0;top:0"></svg>
+  <div class="note pink" style="left:378px;top:92px;transform:rotate(-5deg);font-size:38px">circled it
+for you</div>
+</div>
+
+<!-- the calendar page: torn off the pad, taped down -->
+<div class="mark" data-out="marks/29-page-top.png" data-exact style="width:220px;height:40px">
+  <div class="tape" style="left:62px;top:4px;width:96px;height:24px;transform:rotate(-4deg)"></div>
+</div>
+<!-- bottom of the page, the corner lifting -->
+<div class="mark" data-out="marks/29-page-bottom.png" data-exact style="width:220px;height:20px"></div>
+
+<script src="kit.js"></script>
+<script>
+  K.init(29 * 101);
+  const stage = document.querySelector('.stage');
+  K.stars(document.getElementById('sky'), { w: 600, h: 360, count: 70, sparkles: 5, avoid: [[238, 190, 150], [470, 130, 90]] });
+  const back = document.getElementById('back');
+  K.ellipse(back, { cx: 513, cy: 57, rx: 34, ry: 8, rot: -12, loops: 1.1, width: 1.6, opacity: .7, color: '#B5B7F6' });
+
+  // ring round the highlighted day on the clay calendar (icon cell centre 124,147 in a 232x235 box)
+  const L = 120, T = 62, W = 236, s = W / 232, a = -6 * Math.PI / 180;
+  const cx0 = L + W / 2, cy0 = T + 235 * s / 2, ox = (124 - 116) * s, oy = (147 - 117.5) * s;
+  const dx = ox * Math.cos(a) - oy * Math.sin(a), dy = ox * Math.sin(a) + oy * Math.cos(a);
+  const cx = cx0 + dx, cy = cy0 + dy;
+  const ink = document.getElementById("pen");
+  K.ellipse(ink, { cx, cy, rx: 29, ry: 23, rot: -10, loops: 1.3, wobble: .05, width: 3.6, color: ['#F9A8D4', '#E879B9'], opacity: 1 });
+  K.line(ink, { points: [[430, 182], [420, 206], [386, 224], [cx + 34, cy + 2]], arrow: true, color: '#F9A8D4', width: 2.8, head: 12 });
+  K.doodle(ink, { kind: 'asterisk', x: 112, y: 196, s: 7, color: '#C4B5FD', width: 2 });
+  K.finish(stage, { top: 0.1, bottom: 0.24, sides: 0.06 });
+
+  const m = document.querySelectorAll('.mark');
+  const tt = K.svg(m[0], 220, 40); m[0].insertBefore(tt, m[0].firstChild);
+  K.tornTop(tt, { w: 220, h: 40, y: 24 });
+  // bottom edge: straight, with a small dog-ear lifting at the right corner
+  const bt = K.svg(m[1], 220, 20), NS = 'http://www.w3.org/2000/svg';
+  const body = document.createElementNS(NS, 'path');
+  body.setAttribute('d', 'M0,0 L220,0 L220,2 L198,20 L0,20 Z'); body.setAttribute('fill', '#EEE8F6'); bt.appendChild(body);
+  const fold = document.createElementNS(NS, 'path');
+  fold.setAttribute('d', 'M220,2 L198,20 L203,4 Z'); fold.setAttribute('fill', '#CFC4E3'); bt.appendChild(fold);
+  K.done();
+</script>
+</body></html>

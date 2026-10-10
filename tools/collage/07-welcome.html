@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css">
+<style>
+  .disc { position: absolute; border-radius: 50%; background: radial-gradient(circle at 34% 28%, #2E2A5C 0%, #1A1936 55%, #0E0F22 100%); overflow: hidden; }
+  .disc::after { content: ''; position: absolute; inset: 7px; border-radius: 50%; border: 1.5px dashed rgba(196,181,253,.38); }
+  .disc img { position: absolute; }
+</style></head>
+<body>
+<!-- the humAIne head mark as a round die-cut sticker -->
+<div class="mark" data-out="marks/07-sticker.png" style="width:200px;height:200px">
+  <div style="left:30px;top:26px;width:138px;height:138px;transform:rotate(8deg);filter:url(#diecut)">
+    <div class="disc" style="left:0;top:0;width:138px;height:138px">
+      <img src="../../img/brand/identifier-mark.png" style="left:11px;top:9px;width:118px">
+    </div>
+  </div>
+</div>
+<!-- handwritten title on the notepad, in ink -->
+<div class="mark" data-out="marks/07-note.png" style="width:240px;height:58px">
+  <div class="note ink" style="left:8px;top:4px;transform:rotate(-3deg);font-size:31px;color:#4B3F8F">try these first</div>
+</div>
+<!-- a ring drawn round each margin numeral (td background, stretched) -->
+<div class="mark" data-out="marks/07-circle.png" style="width:48px;height:48px"></div>
+<!-- the bottom of the notepad page, its right corner folded over -->
+<div class="mark" data-out="marks/07-paper-bottom.png" data-exact style="width:520px;height:34px"></div>
+
+<script src="kit.js"></script>
+<script>
+  K.init(707);
+  const m = document.querySelectorAll('.mark');
+  K.doodle(K.svg(m[0], 200, 200, 'left:0;top:0'), { kind: 'asterisk', x: 30, y: 40, s: 8, color: '#F9A8D4', width: 2.2 });
+  K.doodle(K.svg(m[0], 200, 200, 'left:0;top:0'), { kind: 'star', x: 178, y: 168, s: 7, color: '#C4B5FD', width: 2 });
+  K.swash(K.svg(m[1], 240, 58), { x: 12, y: 50, w: 172, h: 4, curve: 1.5, tilt: -1.2, color: '#7C6FD6', opacity: .7, hook: false });
+  K.ellipse(K.svg(m[2], 48, 48), { cx: 24, cy: 24, rx: 17, ry: 15.5, rot: -12, loops: 1.25, wobble: .05, width: 2.2, color: '#5B4FB0', opacity: .9 });
+  const pb = K.svg(m[3], 520, 34);
+  pb.insertAdjacentHTML('beforeend', `
+    <defs><filter id="fold" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="1.8"/></filter>
+    <linearGradient id="flap" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#CFC5E3"/><stop offset="1" stop-color="#E2DAF0"/></linearGradient></defs>
+    <path d="M0,0 H520 V6 L492,34 H0 Z" fill="#EEE8F6"/>
+    <path d="M520,6 L492,34 L490,8 Z" fill="#000" opacity=".18" filter="url(#fold)"/>
+    <path d="M520,6 L492,34 L492,6 Z" fill="url(#flap)"/>`);
+  K.done();
+</script>
+</body></html>

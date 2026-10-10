@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- the clay card, stuck on as a die-cut sticker, with a few fresh "shine" strokes -->
+<div class="mark" data-out="marks/27-sticker.png" style="width:200px;height:200px">
+  <img data-src="../../img/src/icons/card-check.svg" style="left:16px;top:8px;width:164px;transform:rotate(-8deg);filter:url(#diecut)">
+</div>
+<!-- the pass: ticket corners notched out, top and bottom -->
+<div class="mark" data-out="marks/27-pass-top.png" data-exact style="width:520px;height:22px"></div>
+<div class="mark" data-out="marks/27-pass-bottom.png" data-exact style="width:520px;height:22px"></div>
+<!-- the stamp -->
+<div class="mark" data-out="marks/27-stamp.png" style="width:200px;height:100px">
+  <div class="stamp green" style="left:22px;top:24px;transform:rotate(-8deg);font-size:23px;letter-spacing:3.5px;padding:8px 11px 7px 15px;border-width:3px;outline-offset:3px">Active</div>
+</div>
+<!-- pointer down to the button -->
+<div class="mark" data-out="marks/27-note.png" style="width:360px;height:96px">
+  <div class="note" style="left:14px;top:8px;transform:rotate(-3deg);font-size:30px">first question goes here</div>
+</div>
+<script src="kit.js"></script>
+<script>
+  // clay icons without their ambient flecks, so the die-cut edge hugs the card only
+  const clay = () => Promise.all([...document.querySelectorAll('img[data-src]')].map(img => new Promise(res => {
+    const x = new XMLHttpRequest(); x.open('GET', img.dataset.src);
+    x.onload = () => { const t = x.responseText.replace(/<!-- ambient flecks[\s\S]*?(?=<!-- floor shadow)/, ''); img.onload = res; img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(t); };
+    x.send();
+  })));
+  K.init(27 * 101);
+  const m = document.querySelectorAll('.mark');
+  // sticker shine
+  const sk = K.svg(m[0], 200, 200); m[0].appendChild(sk);
+  K.line(sk, { points: [[172, 28], [184, 18]], color: '#4ADE80', width: 2.6, jitter: .4 });
+  K.line(sk, { points: [[178, 46], [194, 44]], color: '#4ADE80', width: 2.6, jitter: .4 });
+  K.line(sk, { points: [[158, 14], [162, 2]], color: '#4ADE80', width: 2.6, jitter: .4 });
+  K.doodle(sk, { kind: 'asterisk', x: 26, y: 158, s: 7, color: '#F9A8D4', width: 2 });
+  // pass edges: concave ticket corners
+  const NS = 'http://www.w3.org/2000/svg', r = 13;
+  const eTop = K.svg(m[1], 520, 22), eBot = K.svg(m[2], 520, 22);
+  const p1 = document.createElementNS(NS, 'path');
+  p1.setAttribute('d', `M0,22 L0,${r} A${r},${r} 0 0 0 ${r},0 L${520 - r},0 A${r},${r} 0 0 0 520,${r} L520,22 Z`); p1.setAttribute("fill", "#EEE8F6"); eTop.appendChild(p1);
+  const p2 = document.createElementNS(NS, 'path');
+  p2.setAttribute('d', `M0,0 L520,0 L520,${22 - r} A${r},${r} 0 0 0 ${520 - r},22 L${r},22 A${r},${r} 0 0 0 0,${22 - r} Z`); p2.setAttribute("fill", "#EEE8F6"); eBot.appendChild(p2);
+  // pointer
+  K.line(K.svg(m[4], 360, 96), { points: [[300, 40], [296, 62], [262, 78], [214, 90]], arrow: true, color: '#C4B5FD', width: 2.6, head: 11 });
+  clay().then(() => K.done());
+</script>
+</body></html>

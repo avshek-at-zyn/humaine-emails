@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css">
+<style>
+  .slip { background: #E9E2F4; box-shadow: 0 14px 28px rgba(0,0,0,.45); }
+  .slip i { position: absolute; left: 18px; right: 18px; height: 1px; background: #CFC6E2; }
+</style></head>
+<body>
+<!-- calm: the card taped to a scrap of paper, a hand-drawn loop round it (try again). No note in the hero. -->
+<div class="stage" data-out="hero/30-payment-failed.jpg" style="height:330px">
+  <div class="glow violet" style="left:150px;top:80px;width:300px;height:190px;opacity:.42"></div>
+  <div class="glow blue" style="left:40px;top:30px;width:150px;height:120px;opacity:.22"></div>
+  <svg id="sky" width="600" height="330" style="left:0;top:0"></svg>
+  <div class="planet dark" style="left:78px;top:58px;width:40px;height:40px"></div>
+  <div class="planet glass" style="left:494px;top:226px;width:28px;height:28px"></div>
+  <div class="planet pink" style="left:516px;top:74px;width:8px;height:8px"></div>
+  <svg id="back" width="600" height="330" style="left:0;top:0"></svg>
+  <div class="slip" style="left:176px;top:100px;width:250px;height:142px;transform:rotate(-4deg)">
+    <i style="top:30px"></i><i style="top:54px"></i><i style="top:78px"></i><i style="top:102px"></i><i style="top:126px"></i>
+  </div>
+  <div class="tape" style="left:168px;top:96px;width:76px;height:22px;transform:rotate(-34deg)"></div>
+  <div class="tape" style="left:372px;top:224px;width:76px;height:22px;transform:rotate(-30deg)"></div>
+  <img data-src="../../img/src/icons/card-alert.svg" style="left:204px;top:52px;width:204px;transform:rotate(6deg);filter:url(#diecut)">
+  <svg id="pen" width="600" height="330" style="left:0;top:0"></svg>
+</div>
+
+<!-- the stamp, for the card face -->
+<div class="mark" data-out="marks/30-stamp.png" style="width:260px;height:110px">
+  <div class="stamp coral" style="left:22px;top:28px;transform:rotate(-8deg);font-size:25px;letter-spacing:3.5px;padding:8px 11px 7px 15px;border-width:3px;outline-offset:3px;color:#FF8E8E;opacity:1">Declined</div>
+</div>
+<!-- functional pointer down to the button -->
+<div class="mark" data-out="marks/30-note.png" style="width:360px;height:96px">
+  <div class="note" style="left:28px;top:8px;transform:rotate(-3deg);font-size:30px">same card or a new one</div>
+</div>
+
+<script src="kit.js"></script>
+<script>
+  const clay = () => Promise.all([...document.querySelectorAll('img[data-src]')].map(img => new Promise(res => {
+    const x = new XMLHttpRequest(); x.open('GET', img.dataset.src);
+    x.onload = () => { const t = x.responseText.replace(/<!-- ambient flecks[\s\S]*?(?=<!-- floor shadow)/, ''); img.onload = res; img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(t); };
+    x.send();
+  })));
+  K.init(30 * 101);
+  const stage = document.querySelector('.stage');
+  K.stars(document.getElementById('sky'), { w: 600, h: 330, count: 52, sparkles: 3, avoid: [[300, 170, 190]] });
+  const back = document.getElementById('back');
+  K.ellipse(back, { cx: 98, cy: 78, rx: 44, ry: 11, rot: 16, loops: 1.1, width: 1.6, opacity: .6, color: '#8E86C9' });
+  // the loop: most of an ellipse, ending in an arrowhead (try it again)
+  const ink = document.getElementById("pen");
+  const pts = [], cx = 302, cy = 170, rx = 200, ry = 122, rot = -6 * Math.PI / 180;
+  for (let i = 0; i <= 30; i++) {
+    const t = (-0.95 + i / 30 * 1.78) * Math.PI;
+    const wob = 1 + 0.025 * Math.sin(i * 1.7);
+    const x = rx * wob * Math.cos(t), y = ry * wob * Math.sin(t);
+    pts.push([cx + x * Math.cos(rot) - y * Math.sin(rot), cy + x * Math.sin(rot) + y * Math.cos(rot)]);
+  }
+  K.line(ink, { points: pts, arrow: true, color: ['#8E86C9', '#C4B5FD'], width: 2.6, head: 14, jitter: 1.2, opacity: .9 });
+  K.doodle(ink, { kind: 'asterisk', x: 470, y: 120, s: 6, color: '#8E86C9', width: 1.8 });
+  K.finish(stage, { top: 0.1, bottom: 0.24, sides: 0.06 });
+
+  const m = document.querySelectorAll('.mark');
+  K.line(K.svg(m[1], 360, 96), { points: [[306, 40], [300, 62], [266, 78], [216, 90]], arrow: true, color: '#C4B5FD', width: 2.6, head: 11 });
+  clay().then(() => K.done());
+</script>
+</body></html>

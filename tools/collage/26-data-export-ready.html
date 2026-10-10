@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- the clay export document as a die-cut sticker -->
+<div class="mark" data-out="marks/26-sticker.png" style="width:200px;height:200px">
+  <img id="doc" style="left:28px;top:22px;width:148px;transform:rotate(7deg);filter:url(#diecut)">
+</div>
+<!-- file ticket edges: rounded corners top and bottom (the perforation is the shared paper-perf.png) -->
+<div class="mark" data-out="marks/26-ticket-top.png" data-exact style="width:520px;height:18px"></div>
+<div class="mark" data-out="marks/26-ticket-bottom.png" data-exact style="width:520px;height:18px"></div>
+<!-- the stub's timeline, inked: done dot, ringed "now" dot, hollow "next" dot. Dots at 1/6, 1/2, 5/6 so they sit over three equal columns -->
+<div class="mark" data-out="marks/26-timeline.png" style="width:468px;height:32px"></div>
+<!-- ink note pointing down at the "now" dot; the arrow tip is at the image's centre -->
+<div class="mark" data-out="marks/26-note.png" style="width:220px;height:76px">
+  <div class="note ink" style="left:6px;top:8px;transform:rotate(-4deg);font-size:26px;color:#4B3F8F">ready when you are</div>
+</div>
+<script src="kit.js"></script>
+<script>
+  K.init(2626);
+  const NS = 'http://www.w3.org/2000/svg';
+  // the icon's floor shadow and heavy drop shadow are dense enough to be die-cut into a white plinth: strip them for the sticker only
+  const xhr = new XMLHttpRequest(); xhr.open('GET', '../../img/src/icons/export-ready.svg', false); xhr.send();
+  const doc = document.getElementById('doc');
+  doc.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(xhr.responseText
+    .replace(/<ellipse cx="100" cy="178"[^>]*\/>/, '')
+    .replace(/flood-opacity="0\.5"/, 'flood-opacity="0.1"'));
+  const m = document.querySelectorAll('.mark');
+  K.doodle(K.svg(m[0], 200, 200), { kind: 'star', x: 30, y: 44, s: 9, color: '#F9A8D4', width: 2.2 });
+  const shape = (svg, d) => { const p = document.createElementNS(NS, 'path'); p.setAttribute('d', d); p.setAttribute('fill', '#EEE8F6'); svg.appendChild(p); };
+  shape(K.svg(m[1], 520, 18), 'M0,18 L0,14 Q0,0 14,0 L506,0 Q520,0 520,14 L520,18 Z');
+  shape(K.svg(m[2], 520, 18), 'M0,0 L0,4 Q0,18 14,18 L506,18 Q520,18 520,4 L520,0 Z');
+
+  const tl = K.svg(m[3], 468, 32);
+  const x1 = 78, x2 = 234, x3 = 390, y = 16;
+  K.line(tl, { points: [[x1, y], [156, y - 1], [x2, y + .5]], width: 2.4, color: '#6E60C8', jitter: .5 });
+  const fut = K.line(tl, { points: [[x2, y], [312, y + 1], [x3, y]], width: 2.2, color: '#A79DC9', jitter: .5 });
+  fut.querySelector('path').setAttribute('stroke-dasharray', '5 6');
+  const disc = (cx, r, fill) => { const c = document.createElementNS(NS, 'circle'); c.setAttribute('cx', cx); c.setAttribute('cy', y); c.setAttribute('r', r); c.setAttribute('fill', fill); tl.appendChild(c); };
+  disc(x1, 7, '#EEE8F6'); K.ellipse(tl, { cx: x1, cy: y, rx: 4.6, ry: 4.6, loops: 3, wobble: .08, width: 4, color: '#6E60C8', passes: 1 });
+  disc(x2, 12, '#EEE8F6'); K.ellipse(tl, { cx: x2, cy: y, rx: 10, ry: 10, loops: 1.15, wobble: .05, width: 2.4, color: '#2FBF6B' });
+  K.ellipse(tl, { cx: x2, cy: y, rx: 3.6, ry: 3.6, loops: 3, wobble: .08, width: 3.6, color: '#2FBF6B', passes: 1 });
+  disc(x3, 8, '#EEE8F6'); K.ellipse(tl, { cx: x3, cy: y, rx: 6, ry: 6, loops: 1.1, wobble: .06, width: 1.8, color: '#A79DC9' });
+
+  K.line(K.svg(m[4], 220, 76), { points: [[162, 26], [168, 46], [144, 62], [114, 72]], arrow: true, color: '#6E60C8', width: 2.4, head: 10 });
+  doc.decode().then(K.done);
+</script>
+</body></html>

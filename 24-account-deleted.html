@@ -12,7 +12,7 @@
 <!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
 <![endif]-->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{color-scheme:dark;supported-color-schemes:dark;}
   body,table,td,a{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
@@ -24,12 +24,11 @@
   u + .body a, #MessageViewBody a{color:inherit;text-decoration:none;}
   @media screen and (max-width:620px){
     .px{padding-left:24px!important;padding-right:24px!important;}
-    .h1{font-size:27px!important;line-height:1.25!important;}
+    .h1{font-size:34px!important;line-height:1.1!important;letter-spacing:-0.8px!important;}
     .lead{font-size:15px!important;}
-    .rec{padding-left:18px!important;padding-right:18px!important;}
-    .rec-title{font-size:18px!important;line-height:25px!important;}
-    .col-l{padding-right:10px!important;}
-    .col-r{padding-left:12px!important;}
+    .pp{padding-left:18px!important;padding-right:18px!important;}
+    .plbl{width:84px!important;}
+    .pk{font-size:11px!important;}
   }
 </style>
 </head>
@@ -48,82 +47,92 @@
     <img src="https://humaine-email.vercel.app/img/brand/lockup@2x.png" width="144" height="36" alt="humAIne" style="display:block;width:144px;height:36px;border:0;">
   </td></tr>
 
-  <!-- hero : the app's account-deleted illustration in a short, quiet scene -->
-  <tr><td>
-    <img src="https://humaine-email.vercel.app/img/hero/24-account-deleted.jpg" width="600" alt="A dimmed lilac profile disc crossed through by a red prohibition sign, on an empty orbit beside a dark ringed planet" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
-  </td></tr>
+  <!-- the app's account-deleted disc as a die-cut sticker. Serious email: calm, no doodles -->
+  <tr><td align="center" style="padding:20px 0 12px;"><img src="https://humaine-email.vercel.app/img/marks/24-sticker.png" width="150" height="150" alt="A dimmed lilac profile disc crossed through by a red line, as a die-cut sticker" style="display:block;width:150px;height:150px;border:0;margin:0 auto;"></td></tr>
+
+  <!-- kicker : a log line, not a badge -->
+  <tr><td align="center" class="px" style="padding:0 40px 14px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:14px;letter-spacing:1.6px;text-transform:uppercase;color:#C4B5FD;">Account deleted</td></tr>
 
   <!-- headline + lead -->
-  <tr><td align="center" class="px" style="padding:10px 48px 0;">
-    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;text-wrap:balance;">Your account has been&nbsp;deleted</h1>
-    <p class="lead" style="margin:16px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#B4B5C4;">It took effect straight away and cannot be undone. Keep this email as your&nbsp;record.</p>
+  <tr><td class="px" style="padding:0 40px 0;">
+    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:44px;line-height:1.1;letter-spacing:-1.2px;color:#FFFFFF;text-align:center;">Your account has <span style="white-space:nowrap;">been deleted</span></h1>
+    <p class="lead" style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#B4B5C4;text-align:center;">It took effect straight away and cannot be undone. Keep this email as your&nbsp;record.</p>
   </td></tr>
 
-  <!-- signature : the deletion record -->
-  <tr><td class="px" style="padding:28px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#15171F;border:1px solid #23252E;border-radius:16px;">
-
-      <!-- record header -->
-      <tr><td class="rec" style="padding:20px 22px 18px;">
-        <p style="margin:0 0 8px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:14px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:#7D7F8F;">Deletion record</p>
-        <p class="rec-title" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:20px;line-height:28px;font-weight:500;color:#FFFFFF;">Deleted {{deletion_date}} at {{deletion_time}} ({{timezone}})</p>
-        <p style="margin:4px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;color:#7D7F8F;word-break:break-all;">Account {{recipient_email}}</p>
-      </td></tr>
-
-      <!-- tear line -->
-      <tr><td class="rec" style="padding:0 22px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;border-top:1px dashed #34364A;">&nbsp;</td></tr></table>
-      </td></tr>
-
-      <!-- removed | kept by law -->
-      <tr><td class="rec" style="padding:16px 22px 18px;">
+  <!-- signature : the deletion record, a paper slip punched for filing and torn off at the bottom -->
+  <tr><td class="px" style="padding:30px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/24-paper-top.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#EEE8F6" style="background-color:#EEE8F6;">
+      <tr><td class="pp" style="padding:6px 26px 4px;">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-          <td class="col-l" width="50%" valign="top" style="width:50%;padding-right:14px;">
-            <p style="margin:0 0 10px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:14px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:#7D7F8F;">Removed</p>
-            <p style="margin:0 0 6px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;color:#7D7F8F;text-decoration:line-through;">Your account</p>
-            <p style="margin:0 0 6px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;color:#7D7F8F;text-decoration:line-through;">Your details</p>
-            <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;color:#7D7F8F;text-decoration:line-through;">Every conversation</p>
+          <td valign="middle">
+            <p style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:21px;line-height:24px;font-weight:600;color:#2B2350;">hum<span style="color:#5B62B4;">AI</span>ne</p>
+            <p style="margin:2px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:14px;letter-spacing:1.6px;text-transform:uppercase;color:#6E6790;">Deletion record</p>
           </td>
-          <td class="col-r" width="50%" valign="top" style="width:50%;padding-left:18px;border-left:1px solid #23252E;">
-            <p style="margin:0 0 10px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:14px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:#C4B5FD;">Kept by law</p>
-            <p style="margin:0 0 6px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;font-weight:600;color:#FFFFFF;">Billing records</p>
-            <p style="margin:0 0 6px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;color:#B4B5C4;">Invoices and payment records</p>
-            <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;color:#B4B5C4;">Seven years, as tax law requires</p>
-          </td>
+          <td valign="middle" align="right" width="132" style="width:132px;"><img src="https://humaine-email.vercel.app/img/marks/24-stamp.png" width="132" height="60" alt="Stamped: closed" style="display:block;width:132px;height:60px;border:0;"></td>
         </tr></table>
-      </td></tr>
 
-      <!-- record footnote -->
-      <tr><td class="rec" style="padding:14px 22px 16px;border-top:1px solid #1F2129;">
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;font-weight:500;color:#C4B5FD;">&#10022;&nbsp; We keep details only where the law requires&nbsp;it.</p>
-      </td></tr>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;">
+          <tr>
+            <td width="110" valign="top" class="plbl" style="width:110px;padding:5px 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:18px;letter-spacing:1.2px;text-transform:uppercase;color:#6E6790;">Deleted</td>
+            <td valign="top" align="right" style="padding:5px 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:13px;line-height:18px;color:#1B1730;">{{deletion_date}}, {{deletion_time}} {{timezone}}</td>
+          </tr>
+          <tr>
+            <td width="110" valign="top" class="plbl" style="width:110px;padding:5px 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:18px;letter-spacing:1.2px;text-transform:uppercase;color:#6E6790;">Account</td>
+            <td valign="top" align="right" style="padding:5px 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:13px;line-height:18px;color:#1B1730;word-break:break-all;">{{recipient_email}}</td>
+          </tr>
+        </table>
 
+        <!-- removed : each line struck through in ink -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;">
+          <tr>
+            <td width="110" valign="top" class="plbl" style="width:110px;padding:14px 0 12px;border-top:1px dashed #B8AFD3;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:22px;letter-spacing:1.2px;text-transform:uppercase;color:#6E6790;">Removed</td>
+            <td valign="top" align="right" style="padding:14px 0 12px;border-top:1px dashed #B8AFD3;">
+              <p style="margin:0 0 6px;text-align:right;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:22px;color:#8A83A8;"><span style="padding:2px 6px 3px;white-space:nowrap;background-image:url('https://humaine-email.vercel.app/img/marks/24-strike.png');background-repeat:no-repeat;background-size:100% 100%;background-position:center;">Your account</span></p>
+              <p style="margin:0 0 6px;text-align:right;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:22px;color:#8A83A8;"><span style="padding:2px 6px 3px;white-space:nowrap;background-image:url('https://humaine-email.vercel.app/img/marks/24-strike.png');background-repeat:no-repeat;background-size:100% 100%;background-position:center;">Your details</span></p>
+              <p style="margin:0;text-align:right;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:22px;color:#8A83A8;"><span style="padding:2px 6px 3px;white-space:nowrap;background-image:url('https://humaine-email.vercel.app/img/marks/24-strike.png');background-repeat:no-repeat;background-size:100% 100%;background-position:center;">Every conversation</span></p>
+            </td>
+          </tr>
+          <!-- kept by law -->
+          <tr>
+            <td width="110" valign="top" class="plbl" style="width:110px;padding:14px 0 12px;border-top:1px dashed #B8AFD3;border-bottom:1px dashed #B8AFD3;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:20px;letter-spacing:1.2px;text-transform:uppercase;color:#6E6790;">Kept by law</td>
+            <td valign="top" align="right" style="padding:14px 0 14px;border-top:1px dashed #B8AFD3;border-bottom:1px dashed #B8AFD3;">
+              <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:20px;font-weight:600;color:#1B1730;text-align:right;">Billing records</p>
+              <p style="margin:4px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13.5px;line-height:19px;color:#4A4466;text-align:right;">Invoices and payment records</p>
+              <p class="pk" style="margin:2px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:12px;line-height:18px;color:#6E6790;text-align:right;">Seven years, as tax law requires</p>
+            </td>
+          </tr>
+        </table>
+
+        <p style="margin:14px 0 6px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11.5px;line-height:17px;color:#6E6790;text-align:center;">We keep details only where the law requires&nbsp;it.</p>
+      </td></tr>
     </table>
+    <img src="https://humaine-email.vercel.app/img/marks/paper-bottom.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
   </td></tr>
 
   <!-- coming back, and the not-you line -->
-  <tr><td align="center" class="px" style="padding:26px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#B4B5C4;">Thank you for using humAIne. You can <a href="{{signup_url}}" style="color:#A78BFA;font-weight:600;text-decoration:none;">create&nbsp;a&nbsp;new&nbsp;account</a> on the web at any time, though nothing from this one carries&nbsp;over.</p>
-    <p style="margin:16px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#B4B5C4;"><span style="color:#FFFFFF;font-weight:600;">Didn&rsquo;t delete your account?</span> Write to <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a> straight away. We answer emails seven days a&nbsp;week.</p>
+  <tr><td class="px" style="padding:28px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#B4B5C4;text-align:center;">Thank you for using humAIne. You can <a href="{{signup_url}}" style="color:#C4B5FD;font-weight:600;text-decoration:underline;text-decoration-color:#5B4E9E;white-space:nowrap;">create a new account</a> on the web at any time, though nothing from this one carries&nbsp;over.</p>
+    <p style="margin:14px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#B4B5C4;text-align:center;"><span style="color:#FFFFFF;font-weight:600;">Didn&rsquo;t delete your account?</span> Write to <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a> straight away. We answer emails seven days a&nbsp;week.</p>
   </td></tr>
 
   <!-- fine print -->
-  <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">For questions about the billing records we keep, write to <a href="mailto:{{privacy_email}}" style="color:#A78BFA;">{{privacy_email}}</a>. Data requests are answered within 30&nbsp;days.</p>
+  <tr><td class="px" style="padding:26px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;text-align:center;">For questions about the billing records we keep, write to <a href="mailto:{{privacy_email}}" style="color:#A78BFA;">{{privacy_email}}</a>. Data requests are answered within 30&nbsp;days.</p>
   </td></tr>
 
-  <!-- footer : account -->
-  <tr><td class="px" style="padding:44px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#1C1E27;">&nbsp;</td></tr></table>
+  <!-- footer : account (under a hand-drawn rule) -->
+  <tr><td class="px" style="padding:40px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/divider.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
   </td></tr>
-  <tr><td align="center" class="px" style="padding:30px 40px 40px;">
+  <tr><td align="center" class="px" style="padding:26px 40px 40px;">
     <img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="40" height="39" alt="humAIne" style="display:block;width:40px;height:39px;border:0;margin:0 auto;">
     <p style="margin:12px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:15px;line-height:20px;color:#C9C3F2;">hum<span style="color:#8FA0FF;">AI</span>ne</p>
     <p style="margin:4px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:18px;color:#7D7F8F;">Disruptively Human . Trust Co-created.</p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;">
+    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;text-align:center;">
       <a href="{{help_url}}" style="color:#A3A5B5;text-decoration:none;">Help centre</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{privacy_url}}" style="color:#A3A5B5;text-decoration:none;">Privacy</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{terms_url}}" style="color:#A3A5B5;text-decoration:none;">Terms</a>
     </p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;">Sent to {{recipient_email}} because you deleted your humAIne account. It&rsquo;s a one-off service message, so there&rsquo;s nothing to unsubscribe from.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
+    <p style="margin:14px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;text-align:center;">Sent to {{recipient_email}} because you deleted your humAIne account. It&rsquo;s a one-off service message, so there&rsquo;s nothing to unsubscribe from.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
   </td></tr>
 
 </table>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css">
+<style>
+  .card { background: #E9E2F4; border-radius: 13px; box-shadow: 0 16px 30px rgba(0,0,0,.5); overflow: hidden; }
+  .card > * { position: absolute; }
+  .card .band { left: 0; right: 0; top: 0; height: 26px; background: linear-gradient(90deg, #8B93E8, #C48DD8); opacity: .85; }
+  .card .chip { left: 16px; top: 40px; width: 28px; height: 21px; border-radius: 5px; background: #CFC6E2; box-shadow: inset 0 0 0 1px #B8AFD3; }
+  .card .num { left: 16px; bottom: 13px; font: 500 13px/1 'DM Mono', monospace; letter-spacing: 2px; color: #6E6790; }
+</style></head>
+<body>
+<!-- hero: the clay refund receipt, and a pen arrow carrying it back to a paper card, taped down -->
+<div class="stage" data-out="hero/37-refund-issued.jpg" style="height:370px">
+  <div class="glow violet" style="left:250px;top:70px;width:280px;height:220px;opacity:.5"></div>
+  <div class="glow pink" style="left:40px;top:170px;width:220px;height:150px;opacity:.3"></div>
+  <svg id="sky" width="600" height="370" style="left:0;top:0"></svg>
+  <div class="planet lilac" style="left:494px;top:66px;width:30px;height:30px"></div>
+  <div class="planet pink" style="left:516px;top:262px;width:16px;height:16px"></div>
+  <div class="planet cyan" style="left:236px;top:318px;width:10px;height:10px"></div>
+  <svg id="back" width="600" height="370" style="left:0;top:0"></svg>
+  <!-- the card it goes back to -->
+  <div class="card" style="left:74px;top:176px;width:156px;height:100px;transform:rotate(-9deg)">
+    <div class="band"></div><div class="chip"></div><div class="num">&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;</div>
+  </div>
+  <div class="tape" style="left:184px;top:160px;width:70px;height:22px;transform:rotate(32deg)"></div>
+  <img src="../../img/src/icons/receipt-refund.svg" style="left:286px;top:58px;width:196px;transform:rotate(8deg);filter:url(#diecut)">
+  <svg id="pen" width="600" height="370" style="left:0;top:0"></svg>
+  <div class="note pink" style="left:58px;top:40px;transform:rotate(-5deg);font-size:33px">on its way back</div>
+</div>
+
+<!-- credit note top: torn edge, a paperclip holding it -->
+<div class="mark" data-out="marks/37-paper-top.png" data-exact style="width:520px;height:52px"></div>
+<!-- the stamp -->
+<div class="mark" data-out="marks/37-stamp.png" style="width:216px;height:100px">
+  <div class="stamp pink" style="left:15px;top:25px;transform:rotate(-10deg);font-size:23px;letter-spacing:3.5px;padding:8px 11px 7px 15px;border-width:3px;outline-offset:3px">Refunded</div>
+</div>
+
+<!-- a pen double underline under the total (span background, stretched to the amount) -->
+<div class="mark" data-out="marks/37-total-line.png" style="width:240px;height:20px"></div>
+
+<script src="kit.js"></script>
+<script>
+  K.init(3737);
+  const NS = 'http://www.w3.org/2000/svg';
+  const stage = document.querySelector('.stage');
+  K.stars(document.getElementById('sky'), { w: 600, h: 370, count: 66, sparkles: 4, avoid: [[380, 180, 130], [150, 220, 90]] });
+  const back = document.getElementById('back');
+  K.ellipse(back, { cx: 509, cy: 81, rx: 36, ry: 9, rot: -16, loops: 1.1, width: 1.6, opacity: .7, color: '#B5B7F6' });
+  const ink = document.getElementById("pen");
+  // the refund's path: out of the receipt, up and over, down onto the card
+  K.line(ink, { points: [[300, 132], [262, 98], [214, 88], [170, 104], [146, 136], [142, 168]], arrow: true, color: ['#F9A8D4', '#E879B9'], width: 2.8, head: 13 });
+  K.doodle(ink, { kind: 'asterisk', x: 488, y: 196, s: 8, color: '#C4B5FD', width: 2 });
+  K.doodle(ink, { kind: 'star', x: 92, y: 116, s: 9, color: '#C4B5FD', width: 2 });
+  K.finish(stage, { top: 0.08, bottom: 0.22, sides: 0.06 });
+
+  // credit note top: torn paper + a pen-drawn paperclip
+  const m = [...document.querySelectorAll('.mark')];
+  const pt = K.svg(m[0], 520, 52);
+  K.tornTop(pt, { w: 520, h: 52, y: 30 });
+  const clip = document.createElementNS(NS, 'path');
+  clip.setAttribute('d', 'M8,34 V10 a4.5,4.5 0 0 1 9,0 V40 a8,8 0 0 1 -16,0 V7 a6.5,6.5 0 0 1 13,0');
+  clip.setAttribute('fill', 'none'); clip.setAttribute('stroke', '#A9A2C6'); clip.setAttribute('stroke-width', '2.6');
+  clip.setAttribute('stroke-linecap', 'round'); clip.setAttribute('transform', 'translate(452,2) rotate(10) scale(1.05)');
+  pt.appendChild(clip);
+  const tl = K.svg(m[2], 240, 20);
+  K.line(tl, { points: [[4, 6], [80, 5], [160, 6.5], [236, 4.5]], jitter: .7, width: 2.4, color: '#E879B9' });
+  K.line(tl, { points: [[10, 13], [120, 14], [230, 12]], jitter: .7, width: 2, color: '#E879B9', opacity: .85 });
+  K.done();
+</script>
+</body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- the clay card with its clock, die-cut, a hand-drawn sweep round the clock -->
+<div class="mark" data-out="marks/31-sticker.png" style="width:200px;height:200px">
+  <img data-src="../../img/src/icons/card-clock.svg" style="left:14px;top:14px;width:160px;transform:rotate(7deg);filter:url(#diecut)">
+</div>
+<!-- the card face (light, plastic): rounded top and bottom edges -->
+<div class="mark" data-out="marks/31-card-top.png" data-exact style="width:340px;height:18px"></div>
+<div class="mark" data-out="marks/31-card-bottom.png" data-exact style="width:340px;height:18px"></div>
+<!-- a ring for the expiry, in ink that reads on the light card -->
+<div class="mark" data-out="marks/31-ring.png" style="width:240px;height:96px"></div>
+<!-- the note under the card, pointing back up at the ringed date -->
+<div class="mark" data-out="marks/31-note.png" style="width:340px;height:92px">
+  <div class="note pink" style="left:14px;top:42px;transform:rotate(-3deg);font-size:30px">before renewal day</div>
+</div>
+<script src="kit.js"></script>
+<script>
+  const clay = () => Promise.all([...document.querySelectorAll('img[data-src]')].map(img => new Promise(res => {
+    const x = new XMLHttpRequest(); x.open('GET', img.dataset.src);
+    x.onload = () => { const t = x.responseText.replace(/<!-- ambient flecks[\s\S]*?(?=<!-- floor shadow)/, ''); img.onload = res; img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(t); };
+    x.send();
+  })));
+  K.init(31 * 101);
+  const m = document.querySelectorAll('.mark');
+  // sticker: an arc sweeping clockwise round the clock badge (badge centre 186,78 r30 in a 232x235 box)
+  const sk = K.svg(m[0], 200, 200); m[0].appendChild(sk);
+  const L = 14, T = 14, W = 160, s = W / 232, a = 7 * Math.PI / 180;
+  const ox = (186 - 116) * s, oy = (78 - 117.5) * s;
+  const bx = L + W / 2 + ox * Math.cos(a) - oy * Math.sin(a), by = T + 235 * s / 2 + ox * Math.sin(a) + oy * Math.cos(a);
+  const arc = [], R = 34;
+  for (let i = 0; i <= 10; i++) { const t = (-1.05 + i / 10 * 0.95) * Math.PI; arc.push([bx + R * Math.cos(t), by + R * Math.sin(t)]); }
+  K.line(sk, { points: arc, arrow: true, color: '#F9A8D4', width: 2.6, head: 10, jitter: .6 });
+  for (const t of [0.12, 0.3, 0.48]) { const q = t * Math.PI; K.line(sk, { points: [[bx + 31 * Math.cos(q), by + 31 * Math.sin(q)], [bx + 40 * Math.cos(q), by + 40 * Math.sin(q)]], color: '#C4B5FD', width: 2.2, jitter: .3 }); }
+  // card edges: rounded corners, radius 16
+  const NS = 'http://www.w3.org/2000/svg', r = 16, fill = '#E6DCF5';
+  const cTop = K.svg(m[1], 340, 18), cBot = K.svg(m[2], 340, 18);
+  const p1 = document.createElementNS(NS, 'path');
+  p1.setAttribute('d', `M0,18 L0,${r} A${r},${r} 0 0 1 ${r},0 L${340 - r},0 A${r},${r} 0 0 1 340,${r} L340,18 Z`); p1.setAttribute('fill', fill); cTop.appendChild(p1);
+  const p2 = document.createElementNS(NS, 'path');
+  p2.setAttribute('d', `M0,0 L340,0 L340,${18 - r} A${r},${r} 0 0 1 ${340 - r},18 L${r},18 A${r},${r} 0 0 1 0,${18 - r} Z`); p2.setAttribute('fill', fill); cBot.appendChild(p2);
+  // the ring
+  K.ellipse(K.svg(m[3], 240, 96), { cx: 120, cy: 48, rx: 110, ry: 37, rot: -3, loops: 1.24, wobble: .035, width: 3, color: ['#D6409F', '#7C5CE0'] });
+  // pointer up to the ring
+  K.line(K.svg(m[4], 340, 92), { points: [[240, 54], [266, 46], [281, 30], [284, 6]], arrow: true, color: '#F9A8D4', width: 2.6, head: 11 });
+  clay().then(() => K.done());
+</script>
+</body></html>

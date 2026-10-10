@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- the clay administrator with the paper-plane badge, as a die-cut sticker, a dashed flight trail drawn in -->
+<div class="mark" data-out="marks/16-sticker.png" style="width:200px;height:200px">
+  <img id="icon" data-src="../../img/src/icons/admin-request.svg" style="left:26px;top:28px;width:150px;transform:rotate(-8deg);filter:url(#diecut)">
+</div>
+
+<!-- timeline track for three equal columns (centres at 1/6, 3/6, 5/6): done -> now solid, now -> next dashed.
+     Stretched to the row width as a background, so the gaps stay round the dots at any width. -->
+<div class="mark" data-out="marks/16-track.png" style="width:520px;height:28px"></div>
+
+<!-- the reference number's ticket stub: rounded top, perforation, rounded bottom (280 wide, paper #EEE8F6) -->
+<div class="mark" data-out="marks/16-stub-top.png" data-exact style="width:280px;height:12px"></div>
+<div class="mark" data-out="marks/16-stub-perf.png" data-exact style="width:280px;height:24px"></div>
+<div class="mark" data-out="marks/16-stub-bottom.png" data-exact style="width:280px;height:12px"></div>
+
+<!-- pointer down to the stub -->
+<div class="mark" data-out="marks/16-note.png" style="width:360px;height:92px">
+  <div class="note" style="left:28px;top:6px;transform:rotate(-3deg);font-size:29px">quote this if you write</div>
+</div>
+
+<script src="kit.js"></script>
+<script>
+  function clean(img) {
+    return new Promise(res => {
+      const x = new XMLHttpRequest();
+      x.open('GET', img.getAttribute('data-src'));
+      x.onload = () => {
+        const s = x.responseText.replace(/<!-- ambient flecks[\s\S]*?(?=\s*<!-- floor shadow)/, '');
+        img.onload = img.onerror = () => res();
+        img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(s);
+      };
+      x.onerror = () => { img.onload = img.onerror = () => res(); img.src = img.getAttribute('data-src'); };
+      x.send();
+    });
+  }
+
+  K.init(1616);
+  const m = document.querySelectorAll('.mark');
+  const NS = 'http://www.w3.org/2000/svg';
+
+  // sticker: a dashed flight trail looping in to the plane
+  const st = K.svg(m[0], 200, 200, 'left:0;top:0');
+  const curve = t => { const a = [64, 26], c = [196, 2], b = [182, 100]; return [(1 - t) * (1 - t) * a[0] + 2 * (1 - t) * t * c[0] + t * t * b[0], (1 - t) * (1 - t) * a[1] + 2 * (1 - t) * t * c[1] + t * t * b[1]]; };
+  for (let i = 0; i < 7; i++) K.line(st, { points: [curve(i / 7), curve(i / 7 + 0.07)], color: '#C4B5FD', width: 2.2, jitter: .3 });
+  K.doodle(st, { kind: 'asterisk', x: 26, y: 70, s: 8, color: '#F9A8D4', width: 2.2 });
+
+  // track
+  const tr = K.svg(m[1], 520, 28);
+  K.line(tr, { points: [[105, 15], [150, 13], [200, 14.5], [242, 13]], color: ['#C48DD8', '#F9A8D4'], width: 2.8, jitter: .6 });
+  for (let i = 0; i < 9; i++) { const x0 = 278 + i * 15.6; K.line(tr, { points: [[x0, 14 + (i % 2 ? .6 : -.4)], [x0 + 8, 14 + (i % 2 ? -.3 : .5)]], color: '#565869', width: 2.2, jitter: .2 }); }
+
+  // stub edges
+  const path = (svg, d) => { const p = document.createElementNS(NS, 'path'); p.setAttribute('d', d); p.setAttribute('fill', '#EEE8F6'); svg.appendChild(p); };
+  path(K.svg(m[2], 280, 12), 'M0,12 L0,9 Q0,0 9,0 L271,0 Q280,0 280,9 L280,12 Z');
+  K.perforation(K.svg(m[3], 280, 24), { w: 280, h: 24, r: 8 });
+  path(K.svg(m[4], 280, 12), 'M0,0 L280,0 L280,3 Q280,12 271,12 L9,12 Q0,12 0,3 Z');
+
+  // note pointer
+  K.line(K.svg(m[5], 360, 92), { points: [[288, 34], [292, 56], [268, 74], [228, 88]], arrow: true, color: '#C4B5FD', width: 2.6, head: 11 });
+
+  clean(document.getElementById('icon')).then(() => K.done());
+</script>
+</body></html>

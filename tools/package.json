@@ -2,10 +2,12 @@
   "name": "humaine-email-tools",
   "private": true,
   "type": "module",
-  "description": "Asset generators for the HumAIne email templates (hero scenes, clay icons).",
+  "description": "Asset generators and QA for the humAIne email templates (collage heroes, hand-drawn marks, screenshots, lint).",
   "scripts": {
-    "scenes": "node scene.mjs",
-    "shot": "node shot.mjs"
+    "collage": "node collage.mjs",
+    "shot": "node shot.mjs",
+    "review": "node review.mjs",
+    "lint": "python3 lint.py"
   },
   "dependencies": {
     "sharp": "^0.33.5",

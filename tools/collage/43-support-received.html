@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- 0 the app's thank-you bubble as a die-cut sticker, with three pen strokes as if it's talking -->
+<div class="mark" data-out="marks/43-sticker.png" style="width:200px;height:200px">
+  <img src="../../img/src/app/thankyou-bubble.svg" style="left:20px;top:30px;width:156px;transform:rotate(-6deg);filter:url(#diecut)">
+</div>
+<!-- 1 ticket top: rounded corners -->
+<div class="mark" data-out="marks/43-paper-top.png" data-exact style="width:520px;height:20px"></div>
+<!-- 2 ticket bottom: rounded corners -->
+<div class="mark" data-out="marks/43-paper-bottom.png" data-exact style="width:520px;height:20px"></div>
+<!-- 3 the stamp -->
+<div class="mark" data-out="marks/43-stamp.png" style="width:216px;height:96px">
+  <div class="stamp violet" style="left:15px;top:23px;transform:rotate(-7deg);color:#7A69EC;font-size:23px;letter-spacing:3.5px;padding:8px 11px 7px 15px;border-width:3px;outline-offset:3px">Received</div>
+</div>
+<!-- 4 an ink note on the ticket, pointing up at the reference -->
+<div class="mark" data-out="marks/43-note.png" style="width:300px;height:66px">
+  <div class="note ink" style="left:44px;top:24px;transform:rotate(-3deg);font-size:27px;color:#4B3F8F">keep this number handy</div>
+</div>
+<script src="kit.js"></script>
+<script>
+  K.init(4343);
+  const NS = 'http://www.w3.org/2000/svg';
+  const m = [...document.querySelectorAll('.mark')];
+  // sticker: speech strokes off the bubble's top-right
+  const st = K.svg(m[0], 200, 200);
+  K.line(st, { points: [[160, 40], [174, 28]], jitter: .4, width: 2.4, color: '#F9A8D4' });
+  K.line(st, { points: [[168, 54], [186, 50]], jitter: .4, width: 2.4, color: '#F9A8D4' });
+  K.line(st, { points: [[148, 30], [152, 14]], jitter: .4, width: 2.4, color: '#F9A8D4' });
+  // ticket edges: paper with 14px rounded corners
+  const rr = (svg, y, h) => { const p = document.createElementNS(NS, 'rect'); p.setAttribute('x', 0); p.setAttribute('y', y); p.setAttribute('width', 520); p.setAttribute('height', h); p.setAttribute('rx', 14); p.setAttribute('fill', '#EEE8F6'); svg.appendChild(p); };
+  rr(K.svg(m[1], 520, 20), 0, 40);
+  rr(K.svg(m[2], 520, 20), -20, 40);
+  // note: an arrow from the start of the words, curling up at the reference above
+  K.line(K.svg(m[4], 280, 66), { points: [[38, 44], [20, 38], [14, 22], [20, 6]], arrow: true, color: '#4B3F8F', width: 2.2, head: 9 });
+  K.done();
+</script>
+</body></html>

@@ -12,7 +12,7 @@
 <!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
 <![endif]-->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{color-scheme:dark;supported-color-schemes:dark;}
   body,table,td,a{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
@@ -24,9 +24,10 @@
   u + .body a, #MessageViewBody a{color:inherit;text-decoration:none;}
   @media screen and (max-width:620px){
     .px{padding-left:24px!important;padding-right:24px!important;}
-    .h1{font-size:27px!important;line-height:1.25!important;}
+    .h1{font-size:34px!important;line-height:1.1!important;letter-spacing:-0.8px!important;}
     .lead{font-size:15px!important;}
     .ribbon{font-size:12.5px!important;}
+    .lbl{width:88px!important;}
   }
 </style>
 </head>
@@ -45,74 +46,84 @@
     <img src="https://humaine-email.vercel.app/img/brand/lockup@2x.png" width="144" height="36" alt="humAIne" style="display:block;width:144px;height:36px;border:0;">
   </td></tr>
 
-  <!-- signature : status ribbon (alert) -->
+  <!-- status ribbon (alert) -->
   <tr><td style="padding:18px 0 0;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#26171F" style="background-color:#26171F;border-top:1px solid #5D2F35;border-bottom:1px solid #5D2F35;">
       <tr><td align="center" class="px ribbon" style="padding:11px 40px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;font-weight:600;color:#FCA5A5;">&#9679;&nbsp; Account suspended since {{suspension_date}} &middot; Ref&nbsp;{{case_id}}</td></tr>
     </table>
   </td></tr>
 
-  <!-- hero : shorter scene under the ribbon -->
-  <tr><td>
-    <img src="https://humaine-email.vercel.app/img/hero/25-account-suspended.jpg" width="600" alt="A lilac clay figure wearing a coral pause badge, between a ringed pink planet and a blue one" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
+  <!-- hero : a quiet collage. The clay figure with its pause badge inside a hand-drawn orbit that stops short -->
+  <tr><td style="padding:0;">
+    <img src="https://humaine-email.vercel.app/img/hero/25-account-suspended.jpg" width="600" alt="A lilac clay figure wearing a coral pause badge, inside a hand-drawn orbit that stops short, its small moon halted at the end" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
   </td></tr>
+
+  <!-- kicker : a log line, not a badge -->
+  <tr><td align="center" class="px" style="padding:0 40px 14px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:14px;letter-spacing:1.6px;text-transform:uppercase;color:#FCA5A5;">&#9679;&nbsp; Acceptable use review</td></tr>
 
   <!-- headline + lead -->
-  <tr><td align="center" class="px" style="padding:6px 48px 0;">
-    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;text-wrap:balance;">We&rsquo;ve suspended your account while we review&nbsp;it</h1>
-    <p class="lead" style="margin:16px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#B4B5C4;">The review checks how your humAIne account has been used against our Acceptable Use Policy. Until it ends, you can&rsquo;t sign in or start conversations.</p>
+  <tr><td class="px" style="padding:0 40px 0;">
+    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:44px;line-height:1.1;letter-spacing:-1.2px;color:#FFFFFF;text-align:center;">We&rsquo;ve suspended your account while we <span style="white-space:nowrap;">review it</span></h1>
+    <p class="lead" style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#B4B5C4;text-align:center;">The review checks how your humAIne account has been used against our Acceptable Use&nbsp;Policy.</p>
   </td></tr>
 
-  <!-- reason + outcome -->
+  <!-- signature : the case as a mono log. Reason, what it means now, how the outcome reaches you -->
   <tr><td class="px" style="padding:28px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#15171F;border:1px solid #23252E;border-radius:16px;">
-      <tr><td style="padding:16px 22px;border-bottom:1px solid #1F2129;">
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Reason</p>
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">{{suspension_reason}}</p>
-      </td></tr>
-      <tr><td style="padding:16px 22px;">
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Outcome</p>
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;word-break:break-all;">By email to {{recipient_email}} when the review ends</p>
-      </td></tr>
+    <img src="https://humaine-email.vercel.app/img/marks/divider.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td class="lbl" width="112" valign="top" style="width:112px;padding:15px 12px 15px 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:22px;letter-spacing:1.2px;text-transform:uppercase;color:#FCA5A5;">Reason</td>
+        <td valign="top" style="padding:15px 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:22px;font-weight:500;color:#FFFFFF;">{{suspension_reason}}</td>
+      </tr>
+      <tr>
+        <td class="lbl" width="112" valign="top" style="width:112px;padding:14px 12px 14px 0;border-top:1px dashed #262836;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:21px;letter-spacing:1.2px;text-transform:uppercase;color:#7D7F8F;">Meanwhile</td>
+        <td valign="top" style="padding:14px 0;border-top:1px dashed #262836;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;color:#FFFFFF;">You can&rsquo;t sign in or start conversations</td>
+      </tr>
+      <tr>
+        <td class="lbl" width="112" valign="top" style="width:112px;padding:14px 12px 14px 0;border-top:1px dashed #262836;border-bottom:1px dashed #262836;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:21px;letter-spacing:1.2px;text-transform:uppercase;color:#7D7F8F;">Outcome</td>
+        <td valign="top" style="padding:14px 0;border-top:1px dashed #262836;border-bottom:1px dashed #262836;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;color:#FFFFFF;">By email to <span style="word-break:break-all;">{{recipient_email}}</span> when the review&nbsp;ends</td>
+      </tr>
     </table>
   </td></tr>
 
   <!-- your side -->
-  <tr><td align="center" class="px" style="padding:24px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#B4B5C4;">If something here is wrong, or we&rsquo;re missing context, we want to hear&nbsp;it.</p>
+  <tr><td class="px" style="padding:30px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#B4B5C4;text-align:center;">If something here is wrong, or we&rsquo;re missing context, we want to hear&nbsp;it.</p>
   </td></tr>
-  <tr><td class="px" style="padding:20px 40px 0;">
-    <!--[if mso]>
-    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{appeal_url}}" style="height:52px;v-text-anchor:middle;width:520px;" arcsize="31%" stroke="f" fillcolor="#768AFF">
-      <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
-      <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Tell us what happened</center>
-    </v:roundrect>
-    <![endif]-->
-    <!--[if !mso]><!-->
-    <a href="{{appeal_url}}" style="display:block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:16px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:600;line-height:52px;text-align:center;text-decoration:none;">Tell us what happened</a>
-    <!--<![endif]-->
+  <tr><td class="px" align="center" style="padding:18px 40px 0;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td>
+      <!--[if mso]>
+      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{appeal_url}}" style="height:52px;v-text-anchor:middle;width:262px;" arcsize="27%" stroke="f" fillcolor="#768AFF">
+        <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
+        <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Tell us what happened &rarr;</center>
+      </v:roundrect>
+      <![endif]-->
+      <!--[if !mso]><!-->
+      <a href="{{appeal_url}}" style="display:inline-block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:14px;padding:0 28px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;line-height:52px;text-decoration:none;white-space:nowrap;">Tell us what happened&nbsp;&rarr;</a>
+      <!--<![endif]-->
+    </td></tr></table>
   </td></tr>
-  <tr><td align="center" class="px" style="padding:16px 40px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;"><a href="{{acceptable_use_url}}" style="color:#A78BFA;font-weight:600;text-decoration:none;">Read the Acceptable Use Policy&nbsp;&rarr;</a></p>
+  <tr><td class="px" style="padding:16px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6;text-align:center;"><a href="{{acceptable_use_url}}" style="color:#C4B5FD;font-weight:600;text-decoration:underline;text-decoration-color:#5B4E9E;">Read the Acceptable Use Policy</a></p>
   </td></tr>
 
   <!-- fine print -->
-  <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">Button not working? Paste this link:<br><a href="{{appeal_url}}" style="color:#A78BFA;word-break:break-all;">{{appeal_url}}</a><br>For anything else, write to <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a> and quote {{case_id}}.</p>
+  <tr><td class="px" style="padding:26px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;text-align:center;">Button not working? Paste this link:<br><a href="{{appeal_url}}" style="color:#A78BFA;word-break:break-all;">{{appeal_url}}</a><br>For anything else, write to <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a> and quote {{case_id}}.</p>
   </td></tr>
 
-  <!-- footer : security -->
-  <tr><td class="px" style="padding:44px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#1C1E27;">&nbsp;</td></tr></table>
+  <!-- footer : security (under a hand-drawn rule) -->
+  <tr><td class="px" style="padding:40px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/divider.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
   </td></tr>
-  <tr><td align="center" class="px" style="padding:30px 40px 40px;">
+  <tr><td align="center" class="px" style="padding:26px 40px 40px;">
     <img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="40" height="39" alt="humAIne" style="display:block;width:40px;height:39px;border:0;margin:0 auto;">
     <p style="margin:12px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:15px;line-height:20px;color:#C9C3F2;">hum<span style="color:#8FA0FF;">AI</span>ne</p>
     <p style="margin:4px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:18px;color:#7D7F8F;">Disruptively Human . Trust Co-created.</p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;">
+    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;text-align:center;">
       <a href="{{help_url}}" style="color:#A3A5B5;text-decoration:none;">Help centre</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{security_url}}" style="color:#A3A5B5;text-decoration:none;">Security</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{privacy_url}}" style="color:#A3A5B5;text-decoration:none;">Privacy</a>
     </p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;">Security notification sent to {{recipient_email}} because your account was suspended. These can&rsquo;t be switched off while you have a humAIne account.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
+    <p style="margin:14px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;text-align:center;">Security notification sent to {{recipient_email}} because your account was suspended. These can&rsquo;t be switched off while you have a humAIne account.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
   </td></tr>
 
 </table>

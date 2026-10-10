@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- the clay gift as a die-cut sticker, two sparkles doodled beside it -->
+<div class="mark" data-out="marks/42-sticker.png" style="width:200px;height:200px">
+  <img src="../../img/src/icons/gift.svg" style="left:28px;top:24px;width:150px;transform:rotate(8deg);filter:url(#diecut)">
+</div>
+<!-- coupon edges: a row of punched notches, like a stamp -->
+<div class="mark" data-out="marks/42-paper-top.png" data-exact style="width:520px;height:14px"></div>
+<div class="mark" data-out="marks/42-paper-bottom.png" data-exact style="width:520px;height:14px"></div>
+<!-- the stamp -->
+<div class="mark" data-out="marks/42-stamp.png" style="width:180px;height:104px">
+  <div class="stamp pink" style="left:24px;top:24px;transform:rotate(-8deg)">Save</div>
+</div>
+<!-- scribbled strike in ink, stretched over the monthly total -->
+<div class="mark" data-out="marks/42-strike.png" style="width:300px;height:40px"></div>
+<!-- ink arrow down, monthly to annual -->
+<div class="mark" data-out="marks/42-arrow.png" style="width:40px;height:72px"></div>
+<!-- ink note in the margin beside the arrow -->
+<div class="mark" data-out="marks/42-note.png" style="width:136px;height:64px">
+  <div class="note ink" style="left:6px;top:6px;transform:rotate(-4deg);font-size:25px;line-height:.92;color:#4B3F8F">one payment
+   a year</div>
+</div>
+<script src="kit.js"></script>
+<script>
+  K.init(4242);
+  const m = [...document.querySelectorAll('.mark')];
+  const NS = 'http://www.w3.org/2000/svg';
+  const sp = (svg, x, y, s, fill) => { const p = document.createElementNS(NS, 'path'); p.setAttribute('d', `M${x},${y - s} Q${x},${y} ${x + s},${y} Q${x},${y} ${x},${y + s} Q${x},${y} ${x - s},${y} Q${x},${y} ${x},${y - s}Z`); p.setAttribute('fill', fill); svg.appendChild(p); };
+  const st = K.svg(m[0], 200, 200);
+  K.doodle(st, { kind: 'star', x: 172, y: 40, s: 10, color: '#F9A8D4', width: 2.2 });
+  sp(st, 30, 46, 6, '#EDE9FF');
+
+  // notched edges: paper strip with half-circles punched out of the outer edge
+  const notch = (parent, outerY, id) => {
+    const s = K.svg(parent, 520, 14);
+    const defs = s.querySelector('defs');
+    const mask = document.createElementNS(NS, 'mask'); mask.setAttribute('id', id); defs.appendChild(mask);
+    const bg = document.createElementNS(NS, 'rect'); bg.setAttribute('width', 520); bg.setAttribute('height', 14); bg.setAttribute('fill', '#fff'); mask.appendChild(bg);
+    for (let x = 10; x <= 512; x += 15.7) { const c = document.createElementNS(NS, 'circle'); c.setAttribute('cx', x); c.setAttribute('cy', outerY); c.setAttribute('r', 4.6); c.setAttribute('fill', '#000'); mask.appendChild(c); }
+    const r = document.createElementNS(NS, 'rect'); r.setAttribute('width', 520); r.setAttribute('height', 14); r.setAttribute('fill', '#EEE8F6'); r.setAttribute('mask', `url(#${id})`); s.appendChild(r);
+  };
+  notch(m[1], 0, 'n-top');
+  notch(m[2], 14, 'n-bot');
+
+  const sk = K.svg(m[4], 300, 40);
+  K.line(sk, { points: [[6, 24], [100, 19], [200, 22], [294, 15]], jitter: 1.4, width: 3, color: '#D9468F' });
+  K.line(sk, { points: [[14, 17], [150, 25], [286, 20]], jitter: 1.2, width: 2, color: '#D9468F', opacity: .7 });
+  K.line(K.svg(m[5], 40, 72), { points: [[18, 4], [23, 26], [19, 48], [21, 66]], arrow: true, color: '#5B4EC0', width: 3, head: 12 });
+  K.done();
+</script>
+</body></html>

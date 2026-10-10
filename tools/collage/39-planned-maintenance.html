@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- hero : the clay gear inside a clock face drawn by hand, the work window marked on the rim in pink marker -->
+<div class="stage" data-out="hero/39-planned-maintenance.jpg" style="height:360px">
+  <div class="glow violet" style="left:90px;top:60px;width:290px;height:220px;opacity:.5"></div>
+  <div class="glow pink" style="left:330px;top:120px;width:200px;height:150px;opacity:.24"></div>
+  <svg id="sky" width="600" height="360" style="left:0;top:0"></svg>
+  <div class="planet blue" style="left:478px;top:252px;width:30px;height:30px"></div>
+  <div class="planet lilac" style="left:520px;top:58px;width:14px;height:14px"></div>
+  <div class="planet pink" style="left:70px;top:84px;width:10px;height:10px"></div>
+  <div class="planet cyan" style="left:82px;top:268px;width:9px;height:9px"></div>
+  <svg id="dial" width="600" height="360" style="left:0;top:0"></svg>
+  <img class="icon" src="../../img/src/icons/gear-clock.svg" style="left:132px;top:46px;width:206px;transform:rotate(-6deg)">
+  <svg id="ink" width="600" height="360" style="left:0;top:0"></svg>
+  <div class="note pink" style="left:402px;top:86px;transform:rotate(-6deg);font-size:35px">planned,
+not broken</div>
+</div>
+
+<!-- top of the notice: a printed sheet, straight edge, taped to the door at both corners -->
+<div class="mark" data-out="marks/39-paper-top.png" data-exact style="width:520px;height:42px">
+  <div class="tape" style="left:-16px;top:10px;width:96px;height:26px;transform:rotate(-34deg);background:rgba(206,192,236,.56)"></div>
+  <div class="tape" style="left:440px;top:10px;width:96px;height:26px;transform:rotate(31deg);background:rgba(206,192,236,.56)"></div>
+</div>
+<!-- bottom of the notice, taped at both corners -->
+<div class="mark" data-out="marks/39-paper-bottom.png" data-exact style="width:520px;height:42px">
+  <div class="tape" style="left:-14px;top:8px;width:92px;height:26px;transform:rotate(30deg);background:rgba(206,192,236,.56)"></div>
+  <div class="tape" style="left:442px;top:8px;width:92px;height:26px;transform:rotate(-33deg);background:rgba(206,192,236,.56)"></div>
+</div>
+<!-- timeline dots drawn in ink: next up, and still ahead -->
+<div class="mark" data-out="marks/39-dot-now.png" style="width:32px;height:32px"></div>
+<div class="mark" data-out="marks/39-dot-next.png" style="width:32px;height:32px"></div>
+
+<script src="kit.js"></script>
+<script>
+  K.init(3939);
+  const stage = document.querySelector('.stage');
+  const cx = 230, cy = 164, R = 122;
+  K.stars(document.getElementById('sky'), { w: 600, h: 360, count: 70, sparkles: 5, avoid: [[cx, cy, R + 20], [470, 120, 70]] });
+
+  const dial = document.getElementById('dial');
+  // the clock face, gone round twice with a pen
+  K.ellipse(dial, { cx, cy, rx: R, ry: R - 4, rot: -4, loops: 1.1, wobble: .025, width: 2.2, opacity: .75, color: ['#B5B7F6', '#C4B5FD'] });
+  // hour ticks, longer at 12 / 3 / 6 / 9
+  for (let k = 0; k < 12; k++) {
+    const a = (k * 30 - 90) * Math.PI / 180, long = k % 3 === 0;
+    const r1 = R - (long ? 20 : 12), r2 = R - 5;
+    K.line(dial, { points: [[cx + Math.cos(a) * r1, cy + Math.sin(a) * r1], [cx + Math.cos(a) * r2, cy + Math.sin(a) * r2]], color: '#C4B5FD', width: long ? 2.6 : 1.8, jitter: .3, opacity: .85 });
+  }
+  const ink = document.getElementById('ink');
+  // the work window, marked on the rim
+  const arc = [];
+  for (let t = -34; t <= 32; t += 6) { const a = t * Math.PI / 180, r = R + 14; arc.push([cx + Math.cos(a) * r, cy + Math.sin(a) * r]); }
+  K.line(ink, { points: arc, color: ['#F9A8D4', '#E879B9'], width: 6, jitter: .6, opacity: .92 });
+  K.line(ink, { points: [arc[0], [arc[0][0] - 7, arc[0][1] - 9]], color: '#F9A8D4', width: 3, jitter: .2 });
+  K.line(ink, { points: [arc[arc.length - 1], [arc[arc.length - 1][0] - 8, arc[arc.length - 1][1] + 8]], color: '#E879B9', width: 3, jitter: .2 });
+  // arrow from the note to the window
+  K.line(ink, { points: [[468, 168], [454, 194], [424, 210], [390, 206]], arrow: true, color: '#F9A8D4', width: 2.6, head: 11 });
+  K.ellipse(ink, { cx: 493, cy: 267, rx: 30, ry: 7.5, rot: 14, loops: 1.1, width: 1.5, opacity: .7, color: '#B5B7F6' });
+  K.doodle(ink, { kind: 'asterisk', x: 548, y: 186, s: 7, color: '#C4B5FD', width: 2 });
+  K.finish(stage, { top: 0.08, bottom: 0.2, sides: 0.06 });
+
+  const m = [...document.querySelectorAll('.mark')];
+  const NS = 'http://www.w3.org/2000/svg';
+  const rect = (parent, w, h, y, hh) => { const s = K.svg(parent, w, h); parent.insertBefore(s, parent.firstChild); const r = document.createElementNS(NS, 'rect'); r.setAttribute('x', 0); r.setAttribute('y', y); r.setAttribute('width', w); r.setAttribute('height', hh); r.setAttribute('fill', '#EEE8F6'); s.appendChild(r); };
+  rect(m[0], 520, 42, 18, 24);
+  rect(m[1], 520, 42, 0, 24);
+  const d1 = K.svg(m[2], 32, 32);
+  K.ellipse(d1, { cx: 16, cy: 16, rx: 11.5, ry: 11, loops: 1.15, wobble: .05, width: 2.2, color: '#5B62B4' });
+  K.ellipse(d1, { cx: 16, cy: 16, rx: 4, ry: 4, loops: 3, wobble: .08, width: 3.8, color: '#D9468F', passes: 1 });
+  K.ellipse(K.svg(m[3], 32, 32), { cx: 16, cy: 16, rx: 7.5, ry: 7.5, loops: 1.12, wobble: .06, width: 2, color: '#8C84AE' });
+  K.done();
+</script>
+</body></html>

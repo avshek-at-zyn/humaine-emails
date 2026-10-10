@@ -12,7 +12,7 @@
 <!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
 <![endif]-->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{color-scheme:dark;supported-color-schemes:dark;}
   body,table,td,a{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
@@ -24,8 +24,9 @@
   u + .body a, #MessageViewBody a{color:inherit;text-decoration:none;}
   @media screen and (max-width:620px){
     .px{padding-left:24px!important;padding-right:24px!important;}
-    .h1{font-size:27px!important;line-height:1.25!important;}
+    .h1{font-size:34px!important;line-height:1.1!important;letter-spacing:-0.8px!important;}
     .lead{font-size:15px!important;}
+    .lbl{width:84px!important;}
   }
 </style>
 </head>
@@ -44,96 +45,107 @@
     <img src="https://humaine-email.vercel.app/img/brand/lockup@2x.png" width="144" height="36" alt="humAIne" style="display:block;width:144px;height:36px;border:0;">
   </td></tr>
 
-  <!-- signature move : status ribbon (alert), full width of the column, one line of status + time -->
+  <!-- status ribbon (alert), full width of the column, one line of status + time. It is this email's status line, so no kicker -->
   <tr><td style="padding:18px 0 0;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
       <tr><td align="center" bgcolor="#26171F" style="padding:11px 24px;background-color:#26171F;border-top:1px solid #5D2F35;border-bottom:1px solid #5D2F35;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#FCA5A5;">&#9679;&nbsp; Sign-in paused until {{unlock_time}} ({{timezone}})</td></tr>
     </table>
   </td></tr>
 
-  <!-- hero : smaller scene under the ribbon -->
-  <tr><td><img src="https://humaine-email.vercel.app/img/hero/15-sign-in-paused.jpg" width="600" alt="A lilac padlock with a white pause badge, on a faint orbit between a dark ringed planet and a ringed lilac one" style="display:block;width:100%;max-width:600px;height:auto;border:0;"></td></tr>
+  <!-- the clay paused lock, a small die-cut sticker -->
+  <tr><td align="center" style="padding:24px 0 14px;"><img src="https://humaine-email.vercel.app/img/marks/15-sticker.png" width="120" height="120" alt="A lilac clay padlock with a white pause badge, as a die-cut sticker" style="display:block;width:120px;height:120px;border:0;margin:0 auto;"></td></tr>
 
-  <!-- headline + lead -->
-  <tr><td align="center" class="px" style="padding:6px 48px 0;">
-    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;text-wrap:balance;">Three sign-in attempts didn&rsquo;t&nbsp;match</h1>
-    <p class="lead" style="margin:16px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#B4B5C4;">Nobody got in. The right password isn&rsquo;t enough on its own: every sign-in also asks for the code from your authenticator&nbsp;app.</p>
+  <!-- headline + lead : plain, no marks -->
+  <tr><td class="px" align="center" style="padding:0 40px 0;">
+    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:44px;line-height:1.1;letter-spacing:-1.2px;color:#FFFFFF;text-align:center;">Three sign-in attempts didn&rsquo;t&nbsp;match</h1>
+    <p class="lead" style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#B4B5C4;text-align:center;">Nobody got in. The right password isn&rsquo;t enough on its own: every sign-in also asks for the code from your authenticator&nbsp;app.</p>
   </td></tr>
 
-  <!-- attempt details, with the "not you" guidance as the card's last row -->
-  <tr><td class="px" style="padding:28px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#15171F;border:1px solid #23252E;border-radius:16px;">
-      <tr><td style="padding:16px 22px;border-bottom:1px solid #1F2129;">
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Last attempt</p>
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">{{attempt_date}} at {{attempt_time}} ({{timezone}})</p>
-      </td></tr>
-      <tr><td style="padding:16px 22px;border-bottom:1px solid #1F2129;">
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Device &amp; browser</p>
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">{{device_name}} &middot; {{browser_name}}</p>
-      </td></tr>
-      <tr><td style="padding:16px 22px;border-bottom:1px solid #1F2129;">
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Location</p>
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;">{{city}}, {{country}}</p>
-      </td></tr>
-      <tr><td style="padding:16px 22px;border-bottom:1px solid #1F2129;">
-        <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">IP address</p>
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:500;color:#FFFFFF;word-break:break-all;">{{ip_address}}</p>
-      </td></tr>
-      <tr><td style="padding:14px 22px 16px;">
-        <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;font-weight:500;color:#FCA5A5;">&#9679;&nbsp; Not you? Whoever tried knows your email address, so reset your password&nbsp;anyway.</p>
-      </td></tr>
-    </table>
-  </td></tr>
-
-  <!-- if it was you -->
-  <tr><td align="center" class="px" style="padding:24px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#B4B5C4;">If it was you, try again after {{unlock_time}}, or reset your password now. Resetting is the quickest way back&nbsp;in.</p>
-  </td></tr>
-
-  <!-- primary action -->
-  <tr><td class="px" style="padding:28px 40px 0;">
-    <!--[if mso]>
-    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{reset_password_url}}" style="height:52px;v-text-anchor:middle;width:520px;" arcsize="31%" stroke="f" fillcolor="#768AFF">
-      <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
-      <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Reset password</center>
-    </v:roundrect>
-    <![endif]-->
-    <!--[if !mso]><!-->
-    <a href="{{reset_password_url}}" style="display:block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:16px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:600;line-height:52px;text-align:center;text-decoration:none;">Reset password</a>
-    <!--<![endif]-->
-  </td></tr>
-
-  <!-- ask humAIne -->
-  <tr><td class="px" style="padding:28px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#12131C;border:1px solid #2A2547;border-radius:16px;">
+  <!-- signature : the attempt, as a mono log between two hand-drawn rules. The not-you guidance is its last line -->
+  <tr><td class="px" style="padding:30px 40px 0;">
+    <p style="margin:0 0 12px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:14px;letter-spacing:1.6px;text-transform:uppercase;color:#7D7F8F;text-align:center;">Last attempt</p>
+    <img src="https://humaine-email.vercel.app/img/marks/divider.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
       <tr>
-        <td width="52" valign="middle" style="padding:14px 0 14px 16px;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="36" height="35" alt="" style="display:block;width:36px;height:35px;border:0;"></td>
-        <td valign="middle" style="padding:14px 12px;">
-          <p style="margin:0 0 3px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#8E86C9;">Ask humAIne</p>
-          <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:16px;line-height:22px;color:#FFFFFF;text-decoration:none;">&ldquo;Is someone guessing?&rdquo;</a>
-        </td>
-        <td width="40" valign="middle" align="right" style="padding:14px 18px 14px 0;"><a href="{{chat_url}}" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;line-height:20px;color:#A78BFA;text-decoration:none;">&rarr;</a></td>
+        <td class="lbl" width="104" valign="top" style="width:104px;padding:13px 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:20px;letter-spacing:1.2px;text-transform:uppercase;color:#7D7F8F;">When</td>
+        <td valign="top" align="right" style="padding:13px 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:14px;line-height:20px;color:#FFFFFF;">{{attempt_date}}, {{attempt_time}} ({{timezone}})</td>
+      </tr>
+      <tr>
+        <td class="lbl" width="104" valign="top" style="width:104px;padding:13px 0;border-top:1px dashed #262836;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:20px;letter-spacing:1.2px;text-transform:uppercase;color:#7D7F8F;">Device</td>
+        <td valign="top" align="right" style="padding:13px 0;border-top:1px dashed #262836;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:14px;line-height:20px;color:#FFFFFF;">{{device_name}}</td>
+      </tr>
+      <tr>
+        <td class="lbl" width="104" valign="top" style="width:104px;padding:13px 0;border-top:1px dashed #262836;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:20px;letter-spacing:1.2px;text-transform:uppercase;color:#7D7F8F;">Browser</td>
+        <td valign="top" align="right" style="padding:13px 0;border-top:1px dashed #262836;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:14px;line-height:20px;color:#FFFFFF;">{{browser_name}}</td>
+      </tr>
+      <tr>
+        <td class="lbl" width="104" valign="top" style="width:104px;padding:13px 0;border-top:1px dashed #262836;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:20px;letter-spacing:1.2px;text-transform:uppercase;color:#7D7F8F;">Location</td>
+        <td valign="top" align="right" style="padding:13px 0;border-top:1px dashed #262836;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:14px;line-height:20px;color:#FFFFFF;">{{city}}, {{country}}</td>
+      </tr>
+      <tr>
+        <td class="lbl" width="104" valign="top" style="width:104px;padding:13px 0;border-top:1px dashed #262836;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:20px;letter-spacing:1.2px;text-transform:uppercase;color:#7D7F8F;">IP</td>
+        <td valign="top" align="right" style="padding:13px 0;border-top:1px dashed #262836;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:14px;line-height:20px;color:#FFFFFF;word-break:break-all;">{{ip_address}}</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="padding:13px 0 14px;border-top:1px dashed #262836;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:12.5px;line-height:19px;color:#FCA5A5;">&#9679;&nbsp; Not you? Whoever tried knows your email address, so reset your password&nbsp;anyway.</td>
       </tr>
     </table>
+    <img src="https://humaine-email.vercel.app/img/marks/divider.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
+  </td></tr>
+
+  <!-- if it was you : one sentence, a functional handwritten pointer, the one button -->
+  <tr><td class="px" style="padding:28px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#B4B5C4;text-align:center;">If it was you, try again after {{unlock_time}}, or reset your password&nbsp;now.</p>
+  </td></tr>
+  <tr><td class="px" align="center" style="padding:14px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/15-note.png" width="300" alt="Handwritten: quickest way back in" style="display:block;width:300px;max-width:100%;height:auto;border:0;margin:0 auto;">
+  </td></tr>
+  <tr><td class="px" align="center" style="padding:2px 40px 0;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td>
+      <!--[if mso]>
+      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{reset_password_url}}" style="height:52px;v-text-anchor:middle;width:206px;" arcsize="27%" stroke="f" fillcolor="#768AFF">
+        <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
+        <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Reset password &rarr;</center>
+      </v:roundrect>
+      <![endif]-->
+      <!--[if !mso]><!-->
+      <a href="{{reset_password_url}}" style="display:inline-block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:14px;padding:0 28px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;line-height:52px;text-decoration:none;white-space:nowrap;">Reset password&nbsp;&rarr;</a>
+      <!--<![endif]-->
+    </td></tr></table>
+  </td></tr>
+
+  <!-- ask humAIne : a chat bubble from humAIne, the way the app shows it -->
+  <tr><td class="px" align="center" style="padding:36px 40px 0;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
+      <td width="34" valign="bottom" style="width:34px;padding:0 10px 2px 0;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="34" height="33" alt="" style="display:block;width:34px;height:33px;border:0;"></td>
+      <td valign="bottom">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td style="padding:11px 18px 13px 16px;background-color:#1C1A30;border:1px solid #383159;border-radius:18px 18px 18px 4px;">
+            <p style="margin:0 0 3px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:14px;letter-spacing:0.4px;color:#8E86C9;">Ask humAIne</p>
+            <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:17px;line-height:23px;color:#FFFFFF;text-decoration:none;">&ldquo;Is someone guessing?&rdquo;&nbsp;<span style="color:#A78BFA;">&rarr;</span></a>
+          </td>
+        </tr></table>
+      </td>
+    </tr></table>
   </td></tr>
 
   <!-- fine print -->
-  <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">Button not working? Paste this link:<br><a href="{{reset_password_url}}" style="color:#A78BFA;word-break:break-all;">{{reset_password_url}}</a><br>Seeing this more than once? Tell us at <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a>.</p>
+  <tr><td class="px" style="padding:26px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;text-align:center;">Button not working? Paste this link:<br><a href="{{reset_password_url}}" style="color:#A78BFA;word-break:break-all;">{{reset_password_url}}</a><br>Seeing this more than once? Tell us at <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a>.</p>
   </td></tr>
 
-  <!-- footer : security -->
-  <tr><td class="px" style="padding:44px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#1C1E27;">&nbsp;</td></tr></table>
+  <!-- footer : security (under a hand-drawn rule) -->
+  <tr><td class="px" style="padding:40px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/divider.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
   </td></tr>
-  <tr><td align="center" class="px" style="padding:30px 40px 40px;">
+  <tr><td align="center" class="px" style="padding:26px 40px 40px;">
     <img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="40" height="39" alt="humAIne" style="display:block;width:40px;height:39px;border:0;margin:0 auto;">
     <p style="margin:12px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:15px;line-height:20px;color:#C9C3F2;">hum<span style="color:#8FA0FF;">AI</span>ne</p>
     <p style="margin:4px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:18px;color:#7D7F8F;">Disruptively Human . Trust Co-created.</p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;">
+    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;text-align:center;">
       <a href="{{help_url}}" style="color:#A3A5B5;text-decoration:none;">Help centre</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{security_url}}" style="color:#A3A5B5;text-decoration:none;">Security</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{privacy_url}}" style="color:#A3A5B5;text-decoration:none;">Privacy</a>
     </p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;">Security notification sent to {{recipient_email}} because sign-in to this account was paused. These can&rsquo;t be switched off while your account is active.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
+    <p style="margin:14px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;text-align:center;">Security notification sent to {{recipient_email}} because sign-in to this account was paused. These can&rsquo;t be switched off while your account is active.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
   </td></tr>
 
 </table>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css">
+<style>
+  .page { background: #EEE8F6; box-shadow: 0 16px 30px rgba(0,0,0,.5);
+    clip-path: polygon(0 0, 100% 0, 100% 94%, 96% 96.5%, 91% 94.5%, 86% 97%, 80% 95%, 74% 97.5%, 68% 95%, 62% 97%, 55% 94.8%, 49% 97.4%, 43% 95.2%, 37% 97.6%, 31% 95%, 25% 97%, 19% 94.6%, 13% 97.2%, 7% 95%, 2% 97%, 0 95%); }
+  .page > * { position: absolute; }
+  .page .band { left: 0; right: 0; top: 0; height: 32px; background: linear-gradient(90deg, #7C6FD6, #C48DD8); }
+  .page .holes { left: 0; right: 0; top: 10px; height: 12px; }
+  .page i { position: absolute; width: 16px; height: 13px; border-radius: 3px; background: #DCD4EA; }
+  .page i.past { background: #CFC6E2; }
+</style></head>
+<body>
+<!-- hero: a torn wall-calendar page with the next charge day ringed, the clay calendar inside a pen-drawn renew loop -->
+<div class="stage" data-out="hero/35-subscription-resumed.jpg" style="height:370px">
+  <div class="glow violet" style="left:260px;top:60px;width:280px;height:230px;opacity:.5"></div>
+  <div class="glow pink" style="left:60px;top:120px;width:200px;height:160px;opacity:.26"></div>
+  <svg id="sky" width="600" height="370" style="left:0;top:0"></svg>
+  <div class="planet pink" style="left:506px;top:44px;width:26px;height:26px"></div>
+  <div class="planet cyan" style="left:62px;top:296px;width:11px;height:11px"></div>
+  <div class="planet blue" style="left:540px;top:246px;width:13px;height:13px"></div>
+  <div class="page" id="page" style="left:72px;top:104px;width:168px;height:176px;transform:rotate(-8deg)"><div class="band"></div></div>
+  <div class="tape" style="left:118px;top:84px;width:86px;height:24px;transform:rotate(-12deg)"></div>
+  <svg id="loop" width="600" height="370" style="left:0;top:0"></svg>
+  <img src="../../img/src/icons/calendar-resume.svg" style="left:296px;top:78px;width:190px;transform:rotate(6deg);filter:url(#diecut)">
+  <svg id="pen" width="600" height="370" style="left:0;top:0"></svg>
+  <div class="note green" style="left:48px;top:28px;transform:rotate(-4deg);font-size:33px">right where you left off</div>
+</div>
+
+<!-- a big pen ring for the next charge date -->
+<div class="mark" data-out="marks/35-ring.png" style="width:360px;height:110px"></div>
+
+<script src="kit.js"></script>
+<script>
+  K.init(3535);
+  const stage = document.querySelector('.stage');
+  K.stars(document.getElementById('sky'), { w: 600, h: 370, count: 66, sparkles: 4, avoid: [[390, 180, 140], [156, 190, 100]] });
+
+  // calendar grid: 7 x 4 day cells, one ringed (drawn inside the page so it rotates with it)
+  const page = document.getElementById('page');
+  for (let r = 0; r < 4; r++) for (let c = 0; c < 7; c++) {
+    const i = document.createElement('i');
+    i.style.left = (12 + c * 21) + 'px'; i.style.top = (48 + r * 26) + 'px';
+    if (r === 0 || (r === 1 && c < 3)) i.className = 'past';
+    page.appendChild(i);
+  }
+  const ps = K.svg(page, 168, 176);
+  K.ellipse(ps, { cx: 12 + 4 * 21 + 8, cy: 48 + 2 * 26 + 6.5, rx: 17, ry: 13, rot: -6, loops: 1.25, wobble: .06, width: 2.4, color: ['#2FBF6B', '#7C6FD6'] });
+  K.line(ps, { points: [[14, 42], [150, 41]], jitter: .5, width: 1.2, color: '#B8AFD3' });
+
+  // renew loop round the clay calendar: most of a circle, arrowhead at the end
+  const loop = document.getElementById('loop'), pts = [];
+  for (let a = -160; a <= 138; a += 12) { const t = a * Math.PI / 180; pts.push([392 + 142 * Math.cos(t), 176 + 106 * Math.sin(t)]); }
+  K.line(loop, { points: pts, arrow: true, color: ['#4ADE80', '#C4B5FD'], width: 2.8, head: 14, jitter: 1.2 });
+
+  const ink = document.getElementById("pen");
+  // the note's arrow, down onto the ringed day
+  K.line(ink, { points: [[112, 70], [104, 100], [116, 140], [146, 172], [164, 188]], arrow: true, color: '#4ADE80', width: 2.6, head: 12 });
+  K.doodle(ink, { kind: 'asterisk', x: 548, y: 150, s: 7, color: '#F9A8D4', width: 2 });
+  K.finish(stage, { top: 0.06, bottom: 0.22, sides: 0.06 });
+
+  const m = document.querySelector('.mark');
+  K.ellipse(K.svg(m, 360, 110), { cx: 180, cy: 55, rx: 170, ry: 47, rot: -1.5, loops: 1.26, wobble: .03, width: 3, color: ['#4ADE80', '#C4B5FD', '#F9A8D4'] });
+  K.done();
+</script>
+</body></html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<div class="stage" data-out="hero/02-security-alert.jpg" style="height:390px">
+  <div class="glow violet" style="left:90px;top:90px;width:300px;height:220px"></div>
+  <div class="glow pink" style="left:400px;top:10px;width:180px;height:140px;opacity:.28"></div>
+  <svg id="sky" width="600" height="390" style="left:0;top:0"></svg>
+  <div class="planet glass" style="left:452px;top:52px;width:46px;height:46px"></div>
+  <div class="planet pink" style="left:62px;top:286px;width:18px;height:18px"></div>
+  <div class="planet cyan" style="left:548px;top:268px;width:11px;height:11px"></div>
+  <svg id="orbit" width="600" height="390" style="left:0;top:0"></svg>
+  <img class="icon" src="../../img/src/icons/device-alert.svg" style="left:128px;top:62px;width:250px;transform:rotate(-7deg)">
+  <svg id="ink" width="600" height="390" style="left:0;top:0"></svg>
+  <div class="note pink" style="left:366px;top:96px;transform:rotate(-6deg);font-size:36px">never seen
+this one before</div>
+</div>
+
+<div class="mark" data-out="marks/02-note.png" style="width:360px;height:96px">
+  <div class="note" style="left:20px;top:6px;transform:rotate(-3deg);font-size:29px">wasn't you? start here</div>
+</div>
+
+<script src="kit.js"></script>
+<script>
+  K.init(202);
+  const stage = document.querySelector('.stage');
+  K.stars(document.getElementById('sky'), { w: 600, h: 390, count: 70, sparkles: 5, avoid: [[255, 200, 150]] });
+  const orbit = document.getElementById('orbit');
+  K.ellipse(orbit, { cx: 252, cy: 214, rx: 196, ry: 50, rot: -9, loops: 1.16, width: 2.6, opacity: .8 });
+  K.ellipse(orbit, { cx: 475, cy: 75, rx: 46, ry: 11, rot: -20, loops: 1.1, width: 1.6, opacity: .7, color: '#B5B7F6' });
+  const ink = document.getElementById('ink');
+  K.line(ink, { points: [[392, 180], [382, 206], [362, 226], [340, 236]], arrow: true, color: '#F9A8D4', width: 2.8, head: 12 });
+  K.doodle(ink, { kind: 'asterisk', x: 120, y: 92, s: 8, color: '#C4B5FD', width: 2 });
+  K.finish(stage, { top: 0.1, bottom: 0.24, sides: 0.06 });
+
+  const note = document.querySelectorAll('.mark')[0];
+  const ns = K.svg(note, 360, 96);
+  K.line(ns, { points: [[262, 30], [266, 52], [238, 72], [196, 88]], arrow: true, color: '#C4B5FD', width: 2.6, head: 11 });
+  K.done();
+</script>
+</body></html>

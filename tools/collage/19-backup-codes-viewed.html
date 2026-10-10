@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- hero : a doodled eye looking across at the clay code card, dotted sight lines, a note on what it means -->
+<div class="stage" data-out="hero/19-backup-codes-viewed.jpg" style="height:350px">
+  <div class="glow violet" style="left:256px;top:60px;width:300px;height:220px"></div>
+  <div class="glow pink" style="left:30px;top:150px;width:210px;height:150px;opacity:.24"></div>
+  <svg id="sky" width="600" height="350" style="left:0;top:0"></svg>
+  <div class="planet blue" style="left:500px;top:238px;width:30px;height:30px"></div>
+  <div class="planet lilac" style="left:520px;top:70px;width:12px;height:12px"></div>
+  <div class="planet cyan" style="left:66px;top:282px;width:9px;height:9px"></div>
+  <svg id="back" width="600" height="350" style="left:0;top:0"></svg>
+  <img class="icon" src="../../img/src/icons/codes-viewed.svg" style="left:262px;top:52px;width:244px;transform:rotate(7deg)">
+  <svg id="ink" width="600" height="350" style="left:0;top:0"></svg>
+  <div class="note pink" style="left:52px;top:46px;transform:rotate(-4deg);font-size:34px">seen, but still valid</div>
+</div>
+
+<!-- the notification tile: the clay card itself, small -->
+<div class="mark" data-out="marks/19-tile.png" style="width:40px;height:40px">
+  <img id="tile" data-src="../../img/src/icons/codes-viewed.svg" style="left:-5px;top:-4px;width:50px">
+</div>
+
+<script src="kit.js"></script>
+<script>
+  function clean(img) {
+    return new Promise(res => {
+      const x = new XMLHttpRequest();
+      x.open('GET', img.getAttribute('data-src'));
+      x.onload = () => {
+        const s = x.responseText.replace(/<!-- ambient flecks[\s\S]*?(?=\s*<!-- floor shadow)/, '');
+        img.onload = img.onerror = () => res();
+        img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(s);
+      };
+      x.onerror = () => { img.onload = img.onerror = () => res(); img.src = img.getAttribute('data-src'); };
+      x.send();
+    });
+  }
+
+  K.init(1919);
+  const stage = document.querySelector('.stage');
+  K.stars(document.getElementById('sky'), { w: 600, h: 350, count: 66, sparkles: 5, avoid: [[384, 180, 130]] });
+  const back = document.getElementById('back');
+  K.ellipse(back, { cx: 515, cy: 253, rx: 44, ry: 11, rot: 16, loops: 1.12, width: 1.8, opacity: .7, color: '#B5B7F6' });
+
+  const ink = document.getElementById('ink');
+  // the eye: two lids, a ringed iris, a pupil, a few lashes
+  const E = [138, 196], W = 52, H = 24;
+  const lid = s => [...Array(13)].map((_, i) => { const t = i / 12; return [E[0] - W + 2 * W * t, E[1] + s * H * Math.sin(Math.PI * t)]; });
+  K.line(ink, { points: lid(-1), color: '#C4B5FD', width: 2.8, jitter: .5 });
+  K.line(ink, { points: lid(1), color: '#C4B5FD', width: 2.4, jitter: .5 });
+  K.ellipse(ink, { cx: E[0] + 8, cy: E[1] + 1, rx: 15, ry: 15, loops: 1.15, width: 2.4, color: ['#C4B5FD', '#F9A8D4'], opacity: .95 });
+  const NS = 'http://www.w3.org/2000/svg';
+  const pupil = document.createElementNS(NS, 'circle');
+  pupil.setAttribute('cx', E[0] + 11); pupil.setAttribute('cy', E[1] + 1); pupil.setAttribute('r', 6.5); pupil.setAttribute('fill', '#F9A8D4'); pupil.setAttribute('filter', 'url(#marker)');
+  ink.appendChild(pupil);
+  for (const t of [0.22, 0.38, 0.54, 0.7]) {
+    const x = E[0] - W + 2 * W * t, y = E[1] - H * Math.sin(Math.PI * t), a = -Math.PI / 2 + (t - 0.5) * 1.6;
+    K.line(ink, { points: [[x, y - 2], [x + Math.cos(a) * 10, y - 2 + Math.sin(a) * 10]], color: '#C4B5FD', width: 2.2, jitter: .3 });
+  }
+  // dotted sight lines across to the card
+  const dashed = (a, b, n) => { for (let i = 0; i < n; i++) { const t0 = i / n, t1 = t0 + 0.55 / n; K.line(ink, { points: [[a[0] + (b[0] - a[0]) * t0, a[1] + (b[1] - a[1]) * t0], [a[0] + (b[0] - a[0]) * t1, a[1] + (b[1] - a[1]) * t1]], color: '#C4B5FD', width: 2, jitter: .3, opacity: .7 }); } };
+  dashed([200, 182], [300, 138], 6);
+  dashed([204, 198], [304, 196], 6);
+  dashed([200, 214], [298, 250], 6);
+  // the note's arrow, down to the top of the card
+  K.line(ink, { points: [[300, 84], [326, 88], [346, 102], [354, 118]], arrow: true, color: '#F9A8D4', width: 2.6, head: 11 });
+  K.doodle(ink, { kind: 'asterisk', x: 548, y: 168, s: 8, color: '#F9A8D4', width: 2 });
+  K.doodle(ink, { kind: 'star', x: 92, y: 120, s: 8, color: '#C4B5FD', width: 1.8 });
+  K.finish(stage, { top: 0.1, bottom: 0.2, sides: 0.06 });
+
+  clean(document.getElementById('tile')).then(() => K.done());
+</script>
+</body></html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css">
+<style>
+  .map { background: #E9E2F4; box-shadow: 0 16px 30px rgba(0,0,0,.5); overflow: hidden; }
+  .map > * { position: absolute; }
+</style></head>
+<body>
+<!-- hero : a torn-out paper map taped down, a dotted route from the old spot to the clay house stuck on top, a note on why it matters -->
+<div class="stage" data-out="hero/23-address-updated.jpg" style="height:360px">
+  <div class="glow violet" style="left:120px;top:90px;width:320px;height:200px;opacity:.48"></div>
+  <div class="glow pink" style="left:410px;top:170px;width:150px;height:130px;opacity:.26"></div>
+  <svg id="sky" width="600" height="360" style="left:0;top:0"></svg>
+  <div class="planet blue" style="left:84px;top:72px;width:26px;height:26px"></div>
+  <div class="planet lilac" style="left:498px;top:70px;width:15px;height:15px"></div>
+  <div class="planet cyan" style="left:70px;top:286px;width:8px;height:8px"></div>
+  <svg id="orbit" width="600" height="360" style="left:0;top:0"></svg>
+  <div class="map" style="left:76px;top:104px;width:300px;height:186px;transform:rotate(-5deg)">
+    <svg id="roads" width="300" height="186" style="left:0;top:0"></svg>
+  </div>
+  <div class="tape" style="left:64px;top:96px;width:84px;height:24px;transform:rotate(-30deg)"></div>
+  <div class="tape" style="left:306px;top:272px;width:80px;height:22px;transform:rotate(-18deg)"></div>
+  <svg id="route" width="600" height="360" style="left:0;top:0"></svg>
+  <img src="../../img/src/icons/home-updated.svg" style="left:214px;top:74px;width:168px;transform:rotate(6deg);filter:url(#diecut)">
+  <svg id="ink" width="600" height="360" style="left:0;top:0"></svg>
+  <div class="note" style="left:410px;top:228px;transform:rotate(-7deg);font-size:32px">for proving
+ it's you</div>
+</div>
+
+<script src="kit.js"></script>
+<script>
+  K.init(2323);
+  const stage = document.querySelector('.stage');
+  K.stars(document.getElementById('sky'), { w: 600, h: 360, count: 64, sparkles: 4, avoid: [[260, 200, 160]] });
+  K.ellipse(document.getElementById('orbit'), { cx: 97, cy: 85, rx: 34, ry: 9, rot: -16, loops: 1.1, width: 1.6, opacity: .7, color: '#B5B7F6' });
+
+  // the map: pale streets, a river, a park, drawn freehand
+  const r = document.getElementById('roads');
+  K.line(r, { points: [[-10, 132], [70, 118], [150, 128], [230, 104], [310, 112]], width: 12, color: '#C9DAF3', jitter: 1.2 });            // river
+  K.line(r, { points: [[-10, 46], [90, 54], [180, 40], [310, 52]], width: 7, color: '#D7CEE8', jitter: .8 });
+  K.line(r, { points: [[62, -10], [70, 80], [58, 196]], width: 7, color: '#D7CEE8', jitter: .8 });
+  K.line(r, { points: [[188, -10], [196, 90], [214, 196]], width: 6, color: '#D7CEE8', jitter: .8 });
+  K.line(r, { points: [[-10, 168], [120, 160], [310, 176]], width: 4, color: '#DCD4EA', jitter: .8 });
+  K.line(r, { points: [[120, -10], [128, 60], [112, 120]], width: 2.4, color: '#CFC6E2', jitter: .6 });
+  K.line(r, { points: [[250, -10], [262, 70]], width: 2.4, color: '#CFC6E2', jitter: .6 });
+
+  // the route: a small inked cross where it was, a dotted line to the house
+  const route = document.getElementById('route');
+  K.doodle(route, { kind: 'cross', x: 126, y: 232, s: 7, color: '#7C6FD6', width: 2.4 });
+  const rt = K.line(route, { points: [[138, 222], [170, 192], [206, 196], [232, 214], [270, 210], [298, 196]], width: 3.2, color: '#7C6FD6', jitter: .8 });
+  rt.removeAttribute('filter');
+  rt.querySelector('path').setAttribute('stroke-dasharray', '0.1 8.5');
+
+  const ink = document.getElementById('ink');
+  K.line(ink, { points: [[436, 222], [428, 204], [412, 192], [394, 188]], arrow: true, color: '#C4B5FD', width: 2.6, head: 11 });
+  K.doodle(ink, { kind: 'asterisk', x: 470, y: 124, s: 7, color: '#F9A8D4', width: 2 });
+  K.doodle(ink, { kind: 'star', x: 116, y: 318, s: 8, color: '#C4B5FD', width: 1.8 });
+  K.finish(stage, { top: 0.08, bottom: 0.22, sides: 0.06 });
+  K.done();
+</script>
+</body></html>

@@ -12,7 +12,7 @@
 <!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
 <![endif]-->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{color-scheme:dark;supported-color-schemes:dark;}
   body,table,td,a{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
@@ -24,9 +24,10 @@
   u + .body a, #MessageViewBody a{color:inherit;text-decoration:none;}
   @media screen and (max-width:620px){
     .px{padding-left:24px!important;padding-right:24px!important;}
-    .h1{font-size:27px!important;line-height:1.25!important;}
+    .h1{font-size:34px!important;line-height:1.1!important;letter-spacing:-0.8px!important;}
     .lead{font-size:15px!important;}
-    .split-copy{max-width:100%!important;}
+    .city{font-size:40px!important;line-height:46px!important;}
+    .lbl{width:78px!important;}
   }
 </style>
 </head>
@@ -45,86 +46,99 @@
     <img src="https://humaine-email.vercel.app/img/brand/lockup@2x.png" width="144" height="36" alt="humAIne" style="display:block;width:144px;height:36px;border:0;">
   </td></tr>
 
-  <!-- signature move : split hero. Copy left, compact square scene right; on mobile the scene stacks on top -->
-  <tr><td class="px" dir="rtl" align="center" style="padding:22px 40px 0;font-size:0;line-height:0;text-align:center;">
-    <!--[if mso]><table role="presentation" width="520" cellpadding="0" cellspacing="0" border="0" dir="rtl"><tr><td width="208" valign="middle" dir="ltr"><![endif]-->
-    <div class="split-img" dir="ltr" style="display:inline-block;width:100%;max-width:208px;vertical-align:middle;">
-      <img src="https://humaine-email.vercel.app/img/hero/23-address-updated.jpg" width="208" alt="A lilac clay house with a green check, on an orbit beside a small ringed pink planet" style="display:block;width:100%;max-width:208px;height:auto;border:0;margin:0 auto;">
-    </div><!--[if mso]></td><td width="312" valign="middle" dir="ltr"><![endif]--><div class="split-copy" dir="ltr" style="display:inline-block;width:100%;max-width:312px;vertical-align:middle;text-align:left;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr><td align="left" style="padding:0;">
-          <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="left"><tr>
-            <td style="padding:7px 14px;background-color:#1C1A30;border:1px solid #383159;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:14px;font-weight:600;color:#C4B5FD;">&#10022;&nbsp; Registered address updated</td>
-          </tr></table>
-        </td></tr>
-        <tr><td align="left" style="padding:18px 0 0;">
-          <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:28px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;text-align:left;text-wrap:balance;">Your profile has a new registered&nbsp;address</h1>
-        </td></tr>
-        <tr><td align="left" style="padding:20px 0 0;">
-          <p style="margin:0 0 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;color:#7D7F8F;">Now registered in</p>
-          <p style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:24px;line-height:31px;font-weight:400;color:#C4B5FD;">{{address_city}}, {{address_country}}</p>
-          <p style="margin:6px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;color:#7D7F8F;">The street address stays in your profile.</p>
-        </td></tr>
-      </table>
-    </div>
-    <!--[if mso]></td></tr></table><![endif]-->
+  <!-- hero : collage. A torn-out paper map taped down, a dotted route to the clay house stuck on top -->
+  <tr><td style="padding:4px 0 0;">
+    <img src="https://humaine-email.vercel.app/img/hero/23-address-updated.jpg" width="600" alt="A lilac clay house with a green check, stuck on a taped paper map with a dotted route drawn to it, and a handwritten note: for proving it&rsquo;s you" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
   </td></tr>
 
-  <!-- hairline -->
-  <tr><td class="px" style="padding:30px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#1F2129;">&nbsp;</td></tr></table>
+  <!-- kicker : a log line, not a badge -->
+  <tr><td align="center" class="px" style="padding:0 40px 14px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:14px;letter-spacing:1.6px;text-transform:uppercase;color:#C4B5FD;">&#10022;&nbsp; Registered address updated</td></tr>
+
+  <!-- headline + lead -->
+  <tr><td class="px" style="padding:0 40px 0;">
+    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:44px;line-height:1.1;letter-spacing:-1.2px;color:#FFFFFF;text-align:center;">Your profile <span style="white-space:nowrap;">has a new</span> <span style="white-space:nowrap;">registered address</span></h1>
+    <p class="lead" style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#B4B5C4;text-align:center;">{{first_name}}, humAIne uses your registered address to confirm it&rsquo;s really you if you ever need to recover your&nbsp;account.</p>
   </td></tr>
 
-  <!-- when, and what it's for -->
-  <tr><td align="left" class="px" style="padding:24px 40px 0;">
-    <p class="lead" style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#B4B5C4;">{{first_name}}, the change was made on {{change_date}} at {{change_time}} ({{timezone}}) from {{device_name}}.</p>
-    <p style="margin:14px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#B4B5C4;">humAIne uses your registered address to confirm it&rsquo;s really you if you ever need to recover your account. Invoices go to your billing address, which you can change in Billing&nbsp;&amp;&nbsp;Payments.</p>
+  <!-- signature : the new city, big, a marker swash under it -->
+  <tr><td class="px" align="center" style="padding:30px 40px 0;">
+    <p style="margin:0 0 6px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:16px;letter-spacing:1.6px;text-transform:uppercase;color:#7D7F8F;text-align:center;">Now registered in</p>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
+      <td class="city" align="center" style="padding:0 6px 12px;background-image:url('https://humaine-email.vercel.app/img/marks/swash.png');background-repeat:no-repeat;background-position:50% 100%;background-size:100% 16px;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:54px;line-height:60px;font-weight:500;letter-spacing:-1.2px;color:#FFFFFF;text-align:center;">{{address_city}}</td>
+    </tr></table>
+    <p style="margin:12px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:12px;line-height:18px;letter-spacing:1.8px;text-transform:uppercase;color:#C4B5FD;text-align:center;">{{address_country}}</p>
   </td></tr>
 
-  <!-- not you : one sentence, then a secondary button -->
-  <tr><td align="left" class="px" style="padding:24px 40px 0;">
-    <p style="margin:0 0 16px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#FFFFFF;">If this wasn&rsquo;t you, someone may be changing the details humAIne uses to recognise&nbsp;you.</p>
-    <!--[if mso]>
-    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{secure_account_url}}" style="height:48px;v-text-anchor:middle;width:520px;" arcsize="30%" strokecolor="#2E3040" fillcolor="#1B1D26">
-      <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;">Secure my account</center>
-    </v:roundrect>
-    <![endif]-->
-    <!--[if !mso]><!-->
-    <a href="{{secure_account_url}}" style="display:block;background-color:#1B1D26;border:1px solid #2E3040;border-radius:14px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;font-weight:600;line-height:46px;text-align:center;text-decoration:none;">Secure my account</a>
-    <!--<![endif]-->
-  </td></tr>
-
-  <!-- ask humAIne -->
-  <tr><td class="px" style="padding:28px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#12131C;border:1px solid #2A2547;border-radius:16px;">
+  <!-- the log : mono labels, when and where from -->
+  <tr><td class="px" style="padding:26px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/divider.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
       <tr>
-        <td width="52" valign="middle" style="padding:14px 0 14px 16px;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="36" height="35" alt="" style="display:block;width:36px;height:35px;border:0;"></td>
-        <td valign="middle" style="padding:14px 12px;">
-          <p style="margin:0 0 3px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#8E86C9;">Ask humAIne</p>
-          <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:16px;line-height:22px;color:#FFFFFF;text-decoration:none;">&ldquo;Why my address?&rdquo;</a>
-        </td>
-        <td width="40" valign="middle" align="right" style="padding:14px 18px 14px 0;"><a href="{{chat_url}}" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;line-height:20px;color:#A78BFA;text-decoration:none;">&rarr;</a></td>
+        <td class="lbl" width="96" valign="top" style="width:96px;padding:13px 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:20px;letter-spacing:1.2px;text-transform:uppercase;color:#7D7F8F;">Changed</td>
+        <td valign="top" align="right" style="padding:13px 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:20px;color:#FFFFFF;">{{change_date}}, {{change_time}} {{timezone}}</td>
+      </tr>
+      <tr>
+        <td class="lbl" width="96" valign="top" style="width:96px;padding:13px 0;border-top:1px dashed #262836;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:20px;letter-spacing:1.2px;text-transform:uppercase;color:#7D7F8F;">Device</td>
+        <td valign="top" align="right" style="padding:13px 0;border-top:1px dashed #262836;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:20px;color:#FFFFFF;">{{device_name}}</td>
+      </tr>
+      <tr>
+        <td class="lbl" width="96" valign="top" style="width:96px;padding:13px 0;border-top:1px dashed #262836;border-bottom:1px dashed #262836;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:20px;letter-spacing:1.2px;text-transform:uppercase;color:#7D7F8F;">Street</td>
+        <td valign="top" align="right" style="padding:13px 0;border-top:1px dashed #262836;border-bottom:1px dashed #262836;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:20px;color:#B4B5C4;">Kept in your profile, not in this&nbsp;email</td>
       </tr>
     </table>
+    <p style="margin:10px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;color:#7D7F8F;text-align:center;">Invoices go to your billing address, which you can change in Billing&nbsp;&amp;&nbsp;Payments.</p>
+  </td></tr>
+
+  <!-- not you : one sentence, then the button -->
+  <tr><td class="px" style="padding:30px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#FFFFFF;text-align:center;">If this wasn&rsquo;t you, someone may be changing the details humAIne uses to recognise&nbsp;you.</p>
+  </td></tr>
+  <tr><td class="px" align="center" style="padding:18px 40px 0;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td>
+      <!--[if mso]>
+      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{secure_account_url}}" style="height:52px;v-text-anchor:middle;width:250px;" arcsize="27%" stroke="f" fillcolor="#768AFF">
+        <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
+        <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Secure my account &rarr;</center>
+      </v:roundrect>
+      <![endif]-->
+      <!--[if !mso]><!-->
+      <a href="{{secure_account_url}}" style="display:inline-block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:14px;padding:0 28px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;line-height:52px;text-decoration:none;white-space:nowrap;">Secure my account&nbsp;&rarr;</a>
+      <!--<![endif]-->
+    </td></tr></table>
+  </td></tr>
+
+  <!-- ask humAIne : a chat bubble from humAIne, the way the app shows it -->
+  <tr><td class="px" align="center" style="padding:36px 40px 0;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
+      <td width="34" valign="bottom" style="width:34px;padding:0 10px 2px 0;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="34" height="33" alt="" style="display:block;width:34px;height:33px;border:0;"></td>
+      <td valign="bottom">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td style="padding:11px 18px 13px 16px;background-color:#1C1A30;border:1px solid #383159;border-radius:18px 18px 18px 4px;">
+            <p style="margin:0 0 3px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:14px;letter-spacing:0.4px;color:#8E86C9;">Ask humAIne</p>
+            <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:17px;line-height:23px;color:#FFFFFF;text-decoration:none;">&ldquo;Why my address?&rdquo;&nbsp;<span style="color:#A78BFA;">&rarr;</span></a>
+          </td>
+        </tr></table>
+      </td>
+    </tr></table>
   </td></tr>
 
   <!-- fine print -->
-  <tr><td align="left" class="px" style="padding:22px 40px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">Button not working? Paste this link:<br><a href="{{secure_account_url}}" style="color:#A78BFA;word-break:break-all;">{{secure_account_url}}</a><br>Questions? Write to <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a>.</p>
+  <tr><td class="px" style="padding:26px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;text-align:center;">Button not working? Paste this link:<br><a href="{{secure_account_url}}" style="color:#A78BFA;word-break:break-all;">{{secure_account_url}}</a><br>Questions? Write to <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a>.</p>
   </td></tr>
 
-  <!-- footer : security -->
-  <tr><td class="px" style="padding:44px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#1C1E27;">&nbsp;</td></tr></table>
+  <!-- footer : security (under a hand-drawn rule) -->
+  <tr><td class="px" style="padding:40px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/divider.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
   </td></tr>
-  <tr><td align="center" class="px" style="padding:30px 40px 40px;">
+  <tr><td align="center" class="px" style="padding:26px 40px 40px;">
     <img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="40" height="39" alt="humAIne" style="display:block;width:40px;height:39px;border:0;margin:0 auto;">
     <p style="margin:12px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:15px;line-height:20px;color:#C9C3F2;">hum<span style="color:#8FA0FF;">AI</span>ne</p>
     <p style="margin:4px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:18px;color:#7D7F8F;">Disruptively Human . Trust Co-created.</p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;">
+    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;text-align:center;">
       <a href="{{help_url}}" style="color:#A3A5B5;text-decoration:none;">Help centre</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{security_url}}" style="color:#A3A5B5;text-decoration:none;">Security</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{privacy_url}}" style="color:#A3A5B5;text-decoration:none;">Privacy</a>
     </p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;">Security notification sent to {{recipient_email}}. These can&rsquo;t be switched off while your account is&nbsp;active.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
+    <p style="margin:14px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;text-align:center;">Security notification sent to {{recipient_email}}. These can&rsquo;t be switched off while your account is&nbsp;active.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
   </td></tr>
 
 </table>

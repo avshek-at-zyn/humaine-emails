@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- hero : the clay solar-system progress, the active pink planet ringed by hand, a flag planted on the last one -->
+<div class="stage" data-out="hero/09-onboarding-abandoned.jpg" style="height:330px">
+  <div class="glow violet" style="left:170px;top:80px;width:280px;height:200px;opacity:.45"></div>
+  <div class="glow pink" style="left:280px;top:140px;width:150px;height:130px;opacity:.3"></div>
+  <svg id="sky" width="600" height="330" style="left:0;top:0"></svg>
+  <div class="planet blue" style="left:484px;top:236px;width:30px;height:30px"></div>
+  <div class="planet lilac" style="left:88px;top:256px;width:13px;height:13px"></div>
+  <div class="planet cyan" style="left:528px;top:76px;width:10px;height:10px"></div>
+  <img class="icon" src="../../img/src/icons/solar-progress.svg" style="left:136px;top:16px;width:330px">
+  <svg id="ink" width="600" height="330" style="left:0;top:0"></svg>
+  <div class="note pink" style="left:56px;top:58px;transform:rotate(-6deg);font-size:36px">halfway there</div>
+</div>
+
+<!-- "you're here", in ink on the checklist paper, pointing down at the ringed step -->
+<div class="mark" data-out="marks/09-note.png" style="width:220px;height:58px">
+  <div class="note ink" style="left:92px;top:2px;transform:rotate(-4deg);font-size:28px;color:#4B3F8F">you're here</div>
+</div>
+<!-- ink ring for the active step (stretched round it as a span background) -->
+<div class="mark" data-out="marks/09-ring.png" style="width:300px;height:64px"></div>
+<!-- ink strike and check for the done steps (the shared ones are drawn for the dark canvas) -->
+<div class="mark" data-out="marks/09-strike.png" style="width:300px;height:40px"></div>
+<div class="mark" data-out="marks/09-check.png" style="width:44px;height:40px"></div>
+<!-- spiral-bound top of the notebook page: wire loops through punched holes -->
+<div class="mark" data-out="marks/09-paper-top.png" data-exact style="width:520px;height:40px"></div>
+
+<script src="kit.js"></script>
+<script>
+  K.init(909);
+  const stage = document.querySelector('.stage');
+  K.stars(document.getElementById('sky'), { w: 600, h: 330, count: 64, sparkles: 5, avoid: [[300, 170, 150]] });
+  const ink = document.getElementById('ink');
+  // ring round the active (pink) step
+  K.ellipse(ink, { cx: 332, cy: 200, rx: 70, ry: 62, rot: -10, loops: 1.22, width: 2.6, opacity: .9, color: ['#F9A8D4', '#C4B5FD'] });
+  // a flag planted on the last, glass planet
+  const flag = K.svg(stage, 600, 330); stage.insertBefore(flag, ink);
+  flag.insertAdjacentHTML('beforeend', '<path d="M414,78 L452,88 L414,100 Z" fill="#F9A8D4" opacity=".28"/>');
+  K.line(ink, { points: [[411, 124], [412, 100], [414, 76]], color: '#E8E4F8', width: 2.4, jitter: .5 });
+  K.line(ink, { points: [[414, 78], [434, 82], [452, 88], [434, 94], [414, 100]], color: '#F9A8D4', width: 2.3, jitter: .5 });
+  // the note's arrow, down onto the ring
+  K.line(ink, { points: [[214, 102], [238, 112], [258, 126], [272, 144]], arrow: true, color: '#F9A8D4', width: 2.8, head: 12 });
+  K.ellipse(ink, { cx: 499, cy: 251, rx: 34, ry: 9, rot: -14, loops: 1.1, width: 1.7, opacity: .75, color: '#B5B7F6' });
+  K.doodle(ink, { kind: 'asterisk', x: 540, y: 170, s: 7, color: '#C4B5FD', width: 2 });
+  K.finish(stage, { top: 0.1, bottom: 0.22, sides: 0.06 });
+
+  const m = document.querySelectorAll('.mark');
+  K.line(K.svg(m[0], 220, 58), { points: [[86, 22], [64, 28], [48, 40], [40, 54]], arrow: true, color: '#4B3F8F', width: 2.4, head: 10, jitter: 1 });
+  K.ellipse(K.svg(m[1], 300, 64), { cx: 150, cy: 32, rx: 140, ry: 25, rot: -1.5, loops: 1.2, wobble: .03, width: 2.6, color: ['#C2418F', '#6B5BD0'] });
+  const st = K.svg(m[2], 300, 40);
+  K.line(st, { points: [[6, 23], [100, 19], [200, 22], [294, 15]], jitter: 1.4, width: 3, color: '#C2418F' });
+  K.line(st, { points: [[14, 17], [150, 25], [286, 19]], jitter: 1.2, width: 2, color: '#C2418F', opacity: .6 });
+  K.doodle(K.svg(m[3], 44, 40), { kind: 'check', x: 22, y: 20, s: 14, color: '#22A35A', width: 3.2 });
+  // spiral top
+  const sp = K.svg(m[4], 520, 40);
+  sp.insertAdjacentHTML('beforeend', '<path d="M0,14 H520 V40 H0 Z" fill="#EEE8F6"/>');
+  for (let x = 22; x < 510; x += 26) {
+    sp.insertAdjacentHTML('beforeend', `<circle cx="${x}" cy="25" r="4.6" fill="#090B14"/>`);
+    sp.insertAdjacentHTML('beforeend', `<path d="M${x - 1.5},26 C${x - 7},18 ${x - 6},4 ${x + 2},3 C${x + 7},2 ${x + 6},10 ${x + 4},16" fill="none" stroke="#9C98B4" stroke-width="2.6" stroke-linecap="round"/>`);
+    sp.insertAdjacentHTML('beforeend', `<path d="M${x - 4.5},6 C${x - 3},4 ${x},3 ${x + 2},3" fill="none" stroke="#E4E1F0" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>`);
+  }
+  K.done();
+</script>
+</body></html>

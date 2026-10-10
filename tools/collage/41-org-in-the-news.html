@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- hero : the clay newspaper inside a dashed "cut here" frame, scissors halfway along the top, a handwritten aside -->
+<div class="stage" data-out="hero/41-org-in-the-news.jpg" style="height:350px">
+  <div class="glow violet" style="left:220px;top:60px;width:300px;height:210px;opacity:.5"></div>
+  <div class="glow pink" style="left:30px;top:120px;width:200px;height:140px;opacity:.22"></div>
+  <svg id="sky" width="600" height="350" style="left:0;top:0"></svg>
+  <div class="planet glass" style="left:508px;top:236px;width:30px;height:30px"></div>
+  <div class="planet blue" style="left:110px;top:62px;width:14px;height:14px"></div>
+  <div class="planet cyan" style="left:540px;top:112px;width:9px;height:9px"></div>
+  <div class="planet pink" style="left:150px;top:284px;width:8px;height:8px"></div>
+  <svg id="frame" width="600" height="350" style="left:0;top:0"></svg>
+  <img class="icon" src="../../img/src/icons/news-alert.svg" style="left:240px;top:54px;width:214px;transform:rotate(-6deg)">
+  <svg id="ink" width="600" height="350" style="left:0;top:0"></svg>
+  <div class="note" style="left:44px;top:112px;transform:rotate(-6deg);font-size:35px">someone
+you follow</div>
+</div>
+
+<!-- top of the clipping: ripped out of the paper, a strip of tape across the corner -->
+<div class="mark" data-out="marks/41-paper-top.png" data-exact style="width:520px;height:48px">
+  <div class="tape" style="left:18px;top:8px;width:116px;height:28px;transform:rotate(-12deg);background:rgba(206,192,236,.56)"></div>
+</div>
+<!-- bottom of the clipping, ripped -->
+<div class="mark" data-out="marks/41-paper-bottom.png" data-exact style="width:520px;height:26px"></div>
+<!-- a pink marker line under the headline, the way you'd mark a clipping -->
+<div class="mark" data-out="marks/41-underline.png" style="width:220px;height:20px"></div>
+
+<script src="kit.js"></script>
+<script>
+  K.init(4141);
+  const stage = document.querySelector('.stage');
+  K.stars(document.getElementById('sky'), { w: 600, h: 350, count: 70, sparkles: 5, avoid: [[350, 160, 150], [110, 150, 70]] });
+
+  // the dashed cut-out frame, slightly crooked
+  const frame = document.getElementById('frame');
+  const C = [[210, 42], [482, 30], [492, 280], [218, 290]];
+  const pts = [];
+  for (let i = 0; i < 4; i++) {
+    const [a, b] = [C[i], C[(i + 1) % 4]];
+    pts.push(a, [a[0] + (b[0] - a[0]) * 0.03, a[1] + (b[1] - a[1]) * 0.03], [a[0] + (b[0] - a[0]) * 0.5, a[1] + (b[1] - a[1]) * 0.5], [a[0] + (b[0] - a[0]) * 0.97, a[1] + (b[1] - a[1]) * 0.97]);
+  }
+  pts.push(C[0]);
+  const cut = K.line(frame, { points: pts, color: ['#B5B7F6', '#C4B5FD'], width: 2.2, jitter: .9, opacity: .85 });
+  cut.querySelector('path').setAttribute('stroke-dasharray', '9 8');
+
+  const ink = document.getElementById('ink');
+  // scissors on the top edge, cutting right
+  const px = 286, py = 37;
+  K.line(ink, { points: [[px - 22, py - 10], [px, py], [px + 28, py + 11]], color: '#F9A8D4', width: 2.6, jitter: .3 });
+  K.line(ink, { points: [[px - 22, py + 11], [px, py], [px + 28, py - 12]], color: '#F9A8D4', width: 2.6, jitter: .3 });
+  K.ellipse(ink, { cx: px - 30, cy: py - 14, rx: 8, ry: 6.5, rot: 20, loops: 1.15, width: 2.4, color: '#F9A8D4', passes: 1 });
+  K.ellipse(ink, { cx: px - 30, cy: py + 15, rx: 8, ry: 6.5, rot: -20, loops: 1.15, width: 2.4, color: '#F9A8D4', passes: 1 });
+  // the bell is ringing
+  const bx = 404, by = 96;
+  for (const a of [-78, -48, -18]) {
+    const r = a * Math.PI / 180;
+    K.line(ink, { points: [[bx + Math.cos(r) * 46, by + Math.sin(r) * 46], [bx + Math.cos(r) * 58, by + Math.sin(r) * 58]], color: '#F9A8D4', width: 2.4, jitter: .2 });
+  }
+  // arrow from the note to the frame
+  K.line(ink, { points: [[112, 194], [132, 222], [170, 234], [214, 226]], arrow: true, color: '#C4B5FD', width: 2.6, head: 11 });
+  K.ellipse(ink, { cx: 523, cy: 251, rx: 31, ry: 7.5, rot: -14, loops: 1.1, width: 1.5, opacity: .7, color: '#B5B7F6' });
+  K.doodle(ink, { kind: 'asterisk', x: 92, y: 290, s: 7, color: '#F9A8D4', width: 2 });
+  K.finish(stage, { top: 0.08, bottom: 0.2, sides: 0.06 });
+
+  const m = [...document.querySelectorAll('.mark')];
+  const ctop = K.svg(m[0], 520, 48); m[0].insertBefore(ctop, m[0].firstChild);
+  K.tornTop(ctop, { w: 520, h: 48, y: 30, amp: 3.6 });
+  K.tornBottom(K.svg(m[1], 520, 26), { w: 520, h: 26, y: 12, amp: 3.6 });
+  K.swash(K.svg(m[2], 220, 20), { x: 4, y: 10, w: 200, h: 6, curve: 2, tilt: -1, color: ['#E0559B', '#C2367E'], opacity: .85, hook: true });
+  K.done();
+</script>
+</body></html>

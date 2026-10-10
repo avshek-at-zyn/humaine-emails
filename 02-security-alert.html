@@ -12,7 +12,7 @@
 <!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
 <![endif]-->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{color-scheme:dark;supported-color-schemes:dark;}
   body,table,td,a{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
@@ -24,8 +24,9 @@
   u + .body a, #MessageViewBody a{color:inherit;text-decoration:none;}
   @media screen and (max-width:620px){
     .px{padding-left:24px!important;padding-right:24px!important;}
-    .h1{font-size:27px!important;line-height:1.25!important;}
+    .h1{font-size:34px!important;line-height:1.1!important;letter-spacing:-0.8px!important;}
     .lead{font-size:15px!important;}
+    .lbl{width:78px!important;}
   }
 </style>
 </head>
@@ -44,122 +45,105 @@
     <img src="https://humaine-email.vercel.app/img/brand/lockup@2x.png" width="144" height="36" alt="humAIne" style="display:block;width:144px;height:36px;border:0;">
   </td></tr>
 
-  <!-- hero : app clay illustration in a planetary scene, edges fade into the canvas -->
-  <tr><td>
-    <img src="https://humaine-email.vercel.app/img/hero/02-security-alert.jpg" width="600" alt="A lilac smartphone with a location-pin badge, floating on an orbit beside a ringed planet" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
+  <!-- hero : collage. Clay phone inside a hand-drawn orbit, a handwritten aside pointing at it -->
+  <tr><td style="padding:4px 0 0;">
+    <img src="https://humaine-email.vercel.app/img/hero/02-security-alert.jpg" width="600" alt="A lilac clay phone with a location-pin badge inside a hand-drawn orbit, and a handwritten note: never seen this one before" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
   </td></tr>
 
-  <!-- status chip : alert -->
-  <tr><td align="center" class="px" style="padding:4px 40px 0;">
+  <!-- kicker : a log line, not a badge -->
+  <tr><td align="center" class="px" style="padding:0 40px 14px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:14px;letter-spacing:1.6px;text-transform:uppercase;color:#FCA5A5;">&#9679;&nbsp; New sign-in</td></tr>
+
+  <!-- headline : left, large, a marker stroke under the phrase that matters -->
+  <tr><td class="px" style="padding:0 40px 0;">
+    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:44px;line-height:1.08;letter-spacing:-1.2px;color:#FFFFFF;text-align:center;">We haven&rsquo;t seen <span style="white-space:nowrap;background-image:url('https://humaine-email.vercel.app/img/marks/swash.png');background-repeat:no-repeat;background-position:0 96%;background-size:100% 0.3em;">this device</span> before</h1>
+    <p class="lead" style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#B4B5C4;text-align:center;">If it was you, {{first_name}}, there&rsquo;s nothing to do. This is what we&nbsp;saw.</p>
+  </td></tr>
+
+  <!-- the record : a log, not a card. Mono labels, the device ringed by hand -->
+  <tr><td class="px" style="padding:26px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/divider.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td class="lbl" width="96" valign="middle" style="width:96px;padding:14px 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:16px;letter-spacing:1.2px;text-transform:uppercase;color:#7D7F8F;">Device</td>
+        <td valign="middle" align="right" style="padding:6px 0;">
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="right"><tr>
+            <td style="padding:9px 16px 10px 14px;background-image:url('https://humaine-email.vercel.app/img/marks/ring.png');background-repeat:no-repeat;background-size:100% 100%;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:20px;font-weight:600;color:#FFFFFF;">{{device_name}}</td>
+          </tr></table>
+        </td>
+      </tr>
+      <tr>
+        <td class="lbl" width="96" valign="top" style="width:96px;padding:13px 0;border-top:1px dashed #262836;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:20px;letter-spacing:1.2px;text-transform:uppercase;color:#7D7F8F;">Where</td>
+        <td valign="top" align="right" style="padding:13px 0;border-top:1px dashed #262836;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:20px;color:#FFFFFF;">{{city}}, {{country}}</td>
+      </tr>
+      <tr>
+        <td class="lbl" width="96" valign="top" style="width:96px;padding:13px 0;border-top:1px dashed #262836;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:20px;letter-spacing:1.2px;text-transform:uppercase;color:#7D7F8F;">When</td>
+        <td valign="top" align="right" style="padding:13px 0;border-top:1px dashed #262836;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:20px;color:#FFFFFF;">{{signin_date}}, {{signin_time}} {{timezone}}</td>
+      </tr>
+      <tr>
+        <td class="lbl" width="96" valign="top" style="width:96px;padding:13px 0;border-top:1px dashed #262836;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:20px;letter-spacing:1.2px;text-transform:uppercase;color:#7D7F8F;">Browser</td>
+        <td valign="top" align="right" style="padding:13px 0;border-top:1px dashed #262836;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:20px;color:#FFFFFF;">{{browser_name}}</td>
+      </tr>
+      <tr>
+        <td class="lbl" width="96" valign="top" style="width:96px;padding:13px 0;border-top:1px dashed #262836;border-bottom:1px dashed #262836;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:20px;letter-spacing:1.2px;text-transform:uppercase;color:#7D7F8F;">IP</td>
+        <td valign="top" align="right" style="padding:13px 0;border-top:1px dashed #262836;border-bottom:1px dashed #262836;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:14px;line-height:20px;color:#FFFFFF;word-break:break-all;">{{ip_address}}</td>
+      </tr>
+    </table>
+    <p style="margin:10px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;color:#7D7F8F;text-align:center;">Location comes from the IP address, so it can be a city or two&nbsp;out.</p>
+  </td></tr>
+
+  <!-- not you : a handwritten pointer down to the one button that matters -->
+  <tr><td class="px" align="center" style="padding:30px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/02-note.png" width="360" alt="Handwritten: wasn&rsquo;t you? start here" style="display:block;width:360px;max-width:100%;height:auto;border:0;margin:0 auto;">
+  </td></tr>
+  <tr><td class="px" align="center" style="padding:2px 40px 0;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td>
+      <!--[if mso]>
+      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{secure_account_url}}" style="height:52px;v-text-anchor:middle;width:250px;" arcsize="27%" stroke="f" fillcolor="#768AFF">
+        <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
+        <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Secure my account &rarr;</center>
+      </v:roundrect>
+      <![endif]-->
+      <!--[if !mso]><!-->
+      <a href="{{secure_account_url}}" style="display:inline-block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:14px;padding:0 28px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;line-height:52px;text-decoration:none;white-space:nowrap;">Secure my account&nbsp;&rarr;</a>
+      <!--<![endif]-->
+    </td></tr></table>
+  </td></tr>
+  <tr><td class="px" style="padding:14px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6;color:#B4B5C4;text-align:center;">It signs out every session and walks you through a new password. Or <a href="{{sessions_url}}" style="color:#C4B5FD;font-weight:600;text-decoration:underline;text-decoration-color:#5B4E9E;">look at active sessions</a>&nbsp;first.</p>
+  </td></tr>
+
+  <!-- ask humAIne : a chat bubble from humAIne, the way the app shows it -->
+  <tr><td class="px" align="center" style="padding:36px 40px 0;">
     <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
-      <td style="padding:7px 14px;background-color:#26171F;border:1px solid #5D2F35;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:14px;font-weight:600;color:#FCA5A5;">&#9679;&nbsp; New sign-in</td>
+      <td width="34" valign="bottom" style="width:34px;padding:0 10px 2px 0;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="34" height="33" alt="" style="display:block;width:34px;height:33px;border:0;"></td>
+      <td valign="bottom">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td style="padding:11px 18px 13px 16px;background-color:#1C1A30;border:1px solid #383159;border-radius:18px 18px 18px 4px;">
+            <p style="margin:0 0 3px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:14px;letter-spacing:0.4px;color:#8E86C9;">Ask humAIne</p>
+            <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:17px;line-height:23px;color:#FFFFFF;text-decoration:none;">&ldquo;Who else has access?&rdquo;&nbsp;<span style="color:#A78BFA;">&rarr;</span></a>
+          </td>
+        </tr></table>
+      </td>
     </tr></table>
   </td></tr>
 
-  <!-- headline -->
-  <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;text-wrap:balance;">We haven&rsquo;t seen this device&nbsp;before</h1>
-  </td></tr>
-
-  <!-- signature : the same notification the app shows under Notifications (Security, unread).
-       Surface and border are the app's unread tint (primary at 10% / 30%) flattened to solid colours. -->
-  <tr><td class="px" style="padding:26px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#15152B" style="background-color:#15152B;border:1px solid #2C2858;border-radius:14px;">
-      <tr>
-        <td width="36" valign="top" style="padding:16px 0 16px 16px;">
-          <!-- 36px tinted tile with a device glyph -->
-          <table role="presentation" width="36" cellpadding="0" cellspacing="0" border="0"><tr>
-            <td width="36" height="36" align="center" valign="middle" bgcolor="#221F40" style="width:36px;height:36px;background-color:#221F40;border:1px solid #3B3470;border-radius:10px;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
-                <td width="9" height="14" style="width:9px;height:14px;border:2px solid #C4B5FD;border-radius:3px;font-size:1px;line-height:1px;">&nbsp;</td>
-              </tr></table>
-            </td>
-          </tr></table>
-        </td>
-        <td valign="top" style="padding:15px 18px 16px 14px;">
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-            <td style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:10.5px;line-height:14px;font-weight:700;letter-spacing:0.6px;text-transform:uppercase;color:#FCA5A5;">Security</td>
-            <td align="right" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:14px;color:#7D7F8F;white-space:nowrap;">{{signin_time}}</td>
-          </tr></table>
-          <p style="margin:5px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:21px;font-weight:700;color:#FFFFFF;">New sign-in on {{device_name}}</p>
-          <p style="margin:3px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;color:#B4B5C4;word-wrap:break-word;overflow-wrap:anywhere;">{{city}}, {{country}} &middot; {{ip_address}}</p>
-        </td>
-      </tr>
-    </table>
-  </td></tr>
-
-  <!-- the rest of the record : quiet hairline rows, no card -->
-  <tr><td class="px" style="padding:14px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-      <tr>
-        <td style="padding:11px 4px;border-bottom:1px solid #1F2129;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;color:#7D7F8F;white-space:nowrap;">Date</td>
-        <td align="right" style="padding:11px 4px 11px 16px;border-bottom:1px solid #1F2129;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:19px;font-weight:500;color:#FFFFFF;">{{signin_date}}</td>
-      </tr>
-      <tr>
-        <td style="padding:11px 4px;border-bottom:1px solid #1F2129;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;color:#7D7F8F;white-space:nowrap;">Time</td>
-        <td align="right" style="padding:11px 4px 11px 16px;border-bottom:1px solid #1F2129;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:19px;font-weight:500;color:#FFFFFF;">{{signin_time}} ({{timezone}})</td>
-      </tr>
-      <tr>
-        <td style="padding:11px 4px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;color:#7D7F8F;white-space:nowrap;">Browser</td>
-        <td align="right" style="padding:11px 4px 11px 16px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:19px;font-weight:500;color:#FFFFFF;">{{browser_name}}</td>
-      </tr>
-    </table>
-    <p style="margin:6px 4px 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;color:#7D7F8F;">Location is estimated from the IP address, so it can be a city or two out.</p>
-  </td></tr>
-
-  <!-- if it was you / not you -->
-  <tr><td align="center" class="px" style="padding:28px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#B4B5C4;">If it was you, {{first_name}}, there&rsquo;s nothing&nbsp;to&nbsp;do.</p>
-    <p style="margin:8px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#B4B5C4;"><span style="color:#FFFFFF;font-weight:600;">Not you?</span> Secure your account now. It signs out every session and takes you through a new&nbsp;password.</p>
-  </td></tr>
-
-  <!-- primary action -->
-  <tr><td class="px" style="padding:22px 40px 0;">
-    <!--[if mso]>
-    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{secure_account_url}}" style="height:52px;v-text-anchor:middle;width:520px;" arcsize="31%" stroke="f" fillcolor="#768AFF">
-      <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
-      <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Secure my account</center>
-    </v:roundrect>
-    <![endif]-->
-    <!--[if !mso]><!-->
-    <a href="{{secure_account_url}}" style="display:block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:16px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:600;line-height:52px;text-align:center;text-decoration:none;">Secure my account</a>
-    <!--<![endif]-->
-  </td></tr>
-  <tr><td align="center" class="px" style="padding:16px 40px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;"><a href="{{sessions_url}}" style="color:#A78BFA;font-weight:600;text-decoration:none;">Review active sessions&nbsp;&rarr;</a></p>
-  </td></tr>
-
-  <!-- ask humAIne -->
-  <tr><td class="px" style="padding:28px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#12131C;border:1px solid #2A2547;border-radius:16px;">
-      <tr>
-        <td width="52" valign="middle" style="padding:14px 0 14px 16px;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="36" height="35" alt="" style="display:block;width:36px;height:35px;border:0;"></td>
-        <td valign="middle" style="padding:14px 12px;">
-          <p style="margin:0 0 3px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#8E86C9;">Ask humAIne</p>
-          <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:16px;line-height:22px;color:#FFFFFF;text-decoration:none;">&ldquo;Who else has access?&rdquo;</a>
-        </td>
-        <td width="40" valign="middle" align="right" style="padding:14px 18px 14px 0;"><a href="{{chat_url}}" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;line-height:20px;color:#A78BFA;text-decoration:none;">&rarr;</a></td>
-      </tr>
-    </table>
-  </td></tr>
-
   <!-- fine print -->
-  <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">Button not working? Paste this link:<br><a href="{{secure_account_url}}" style="color:#A78BFA;word-break:break-all;">{{secure_account_url}}</a><br>Stuck anyway? Write to <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a>.</p>
+  <tr><td class="px" style="padding:26px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;text-align:center;">Button not working? Paste this link:<br><a href="{{secure_account_url}}" style="color:#A78BFA;word-break:break-all;">{{secure_account_url}}</a><br>Stuck anyway? Write to <a href="mailto:{{support_email}}" style="color:#A78BFA;">{{support_email}}</a>.</p>
   </td></tr>
 
-  <!-- footer : security -->
-  <tr><td class="px" style="padding:44px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#1C1E27;">&nbsp;</td></tr></table>
+  <!-- footer : security (under a hand-drawn rule) -->
+  <tr><td class="px" style="padding:40px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/divider.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
   </td></tr>
-  <tr><td align="center" class="px" style="padding:30px 40px 40px;">
+  <tr><td align="center" class="px" style="padding:26px 40px 40px;">
     <img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="40" height="39" alt="humAIne" style="display:block;width:40px;height:39px;border:0;margin:0 auto;">
     <p style="margin:12px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:15px;line-height:20px;color:#C9C3F2;">hum<span style="color:#8FA0FF;">AI</span>ne</p>
     <p style="margin:4px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:18px;color:#7D7F8F;">Disruptively Human . Trust Co-created.</p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;">
+    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;text-align:center;">
       <a href="{{help_url}}" style="color:#A3A5B5;text-decoration:none;">Help centre</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{security_url}}" style="color:#A3A5B5;text-decoration:none;">Security</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{privacy_url}}" style="color:#A3A5B5;text-decoration:none;">Privacy</a>
     </p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;">Security notification sent to {{recipient_email}}. These can&rsquo;t be switched off while your account is active.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
+    <p style="margin:14px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;text-align:center;">Security notification sent to {{recipient_email}}. These can&rsquo;t be switched off while your account is active.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
   </td></tr>
 
 </table>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css">
+<style>
+  .postmark { filter: url(#ink); opacity: .9; }
+  .postmark text { font: 600 9.5px 'DM Mono', monospace; letter-spacing: 2.4px; fill: #A99EE8; }
+</style></head>
+<body>
+<!-- hero : the clay envelope, franked with a hand-inked postmark and its wavy cancellation lines -->
+<div class="stage" data-out="hero/13-verify-email.jpg" style="height:330px">
+  <div class="glow violet" style="left:160px;top:80px;width:280px;height:200px;opacity:.48"></div>
+  <div class="glow pink" style="left:40px;top:180px;width:190px;height:120px;opacity:.24"></div>
+  <svg id="sky" width="600" height="330" style="left:0;top:0"></svg>
+  <div class="planet blue" style="left:470px;top:50px;width:44px;height:44px"></div>
+  <div class="planet pink" style="left:88px;top:246px;width:26px;height:26px"></div>
+  <div class="planet cyan" style="left:300px;top:288px;width:9px;height:9px"></div>
+  <img class="icon" src="../../img/src/icons/mail-at.svg" style="left:176px;top:44px;width:250px;transform:rotate(-6deg)">
+  <svg id="ink" width="600" height="330" style="left:0;top:0"></svg>
+  <svg class="postmark" width="600" height="330" style="left:0;top:0">
+    <defs><path id="pm-arc" d="M 384,226 m -30,0 a 30,30 0 1,1 60,0 a 30,30 0 1,1 -60,0"/></defs>
+    <g transform="rotate(-14 384 226)">
+      <circle cx="384" cy="226" r="41" fill="none" stroke="#A99EE8" stroke-width="2.6"/>
+      <circle cx="384" cy="226" r="27" fill="none" stroke="#A99EE8" stroke-width="1.6"/>
+      <text><textPath href="#pm-arc" startOffset="0" textLength="184" lengthAdjust="spacing">CONFIRM · SIGN-UP · </textPath></text>
+      <text x="384" y="232" text-anchor="middle" style="font-size:17px;letter-spacing:0">@</text>
+    </g>
+  </svg>
+  <div class="note pink" style="left:52px;top:56px;transform:rotate(-6deg);font-size:35px">making sure
+it's yours</div>
+</div>
+
+<!-- the code slip : taped top, a perforation before its stub -->
+<div class="mark" data-out="marks/13-slip-top.png" data-exact style="width:300px;height:36px">
+  <div class="tape" style="left:100px;top:4px;width:100px;height:26px;transform:rotate(-4deg)"></div>
+</div>
+<div class="mark" data-out="marks/13-slip-perf.png" data-exact style="width:300px;height:24px"></div>
+<div class="mark" data-out="marks/13-slip-bottom.png" data-exact style="width:300px;height:14px"></div>
+<!-- hand-drawn timeline connectors : a firm one (done) and a dashed one (still to come) -->
+<div class="mark" data-out="marks/13-line-done.png" style="width:28px;height:104px"></div>
+<div class="mark" data-out="marks/13-line-next.png" style="width:28px;height:104px"></div>
+
+<script src="kit.js"></script>
+<script>
+  K.init(1313);
+  const stage = document.querySelector('.stage');
+  K.stars(document.getElementById('sky'), { w: 600, h: 330, count: 64, sparkles: 5, avoid: [[300, 160, 140]] });
+  const ink = document.getElementById('ink');
+  // wavy cancellation lines running out of the postmark
+  for (let i = 0; i < 4; i++) {
+    const y = 204 + i * 14, pts = [];
+    for (let x = 420; x <= 548; x += 8) pts.push([x, y + Math.sin((x - 420) / 14 + i * .5) * 4.2]);
+    K.line(ink, { points: pts, color: '#A99EE8', width: 2.1, jitter: .4, opacity: .85 });
+  }
+  K.ellipse(ink, { cx: 101, cy: 259, rx: 32, ry: 8, rot: -16, loops: 1.1, width: 1.7, opacity: .75, color: '#B5B7F6' });
+  K.line(ink, { points: [[140, 138], [150, 156], [170, 168], [198, 171]], arrow: true, color: '#F9A8D4', width: 2.8, head: 12 });
+  K.doodle(ink, { kind: 'asterisk', x: 520, y: 132, s: 7, color: '#F9A8D4', width: 2 });
+  K.doodle(ink, { kind: 'star', x: 232, y: 270, s: 8, color: '#C4B5FD', width: 2 });
+  K.finish(stage, { top: 0.1, bottom: 0.22, sides: 0.06 });
+
+  const m = document.querySelectorAll('.mark');
+  const st = K.svg(m[0], 300, 36); m[0].insertBefore(st, m[0].firstChild);
+  st.insertAdjacentHTML('beforeend', '<path d="M0,18 H300 V36 H0 Z" fill="#EEE8F6"/>');
+  K.perforation(K.svg(m[1], 300, 24), { w: 300, h: 24, r: 8 });
+  K.svg(m[2], 300, 14).insertAdjacentHTML('beforeend', '<path d="M0,0 H300 V2 Q300,14 288,14 H12 Q0,14 0,2 Z" fill="#EEE8F6"/>');
+  K.line(K.svg(m[3], 28, 104), { points: [[14, 4], [15, 36], [13, 70], [14, 100]], color: '#8E7FD8', width: 2.2, jitter: .9 });
+  const nx = K.line(K.svg(m[4], 28, 104), { points: [[14, 4], [13, 36], [15, 70], [14, 100]], color: '#565869', width: 2, jitter: .9 });
+  nx.querySelector('path').setAttribute('stroke-dasharray', '5 7');
+  K.done();
+</script>
+</body></html>

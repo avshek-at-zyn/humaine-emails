@@ -12,7 +12,7 @@
 <!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
 <![endif]-->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Hahmlet:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{color-scheme:dark;supported-color-schemes:dark;}
   body,table,td,a{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
@@ -24,12 +24,10 @@
   u + .body a, #MessageViewBody a{color:inherit;text-decoration:none;}
   @media screen and (max-width:620px){
     .px{padding-left:24px!important;padding-right:24px!important;}
-    .h1{font-size:27px!important;line-height:1.25!important;}
+    .h1{font-size:34px!important;line-height:1.1!important;letter-spacing:-0.8px!important;}
     .lead{font-size:15px!important;}
-    .pg{display:block!important;width:auto!important;padding:22px 22px 0!important;}
-    .mg{display:block!important;width:auto!important;padding:20px 22px 0!important;border-left:0!important;}
-    .pf{padding:20px 22px 18px!important;}
-    .pt{font-size:19px!important;}
+    .pp{padding-left:18px!important;padding-right:18px!important;}
+    .ptitle{font-size:21px!important;}
   }
 </style>
 </head>
@@ -48,121 +46,105 @@
     <img src="https://humaine-email.vercel.app/img/brand/lockup@2x.png" width="144" height="36" alt="humAIne" style="display:block;width:144px;height:36px;border:0;">
   </td></tr>
 
-  <!-- hero : app clay illustration in a planetary scene, edges fade into the canvas -->
-  <tr><td>
-    <img src="https://humaine-email.vercel.app/img/hero/03-document-shared.jpg" width="600" alt="A lilac clay document with a violet person badge, circled by an orbit, a ringed planet and a few small moons" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
+  <!-- hero : collage. A dashed flight path loops out of a small planet and lands on the clay document -->
+  <tr><td style="padding:4px 0 0;">
+    <img src="https://humaine-email.vercel.app/img/hero/03-document-shared.jpg" width="600" alt="A dashed, hand-drawn flight path loops out of a small pink planet and lands on a lilac clay document with a person badge, with a handwritten note: sent your way" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
   </td></tr>
 
-  <!-- status chip : info -->
-  <tr><td align="center" class="px" style="padding:4px 40px 0;">
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
-      <td style="padding:7px 14px;background-color:#1C1A30;border:1px solid #383159;border-radius:999px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:14px;font-weight:600;color:#C4B5FD;">&#10022;&nbsp; Shared with you</td>
-    </tr></table>
+  <!-- kicker : a log line, not a badge -->
+  <tr><td align="center" class="px" style="padding:0 40px 14px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:14px;letter-spacing:1.6px;text-transform:uppercase;color:#C4B5FD;">&#10022;&nbsp; Shared with you</td></tr>
+
+  <!-- headline : the word that matters, ringed by hand -->
+  <tr><td class="px" style="padding:0 40px 0;">
+    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:44px;line-height:1.12;letter-spacing:-1.2px;color:#FFFFFF;text-align:center;">{{sharer_name}} sent you <span style="white-space:nowrap;">a <span style="background-image:url('https://humaine-email.vercel.app/img/marks/ring.png');background-repeat:no-repeat;background-size:100% 100%;padding:2px 12px 6px;">document</span></span></h1>
+    <p class="lead" style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#B4B5C4;text-align:center;">Hi {{first_name}}, it was shared from {{sharer_email}} and opens only for the people they&nbsp;chose.</p>
   </td></tr>
 
-  <!-- headline + lead -->
-  <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <h1 class="h1" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-weight:500;font-size:31px;line-height:1.25;letter-spacing:-0.3px;color:#FFFFFF;text-wrap:balance;">{{sharer_name}} sent you a&nbsp;document</h1>
-    <p class="lead" style="margin:16px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#B4B5C4;">Hi {{first_name}}, it was shared from {{sharer_email}} and opens only for the people they&nbsp;chose.</p>
-  </td></tr>
-
-  <!-- signature : the document itself, as a page, with the sharer's note in the margin.
-       The note column is Handlebars-conditional and sits inside HTML comments so raw previews stay clean;
-       swap it for your ESP's own conditional if it isn't Handlebars. Without a note, the page takes the full width.
-       page_count_label arrives pre-pluralised: "1 page", "12 pages". -->
-  <tr><td class="px" style="padding:28px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#181A24" style="background-color:#181A24;border:1px solid #2A2C38;border-radius:8px;">
-      <tr>
-        <!-- page body -->
-        <td class="pg" valign="top" style="padding:26px 24px 0 26px;">
-          <p class="pt" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:21px;line-height:1.3;font-weight:500;color:#FFFFFF;">{{document_title}}</p>
-          <p style="margin:8px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;color:#7D7F8F;">{{document_type}} &middot; {{page_count_label}}</p>
-          <!-- soft text bars : a heading, then body lines with one highlighted passage -->
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:22px;">
-            <tr><td><table role="presentation" width="42%" cellpadding="0" cellspacing="0" border="0"><tr><td height="8" bgcolor="#30323F" style="height:8px;font-size:1px;line-height:8px;border-radius:4px;background-color:#30323F;">&nbsp;</td></tr></table></td></tr>
-            <tr><td height="14" style="height:14px;font-size:1px;line-height:14px;">&nbsp;</td></tr>
-            <tr><td><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="6" bgcolor="#252733" style="height:6px;font-size:1px;line-height:6px;border-radius:3px;background-color:#252733;">&nbsp;</td></tr></table></td></tr>
-            <tr><td height="10" style="height:10px;font-size:1px;line-height:10px;">&nbsp;</td></tr>
-            <tr><td><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="6" bgcolor="#3A336E" style="height:6px;font-size:1px;line-height:6px;border-radius:3px;background-color:#3A336E;">&nbsp;</td></tr></table></td></tr>
-            <tr><td height="10" style="height:10px;font-size:1px;line-height:10px;">&nbsp;</td></tr>
-            <tr><td><table role="presentation" width="56%" cellpadding="0" cellspacing="0" border="0"><tr><td height="6" bgcolor="#3A336E" style="height:6px;font-size:1px;line-height:6px;border-radius:3px;background-color:#3A336E;">&nbsp;</td></tr></table></td></tr>
-            <tr><td height="10" style="height:10px;font-size:1px;line-height:10px;">&nbsp;</td></tr>
-            <tr><td><table role="presentation" width="88%" cellpadding="0" cellspacing="0" border="0"><tr><td height="6" bgcolor="#252733" style="height:6px;font-size:1px;line-height:6px;border-radius:3px;background-color:#252733;">&nbsp;</td></tr></table></td></tr>
-          </table>
-        </td>
+  <!-- signature : the document as a paper page, taped down at the corners, torn top and bottom.
+       The sharer's note is a pink sticky stuck on the page. It is Handlebars-conditional and sits inside HTML comments so raw
+       previews stay clean; swap it for your ESP's own conditional if it isn't Handlebars. Without a note, the page simply ends
+       after the ruled lines. page_count_label arrives pre-pluralised: "1 page", "12 pages". -->
+  <tr><td class="px" style="padding:30px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/03-paper-top.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#EEE8F6" style="background-color:#EEE8F6;">
+      <tr><td class="pp" style="padding:0 34px;">
+        <p style="margin:0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:14px;letter-spacing:1.6px;text-transform:uppercase;color:#6E6790;">Shared document</p>
+        <p class="ptitle" style="margin:10px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:25px;line-height:1.25;font-weight:500;letter-spacing:-0.3px;color:#1B1730;word-wrap:break-word;overflow-wrap:anywhere;">{{document_title}}</p>
+        <p style="margin:8px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:12.5px;line-height:18px;color:#6E6790;">{{document_type}} &middot; {{page_count_label}}</p>
+        <!-- faint ruled lines -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+          <tr><td height="26" style="height:26px;border-bottom:1px solid #DCD4EA;font-size:1px;line-height:1px;">&nbsp;</td></tr>
+          <tr><td height="26" style="height:26px;border-bottom:1px solid #DCD4EA;font-size:1px;line-height:1px;">&nbsp;</td></tr>
+          <tr><td height="26" style="height:26px;border-bottom:1px solid #DCD4EA;font-size:1px;line-height:1px;">&nbsp;</td></tr>
+        </table>
         <!-- {{#if share_message}} -->
-        <!-- margin comment -->
-        <td class="mg" width="176" valign="top" style="width:176px;padding:26px 18px 0 16px;border-left:1px dashed #2A2C38;">
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#1C1A30" style="background-color:#1C1A30;border:1px solid #383159;border-radius:10px;">
-            <tr><td style="padding:12px 14px 14px;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-                <td width="8" valign="middle" style="width:8px;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="8" height="8" bgcolor="#A78BFA" style="width:8px;height:8px;font-size:1px;line-height:8px;border-radius:999px;background-color:#A78BFA;">&nbsp;</td></tr></table></td>
-                <td valign="middle" style="padding-left:8px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#C4B5FD;">{{sharer_name}}</td>
-              </tr></table>
-              <p style="margin:8px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13.5px;line-height:1.5;color:#E4E1F5;word-wrap:break-word;overflow-wrap:anywhere;">{{share_message}}</p>
-            </td></tr>
-          </table>
-        </td>
+        <!-- the sharer's note : a pink sticky, live text -->
+        <table role="presentation" width="280" cellpadding="0" cellspacing="0" border="0" align="center" style="width:280px;max-width:100%;margin:22px auto 0;">
+          <tr><td style="padding:0;font-size:0;line-height:0;"><img src="https://humaine-email.vercel.app/img/marks/03-sticky-top.png" width="280" alt="" style="display:block;width:100%;max-width:280px;height:auto;border:0;"></td></tr>
+          <tr><td bgcolor="#F6D3EE" style="padding:8px 22px 12px;background-color:#F6D3EE;">
+            <p style="margin:0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:14px;letter-spacing:1.4px;text-transform:uppercase;color:#9A3F7E;">Note from {{sharer_name}}</p>
+            <p style="margin:8px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15.5px;line-height:1.5;color:#1B1730;word-wrap:break-word;overflow-wrap:anywhere;">{{share_message}}</p>
+          </td></tr>
+          <tr><td style="padding:0;font-size:0;line-height:0;"><img src="https://humaine-email.vercel.app/img/marks/03-sticky-bottom.png" width="280" alt="" style="display:block;width:100%;max-width:280px;height:auto;border:0;"></td></tr>
+        </table>
         <!-- {{/if}} -->
-      </tr>
-      <!-- page footer -->
-      <tr><td class="pf" colspan="2" style="padding:24px 26px 18px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-          <td style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:11px;line-height:14px;color:#565869;">humAIne</td>
-          <td align="right" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:14px;color:#565869;">Generated {{generated_date}}</td>
+        <!-- page footer -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:22px;"><tr>
+          <td valign="middle" style="padding:12px 0 4px;border-top:1px dashed #B8AFD3;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:14px;line-height:18px;font-weight:600;color:#2B2350;">hum<span style="color:#5B62B4;">AI</span>ne</td>
+          <td valign="middle" align="right" style="padding:12px 0 4px;border-top:1px dashed #B8AFD3;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:18px;color:#6E6790;white-space:nowrap;">Generated {{generated_date}}</td>
         </tr></table>
       </td></tr>
     </table>
-    <!-- the pages underneath -->
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:0 10px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="5" bgcolor="#12141C" style="height:5px;font-size:1px;line-height:5px;background-color:#12141C;border:1px solid #23252F;border-top:0;border-radius:0 0 7px 7px;">&nbsp;</td></tr></table>
+    <img src="https://humaine-email.vercel.app/img/marks/03-paper-bottom.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
+  </td></tr>
+
+  <!-- action -->
+  <tr><td class="px" align="center" style="padding:26px 40px 0;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td>
+      <!--[if mso]>
+      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{document_url}}" style="height:52px;v-text-anchor:middle;width:210px;" arcsize="27%" stroke="f" fillcolor="#768AFF">
+        <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
+        <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Open document &rarr;</center>
+      </v:roundrect>
+      <![endif]-->
+      <!--[if !mso]><!-->
+      <a href="{{document_url}}" style="display:inline-block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:14px;padding:0 28px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;line-height:52px;text-decoration:none;white-space:nowrap;">Open document&nbsp;&rarr;</a>
+      <!--<![endif]-->
     </td></tr></table>
   </td></tr>
 
-  <!-- primary action -->
-  <tr><td class="px" style="padding:28px 40px 0;">
-    <!--[if mso]>
-    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{document_url}}" style="height:52px;v-text-anchor:middle;width:520px;" arcsize="31%" stroke="f" fillcolor="#768AFF">
-      <v:fill type="gradient" color="#768AFF" color2="#FA81D6" angle="90"/>
-      <w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Open document</center>
-    </v:roundrect>
-    <![endif]-->
-    <!--[if !mso]><!-->
-    <a href="{{document_url}}" style="display:block;background-color:#9A86EC;background-image:linear-gradient(90deg,#768AFF 0%,#FA81D6 100%);border-radius:16px;color:#FFFFFF;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:600;line-height:52px;text-align:center;text-decoration:none;">Open document</a>
-    <!--<![endif]-->
-  </td></tr>
-
-  <!-- ask humAIne -->
-  <tr><td class="px" style="padding:24px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#12131C;border:1px solid #2A2547;border-radius:16px;">
-      <tr>
-        <td width="52" valign="middle" style="padding:14px 0 14px 16px;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="36" height="35" alt="" style="display:block;width:36px;height:35px;border:0;"></td>
-        <td valign="middle" style="padding:14px 12px;">
-          <p style="margin:0 0 3px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:16px;font-weight:600;color:#8E86C9;">Ask humAIne</p>
-          <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:16px;line-height:22px;color:#FFFFFF;text-decoration:none;">&ldquo;Summarise it for me&rdquo;</a>
-        </td>
-        <td width="40" valign="middle" align="right" style="padding:14px 18px 14px 0;"><a href="{{chat_url}}" style="font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;line-height:20px;color:#A78BFA;text-decoration:none;">&rarr;</a></td>
-      </tr>
-    </table>
+  <!-- ask humAIne : a chat bubble from humAIne, the way the app shows it -->
+  <tr><td class="px" align="center" style="padding:36px 40px 0;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
+      <td width="34" valign="bottom" style="width:34px;padding:0 10px 2px 0;"><img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="34" height="33" alt="" style="display:block;width:34px;height:33px;border:0;"></td>
+      <td valign="bottom">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td style="padding:11px 18px 13px 16px;background-color:#1C1A30;border:1px solid #383159;border-radius:18px 18px 18px 4px;">
+            <p style="margin:0 0 3px;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:14px;letter-spacing:0.4px;color:#8E86C9;">Ask humAIne</p>
+            <a href="{{chat_url}}" style="font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:17px;line-height:23px;color:#FFFFFF;text-decoration:none;">&ldquo;Summarise it for me&rdquo;&nbsp;<span style="color:#A78BFA;">&rarr;</span></a>
+          </td>
+        </tr></table>
+      </td>
+    </tr></table>
   </td></tr>
 
   <!-- fine print -->
-  <tr><td align="center" class="px" style="padding:22px 48px 0;">
-    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;">Weren&rsquo;t expecting it? Ignore this email. Nothing opens on&nbsp;its&nbsp;own.<br>Button not working? Paste this link:<br><a href="{{document_url}}" style="color:#A78BFA;word-break:break-all;">{{document_url}}</a></p>
+  <tr><td class="px" style="padding:26px 40px 0;">
+    <p style="margin:0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.7;color:#7D7F8F;text-align:center;">Weren&rsquo;t expecting it? Ignore this email. Nothing opens on&nbsp;its&nbsp;own.<br>Button not working? Paste this link:<br><a href="{{document_url}}" style="color:#A78BFA;word-break:break-all;">{{document_url}}</a></p>
   </td></tr>
 
-  <!-- footer : account -->
-  <tr><td class="px" style="padding:44px 40px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" style="height:1px;line-height:1px;font-size:1px;background-color:#1C1E27;">&nbsp;</td></tr></table>
+  <!-- footer : account (under a hand-drawn rule) -->
+  <tr><td class="px" style="padding:40px 40px 0;">
+    <img src="https://humaine-email.vercel.app/img/marks/divider.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
   </td></tr>
-  <tr><td align="center" class="px" style="padding:30px 40px 40px;">
+  <tr><td align="center" class="px" style="padding:26px 40px 40px;">
     <img src="https://humaine-email.vercel.app/img/brand/mark-96.png" width="40" height="39" alt="humAIne" style="display:block;width:40px;height:39px;border:0;margin:0 auto;">
     <p style="margin:12px 0 0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:15px;line-height:20px;color:#C9C3F2;">hum<span style="color:#8FA0FF;">AI</span>ne</p>
     <p style="margin:4px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:18px;color:#7D7F8F;">Disruptively Human . Trust Co-created.</p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;">
+    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:18px;text-align:center;">
       <a href="{{help_url}}" style="color:#A3A5B5;text-decoration:none;">Help centre</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{privacy_url}}" style="color:#A3A5B5;text-decoration:none;">Privacy</a>&nbsp;&nbsp;<span style="color:#3A3C48;">&middot;</span>&nbsp;&nbsp;<a href="{{terms_url}}" style="color:#A3A5B5;text-decoration:none;">Terms</a>
     </p>
-    <p style="margin:18px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;">Sent to {{recipient_email}} because {{sharer_email}} shared a document with you. It&rsquo;s a one-off service message, so there&rsquo;s nothing to unsubscribe from.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
+    <p style="margin:14px 0 0;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#565869;text-align:center;">Sent to {{recipient_email}} because {{sharer_email}} shared a document with you. It&rsquo;s a one-off service message, so there&rsquo;s nothing to unsubscribe from.<br>&copy; {{current_year}} {{company_name}} &middot; {{company_address}}<br>humAIne is a Zyn Global product.</p>
   </td></tr>
 
 </table>

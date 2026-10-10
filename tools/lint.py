@@ -50,6 +50,14 @@ def lint(path):
     for img in re.findall(r'<img\b[^>]*>', src):
         if 'alt=' not in img:
             errors.append('img without alt')
+    body_html = re.sub(r'(?is)<head.*?</head>', '', src)
+    for pattern, why in [(r'position\s*:\s*(absolute|relative|fixed)', 'CSS position'), (r'(?<![-\w])transform\s*:', 'CSS transform'),
+                         (r'display\s*:\s*(flex|grid)', 'flex/grid layout'), (r'margin[^:;"]*:\s*-\d', 'negative margin')]:
+        if re.search(pattern, body_html):
+            errors.append(f'{why} in email HTML (unsupported in many clients; bake it into an image)')
+    h1tag = re.search(r'(?is)<h1\b[^>]*>', src)
+    if h1tag and 'text-align:center' not in h1tag.group(0).replace(' ', ''):
+        warns.append('headline is not centred (the system is centred)')
     if re.search(r'£\s?\d|\$\s?\d', text):
         warns.append('hardcoded money amount (use a merge tag)')
 
@@ -86,7 +94,7 @@ def lint(path):
 
     m = re.search(r'Ask humAIne</p>\s*<a[^>]*>(.*?)</a>', src, re.S)
     if m:
-        prompt = visible_text(m.group(1)).strip('“”"')
+        prompt = visible_text(m.group(1)).replace('→', '').strip().strip('“”" ')
         if len(prompt) > 22:
             warns.append(f'Ask prompt is {len(prompt)} chars (wraps at 390px; aim <= 22): "{prompt}"')
     return headline, errors, warns

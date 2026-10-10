@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- clay receipt as a die-cut sticker, beside the headline -->
+<div class="mark" data-out="marks/28-sticker.png" style="width:200px;height:200px">
+  <img src="../../img/src/icons/receipt-check.svg" style="left:24px;top:18px;width:150px;transform:rotate(9deg);filter:url(#diecut)">
+</div>
+<!-- torn top edge of the receipt, taped down -->
+<div class="mark" data-out="marks/28-paper-top.png" data-exact style="width:520px;height:46px">
+  <div class="tape" style="left:34px;top:6px;width:118px;height:28px;transform:rotate(-7deg)"></div>
+  <div class="tape" style="left:384px;top:8px;width:104px;height:26px;transform:rotate(5deg)"></div>
+</div>
+<!-- receipt teeth at the bottom -->
+<div class="mark" data-out="marks/28-paper-bottom.png" data-exact style="width:520px;height:16px"></div>
+<!-- the stamp -->
+<div class="mark" data-out="marks/28-stamp.png" style="width:180px;height:104px">
+  <div class="stamp green" style="left:26px;top:24px;transform:rotate(-9deg)">Paid</div>
+</div>
+<!-- an ink note on the paper -->
+<div class="mark" data-out="marks/28-note.png" style="width:230px;height:52px">
+  <div class="note ink" style="left:8px;top:4px;transform:rotate(-3deg);font-size:27px;color:#4B3F8F">for your records</div>
+</div>
+<script src="kit.js"></script>
+<script>
+  K.init(2828);
+  const m = document.querySelectorAll('.mark');
+  const edge = K.svg(m[1], 520, 46); m[1].insertBefore(edge, m[1].firstChild);
+  K.tornTop(edge, { w: 520, h: 46, y: 28 });
+  K.teeth(K.svg(m[2], 520, 16), { w: 520, h: 16, size: 10 });
+  K.swash(K.svg(m[4], 230, 52), { x: 12, y: 44, w: 150, h: 4, curve: 1.5, tilt: -1, color: '#7C6FD6', opacity: .7, hook: false });
+  K.doodle(K.svg(m[0], 200, 200, 'left:0;top:0'), { kind: 'asterisk', x: 176, y: 30, s: 9, color: '#F9A8D4', width: 2.2 });
+  K.done();
+</script>
+</body></html>

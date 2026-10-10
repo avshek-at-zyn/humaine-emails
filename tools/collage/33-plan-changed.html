@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- the clay card with its swap badge, die-cut, two hand-drawn arrows going round it -->
+<div class="mark" data-out="marks/33-sticker.png" style="width:200px;height:200px">
+  <img data-src="../../img/src/icons/card-swap.svg" style="left:20px;top:16px;width:160px;transform:rotate(-6deg);filter:url(#diecut)">
+</div>
+<!-- paper-ink versions of the shared strike and arrow (the shared ones are drawn for the dark canvas) -->
+<div class="mark" data-out="marks/33-strike.png" style="width:300px;height:40px"></div>
+<div class="mark" data-out="marks/33-arrow.png" style="width:84px;height:40px"></div>
+<!-- an ink note at the foot of the notepad page -->
+<div class="mark" data-out="marks/33-note.png" style="width:240px;height:54px">
+  <div class="note ink" style="left:10px;top:6px;transform:rotate(-3deg);font-size:27px;color:#4B3F8F">the rest stays put</div>
+</div>
+<script src="kit.js"></script>
+<script>
+  const clay = () => Promise.all([...document.querySelectorAll('img[data-src]')].map(img => new Promise(res => {
+    const x = new XMLHttpRequest(); x.open('GET', img.dataset.src);
+    x.onload = () => { const t = x.responseText.replace(/<!-- ambient flecks[\s\S]*?(?=<!-- floor shadow)/, ''); img.onload = res; img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(t); };
+    x.send();
+  })));
+  K.init(33 * 101);
+  const m = document.querySelectorAll('.mark');
+  const sk = K.svg(m[0], 200, 200); m[0].appendChild(sk);
+  // one arrow sweeping over the top-left, one back under the bottom
+  K.line(sk, { points: [[22, 104], [24, 70], [44, 46], [76, 36]], arrow: true, color: '#C4B5FD', width: 2.6, head: 10, jitter: .7 });
+  K.line(sk, { points: [[182, 132], [172, 164], [146, 182], [112, 186]], arrow: true, color: '#F9A8D4', width: 2.6, head: 10, jitter: .7 });
+  // strike, in red-pen ink for the paper
+  const st = K.svg(m[1], 300, 40);
+  K.line(st, { points: [[6, 24], [100, 20], [200, 22], [294, 15]], jitter: 1.4, width: 3, color: '#D6409F' });
+  K.line(st, { points: [[14, 18], [150, 25], [286, 20]], jitter: 1.2, width: 2, color: '#D6409F', opacity: .7 });
+  // arrow, in ink
+  K.line(K.svg(m[2], 84, 40), { points: [[6, 24], [30, 18], [58, 20], [76, 18]], arrow: true, color: '#4B3F8F', width: 2.8, head: 11 });
+  clay().then(() => K.done());
+</script>
+</body></html>

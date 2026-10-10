@@ -1,6 +1,6 @@
 # humAIne Email Templates
 
-**43 production-ready HTML emails** for **humAIne** (a Zyn Global product) — every email the product's flows need, designed to feel native to the humAIne app: same canvas, type, clay illustrations and planetary backdrop. Plus a browser-based preview viewer.
+**43 production-ready HTML emails** for **humAIne** (a Zyn Global product) — every email the product's flows need, designed to feel native to the humAIne app (same canvas, type, clay illustrations and planetary backdrop) with a hand-made layer on top: handwritten notes, marker marks, ink stamps and torn paper. Plus a browser-based preview viewer.
 
 **Live preview:** [humaine-email.vercel.app](https://humaine-email.vercel.app) · **Design and flow reference:** the humAIne app, [humaine-personal-mobile.vercel.app](https://humaine-personal-mobile.vercel.app)
 
@@ -137,29 +137,38 @@ Every value below was read from the humAIne app's own CSS, so an email and the s
 | Link | `#A78BFA` | violet accent |
 | Primary CTA | `linear-gradient(90deg, #768AFF, #FA81D6)`, 16px radius, 52px | "Login with email" button |
 | Secondary CTA | `#1B1D26`, 1px `#2E3040`, 14px radius | glass buttons |
-| Status chips | success `#4ADE80` · info `#C4B5FD` · alert `#FCA5A5` · release `#F9A8D4` | "Active" chip pattern |
+| Status kicker | DM Mono, uppercase: success `#4ADE80` · info `#C4B5FD` · alert `#FCA5A5` · release `#F9A8D4` | the app's status chip colours |
+| Paper | `#EEE8F6`, ink `#1B1730`, labels `#6E6790`, dashed rules `#B8AFD3` | (email-only: the hand-made layer) |
+| Handwriting | Covered By Your Grace, lilac `#C4B5FD` / pink `#F9A8D4` on the canvas, ink `#4B3F8F` on paper | (rendered into images) |
 
-Headlines fall back to Georgia (keeps the serif character in Gmail and Outlook, which don't load web fonts); body falls back to Helvetica/Arial.
+Headlines fall back to Georgia (keeps the serif character in Gmail and Outlook, which don't load web fonts); body falls back to Helvetica/Arial; DM Mono falls back to SF Mono, Menlo or Consolas.
 
-**Structure.** Official lockup → hero scene → Hahmlet headline → lead → the email's signature block → CTA → **Ask humAIne** card → footer with the identifier and *"Disruptively Human . Trust Co-created."* The system (canvas, type, colours, buttons, footer, Outlook plumbing) never changes; the shape of the content does.
+**Structure (centred).** Official lockup → artwork (a collage hero, or the email's clay icon as a die-cut sticker) → a monospace kicker (the status, like a log line) → Hahmlet headline with one hand-drawn mark → lead → the email's signature block → an optional handwritten pointer → the button → an **Ask humAIne** chat bubble → footer under a hand-drawn rule, with the identifier and *"Disruptively Human . Trust Co-created."* Canvas, type, colours, buttons, footer and Outlook plumbing never change; the content's shape and the hand-made layer do.
 
-**One signature move per email.** So the set reads as designed for this product rather than stamped from one template, every email has a single focal detail built from its own data, and neighbours never share one:
+**The hand-made layer ("margin notes").** Precise app data with a human hand over it, so no email reads as stamped from a template:
+- **Handwriting.** One short line per email, sometimes a second pointer, written in a marker face (Covered By Your Grace) and rendered into the artwork. It's the email's one human aside ("never seen this one before", "for your records", "the clock is running"). Every line is unique and never carries information, and the alt text spells it out.
+- **Marks.** A marker swash under a headline phrase, a hand-drawn ring round a word or value, a scribbled strike-through over old values, hand-drawn arrows, checks, crosses and timeline dots, and wobbly rules.
+- **Paper.** Torn, taped, perforated paper cards for anything that's a record. The cards are live text on a `#EEE8F6` paper colour, with edge images.
+- **Ink stamps.** Rotated, textured stamps on the paper: PAID, ACTIVE, DECLINED, CANCELLED, REFUNDED, SAVE, RECEIVED, RSVP, VERIFIED, CLOSED, WORKS ONCE.
+- **Die-cut stickers.** The app's clay icons with a white die-cut edge, tilted as if stuck on.
+- **Monospace logs.** Device, place, time and IP as DM Mono rows on dashed rules, not boxed cards.
 
-| Move | What it is | Emails |
-|------|-----------|--------|
-| Big figure | The key value set large in Hahmlet | 04 link window · 08 and 21 codes · 23 new city · 27 amount paid · 35 next charge · 37 refund |
-| Before → after | Old value dimmed and struck, new value bright | 06 authenticator · 11 password · 22 alternate email · 33 plan · 42 Monthly vs Annual |
-| Timeline | Done / current / next steps on a hairline | 09 setup checklist · 13 signup · 16 recovery · 26 export · 34 cancellation · 39 maintenance window |
-| App notification | The event drawn as the app's own notification row | 02 new sign-in · 17 member locked out · 19 codes viewed · 32 billing change · 43 support thread |
-| Artefact | The thing itself, masked | 03 document page · 10 invitation pass · 14 PIN field · 18 backup-code sheet · 20 phone pill · 24 deletion record · 28 invoice · 30 card face · 31 expiry tile |
-| Date tile | A calendar block for the date that matters | 29 renewal · 38 retirement |
-| Editorial index | Magazine-style numbered list | 07 first moves · 12 release notes · 40 weekly briefing |
-| Split hero | Copy left, compact scene right | 01 early access · 05 PIN reset · 41 organisation in the news |
-| Status ribbon | A thin band under the masthead | 15 sign-in paused · 25 suspended · 36 subscription ended |
+| Signature block | Emails |
+|-----------------|--------|
+| Torn paper record | 28 receipt · 37 credit note · 24 deletion record · 18 printable backup-code sheet · 03 shared document page · 41 newspaper clipping · 39 "planned work" notice taped to a door |
+| Ticket, pass or coupon (perforated) | 08 one-time code slip · 13 sign-up code slip · 10 invitation · 26 export file ticket · 27 subscription pass · 43 support ticket · 42 annual coupon · 16 reference stub |
+| Notepad page | 07 first moves · 09 setup to-do list · 12 release notes · 17 admin checklist · 33 plan change · 34 cancellation |
+| Calendar page | 29 renewal (tear-off) · 38 retirement (pinned, day circled) |
+| Before → after, struck by hand | 06 authenticator · 11 password · 22 alternate email · 05 PIN examples |
+| Figure ringed or underlined by hand | 04 link window · 21 code · 23 new city · 31 card expiry · 35 next charge |
+| Card face | 30 declined (stamped) |
+| App notification row + log | 02 new sign-in (device ringed) · 19 codes viewed · 32 billing change · 01 what's included · 20 phone pill (stamped) · 14 PIN field |
+| Zine contents | 40 weekly briefing |
+| Status ribbon + log | 15 sign-in paused · 25 suspended · 36 subscription ended |
 
-Status chips are used only where the signature block doesn't already say the status. The copy rules (British English, plain specific headlines with no trailing full stop, at most one em dash, no exclamation marks, no chatbot phrases) are in `tools/briefs/zyn-vibe.md` and enforced by `tools/lint.py`.
+Serious emails (15, 24, 25, 30, 36) keep the hand-made layer quiet: functional pointers or none, never a joke. The copy rules (British English, plain specific headlines with no trailing full stop, at most one em dash, no exclamation marks, no chatbot phrases) are in `tools/briefs/zyn-vibe.md`, the visual rules in `tools/briefs/handmade.md`, and both are enforced by `tools/lint.py`.
 
-**Ask humAIne.** Every email ends with a card suggesting a relevant chat prompt (*"Is my account secure?"*, *"Summarise it for me"*, *"Why was I declined?"* …), linking to `{{chat_url}}`. Prompts are measured so they sit on one line at 390px. The product is an AI you talk to; the email hands the reader straight to it. Three emails leave the card out on purpose — `24` account deleted, `25` account suspended and `36` subscription ended — because chat isn't available to the reader in those states. To pre-fill the prompt, have your ESP append it to the chat deep link.
+**Ask humAIne.** Every email ends with a chat bubble from humAIne suggesting a relevant prompt (*"Is my account secure?"*, *"Summarise it for me"*, *"Why was I declined?"* …), linking to `{{chat_url}}`. Prompts are measured so they sit on one line at 390px. The product is an AI you talk to; the email hands the reader straight to it. Three emails leave it out on purpose — `24` account deleted, `25` account suspended and `36` subscription ended — because chat isn't available to the reader in those states. To pre-fill the prompt, have your ESP append it to the chat deep link.
 
 **Dark only.** The app is dark-first and so are these. Each file declares `color-scheme: dark` so Apple Mail and iOS don't try to recolour it.
 
@@ -175,36 +184,33 @@ Status chips are used only where the signature block doesn't already say the sta
 
 The wordmark and tagline are crops of the app's own artwork — nothing redrawn.
 
-## Illustration — `img/hero/`, `img/src/`
+## Illustration — `img/hero/`, `img/marks/`, `img/src/`
 
-Each hero is a **clay icon floating in a planetary scene**, matching the app:
+- **Clay icons** use the app's illustration recipe: every shape is three stacked fills (lilac body `#F0D6F8 → #E5C3F0 → #C48DD8 → #8E56A8`, a plum shade `#3A1850` at the bottom, a white specular highlight top-left), with a soft floor shadow and one accent badge. App originals reused as-is live in `img/src/app/`; new icons drawn to the same recipe live in `img/src/icons/`.
+- **Collage heroes** (`img/hero/`, 23 emails) put a clay icon in the app's planetary scene, using the app's exact planet shading, glows and star field. On top go hand-drawn orbits and arrows, paper scraps, tape and a handwritten aside. Edges fade into the canvas so nothing sits in a box.
+- **Die-cut stickers** (`img/marks/<nn>-sticker.png`, 20 emails) replace the hero when the signature block should lead.
+- **Marks** (`img/marks/`) come in two kinds. Shared ones are the swash, ring, strike, arrows, check, cross, timeline dots, divider and paper edges. Per-email ones are notes, stamps, paper tops and stickers, named `<nn>-*.png`.
 
-- **Clay icons** use the app's illustration recipe — every shape is three stacked fills (lilac body `#F0D6F8 → #E5C3F0 → #C48DD8 → #8E56A8`, a plum shade `#3A1850` at the bottom, a white specular highlight top-left), a soft floor shadow, and one accent badge (white disc with a violet glyph, glossy green success, or glossy coral alert).
-  - App originals, reused as-is: `img/src/app/` (password-reset-success, invitation-mail-sent, administrator-icon, chat-history, export-data, …).
-  - New icons drawn to the same recipe: `img/src/icons/`.
-- **Planets** use the app's exact sphere shading — `radial-gradient(circle at 34% 30%, …)` in blue `#CFD6FF→#8B93E8→#5B62B4`, pink `#F6D3EE→#E08FD0→#A8548F`, cyan `#DCFBFF→#4FD6EA→#2B8FA8` and glass — with the app's ring and orbit strokes, star field and violet nebula glow.
-- **Edges fade into the canvas** (soft eased fades on the left/right ~20%, top 36%, bottom 28%) so the scene blends into the email instead of sitting in a box.
-
-Heroes are 1200px wide (2× for crisp display at 600px), JPEG, ~30–60 KB. Emails reference them absolutely (`https://humaine-email.vercel.app/img/…`). Every hero has descriptive alt text and no information lives only in an image, so blocked-image clients lose nothing.
+Everything is 2× for crisp display, and emails reference it absolutely (`https://humaine-email.vercel.app/img/…`). Every image has descriptive alt text and none carries essential information, so blocked-image clients lose nothing. Background-image marks (swash, ring, strike) are progressive: without them the text reads normally.
 
 ## Tools — `tools/`
 
 ```bash
 cd tools && npm install
-node scene.mjs                      # render every hero from tools/scenes/*.json
-node scene.mjs 04-password-reset    # just one
+node collage.mjs                    # render every hero, sticker, note, stamp and mark from tools/collage/*.html
+node collage.mjs 28 37              # just these emails' artwork
 node shot.mjs 04-password-reset.html   # desktop + mobile screenshots (uses local Chrome)
 node review.mjs /tmp/qa 27 28       # same, filled with samples.json, plus contact sheets
 python3 lint.py                     # copy + build checks on every template (or: python3 lint.py 04 15)
 python3 readme_tags.py              # rebuild the merge-tag tables below from the templates
 ```
 
-- **`scene.mjs`** — the hero generator. One JSON file per email in `tools/scenes/` declares the icon, planets (type, position, size, ring), orbit, sparkles and glows. Edit the JSON, re-run, done.
+- **`collage.mjs`** — the artwork renderer. Each email has a page in `tools/collage/<nn>-*.html` built with the kit (`kit.css` for planets, glows, notes, tape, stickers, stamps and paper; `kit.js` for seeded hand-drawn orbits, arrows, swashes, doodles, torn edges, perforations and grain). Every element marked `data-out="hero/…jpg"` or `data-out="marks/…png"` is captured at 2× into `img/`. `00-shared.html` holds the shared marks. Edit a page, re-run with its number, done.
 - **`shot.mjs`** — headless screenshots at 640px and 390px. Requests for production image URLs are served from the repo, so you can check an email before deploying. Prints `MISSING ASSETS` if any image 404s.
-- **`review.mjs`** — QA renders with realistic values from `samples.json` (raw tags hide wrapping problems): desktop + mobile full pages, flags overflow, missing images and unfilled tags, and builds contact sheets of four mobile renders each.
-- **`lint.py`** — the Zyn copy and build linter: banned chatbot phrases, American spellings, em dashes, exclamation marks, staccato or question headlines, trailing full stops, Ask prompts that would wrap, plus `<script>`, light-mode CSS, brand casing, braces, alt text and hardcoded prices. Exit code 1 on errors.
+- **`review.mjs`** — QA renders with realistic values from `samples.json` (raw tags hide wrapping problems): desktop + mobile full pages. It flags overflow, missing images, unfilled tags, an Ask prompt that wraps and a one-word last headline line, and builds contact sheets of four mobile renders each.
+- **`lint.py`** — the Zyn copy and build linter: banned chatbot phrases, American spellings, em dashes, exclamation marks, staccato or question headlines, trailing full stops, Ask prompts that would wrap, plus `<script>`, light-mode CSS, CSS position/transform/flex or negative margins in email HTML, an off-centre headline, brand casing, braces, alt text and hardcoded prices. Exit code 1 on errors.
 - **`readme_tags.py`** — regenerates the merge-tag tables in this README straight from the templates, so the docs can't drift.
-- **`briefs/`** — the product facts, footer variants and design/copy rules the templates were built from.
+- **`briefs/`** — the product facts, footer variants, copy rules (`zyn-vibe.md`) and the hand-made visual system (`handmade.md`) the templates were built from.
 
 ---
 
@@ -228,7 +234,7 @@ Per template (excluding the shared tags above):
 | Template | Tags |
 |----------|------|
 | `01-early-access` | `{{expiry_date}}`, `{{first_name}}`, `{{activation_url}}`, `{{chat_url}}`, `{{terms_url}}`, `{{recipient_email}}`, `{{preferences_url}}`, `{{unsubscribe_url}}` |
-| `02-security-alert` | `{{device_name}}`, `{{city}}`, `{{country}}`, `{{signin_time}}`, `{{timezone}}`, `{{ip_address}}`, `{{signin_date}}`, `{{browser_name}}`, `{{first_name}}`, `{{secure_account_url}}`, `{{sessions_url}}`, `{{chat_url}}`, `{{support_email}}`, `{{security_url}}`, `{{recipient_email}}` |
+| `02-security-alert` | `{{device_name}}`, `{{city}}`, `{{country}}`, `{{signin_time}}`, `{{timezone}}`, `{{first_name}}`, `{{signin_date}}`, `{{browser_name}}`, `{{ip_address}}`, `{{secure_account_url}}`, `{{sessions_url}}`, `{{chat_url}}`, `{{support_email}}`, `{{security_url}}`, `{{recipient_email}}` |
 | `03-document-shared` | `{{sharer_name}}`, `{{document_title}}`, `{{page_count_label}}`, `{{sharer_email}}`, `{{first_name}}`, `{{document_type}}`, `{{share_message}}`, `{{generated_date}}`, `{{document_url}}`, `{{chat_url}}`, `{{terms_url}}`, `{{recipient_email}}` |
 | `04-password-reset` | `{{expiry_minutes}}`, `{{app_url}}`, `{{reset_password_url}}`, `{{chat_url}}`, `{{support_email}}`, `{{security_url}}`, `{{recipient_email}}` |
 | `05-pin-reset` | `{{expiry_minutes}}`, `{{set_pin_url}}`, `{{support_email}}`, `{{chat_url}}`, `{{security_url}}`, `{{recipient_email}}` |
@@ -252,7 +258,7 @@ Per template (excluding the shared tags above):
 | `23-address-updated` | `{{address_city}}`, `{{address_country}}`, `{{change_date}}`, `{{device_name}}`, `{{first_name}}`, `{{change_time}}`, `{{timezone}}`, `{{secure_account_url}}`, `{{chat_url}}`, `{{support_email}}`, `{{security_url}}`, `{{recipient_email}}` |
 | `24-account-deleted` | `{{deletion_date}}`, `{{deletion_time}}`, `{{timezone}}`, `{{recipient_email}}`, `{{signup_url}}`, `{{support_email}}`, `{{privacy_email}}`, `{{terms_url}}` |
 | `25-account-suspended` | `{{suspension_date}}`, `{{case_id}}`, `{{suspension_reason}}`, `{{recipient_email}}`, `{{appeal_url}}`, `{{acceptable_use_url}}`, `{{support_email}}`, `{{security_url}}` |
-| `26-data-export-ready` | `{{export_range}}`, `{{download_expiry}}`, `{{export_format}}`, `{{file_size}}`, `{{request_date}}`, `{{recipient_email}}`, `{{download_url}}`, `{{secure_account_url}}`, `{{chat_url}}`, `{{support_email}}`, `{{terms_url}}` |
+| `26-data-export-ready` | `{{export_range}}`, `{{download_expiry}}`, `{{export_format}}`, `{{file_size}}`, `{{request_date}}`, `{{download_url}}`, `{{secure_account_url}}`, `{{chat_url}}`, `{{support_email}}`, `{{terms_url}}`, `{{recipient_email}}` |
 | `27-subscription-confirmed` | `{{amount}}`, `{{card_brand}}`, `{{card_last4}}`, `{{invoice_number}}`, `{{first_name}}`, `{{plan_period}}`, `{{plan_name}}`, `{{next_charge_date}}`, `{{app_url}}`, `{{invoice_url}}`, `{{chat_url}}`, `{{support_email}}`, `{{billing_url}}`, `{{billing_email}}` |
 | `28-payment-receipt` | `{{invoice_number}}`, `{{amount}}`, `{{plan_name}}`, `{{plan_interval}}`, `{{card_brand}}`, `{{card_last4}}`, `{{next_charge_date}}`, `{{first_name}}`, `{{invoice_date}}`, `{{invoice_url}}`, `{{billing_url}}`, `{{chat_url}}`, `{{billing_email}}` |
 | `29-renewal-reminder` | `{{renewal_date}}`, `{{amount}}`, `{{card_brand}}`, `{{card_last4}}`, `{{first_name}}`, `{{renewal_month}}`, `{{renewal_day}}`, `{{renewal_year}}`, `{{plan_name}}`, `{{plan_interval}}`, `{{billing_url}}`, `{{chat_url}}`, `{{billing_email}}` |
@@ -262,7 +268,7 @@ Per template (excluding the shared tags above):
 | `33-plan-changed` | `{{new_plan}}`, `{{effective_date}}`, `{{amount}}`, `{{plan_period}}`, `{{first_name}}`, `{{old_plan}}`, `{{old_amount}}`, `{{old_plan_period}}`, `{{next_charge_date}}`, `{{billing_url}}`, `{{chat_url}}`, `{{support_email}}`, `{{billing_email}}` |
 | `34-subscription-cancelled` | `{{access_until}}`, `{{card_brand}}`, `{{first_name}}`, `{{cancel_date}}`, `{{amount_paid}}`, `{{cancel_refund_amount}}`, `{{resume_url}}`, `{{chat_url}}`, `{{support_email}}`, `{{billing_url}}`, `{{billing_email}}` |
 | `35-subscription-resumed` | `{{plan_name}}`, `{{amount}}`, `{{next_charge_date}}`, `{{first_name}}`, `{{card_brand}}`, `{{card_last4}}`, `{{plan_period}}`, `{{plan_interval}}`, `{{app_url}}`, `{{billing_url}}`, `{{chat_url}}`, `{{billing_email}}` |
-| `36-subscription-ended` | `{{end_date}}`, `{{first_name}}`, `{{plan_name}}`, `{{plan_interval}}`, `{{amount}}`, `{{plan_period}}`, `{{renew_url}}`, `{{support_email}}`, `{{billing_url}}`, `{{billing_email}}` |
+| `36-subscription-ended` | `{{end_date}}`, `{{first_name}}`, `{{renew_url}}`, `{{plan_name}}`, `{{plan_interval}}`, `{{amount}}`, `{{plan_period}}`, `{{support_email}}`, `{{billing_url}}`, `{{billing_email}}` |
 | `37-refund-issued` | `{{refund_amount}}`, `{{card_brand}}`, `{{card_last4}}`, `{{refund_days}}`, `{{invoice_number}}`, `{{first_name}}`, `{{refund_date}}`, `{{refund_reason}}`, `{{invoice_url}}`, `{{chat_url}}`, `{{support_email}}`, `{{billing_url}}`, `{{billing_email}}` |
 | `38-feature-retiring` | `{{feature_name}}`, `{{retirement_date}}`, `{{replacement_name}}`, `{{first_name}}`, `{{retirement_month}}`, `{{retirement_day}}`, `{{retirement_year}}`, `{{action_needed}}`, `{{details_url}}`, `{{chat_url}}`, `{{support_email}}`, `{{notification_settings_url}}` |
 | `39-planned-maintenance` | `{{maintenance_start}}`, `{{timezone}}`, `{{maintenance_end}}`, `{{first_name}}`, `{{impact}}`, `{{status_url}}`, `{{chat_url}}`, `{{support_email}}`, `{{notification_settings_url}}` |
@@ -308,7 +314,8 @@ Table-based, fully inline styles, solid-colour fallbacks throughout.
 - **Outlook (Windows)** — buttons are VML `<v:roundrect>` with a VML gradient fill, so the gradient CTA survives; content is wrapped in an MSO 600px ghost table; `mso-line-height-rule: exactly` keeps line heights honest.
 - **Gradients** — the CTA carries a solid `#9A86EC` under its CSS gradient, so clients that drop `background-image` still show a branded button.
 - **Web fonts** — Hahmlet and DM Sans load via Google Fonts where supported (Apple Mail, iOS); elsewhere they fall back to Georgia and Helvetica/Arial.
-- **Mobile** — single breakpoint at 620px; padding tightens and the headline steps down. Buttons are already full-width. The split heroes (`01`, `05`, `41`) use fluid inline-block columns, so they stack on phones even in clients that ignore media queries. Every template is checked at 360, 390 and 640px with no horizontal overflow.
+- **Mobile** — single breakpoint at 620px; padding tightens and the headline steps down to 34px. Layouts are single-column and centred, buttons are auto-width and paper cards scale with the column. Every template is checked at 390 and 640px with sample data, with no horizontal overflow.
+- **Hand-made layer** — handwriting, stamps and paper edges are images; marker underlines, rings and strikes are background images that degrade to plain text. No CSS positioning, transforms or negative margins in the emails themselves (lint enforces it); anything tilted or overlapping is baked into an image.
 - **Dark mode** — the templates are designed dark and declare it. Still worth a real-inbox test: some Gmail and Outlook apps apply their own dark-mode adjustments.
 
 ## Preview viewer

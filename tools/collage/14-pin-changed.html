@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css">
+<style>
+  /* a notepad page: torn top, faint rules, a pink margin line */
+  .page { background: #EEE8F6; box-shadow: 0 16px 30px rgba(0,0,0,.5); overflow: visible; }
+  .page i { position: absolute; left: 0; right: 0; height: 1px; background: #D6CDE8; }
+  .page b { position: absolute; top: 0; bottom: 0; left: 30px; width: 1.5px; background: #F2A6CF; opacity: .8; }
+  .page > * { position: absolute; }
+</style></head>
+<body>
+<div class="stage" data-out="hero/14-pin-changed.jpg" style="height:350px">
+  <div class="glow violet" style="left:150px;top:70px;width:300px;height:220px;opacity:.48"></div>
+  <div class="glow pink" style="left:430px;top:20px;width:150px;height:130px;opacity:.24"></div>
+  <svg id="sky" width="600" height="350" style="left:0;top:0"></svg>
+  <div class="planet glass" style="left:470px;top:56px;width:52px;height:52px"></div>
+  <div class="planet lilac" style="left:78px;top:236px;width:18px;height:18px"></div>
+  <div class="planet pink" style="left:506px;top:248px;width:12px;height:12px"></div>
+  <!-- the notepad page -->
+  <div class="page" id="page" style="left:150px;top:92px;width:232px;height:198px;transform:rotate(-5deg)">
+    <b></b>
+    <i style="top:44px"></i><i style="top:76px"></i><i style="top:108px"></i><i style="top:140px"></i><i style="top:172px"></i>
+    <div class="note ink" style="left:44px;top:80px;transform:rotate(-3deg);font-size:38px;color:#4B3F8F;line-height:32px">new pin,
+same you</div>
+  </div>
+  <div class="tape" style="left:150px;top:76px;width:96px;height:26px;transform:rotate(-28deg)"></div>
+  <!-- the clay keypad, die-cut, stuck over the page's top-right corner -->
+  <img src="../../img/src/icons/keypad-check.svg" style="left:300px;top:56px;width:178px;transform:rotate(9deg);filter:url(#diecut)">
+  <svg id="ink" width="600" height="350" style="left:0;top:0"></svg>
+</div>
+
+<script src="kit.js"></script>
+<script>
+  K.init(1414);
+  const stage = document.querySelector('.stage');
+  K.stars(document.getElementById('sky'), { w: 600, h: 350, count: 64, sparkles: 4, avoid: [[300, 180, 170]] });
+  // torn top edge of the page
+  const page = document.getElementById('page');
+  const edge = K.svg(page, 232, 16, 'left:0;top:-15px'); K.tornTop(edge, { w: 232, h: 16, y: 6, amp: 2 });
+  // an ink underline under "same you"
+  K.swash(K.svg(page, 232, 198, 'left:0;top:0'), { x: 58, y: 150, w: 112, h: 4, curve: 1.5, tilt: -0.8, color: '#7C6FD6', opacity: .7, hook: false });
+  const ink = document.getElementById('ink');
+  K.ellipse(ink, { cx: 496, cy: 82, rx: 50, ry: 12, rot: -16, loops: 1.12, width: 1.8, opacity: .75, color: '#B5B7F6' });
+  K.doodle(ink, { kind: 'asterisk', x: 104, y: 96, s: 8, color: '#C4B5FD', width: 2 });
+  K.doodle(ink, { kind: 'star', x: 470, y: 196, s: 11, color: '#F9A8D4', width: 2.2 });
+  K.line(ink, { points: [[428, 286], [458, 292], [488, 284]], color: '#C4B5FD', width: 2, jitter: .8 });
+  K.finish(stage, { top: 0.08, bottom: 0.16, sides: 0.06 });
+  K.done();
+</script>
+</body></html>

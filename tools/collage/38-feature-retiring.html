@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css">
+<style>
+  .pin { width: 26px; height: 26px; border-radius: 50%;
+    background: radial-gradient(circle at 36% 30%, #FBE3F3 0, #EE9ED3 28%, #D9468F 64%, #8E2A63 100%);
+    box-shadow: inset -3px -4px 6px rgba(60,10,40,.35); }
+  .pin-shadow { width: 22px; height: 12px; border-radius: 50%; background: rgba(43,35,80,.32); filter: blur(3px); }
+</style></head>
+<body>
+<!-- the clay archive box as a die-cut sticker, a little setting sun doodled beside it -->
+<div class="mark" data-out="marks/38-sticker.png" style="width:200px;height:200px">
+  <img src="../../img/src/icons/archive-clock.svg" style="left:22px;top:26px;width:150px;transform:rotate(-8deg);filter:url(#diecut)">
+</div>
+<!-- top of the calendar page: torn off the pad, pinned up with a pink pushpin -->
+<div class="mark" data-out="marks/38-paper-top.png" data-exact style="width:520px;height:64px">
+  <div class="pin-shadow" style="left:263px;top:40px"></div>
+  <div class="pin" style="left:247px;top:22px"></div>
+</div>
+<!-- bottom of the page, the left corner curling up a little -->
+<div class="mark" data-out="marks/38-paper-bottom.png" data-exact style="width:520px;height:20px"></div>
+<!-- the day, circled in pink marker (stretched as a td background) -->
+<div class="mark" data-out="marks/38-ring.png" style="width:200px;height:160px"></div>
+<!-- ink note under the day -->
+<div class="mark" data-out="marks/38-note.png" style="width:220px;height:70px">
+  <div class="note ink" style="left:92px;top:26px;transform:rotate(-5deg);font-size:31px;color:#4B3F8F">last day</div>
+</div>
+<script src="kit.js"></script>
+<script>
+  K.init(3838);
+  const m = [...document.querySelectorAll('.mark')];
+  // setting sun doodle, top right of the sticker
+  const st = K.svg(m[0], 200, 200);
+  const sx = 168, sy = 44;
+  K.line(st, { points: [[sx - 15, sy], [sx - 13, sy - 7], [sx - 7, sy - 12.5], [sx, sy - 14], [sx + 7, sy - 12.5], [sx + 13, sy - 7], [sx + 15, sy]], color: '#F9A8D4', width: 2.2, jitter: .4 });
+  K.line(st, { points: [[sx - 22, sy + 1], [sx + 22, sy - 1]], color: '#F9A8D4', width: 2.2, jitter: .4 });
+  for (const a of [-150, -115, -90, -65, -30]) {
+    const r = a * Math.PI / 180;
+    K.line(st, { points: [[sx + Math.cos(r) * 19, sy + Math.sin(r) * 19], [sx + Math.cos(r) * 25, sy + Math.sin(r) * 25]], color: '#F9A8D4', width: 2, jitter: .2 });
+  }
+  // torn top edge behind the pin
+  const edge = K.svg(m[1], 520, 64); m[1].insertBefore(edge, m[1].firstChild);
+  K.tornTop(edge, { w: 520, h: 64, y: 14, amp: 2.4 });
+  // curled corner at the bottom left
+  const cb = K.svg(m[2], 520, 20);
+  cb.insertAdjacentHTML('beforeend', `
+    <defs><linearGradient id="curl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#CFC4E6"/><stop offset="1" stop-color="#E4DCF2"/></linearGradient></defs>
+    <path d="M0,0 H520 V12 H58 C30,12 10,8 0,0 Z" fill="#EEE8F6"/>
+    <path d="M0,0 C10,8 30,12 58,12 C40,7 22,4 0,0 Z" fill="url(#curl)"/>`);
+  // marker ring round the day
+  K.ellipse(K.svg(m[3], 200, 160), { cx: 100, cy: 82, rx: 84, ry: 64, rot: -8, loops: 1.22, wobble: .045, width: 3.4, color: ['#E0559B', '#C2367E'] });
+  // arrow from the note up to the ring
+  const ns = K.svg(m[4], 220, 70);
+  K.line(ns, { points: [[86, 44], [62, 40], [44, 28], [36, 10]], arrow: true, color: '#4B3F8F', width: 2.4, head: 10 });
+  K.done();
+</script>
+</body></html>

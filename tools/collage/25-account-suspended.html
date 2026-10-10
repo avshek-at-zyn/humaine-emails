@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- hero : quiet. The clay figure with its pause badge inside a hand-drawn orbit that stops short, its moon halted at the end -->
+<div class="stage" data-out="hero/25-account-suspended.jpg" style="height:320px">
+  <div class="glow violet" style="left:180px;top:90px;width:250px;height:160px;opacity:.38"></div>
+  <div class="glow blue" style="left:390px;top:160px;width:140px;height:110px;opacity:.2"></div>
+  <svg id="sky" width="600" height="320" style="left:0;top:0"></svg>
+  <div class="planet dark" style="left:76px;top:150px;width:54px;height:54px"></div>
+  <div class="planet glass" style="left:478px;top:66px;width:22px;height:22px"></div>
+  <svg id="back" width="600" height="320" style="left:0;top:0"></svg>
+  <img class="icon" src="../../img/src/icons/account-paused.svg" style="left:214px;top:54px;width:172px">
+  <svg id="front" width="600" height="320" style="left:0;top:0"></svg>
+  <div class="planet lilac" id="moon" style="width:13px;height:13px"></div>
+</div>
+
+<script src="kit.js"></script>
+<script>
+  K.init(2525);
+  const stage = document.querySelector('.stage');
+  K.stars(document.getElementById('sky'), { w: 600, h: 320, count: 42, sparkles: 2, avoid: [[300, 170, 140]] });
+  K.ellipse(document.getElementById('back'), { cx: 103, cy: 177, rx: 50, ry: 11, rot: -12, loops: 1.06, width: 1.4, opacity: .45, color: '#8E86C9', passes: 1 });
+
+  // orbit as an arc with a gap at the front right: t runs from a0 round to a1 and stops
+  const cx = 300, cy = 214, rx = 200, ry = 40, rot = -5 * Math.PI / 180;
+  const at = t => { const x = rx * Math.cos(t), y = ry * Math.sin(t); return [cx + x * Math.cos(rot) - y * Math.sin(rot), cy + x * Math.sin(rot) + y * Math.cos(rot)]; };
+  const arc = (t0, t1) => { const pts = []; const n = Math.max(3, Math.round((t1 - t0) / 0.12)); for (let i = 0; i <= n; i++) pts.push(at(t0 + (t1 - t0) * i / n)); return pts; };
+  const P = Math.PI, style = { width: 2.2, color: ['#B5B7F6', '#C4B5FD'], jitter: .7, opacity: .75 };
+  K.line(document.getElementById('back'), { points: arc(P, 2 * P), ...style });
+  const front = document.getElementById('front');
+  K.line(front, { points: arc(0.32 * P, P), ...style });
+  K.line(front, { points: arc(2 * P, 2.04 * P), ...style });
+  const [mx, my] = at(2.06 * P);
+  const moon = document.getElementById('moon');
+  moon.style.left = (mx - 6.5) + 'px'; moon.style.top = (my - 6.5) + 'px';
+  K.finish(stage, { top: 0.08, bottom: 0.24, sides: 0.07 });
+  K.done();
+</script>
+</body></html>
