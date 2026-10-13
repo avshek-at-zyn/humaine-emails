@@ -30,6 +30,17 @@
     .tid{font-size:34px!important;line-height:40px!important;}
     .stamp{width:131px!important;height:58px!important;}
   }
+  /* narrow phones (360px and below): smaller headline so hand-marked phrases stay whole, tighter gutters */
+  @media screen and (max-width:380px){
+    .px{padding-left:20px!important;padding-right:20px!important;}
+    .h1{font-size:30px!important;}
+    .narrow-full{width:100%!important;max-width:100%!important;}
+    .narrow-full img{width:100%!important;height:auto!important;}
+  }
+  @media screen and (max-width:340px){
+    .h1{font-size:26px!important;}
+    .nimg{max-width:100%!important;height:auto!important;}
+  }
 </style>
 </head>
 <body class="body" style="margin:0;padding:0;background-color:#090B14;">
@@ -73,7 +84,7 @@
         </tr></table>
         <p style="margin:16px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:16px;letter-spacing:1.6px;text-transform:uppercase;color:#6E6790;">Reference</p>
         <p class="tid" style="margin:4px 0 0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:42px;line-height:48px;font-weight:500;letter-spacing:1px;color:#1B1730;word-break:break-all;">{{ticket_id}}</p>
-        <img src="https://humaine-email.vercel.app/img/marks/43-note.png" width="260" alt="Handwritten: keep this number handy" style="display:block;width:260px;max-width:100%;height:auto;border:0;margin:0 0 4px;">
+        <img class="nimg" src="https://humaine-email.vercel.app/img/marks/43-note.png" width="260" alt="Handwritten: keep this number handy" style="display:block;width:260px;max-width:100%;height:auto;border:0;margin:0 0 4px;">
       </td></tr>
       <tr><td style="padding:10px 0 0;font-size:0;line-height:0;"><img src="https://humaine-email.vercel.app/img/marks/paper-perf.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;"></td></tr>
       <tr><td class="pp" style="padding:12px 26px 6px;">

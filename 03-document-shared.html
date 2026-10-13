@@ -29,6 +29,17 @@
     .pp{padding-left:18px!important;padding-right:18px!important;}
     .ptitle{font-size:21px!important;}
   }
+  /* narrow phones (360px and below): smaller headline so hand-marked phrases stay whole, tighter gutters */
+  @media screen and (max-width:380px){
+    .px{padding-left:20px!important;padding-right:20px!important;}
+    .h1{font-size:30px!important;}
+    .narrow-full{width:100%!important;max-width:100%!important;}
+    .narrow-full img{width:100%!important;height:auto!important;}
+  }
+  @media screen and (max-width:340px){
+    .h1{font-size:26px!important;}
+    .nimg{max-width:100%!important;height:auto!important;}
+  }
 </style>
 </head>
 <body class="body" style="margin:0;padding:0;background-color:#090B14;">
@@ -79,7 +90,7 @@
         </table>
         <!-- {{#if share_message}} -->
         <!-- the sharer's note : a pink sticky, live text -->
-        <table role="presentation" width="280" cellpadding="0" cellspacing="0" border="0" align="center" style="width:280px;max-width:100%;margin:22px auto 0;">
+        <table class="narrow-full" role="presentation" width="280" cellpadding="0" cellspacing="0" border="0" align="center" style="width:280px;max-width:100%;margin:22px auto 0;">
           <tr><td style="padding:0;font-size:0;line-height:0;"><img src="https://humaine-email.vercel.app/img/marks/03-sticky-top.png" width="280" alt="" style="display:block;width:100%;max-width:280px;height:auto;border:0;"></td></tr>
           <tr><td bgcolor="#F6D3EE" style="padding:8px 22px 12px;background-color:#F6D3EE;">
             <p style="margin:0;font-family:'DM Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace;font-size:10.5px;line-height:14px;letter-spacing:1.4px;text-transform:uppercase;color:#9A3F7E;">Note from {{sharer_name}}</p>

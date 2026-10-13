@@ -3,6 +3,7 @@
 // Flags horizontal overflow, missing images, unfilled tags, an Ask prompt that wraps and a one-word last headline line.
 //
 //   node review.mjs [outDir] [stem-prefixes...]     e.g. node review.mjs /tmp/qa 27 28 29
+//   node review.mjs --modern [outDir] [stems...]    the modern/ set
 //   -> <outDir>/<stem>.desktop.png, <stem>.mobile.png, sheet-<n>.png (4 mobile renders per sheet, top 1800px)
 
 import puppeteer from 'puppeteer-core';
@@ -15,12 +16,15 @@ const PROD = 'https://humaine-email.vercel.app/';
 const CHROME = process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const TYPES = { '.png': 'image/png', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml', '.html': 'text/html' };
 
-const outDir = path.resolve(process.argv[2] || path.join(ROOT, 'tools/.shots/review'));
-const picks = process.argv.slice(3);
+const MODERN = process.argv.includes('--modern');            // review modern/ instead of the creative set
+const args = process.argv.slice(2).filter(a => a !== '--modern');
+const SRC = MODERN ? path.join(ROOT, 'modern') : ROOT;
+const outDir = path.resolve(args[0] || path.join(ROOT, 'tools/.shots/review'));
+const picks = args.slice(1);
 fs.mkdirSync(outDir, { recursive: true });
 const samples = JSON.parse(fs.readFileSync(path.join(ROOT, 'samples.json'), 'utf8'));
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const files = fs.readdirSync(ROOT).filter(f => /^\d\d-.*\.html$/.test(f)).sort()
+const files = fs.readdirSync(SRC).filter(f => /^\d\d-.*\.html$/.test(f)).sort()
   .filter(f => !picks.length || picks.some(p => f.startsWith(p)));
 
 const browser = await puppeteer.launch({ executablePath: CHROME, headless: true, args: ['--no-sandbox', '--hide-scrollbars'] });
@@ -28,7 +32,7 @@ const mobiles = [];
 try {
   for (const file of files) {
     const stem = path.basename(file, '.html');
-    const html = fs.readFileSync(path.join(ROOT, file), 'utf8').replace(/\{\{\s*(\w+)\s*\}\}/g, (m, k) => k in samples ? esc(samples[k]) : m);
+    const html = fs.readFileSync(path.join(SRC, file), 'utf8').replace(/\{\{\s*(\w+)\s*\}\}/g, (m, k) => k in samples ? esc(samples[k]) : m);
     const left = [...new Set(html.match(/\{\{\s*\w+\s*\}\}/g) || [])];
     for (const [label, width] of [['desktop', 640], ['mobile', 390]]) {
       const page = await browser.newPage();

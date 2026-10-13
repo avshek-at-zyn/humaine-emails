@@ -171,14 +171,15 @@
 
   // Film grain over a stage (soft-light), and edge fades into the email canvas.
   K.finish = (stage, o = {}) => {
-    const { grain = 0.22, top = 0.12, bottom = 0.26, sides = 0.07 } = o;
+    const { grain = 0.22, top = 0.12, bottom = 0.26, sides = 0.07, canvas = '#090B14' } = o;
+    const [cr, cg, cb] = [1, 3, 5].map(i => parseInt(canvas.slice(i, i + 2), 16)), clear = `rgba(${cr},${cg},${cb},0)`;
     const w = stage.offsetWidth, h = stage.offsetHeight;
     const svg = el('svg', { width: w, height: h, style: `left:0;top:0;mix-blend-mode:soft-light;opacity:${grain}` }, stage);
     el('rect', { width: w, height: h, filter: 'url(#grain)' }, svg);
     const fade = document.createElement('div');
     fade.style.cssText = `left:0;top:0;width:${w}px;height:${h}px;pointer-events:none;background:
-      linear-gradient(to bottom, #090B14 0, rgba(9,11,20,0) ${top * 100}%, rgba(9,11,20,0) ${(1 - bottom) * 100}%, #090B14 100%),
-      linear-gradient(to right, #090B14 0, rgba(9,11,20,0) ${sides * 100}%, rgba(9,11,20,0) ${(1 - sides) * 100}%, #090B14 100%);`;
+      linear-gradient(to bottom, ${canvas} 0, ${clear} ${top * 100}%, ${clear} ${(1 - bottom) * 100}%, ${canvas} 100%),
+      linear-gradient(to right, ${canvas} 0, ${clear} ${sides * 100}%, ${clear} ${(1 - sides) * 100}%, ${canvas} 100%);`;
     stage.appendChild(fade);
   };
 
@@ -212,6 +213,23 @@
     el('circle', { cx: 0, cy: h / 2, r, fill: canvas }, svg);
     el('circle', { cx: w, cy: h / 2, r, fill: canvas }, svg);
     el('line', { x1: r + 8, y1: h / 2, x2: w - r - 8, y2: h / 2, stroke: line, 'stroke-width': 1.6, 'stroke-dasharray': '5 6', 'stroke-linecap': 'round' }, svg);
+  };
+
+  // The Zyn Global "dawn": a planet's limb at the bottom of the frame with a warm sun rising behind it
+  // (lifted from zynglobal.vercel.app's hero SVG). Coordinates are in a 1440x360 frame, scaled to fit.
+  K.dawn = (parent, o = {}) => {
+    const { w = 600, h = 240, sunX = 1010, sunY = 306, sunR = 150, limbCy = 1290, rx = 1560, ry = 1000, air = 0.34, id = 'd' + (gid++) } = o;
+    parent.insertAdjacentHTML('beforeend', `<svg width="${w}" height="${h}" viewBox="0 0 1440 360" preserveAspectRatio="xMidYMax slice" style="left:0;bottom:0;position:absolute">
+      <defs>
+        <linearGradient id="${id}l" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#BFD4FF" stop-opacity="0"/><stop offset=".5" stop-color="#F4F7FF" stop-opacity=".95"/><stop offset=".82" stop-color="#FFE9CC" stop-opacity=".9"/><stop offset="1" stop-color="#BFD4FF" stop-opacity="0"/></linearGradient>
+        <radialGradient id="${id}s"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".1" stop-color="#FFF6E8" stop-opacity=".95"/><stop offset=".34" stop-color="#FFDDB0" stop-opacity=".28"/><stop offset="1" stop-color="#FFDDB0" stop-opacity="0"/></radialGradient>
+        <filter id="${id}b" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="16"/></filter>
+      </defs>
+      <ellipse cx="720" cy="${limbCy}" rx="${rx}" ry="${ry}" fill="none" stroke="rgba(150,186,255,${air})" stroke-width="46" filter="url(#${id}b)"/>
+      <circle cx="${sunX}" cy="${sunY}" r="${sunR}" fill="url(#${id}s)"/>
+      <ellipse cx="720" cy="${limbCy}" rx="${rx}" ry="${ry}" fill="#04060C"/>
+      <ellipse cx="720" cy="${limbCy}" rx="${rx}" ry="${ry}" fill="none" stroke="url(#${id}l)" stroke-width="1.6"/>
+    </svg>`);
   };
 
   K.svg = (parent, w, h, style = 'left:0;top:0') => { const s = el('svg', { width: w, height: h, viewBox: `0 0 ${w} ${h}`, style }); el('defs', {}, s); parent.appendChild(s); return s; };

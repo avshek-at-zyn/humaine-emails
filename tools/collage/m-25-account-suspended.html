@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- Modern hero, serious: the paused clay figure, small and still, over a low dawn far right. No planet, no sparkles, a thin sky -->
+<div class="stage" data-out="modern/hero/25-account-suspended.jpg" style="height:240px;background:#06080F">
+  <svg id="sky" width="600" height="240" style="left:0;top:0"></svg>
+  <div class="glow violet" style="left:360px;top:90px;width:220px;height:100px;opacity:.26"></div>
+  <div id="dawn" style="left:0;top:90px;width:600px;height:150px"></div>
+  <img class="icon" src="../../img/src/icons/account-paused.svg" style="left:406px;top:57px;width:128px">
+</div>
+<script src="kit.js"></script>
+<script>
+  K.init(2525);
+  K.stars(document.getElementById('sky'), { w: 600, h: 240, count: 46, sparkles: 0, avoid: [[470, 121, 80]] });
+  K.dawn(document.getElementById('dawn'), { w: 600, h: 150, sunX: 1128, sunY: 336, sunR: 160, air: 0.28 });
+  K.finish(document.querySelector('.stage'), { grain: 0.12, top: 0.06, bottom: 0.02, sides: 0.04, canvas: '#06080F' });
+  K.done();
+</script>
+</body></html>

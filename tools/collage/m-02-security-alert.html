@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- Modern hero: the clay icon rising over the Zyn Global dawn -->
+<div class="stage" data-out="modern/hero/02-security-alert.jpg" style="height:280px;background:#06080F">
+  <div class="planet dark" style="left:470px;top:-60px;width:190px;height:190px;opacity:.55"></div>
+  <svg id="sky" width="600" height="280" style="left:0;top:0"></svg>
+  <div class="glow violet" style="left:300px;top:110px;width:240px;height:120px;opacity:.35"></div>
+  <div id="dawn" style="left:0;top:130px;width:600px;height:150px"></div>
+  <img class="icon" src="../../img/src/icons/device-alert.svg" style="left:346px;top:66px;width:150px">
+</div>
+<script src="kit.js"></script>
+<script>
+  K.init(2002);
+  K.stars(document.getElementById('sky'), { w: 600, h: 280, count: 70, sparkles: 2, avoid: [[421, 140, 90]] });
+  K.dawn(document.getElementById('dawn'), { w: 600, h: 150, sunX: 1010, sunY: 330, sunR: 190 });
+  K.finish(document.querySelector('.stage'), { grain: 0.12, top: 0.06, bottom: 0.02, sides: 0.04, canvas: '#06080F' });
+  K.done();
+</script>
+</body></html>

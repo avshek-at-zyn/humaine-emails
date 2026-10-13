@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- Modern hero: the clay code card with the eye badge rising far right, planet top left -->
+<div class="stage" data-out="modern/hero/19-backup-codes-viewed.jpg" style="height:290px;background:#06080F">
+  <div class="planet dark" style="left:-70px;top:-40px;width:210px;height:210px;opacity:.5"></div>
+  <svg id="sky" width="600" height="290" style="left:0;top:0"></svg>
+  <div class="glow violet" style="left:360px;top:120px;width:230px;height:120px;opacity:.34"></div>
+  <div id="dawn" style="left:0;top:140px;width:600px;height:150px"></div>
+  <img class="icon" src="../../img/src/icons/codes-viewed.svg" style="left:392px;top:74px;width:162px">
+</div>
+<script src="kit.js"></script>
+<script>
+  K.init(2019);
+  K.stars(document.getElementById('sky'), { w: 600, h: 290, count: 72, sparkles: 2, avoid: [[473, 154, 98], [35, 65, 105]] });
+  K.dawn(document.getElementById('dawn'), { w: 600, h: 150, sunX: 1140, sunY: 324, sunR: 176 });
+  K.finish(document.querySelector('.stage'), { grain: 0.12, top: 0.06, bottom: 0.02, sides: 0.04, canvas: '#06080F' });
+  K.done();
+</script>
+</body></html>

@@ -31,7 +31,7 @@ try {
       fs.mkdirSync(path.dirname(dest), { recursive: true });
       const jpg = out.endsWith('.jpg');
       const buf = await handle.screenshot({ omitBackground: !jpg, type: 'png' });
-      if (jpg) await sharp(buf).flatten({ background: '#090B14' }).jpeg({ quality: 82, mozjpeg: true }).toFile(dest);
+      if (jpg) await sharp(buf).flatten({ background: out.startsWith('modern/') ? '#06080F' : '#090B14' }).jpeg({ quality: 82, mozjpeg: true }).toFile(dest);
       else await sharp(buf).png(exact ? { compressionLevel: 9 } : { compressionLevel: 9, palette: true, quality: 92, effort: 8 }).toFile(dest);
       const { width, height } = await sharp(dest).metadata();
       console.log(`${out}  ${width}x${height}  ${(fs.statSync(dest).size / 1024).toFixed(0)} KB`);

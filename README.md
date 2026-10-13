@@ -1,10 +1,23 @@
 # humAIne Email Templates
 
-**43 production-ready HTML emails** for **humAIne** (a Zyn Global product) — every email the product's flows need, designed to feel native to the humAIne app (same canvas, type, clay illustrations and planetary backdrop) with a hand-made layer on top: handwritten notes, marker marks, ink stamps and torn paper. Plus a browser-based preview viewer.
+**43 production-ready HTML emails** for **humAIne** (a Zyn Global product), each in **two designs**: **Creative** and **Modern** — every email the product's flows need, **Creative** (repo root) feels native to the humAIne app (same canvas, type, clay illustrations and planetary backdrop) with a hand-made layer on top: handwritten notes, marker marks, ink stamps and torn paper. **Modern** (`modern/`) speaks the Zyn Global website's language ([zynglobal.vercel.app](https://zynglobal.vercel.app)): light serif headlines, hairline cards, pill buttons and the dawn horizon. Plus a browser-based preview viewer that switches between them.
 
 **Live preview:** [humaine-email.vercel.app](https://humaine-email.vercel.app) · **Design and flow reference:** the humAIne app, [humaine-personal-mobile.vercel.app](https://humaine-personal-mobile.vercel.app)
 
 ---
+
+## Two designs, one data contract
+
+| | **Creative** — repo root | **Modern** — `modern/` |
+|---|---|---|
+| Reference | The humAIne app | The Zyn Global website, [zynglobal.vercel.app](https://zynglobal.vercel.app) |
+| Canvas | `#090B14` | `#06080F` |
+| Headlines | Hahmlet 500, centred, one hand-drawn mark, no full stop | Hahmlet 400 (light), left-aligned, a dimmed tail or one gradient word, ends with a full stop |
+| Layout | Centred; collage hero or die-cut sticker; paper artefacts | Nav-pill masthead, eyebrow pill, pill buttons, hairline cards, numbered rows and columns, centred finale |
+| Artwork | Collage heroes, stickers, handwriting, stamps (`img/hero/`, `img/marks/`) | The dawn (a clay icon rising over a planet's horizon) or a bento icon (`img/modern/`) |
+| Footer | Centred identifier under a hand-drawn rule | Lockup and links in columns, the outlined ZYN GLOBAL wordmark, "Intelligence Evolved" |
+
+Both versions of an email share the same file name, subject line, preheader, facts and **exactly the same merge tags**, so your backend sends either without changes. `python3 tools/lint.py --modern` fails if a Modern email's tags drift from its Creative twin. Pick one design per send, or A/B them.
 
 ## How the catalogue was built
 
@@ -201,16 +214,18 @@ node collage.mjs                    # render every hero, sticker, note, stamp an
 node collage.mjs 28 37              # just these emails' artwork
 node shot.mjs 04-password-reset.html   # desktop + mobile screenshots (uses local Chrome)
 node review.mjs /tmp/qa 27 28       # same, filled with samples.json, plus contact sheets
+node review.mjs --modern /tmp/qa    # the Modern set
 python3 lint.py                     # copy + build checks on every template (or: python3 lint.py 04 15)
+python3 lint.py --modern            # Modern set, incl. same-merge-tags-as-Creative check
 python3 readme_tags.py              # rebuild the merge-tag tables below from the templates
 ```
 
-- **`collage.mjs`** — the artwork renderer. Each email has a page in `tools/collage/<nn>-*.html` built with the kit (`kit.css` for planets, glows, notes, tape, stickers, stamps and paper; `kit.js` for seeded hand-drawn orbits, arrows, swashes, doodles, torn edges, perforations and grain). Every element marked `data-out="hero/…jpg"` or `data-out="marks/…png"` is captured at 2× into `img/`. `00-shared.html` holds the shared marks. Edit a page, re-run with its number, done.
+- **`collage.mjs`** — the artwork renderer. Each email has a page in `tools/collage/<nn>-*.html` (Creative) and `tools/collage/m-<nn>-*.html` (Modern) built with the kit (`kit.css` for planets, glows, notes, tape, stickers, stamps and paper; `kit.js` for seeded hand-drawn orbits, arrows, swashes, doodles, torn edges, perforations and grain). Every element marked `data-out="hero/…jpg"` or `data-out="marks/…png"` is captured at 2× into `img/`. `00-shared.html` and `m-00-shared.html` hold the shared marks; `K.dawn()` draws the website's horizon for Modern heroes. Edit a page, re-run with its number, done.
 - **`shot.mjs`** — headless screenshots at 640px and 390px. Requests for production image URLs are served from the repo, so you can check an email before deploying. Prints `MISSING ASSETS` if any image 404s.
 - **`review.mjs`** — QA renders with realistic values from `samples.json` (raw tags hide wrapping problems): desktop + mobile full pages. It flags overflow, missing images, unfilled tags, an Ask prompt that wraps and a one-word last headline line, and builds contact sheets of four mobile renders each.
 - **`lint.py`** — the Zyn copy and build linter: banned chatbot phrases, American spellings, em dashes, exclamation marks, staccato or question headlines, trailing full stops, Ask prompts that would wrap, plus `<script>`, light-mode CSS, CSS position/transform/flex or negative margins in email HTML, an off-centre headline, brand casing, braces, alt text and hardcoded prices. Exit code 1 on errors.
 - **`readme_tags.py`** — regenerates the merge-tag tables in this README straight from the templates, so the docs can't drift.
-- **`briefs/`** — the product facts, footer variants, copy rules (`zyn-vibe.md`) and the hand-made visual system (`handmade.md`) the templates were built from.
+- **`briefs/`** — the product facts, footer variants, copy rules (`zyn-vibe.md`), the hand-made Creative system (`handmade.md`) and the Modern website language (`modern.md`) the templates were built from.
 
 ---
 
@@ -320,7 +335,7 @@ Table-based, fully inline styles, solid-colour fallbacks throughout.
 
 ## Preview viewer
 
-`index.html` is an inbox-style browser in the app's look: all 43 emails grouped by category (Onboarding, Sign-in & recovery, Security updates, Account & data, Billing, App updates, News & offers, Support) with hero thumbnails, a search box, subjects and preheaders read live from each template, a **Desktop / Mobile** width toggle, arrow-key navigation and deep links (`index.html#27`).
+`index.html` is an inbox-style browser in the app's look. A **Creative / Modern** switch in the top bar flips every email between the two designs; the choice is remembered, and `?style=modern` links straight into Modern (`index.html?style=modern#28`). Beyond that it has all 43 emails grouped by category (Onboarding, Sign-in & recovery, Security updates, Account & data, Billing, App updates, News & offers, Support) with hero thumbnails, a search box, subjects and preheaders read live from each template, a **Desktop / Mobile** width toggle, arrow-key navigation and deep links (`index.html#27`).
 
 - **Sample data / Merge tags.** By default every `{{tag}}` is filled from `samples.json` (a fictional customer, real-looking dates, £ amounts and a masked card), so you see each email the way a customer would. Switch to *Merge tags* to see the raw template. The templates themselves are never modified.
 - **Links** in the preview don't navigate; clicking one shows which merge tag it uses (*Links to `{{reset_password_url}}`*).

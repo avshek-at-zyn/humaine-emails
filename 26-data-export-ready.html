@@ -30,6 +30,17 @@
     .range{font-size:21px!important;line-height:27px!important;}
     .tlv{font-size:12px!important;}
   }
+  /* narrow phones (360px and below): smaller headline so hand-marked phrases stay whole, tighter gutters */
+  @media screen and (max-width:380px){
+    .px{padding-left:20px!important;padding-right:20px!important;}
+    .h1{font-size:30px!important;}
+    .narrow-full{width:100%!important;max-width:100%!important;}
+    .narrow-full img{width:100%!important;height:auto!important;}
+  }
+  @media screen and (max-width:340px){
+    .h1{font-size:26px!important;}
+    .nimg{max-width:100%!important;height:auto!important;}
+  }
 </style>
 </head>
 <body class="body" style="margin:0;padding:0;background-color:#090B14;">
@@ -87,7 +98,7 @@
     <img src="https://humaine-email.vercel.app/img/marks/paper-perf.png" width="520" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#EEE8F6" style="background-color:#EEE8F6;">
       <tr><td class="pp" align="center" style="padding:4px 26px 8px;">
-        <img src="https://humaine-email.vercel.app/img/marks/26-note.png" width="220" alt="Handwritten: ready when you are" style="display:block;width:220px;max-width:100%;height:auto;border:0;margin:0 auto;">
+        <img class="nimg" src="https://humaine-email.vercel.app/img/marks/26-note.png" width="220" alt="Handwritten: ready when you are" style="display:block;width:220px;max-width:100%;height:auto;border:0;margin:0 auto;">
         <img src="https://humaine-email.vercel.app/img/marks/26-timeline.png" width="468" alt="" style="display:block;width:100%;max-width:468px;height:auto;border:0;margin:2px auto 0;">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:8px;"><tr>
           <td width="33%" valign="top" align="center" style="width:33%;padding:0 4px;">

@@ -28,6 +28,17 @@
     .lead{font-size:15px!important;}
     .pp{padding-left:18px!important;padding-right:18px!important;}
   }
+  /* narrow phones (360px and below): smaller headline so hand-marked phrases stay whole, tighter gutters */
+  @media screen and (max-width:380px){
+    .px{padding-left:20px!important;padding-right:20px!important;}
+    .h1{font-size:30px!important;}
+    .narrow-full{width:100%!important;max-width:100%!important;}
+    .narrow-full img{width:100%!important;height:auto!important;}
+  }
+  @media screen and (max-width:340px){
+    .h1{font-size:26px!important;}
+    .nimg{max-width:100%!important;height:auto!important;}
+  }
 </style>
 </head>
 <body class="body" style="margin:0;padding:0;background-color:#090B14;">
@@ -88,7 +99,7 @@
           <!-- step 3 : active, ringed by hand with a pointer -->
           <tr>
             <td colspan="3" valign="top" style="padding:4px 0 16px 19px;border-top:1px solid #DCD4EA;">
-              <img src="https://humaine-email.vercel.app/img/marks/09-note.png" width="220" height="58" alt="Handwritten: you&rsquo;re here" style="display:block;width:220px;height:58px;border:0;">
+              <img class="nimg" src="https://humaine-email.vercel.app/img/marks/09-note.png" width="220" height="58" alt="Handwritten: you&rsquo;re here" style="display:block;width:220px;height:58px;border:0;">
               <span style="display:inline-block;padding:9px 18px 10px 15px;background-image:url('https://humaine-email.vercel.app/img/marks/09-ring.png');background-repeat:no-repeat;background-size:100% 100%;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:21px;font-weight:700;color:#1B1730;">Ask your first question</span>
               <p style="margin:6px 0 0;padding-left:15px;font-family:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;color:#4A4466;">Start with one from your week: a suspicious email, a passkey, a VPN for&nbsp;travel.</p>
             </td>

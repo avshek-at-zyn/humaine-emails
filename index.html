@@ -17,6 +17,11 @@
   .topbar img { display: block; width: 144px; height: 36px; }
   .topbar .label { font-size: 12.5px; color: #7D7F8F; }
   .topbar .label b { color: #C4B5FD; font-weight: 600; }
+  .stylepick { display: flex; background: #11131B; border: 1px solid #23252E; border-radius: 999px; padding: 4px; gap: 2px; }
+  .stylepick button { font: 600 12.5px/1 'DM Sans', sans-serif; color: #A3A5B5; background: transparent; border: 0; border-radius: 999px; padding: 9px 16px; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background .15s, color .15s; }
+  .stylepick button small { font-size: 11px; font-weight: 500; color: #565869; }
+  .stylepick button.on { color: #FFFFFF; background: linear-gradient(90deg, rgba(118,138,255,.28), rgba(250,129,214,.28)); box-shadow: inset 0 0 0 1px #4A3F78; }
+  .stylepick button.on small { color: #C4B5FD; }
 
   .layout { display: flex; flex: 1; min-height: 0; }
 
@@ -72,7 +77,7 @@
 
   @media (max-width: 860px) {
     .sidebar { width: 96px; }
-    .meta, .section, .search, .topbar .label, .viewer-head .meta-line, .group { display: none; }
+    .meta, .section, .search, .topbar .label, .viewer-head .meta-line, .group, .stylepick small { display: none; }
     .item { justify-content: center; padding: 10px 0; }
   }
 </style>
@@ -81,6 +86,10 @@
 
 <div class="topbar">
   <img src="img/brand/lockup@2x.png" alt="humAIne">
+  <div class="stylepick" role="group" aria-label="Design version">
+    <button type="button" id="st-creative" title="Hand-made: handwriting, marker marks, torn paper and stamps">Creative <small>hand-made</small></button>
+    <button type="button" id="st-modern" title="The Zyn Global website language: light serif, hairline cards, the dawn">Modern <small>zynglobal.ai</small></button>
+  </div>
   <div class="label"><b id="count">43</b> email templates &middot; every flow in the app</div>
 </div>
 
@@ -200,10 +209,16 @@
   try { if (localStorage.getItem('humaine-preview-data') === 'tags') mode = 'tags'; } catch (e) {}
   const fill = s => mode === 'sample' ? String(s || '').replace(TAG, (m, k) => k in samples ? samples[k] : m) : String(s || '');
 
+  // Two designs of every email: Creative (repo root) and Modern (modern/, the Zyn Global website language).
+  let style = new URLSearchParams(location.search).get('style');
+  if (style !== 'modern' && style !== 'creative') { try { style = localStorage.getItem('humaine-preview-style'); } catch (e) {} }
+  if (style !== 'modern') style = 'creative';
+  const fileOf = stem => (style === 'modern' ? 'modern/' : '') + stem + '.html';
+
   const pages = new Map();
-  const load = stem => {
-    if (!pages.has(stem)) pages.set(stem, fetch(stem + '.html', { cache: 'no-cache' }).then(r => r.ok ? r.text() : '').catch(() => ''));
-    return pages.get(stem);
+  const load = file => {
+    if (!pages.has(file)) pages.set(file, fetch(file, { cache: 'no-cache' }).then(r => r.ok ? r.text() : '').catch(() => ''));
+    return pages.get(file);
   };
 
   function render(html) {
@@ -251,23 +266,31 @@
       el.addEventListener('click', () => select(el));
       list.appendChild(el);
       items.push(el);
-      Promise.all([load(stem), samplesReady]).then(([html]) => {
+      meta(el);
+    }
+  }
+  document.getElementById('count').textContent = items.length;
+
+  // Read subject, preheader and artwork from the email in the current design.
+  function meta(el) {
+    const file = fileOf(el.dataset.stem);
+    Promise.all([load(file), samplesReady]).then(([html]) => {
+        if (file !== fileOf(el.dataset.stem)) return;
+        const thumb = el.querySelector('.thumb');
+        thumb.style.backgroundImage = ''; thumb.style.backgroundSize = '';
         if (!html) return;
         const doc = new DOMParser().parseFromString(html, 'text/html');
         el.dataset.subject = (doc.querySelector('title')?.textContent || '').trim();
         el.dataset.pre = (doc.body.querySelector('div')?.textContent || '').replace(/[‌ \s]+/g, ' ').trim();
-        // Thumbnail: the email's own artwork (a hero scene, or a die-cut sticker when there isn't one).
-        const art = [...doc.images].map(n => n.getAttribute('src') || '').find(u => /\/img\/hero\/|\/img\/marks\/[^/]*sticker/.test(u));
+        // Thumbnail: the email's own artwork (a hero scene, or the sticker / bento icon when there isn't one).
+        const art = [...doc.images].map(n => n.getAttribute('src') || '').find(u => /\/img\/(modern\/)?hero\/|\/img\/marks\/[^/]*sticker|\/img\/modern\/marks\/\d\d-icon/.test(u));
         if (art) {
-          const thumb = el.querySelector('.thumb');
           thumb.style.backgroundImage = `url('${art.replace(PROD, HERE)}')`;
-          if (art.includes('sticker')) thumb.style.backgroundSize = 'contain';
+          if (/sticker|-icon/.test(art)) thumb.style.backgroundSize = 'contain';
         }
         paint(el);
-      });
-    }
+    });
   }
-  document.getElementById('count').textContent = items.length;
 
   // Inbox line for one email: subject + preheader, filled or raw to match the current mode.
   function paint(el) {
@@ -285,12 +308,14 @@
     items.forEach(i => i.classList.remove('active'));
     el.classList.add('active');
     current = el;
-    fileEl.href = el.dataset.stem + '.html';
+    fileEl.href = fileOf(el.dataset.stem);
     paint(el);
     if (!el.dataset.subject) titleEl.textContent = el.dataset.label;
-    history.replaceState(null, '', '#' + el.dataset.stem.slice(0, 2));
-    const [html] = await Promise.all([load(el.dataset.stem), samplesReady]);
-    if (current !== el || !html) return;
+    history.replaceState(null, '', location.pathname + location.search + '#' + el.dataset.stem.slice(0, 2));
+    const file = fileOf(el.dataset.stem);
+    const [html] = await Promise.all([load(file), samplesReady]);
+    if (current !== el || file !== fileOf(el.dataset.stem)) return;
+    if (!html) { frame.onload = null; frame.srcdoc = '<body style="margin:0;background:#06080F;color:#87858E;font:14px Helvetica,Arial,sans-serif;display:grid;place-items:center;height:100vh">This design isn\u2019t ready for this email yet.</body>'; return; }
     frame.onload = () => { if (y) frame.contentWindow.scrollTo(0, y); };
     frame.srcdoc = render(html);
   }
@@ -345,6 +370,22 @@
   document.getElementById('btn-tags').addEventListener('click', () => mode !== 'tags' && setData('tags'));
   document.getElementById('btn-sample').classList.toggle('on', mode === 'sample');
   document.getElementById('btn-tags').classList.toggle('on', mode === 'tags');
+
+  const setStyle = (next, first) => {
+    style = next;
+    try { localStorage.setItem('humaine-preview-style', style); } catch (e) {}
+    document.getElementById('st-creative').classList.toggle('on', style === 'creative');
+    document.getElementById('st-modern').classList.toggle('on', style === 'modern');
+    const url = new URL(location.href);
+    if (style === 'modern') url.searchParams.set('style', 'modern'); else url.searchParams.delete('style');
+    history.replaceState(null, '', url.pathname + url.search + location.hash);
+    if (first) return;
+    items.forEach(meta);
+    if (current) select(current);
+  };
+  document.getElementById('st-creative').addEventListener('click', () => style !== 'creative' && setStyle('creative'));
+  document.getElementById('st-modern').addEventListener('click', () => style !== 'modern' && setStyle('modern'));
+  setStyle(style, true);
 
   const hash = location.hash.slice(1);
   select(items.find(i => hash && i.dataset.stem.startsWith(hash)) || items[0]);

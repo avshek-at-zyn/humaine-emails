@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- Modern hero: the clay code envelope rising over the Zyn Global dawn, sun low on the left, no planet -->
+<div class="stage" data-out="modern/hero/21-alternate-email-verify.jpg" style="height:260px;background:#06080F">
+  <svg id="sky" width="600" height="260" style="left:0;top:0"></svg>
+  <div class="glow violet" style="left:60px;top:96px;width:230px;height:110px;opacity:.32"></div>
+  <div class="glow blue" style="left:380px;top:20px;width:200px;height:90px;opacity:.12"></div>
+  <div id="dawn" style="left:0;top:110px;width:600px;height:150px"></div>
+  <img class="icon" src="../../img/src/icons/mail-code.svg" style="left:105px;top:68px;width:140px">
+</div>
+<script src="kit.js"></script>
+<script>
+  K.init(2121);
+  K.stars(document.getElementById('sky'), { w: 600, h: 260, count: 74, sparkles: 3, avoid: [[175, 138, 86]] });
+  K.dawn(document.getElementById('dawn'), { w: 600, h: 150, sunX: 420, sunY: 330, sunR: 180 });
+  K.finish(document.querySelector('.stage'), { grain: 0.12, top: 0.06, bottom: 0.02, sides: 0.04, canvas: '#06080F' });
+  K.done();
+</script>
+</body></html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="kit.css"></head>
+<body>
+<!-- Modern hero: the app's clay thank-you bubble rising on the right over the dawn, sun far right, a small far planet on the left -->
+<div class="stage" data-out="modern/hero/43-support-received.jpg" style="height:250px;background:#06080F">
+  <div class="planet dark" style="left:58px;top:34px;width:96px;height:96px;opacity:.45"></div>
+  <svg id="sky" width="600" height="250" style="left:0;top:0"></svg>
+  <div class="glow violet" style="left:350px;top:92px;width:240px;height:116px;opacity:.33"></div>
+  <div id="dawn" style="left:0;top:100px;width:600px;height:150px"></div>
+  <img class="icon" src="../../img/src/app/thankyou-bubble.svg" style="left:398px;top:64px;width:138px">
+</div>
+<script src="kit.js"></script>
+<script>
+  K.init(4343);
+  K.stars(document.getElementById('sky'), { w: 600, h: 250, count: 72, sparkles: 3, avoid: [[467, 132, 92], [106, 82, 60]] });
+  K.dawn(document.getElementById('dawn'), { w: 600, h: 150, sunX: 1150, sunY: 330, sunR: 200 });
+  K.finish(document.querySelector('.stage'), { grain: 0.12, top: 0.06, bottom: 0.02, sides: 0.04, canvas: '#06080F' });
+  K.done();
+</script>
+</body></html>

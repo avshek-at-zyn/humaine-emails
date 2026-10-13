@@ -2,6 +2,7 @@
 
     python3 tools/lint.py                 # every template
     python3 tools/lint.py 04 15 27        # just these (by number or file stem)
+    python3 tools/lint.py --modern [nums] # the modern/ set (website language: periods and left-aligned heads allowed)
 
 Flags AI-generated tells and build mistakes. Errors break the build rules; warnings are things a
 human should look at. Exit code 1 if any errors.
@@ -33,7 +34,7 @@ def visible_text(src):
     return re.sub(r'\s+', ' ', html.unescape(body)).strip()
 
 
-def lint(path):
+def lint(path, modern=False):
     src = path.read_text()
     errors, warns = [], []
     text = visible_text(src)
@@ -56,7 +57,7 @@ def lint(path):
         if re.search(pattern, body_html):
             errors.append(f'{why} in email HTML (unsupported in many clients; bake it into an image)')
     h1tag = re.search(r'(?is)<h1\b[^>]*>', src)
-    if h1tag and 'text-align:center' not in h1tag.group(0).replace(' ', ''):
+    if not modern and h1tag and 'text-align:center' not in h1tag.group(0).replace(' ', ''):
         warns.append('headline is not centred (the system is centred)')
     if re.search(r'£\s?\d|\$\s?\d', text):
         warns.append('hardcoded money amount (use a merge tag)')
@@ -83,13 +84,13 @@ def lint(path):
             warns.append(f'staccato "X. Y." headline: "{headline}"')
         if headline.endswith('?'):
             warns.append(f'question headline: "{headline}"')
-        if headline.endswith('.'):
+        if headline.endswith('.') and not modern:
             warns.append(f'headline ends with a full stop (app headings never do): "{headline}"')
     title = re.search(r'(?is)<title>(.*?)</title>', src)
     subject = html.unescape(title.group(1)).strip() if title else ''
     if not subject:
         errors.append('no <title> subject line')
-    elif subject.endswith('.'):
+    elif subject.endswith('.') and not modern:
         warns.append(f'subject ends with a full stop: "{subject}"')
 
     m = re.search(r'Ask humAIne</p>\s*<a[^>]*>(.*?)</a>', src, re.S)
@@ -97,17 +98,27 @@ def lint(path):
         prompt = visible_text(m.group(1)).replace('→', '').strip().strip('“”" ')
         if len(prompt) > 22:
             warns.append(f'Ask prompt is {len(prompt)} chars (wraps at 390px; aim <= 22): "{prompt}"')
+    if modern:  # same data contract as the creative twin
+        twin = REPO / path.name
+        tags = lambda t: set(re.findall(r'\{\{\s*([#/]?\w+)\s*\}\}', t))
+        if not twin.exists():
+            errors.append('no creative twin with the same file name')
+        else:
+            a, b = tags(src), tags(twin.read_text())
+            if a != b:
+                errors.append(f'merge tags differ from the creative version (missing: {sorted(b - a)}, extra: {sorted(a - b)})')
     return headline, errors, warns
 
 
 def main():
-    picks = sys.argv[1:]
-    files = sorted(REPO.glob('[0-9][0-9]-*.html'))
+    modern = '--modern' in sys.argv
+    picks = [a for a in sys.argv[1:] if a != '--modern']
+    files = sorted((REPO / 'modern' if modern else REPO).glob('[0-9][0-9]-*.html'))
     if picks:
         files = [f for f in files if any(f.stem == p or f.stem.startswith(p + '-') or f.stem.startswith(p) for p in picks)]
     headlines, total_err, total_warn = {}, 0, 0
     for f in files:
-        headline, errors, warns = lint(f)
+        headline, errors, warns = lint(f, modern)
         headlines.setdefault(headline.lower(), []).append(f.stem)
         status = 'ERROR' if errors else ('warn' if warns else 'ok')
         print(f'{status:5}  {f.stem}  — {headline}')

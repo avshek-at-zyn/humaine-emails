@@ -29,6 +29,17 @@
     .num{font-size:48px!important;line-height:48px!important;}
     .stitle{font-size:20px!important;}
   }
+  /* narrow phones (360px and below): smaller headline so hand-marked phrases stay whole, tighter gutters */
+  @media screen and (max-width:380px){
+    .px{padding-left:20px!important;padding-right:20px!important;}
+    .h1{font-size:30px!important;}
+    .narrow-full{width:100%!important;max-width:100%!important;}
+    .narrow-full img{width:100%!important;height:auto!important;}
+  }
+  @media screen and (max-width:340px){
+    .h1{font-size:26px!important;}
+    .nimg{max-width:100%!important;height:auto!important;}
+  }
 </style>
 </head>
 <body class="body" style="margin:0;padding:0;background-color:#090B14;">
@@ -62,7 +73,7 @@
 
   <!-- signature : a zine contents page -->
   <tr><td class="px" align="center" style="padding:20px 40px 0;">
-    <img src="https://humaine-email.vercel.app/img/marks/40-note.png" width="320" alt="Handwritten: start with this one" style="display:block;width:320px;max-width:100%;height:auto;border:0;margin:0 auto;">
+    <img class="nimg" src="https://humaine-email.vercel.app/img/marks/40-note.png" width="320" alt="Handwritten: start with this one" style="display:block;width:320px;max-width:100%;height:auto;border:0;margin:0 auto;">
   </td></tr>
   <tr><td class="px" align="center" style="padding:4px 40px 0;">
     <p class="num" style="margin:0;font-family:'Hahmlet',Georgia,'Times New Roman',serif;font-size:62px;line-height:60px;font-weight:500;color:#A78BFA;text-align:center;">1</p>
